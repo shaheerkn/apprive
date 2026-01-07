@@ -14,7 +14,7 @@
     &:hover {
       color: #000;
       background: #fff;
-    
+
       .header__logo path { fill: #000; }
     }
   }
@@ -38,7 +38,7 @@
 
 .header__logo {
   flex-shrink: 0;
-  
+
   img {
     display: block;
     width: 109px;
