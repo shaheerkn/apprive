@@ -1561,7 +1561,7 @@ img {
 @media (max-width: 992px) {
   .concierge__columns {
     gap: 32px;
-    grid-template-columns: repeat(auto-fill, minmax(142px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
   }
 }
