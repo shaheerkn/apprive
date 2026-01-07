@@ -1,7 +1,7 @@
 .brand-values {
   max-width: 1920px;
   margin: 0 auto;
-  background: linear-gradient(to right, #E2C0A2, #F9E7DF);
+  background: linear-gradient(to right, #4D81A3, #9BB69F);
   padding-block: 64px;
 
   .container {
@@ -20,7 +20,7 @@
     span {
       width: 2px;
       height: 350px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.5);
 
       @media(max-width: 765px) {
         width: 100%;
@@ -37,14 +37,17 @@
   align-items: center;
   text-align: center;
   gap: 24px;
+  padding-inline: 38px;
 }
 
 .brand-values__item-title {
   font-size: 32px;
   font-weight: 500;
+  color: #fff;
 }
 
 .brand-values__item-description {
   font-size: 24px;
   text-align: center;
+  color: #fff;
 }
