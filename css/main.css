@@ -22,6 +22,9 @@ input {
   --color-3: #B1C9DC;
   --color-4: #9BB69F;
   --color-5: #B78A67;
+  --color-border: #FFFFFF80;
+  --color-white: #FFFFFF;
+  --background-brand-values: linear-gradient(to right, #4D81A3, #9BB69F);
 }
 
 .color-scheme-summer {
@@ -30,7 +33,10 @@ input {
   --color-3: #8CB8BB;
   --color-4: #C1D0C9;
   --color-5: #8CB8BB;
-  --color-6: ##F9E7DF;
+  --color-6: #F9E7DF;
+  --color-border: #00000080;
+  --color-white: #000;
+  --background-brand-values: linear-gradient(96.6deg, #E2C0A2 0%, #F9E7DF 100%);
 }
 
 body {
@@ -1592,6 +1598,57 @@ img {
 }
 .concierge__list li::marker {
   color: #FFFFFF;
+}
+
+.brand-values {
+  background: var(--background-brand-values);
+  color: var(--color-white);
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-block: 64px;
+}
+.brand-values .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 765px) {
+  .brand-values .container {
+    flex-direction: column;
+    padding-inline: 24px;
+  }
+}
+.brand-values .container span {
+  width: 2px;
+  height: 350px;
+  background-color: var(--color-border);
+}
+@media (max-width: 765px) {
+  .brand-values .container span {
+    width: 100%;
+    height: 2px;
+  }
+}
+.brand-values__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding-inline: 38px;
+  color: inherit;
+}
+.brand-values__item svg path {
+  fill: currentColor;
+}
+.brand-values__item-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+.brand-values__item-description {
+  font-size: 24px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,26 +1,25 @@
 .brand-values {
+  background: var(--background-brand-values);
+  color: var(--color-white);
   max-width: 1920px;
   margin: 0 auto;
-  background: linear-gradient(to right, #4D81A3, #9BB69F);
   padding-block: 64px;
 
   .container {
-    max-width: 1440px;
-    margin-inline: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
 
-  @media(max-width: 765px) {
-    flex-direction: column;
-    padding-inline: 24px;
-  }
+    @media(max-width: 765px) {
+      flex-direction: column;
+      padding-inline: 24px;
+    }
 
     span {
       width: 2px;
       height: 350px;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: var(--color-border);
 
       @media(max-width: 765px) {
         width: 100%;
@@ -28,26 +27,27 @@
       }
     }
   }
-}
 
-
-.brand-values__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 24px;
-  padding-inline: 38px;
-}
-
-.brand-values__item-title {
-  font-size: 32px;
-  font-weight: 500;
-  color: #fff;
-}
-
-.brand-values__item-description {
-  font-size: 24px;
-  text-align: center;
-  color: #fff;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding-inline: 38px;
+    color: inherit;
+  
+    svg path {
+      fill: currentColor;
+    }
+    &-title {
+      font-size: 32px;
+      font-weight: 500;
+    }
+    
+    &-description {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
 }
