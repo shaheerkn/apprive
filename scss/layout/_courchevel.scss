@@ -42,7 +42,7 @@
       color: transparent;
 
       &::before {
-          content: "A DESTINATION OF WINTER PRESTIGE"; 
+          content: "A DESTINATION OF WINTER PRESTIGE";
           color: #fff;
           line-height: 1.2;
           display: block;
@@ -134,5 +134,6 @@
     position: absolute;
     left: 0;
     top: 0;
+    display: none;
   }
 }
