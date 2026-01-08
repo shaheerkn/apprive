@@ -25,6 +25,7 @@ input {
   --color-border: #FFFFFF80;
   --color-white: #FFFFFF;
   --background-brand-values: linear-gradient(to right, #4D81A3, #9BB69F);
+  --footer-container-background: #00000026;
 }
 
 .color-scheme-summer {
@@ -37,6 +38,7 @@ input {
   --color-border: #00000080;
   --color-white: #000;
   --background-brand-values: linear-gradient(96.6deg, #E2C0A2 0%, #F9E7DF 100%);
+  --footer-container-background:#00000026;
 }
 
 body {
@@ -1679,12 +1681,16 @@ img {
   max-width: 1920px;
   margin-inline: auto;
   padding: 100px 0 48px 0;
-  background: #5A98C0;
+  background: var(--color-1);
+}
+@media (max-width: 765px) {
+  .footer {
+    padding: 20px 0 20px 0;
+  }
 }
 .footer__booking {
   max-width: 1440px;
-  background: #11517c;
-  backdrop-filter: blur(12px);
+  background: var(--footer-container-background);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -1698,6 +1704,11 @@ img {
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
+}
+@media (max-width: 765px) {
+  .footer__booking-title {
+    font-size: 20px;
+  }
 }
 .footer__booking span {
   width: 70px;
@@ -1715,6 +1726,12 @@ img {
     display: none;
   }
 }
+@media (max-width: 765px) {
+  .footer__booking {
+    padding: 16px;
+    gap: 16px;
+  }
+}
 .footer-form {
   width: 100%;
 }
@@ -1722,6 +1739,11 @@ img {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media (max-width: 765px) {
+  .footer-form__group {
+    gap: 8px;
+  }
 }
 .footer-form__group-item {
   display: flex;
@@ -1732,9 +1754,19 @@ img {
   gap: 12px;
   width: 100%;
 }
+@media (max-width: 765px) {
+  .footer-form__group-item {
+    padding: 12px;
+  }
+}
 .footer-form__group-row {
   display: flex;
   gap: 16px;
+}
+@media (max-width: 765px) {
+  .footer-form__group-row {
+    gap: 8px;
+  }
 }
 .footer-form__textfield {
   width: 100%;
@@ -1746,17 +1778,18 @@ img {
 }
 .footer-form__submit {
   width: 100%;
-  background: #B78A67;
+  background: var(--color-5);
   color: #fff;
   font-size: 20px;
   padding: 20px 32px;
-  border: 0.5px solid #B78A67;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-.footer-form__submit:hover {
-  background-color: #5A98C0;
+@media (max-width: 765px) {
+  .footer-form__submit {
+    padding: 12px;
+    font-size: 12px;
+  }
 }
 .footer input {
   border: none;
@@ -1766,7 +1799,6 @@ img {
 }
 .footer-bottom {
   display: flex;
-  align-items: center;
   color: #FFF;
   margin-top: 65px;
   padding-bottom: 40px;
@@ -1779,22 +1811,37 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
+    gap: 16px;
+    margin-top: 24px;
   }
 }
 .footer-bottom__left {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  max-width: 400px;
+  width: 100%;
 }
 @media (max-width: 992px) {
   .footer-bottom__left {
     grid-column: 1;
     grid-row: 1;
+    gap: 16px;
   }
+}
+.footer-bottom__left-logo img {
+  width: 180px;
 }
 .footer-bottom__left-logo___text {
   font-size: 24px;
   margin-top: 24px;
+  text-transform: capitalize;
+}
+@media (max-width: 765px) {
+  .footer-bottom__left-logo___text {
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
 .footer-bottom__left-contact p {
   font-size: 24px;
@@ -1844,12 +1891,23 @@ img {
     grid-column: 1/span 2;
     grid-row: 2;
     justify-content: space-between;
+    gap: 32px;
   }
+}
+.footer-bottom__right-list {
+  max-width: 320px;
+  width: 100%;
 }
 .footer-bottom__right-list h6 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+  .footer-bottom__right-list h6 {
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
 .footer-bottom__right-list ul {
   list-style: none;
@@ -1859,13 +1917,27 @@ img {
   flex-direction: column;
   gap: 12px;
 }
-.footer-bottom__right-list a {
+.footer-bottom__right-list li a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 20px;
 }
-.footer-bottom__right-list a:hover {
+.footer-bottom__right-list li a:hover {
   text-decoration: underline;
+}
+@media (max-width: 992px) {
+  .footer-bottom__right-list li a {
+    font-size: 11px;
+  }
+}
+.footer-bottom__right-list__contactInfo li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.footer-bottom__right-list__contactInfo li span svg {
+  width: 14px;
+  height: 14px;
 }
 .footer-bottom__partner {
   display: flex;
@@ -1882,6 +1954,12 @@ img {
   color: #FFF;
   font-size: 24px;
   margin-top: 40px;
+}
+@media (max-width: 765px) {
+  .footer-copyRight {
+    font-size: 10px;
+    font-weight: 500;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
