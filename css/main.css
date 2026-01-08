@@ -1839,4 +1839,149 @@ img {
   min-height: 900px;
 }
 
+.courchevel-chalets {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+.courchevel-chalets__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.courchevel-chalets__header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.courchevel-chalets__title {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media (max-width: 992px) {
+  .courchevel-chalets__title {
+    position: relative;
+    display: block;
+    color: transparent;
+    font-size: 20px;
+  }
+  .courchevel-chalets__title::before {
+    content: "FEATURED CHALETS";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #000;
+    text-align: center;
+  }
+}
+.courchevel-chalets__divider {
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: #000;
+}
+.courchevel-chalets__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 40px 0 80px 0;
+}
+@media (max-width: 992px) {
+  .courchevel-chalets__grid {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    border-bottom: 2px solid #585858;
+    padding-bottom: 20px;
+  }
+}
+.courchevel-chalets__item {
+  max-width: 453px;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .courchevel-chalets__item {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.courchevel-chalets__item img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.courchevel-chalets__info {
+  display: flex;
+  justify-content: space-between;
+}
+.courchevel-chalets__info div {
+  margin-top: 16px;
+}
+.courchevel-chalets__info div h6 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.courchevel-chalets__info div p {
+  font-size: 20px;
+  color: #585858;
+}
+.courchevel-chalets__amenities {
+  font-size: 20px;
+  color: #585858;
+  font-weight: 500;
+  margin-block: 16px;
+}
+.courchevel-chalets__link {
+  text-decoration: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 20px 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #000;
+  justify-content: center;
+  max-width: 230px;
+}
+.courchevel-chalets__link img {
+  width: 20px;
+  height: 20px;
+}
+.courchevel-chalets__view-all {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  background: #5A98C0;
+  padding: 24px 48px;
+  border-radius: 12px;
+}
+@media (max-width: 992px) {
+  .courchevel-chalets__view-all {
+    position: relative;
+    color: transparent;
+  }
+  .courchevel-chalets__view-all::before {
+    content: "Request Your Stay";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 0;
+  }
+}
+.courchevel-chalets__capacity {
+  width: 120px;
+  border-radius: 100px;
+  padding: 6px 12px;
+  background: #EEEEEE;
+}
+
 /*# sourceMappingURL=main.css.map */
