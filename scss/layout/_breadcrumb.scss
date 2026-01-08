@@ -1,0 +1,18 @@
+.breadcrumb {
+  max-width: 1920px;
+  margin-inline: auto;
+
+  &__container {
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-block: 19px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
