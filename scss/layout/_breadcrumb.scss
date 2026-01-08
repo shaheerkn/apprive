@@ -15,4 +15,8 @@
       color: #000;
     }
   }
+
+  @media (max-width: 765px) {
+    display: none;
+  }
 }
