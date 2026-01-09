@@ -1,17 +1,18 @@
 .courchevel {
-  max-width: 1920px;
   margin-inline: auto;
   position: relative;
-  background: var(--courchevel-background);
-
+  
   &__content {
-    display: flex;
-    max-width: 1440px;
-    margin-inline: auto;
-    padding-block: 100px;
+    padding-block: 100px 300px;
     color: var(--color-white);
-    gap: 77px;
     z-index: 1;
+    background: var(--courchevel-background);
+
+    .container {
+      max-width: 1440px;
+      display: flex;
+      gap: 77px;
+    }
 
     span {
       width: 50px;
@@ -57,6 +58,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    font-size: 24px;
 
     @media (max-width:768px) {
       font-size: 12px;
@@ -93,40 +95,14 @@
   }
 
   &__gallery {
-    position: absolute;
-    bottom: -85%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     max-width: 1440px;
+    margin-top: -242px;
 
     img {
       width: 100%;
       object-fit: cover;
       border-radius: 16px;
-    }
-
-    @media (max-width:1520px) {
-      bottom: -58%;
-    }
-
-    @media (max-width:1440px) {
-      bottom: -50%;
-    }
-
-    @media (max-width:1200px) {
-      bottom: -35%;
-    }
-
-    @media (max-width:992px) {
-      bottom: -25%;
-    }
-
-    @media (max-width:768px) {
-      bottom: -21%;
-    }
-
-    @media (max-width:480px) {
-      bottom: -5%;
     }
   }
 
@@ -134,6 +110,6 @@
     position: absolute;
     left: 0;
     top: 0;
-    display: none;
+    // display: none;
   }
 }
