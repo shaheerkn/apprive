@@ -26,6 +26,7 @@ input {
   --color-border: #FFFFFF80;
   --color-white: #FFFFFF;
   --background-brand-values: linear-gradient(to right, #4D81A3, #9BB69F);
+  --courchevel-background: #B78A67;
 }
 
 .color-scheme-summer {
@@ -38,6 +39,7 @@ input {
   --color-border: #00000080;
   --color-white: #000;
   --background-brand-values: linear-gradient(96.6deg, #E2C0A2 0%, #F9E7DF 100%);
+  --courchevel-background: #F1D5BD;
 }
 
 body {
@@ -2412,6 +2414,7 @@ img {
   display: flex;
   align-items: center;
   gap: 40px;
+  justify-content: center;
 }
 @media (max-width: 992px) {
   .courchevel-concierge__services {
