@@ -2,11 +2,9 @@
   max-width: 1920px;
   margin-inline: auto;
   background:#F5F5F5;
-  margin: 400px 0 100px 0;
+  margin-block: 100px;
   margin-inline: auto;
-  @media (max-width:1440px) {
-    margin-top: 200px;
-  }
+
   &__content {
     max-width: 1440px;
     margin-inline: auto;
