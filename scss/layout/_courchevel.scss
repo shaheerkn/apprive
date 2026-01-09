@@ -1,0 +1,139 @@
+.courchevel {
+  max-width: 1920px;
+  margin-inline: auto;
+  position: relative;
+  background: var(--courchevel-background);
+
+  &__content {
+    display: flex;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-block: 100px;
+    color: var(--color-white);
+    gap: 77px;
+    z-index: 1;
+
+    span {
+      width: 50px;
+      height: 2px;
+      background: #fff;
+      display: none;
+
+      @media (max-width:768px) {
+        display: block;
+      }
+    }
+    @media (max-width:992px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @media (max-width:768px) {
+      font-size: 20px;
+      position: relative;
+      color: transparent;
+
+      &::before {
+          content: "A DESTINATION OF WINTER PRESTIGE";
+          color: #fff;
+          line-height: 1.2;
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+    }
+  }
+
+  &__description {
+    max-width: 781px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width:768px) {
+      font-size: 12px;
+
+      p {
+        position: relative;
+        color: transparent;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+            display: block;
+          }
+          &:nth-child(1)::before {
+            content: "Courchevel stands as one of the world’s most sophisticated winter resorts — where elite skiing meets Michelin dining,";
+          }
+
+          &:nth-child(2)::before {
+            content: "refined alpine living, and absolute discretion. From the exclusive Courchevel 1850 to the authentic charm of Le Praz,";
+          }
+
+          &:nth-child(3)::before {
+            content: "each area offers a distinct atmosphere and level of privacy.";
+          }
+      }
+
+    }
+  }
+
+  &__gallery {
+    position: absolute;
+    bottom: -85%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1440px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    @media (max-width:1520px) {
+      bottom: -58%;
+    }
+
+    @media (max-width:1440px) {
+      bottom: -50%;
+    }
+
+    @media (max-width:1200px) {
+      bottom: -35%;
+    }
+
+    @media (max-width:992px) {
+      bottom: -25%;
+    }
+
+    @media (max-width:768px) {
+      bottom: -21%;
+    }
+
+    @media (max-width:480px) {
+      bottom: -5%;
+    }
+  }
+
+  &__waterMark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+}
