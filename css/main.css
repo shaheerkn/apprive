@@ -2237,4 +2237,100 @@ img {
   }
 }
 
+.chalet-about {
+  max-width: 1192px;
+  margin-inline: auto;
+  margin-inline: 0 auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.chalet-about__container {
+  margin-inline: auto 0;
+  max-width: 952px;
+  padding-block: 60px;
+}
+@media (max-width: 768px) {
+  .chalet-about__container {
+    padding-inline: 24px;
+  }
+}
+.chalet-about__container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  rotate: 180deg;
+  z-index: -1;
+  pointer-events: none;
+}
+.chalet-about__content {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+@media (max-width: 768px) {
+  .chalet-about__content {
+    gap: 12px;
+  }
+}
+.chalet-about__content h3 {
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .chalet-about__content h3 {
+    font-size: 14px;
+  }
+}
+.chalet-about__content span {
+  width: 551px;
+  height: 1px;
+  background: #000;
+  display: block;
+}
+@media (max-width: 768px) {
+  .chalet-about__content span {
+    width: 211px;
+  }
+}
+.chalet-about__text p {
+  font-size: 24px;
+  line-height: 1.3;
+  margin-block: 4px;
+}
+@media (max-width: 768px) {
+  .chalet-about__text p {
+    font-size: 12px;
+  }
+}
+.chalet-about__text p:nth-of-type(2) {
+  display: none;
+}
+.chalet-about__text p:nth-of-type(2).show {
+  display: block;
+}
+.chalet-about__text a {
+  text-decoration: none;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  color: #5A98C0;
+}
+@media (max-width: 768px) {
+  .chalet-about__text a {
+    display: none;
+  }
+}
+.chalet-about__text a.active ~ p:nth-of-type(2) {
+  display: block;
+}
+@media (max-width: 768px) {
+  .chalet-about__text p:nth-of-type(2) {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
