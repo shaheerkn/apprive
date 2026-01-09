@@ -3,6 +3,10 @@
   max-width: 1920px;
   margin-inline: auto;
 
+  &__hero-header {
+    background: #000;
+  }
+
   &__container {
     max-width: 1440px;
     margin-inline: auto;
@@ -113,6 +117,7 @@
       text-decoration: none;
       padding: 20px 37px;
       border-radius: 8px;
+      text-align: center;
 
       &:nth-child(1) {
         background: var(--color-1);

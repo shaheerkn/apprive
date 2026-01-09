@@ -1890,6 +1890,9 @@ img {
   max-width: 1920px;
   margin-inline: auto;
 }
+.single-chalet__hero-header {
+  background: #000;
+}
 .single-chalet__container {
   max-width: 1440px;
   margin-inline: auto;
@@ -1991,6 +1994,7 @@ img {
   text-decoration: none;
   padding: 20px 37px;
   border-radius: 8px;
+  text-align: center;
 }
 .single-chalet__contacts a:nth-child(1) {
   background: var(--color-1);
