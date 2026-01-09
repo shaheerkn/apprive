@@ -1940,7 +1940,7 @@ img {
 .footer-bottom__right-list__contactInfo li {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
 }
 .footer-bottom__right-list__contactInfo li span svg {
   width: 14px;
