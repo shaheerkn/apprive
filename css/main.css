@@ -25,7 +25,8 @@ input {
   --color-border: #FFFFFF80;
   --color-white: #FFFFFF;
   --background-brand-values: linear-gradient(to right, #4D81A3, #9BB69F);
-  --single-chalet-content-background:#E4ECF3;
+  --single-chalet-content-background: #E4ECF3;
+  --chalet-features-list-icon-background: #9BB69F;
 }
 
 .color-scheme-summer {
@@ -39,6 +40,7 @@ input {
   --color-white: #000;
   --background-brand-values: linear-gradient(96.6deg, #E2C0A2 0%, #F9E7DF 100%);
   --single-chalet-content-background:#F8EADE;
+  --chalet-features-list-icon-background: #8CB8BB;
 }
 
 body {
@@ -2125,6 +2127,113 @@ img {
   .single-chalet__expand {
     right: 12px;
     bottom: 12px;
+  }
+}
+.chalet-features {
+  max-width: 1192px;
+  margin-inline: 0 auto;
+  background: #F5F5F5;
+}
+@media (max-width: 992px) {
+  .chalet-features {
+    margin-inline: 0;
+    max-width: 100%;
+    padding-inline: 24px;
+  }
+}
+.chalet-features__container {
+  max-width: 992px;
+  margin-inline: auto 0;
+  padding-block: 60px;
+}
+@media (max-width: 992px) {
+  .chalet-features__container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-inline: 0;
+  }
+}
+.chalet-features__content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .chalet-features__content {
+    justify-content: space-around;
+  }
+}
+.chalet-features__content h2 {
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .chalet-features__content h2 {
+    font-size: 16px;
+  }
+}
+.chalet-features__content span {
+  width: 660px;
+  height: 1px;
+  background: #000;
+  display: block;
+}
+@media (max-width: 768px) {
+  .chalet-features__content span {
+    width: 255px;
+  }
+}
+.chalet-features__list {
+  display: flex;
+  gap: 120px;
+}
+@media (max-width: 768px) {
+  .chalet-features__list {
+    gap: 30px;
+  }
+}
+.chalet-features__list ul {
+  list-style: none;
+}
+.chalet-features__list ul li {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .chalet-features__list ul li {
+    gap: 8px;
+  }
+}
+.chalet-features__list ul li span {
+  width: 64px;
+  height: 64px;
+  background: var(--chalet-features-list-icon-background);
+  border-radius: 8px;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 768px) {
+  .chalet-features__list ul li span {
+    width: 36px;
+    height: 36px;
+  }
+  .chalet-features__list ul li span svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .chalet-features__list ul li {
+    font-size: 12px;
   }
 }
 
