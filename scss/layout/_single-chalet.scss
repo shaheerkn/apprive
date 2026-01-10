@@ -1,10 +1,10 @@
-
 .single-chalet {
   max-width: 1920px;
   margin-inline: auto;
 
   &__hero-header {
     background: #000;
+    position: static;
   }
 
   &__container {
@@ -176,8 +176,22 @@
       display: block;
     }
   }
+
+  &__breadcrumb {
+    background: #f5f5f5;
+  }
 }
 
+.single-chalet__breadcrumb .breadcrumb__container {
+  margin-block: 0;
+  padding: 14px 45px 14px 45px;
+}
+
+.single-chalet__links {
+  a {
+    font-size: 20px;
+  }
+}
 .single-chalet__gallery .swiper {
   max-width: 952px;
   margin: 0 auto;
