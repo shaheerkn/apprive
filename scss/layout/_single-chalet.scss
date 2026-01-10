@@ -15,10 +15,10 @@
     gap: 60px;
     align-items: center;
     padding-inline: 20px;
-    flex-wrap: wrap;
     justify-content: center;
     @media (max-width:1440px) {
       gap: 16px;
+      flex-wrap: wrap;
     }
   }
 
@@ -26,7 +26,7 @@
     max-width: 952px;
     overflow: hidden;
 
-    &-content {
+    &-text {
       display: flex;
       justify-content: space-between;
     }
@@ -34,8 +34,8 @@
 
   &__title {
     font-size: 40px;
-    width: 600;
-
+    font-weight: 600;
+    margin-bottom: 4px;
     @media (max-width:768px) {
       font-size: 20px;
     }
@@ -65,9 +65,9 @@
     background: var(--single-chalet-content-background);
     border-radius: 16px;
     margin-top: 100px;
-
+    max-width: 456px;
+    width: 100%;
     @media (max-width:1440px) {
-      width: 100%;
       max-width: 100%;
       margin-top: 0;
     }
@@ -77,6 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 76px;
   }
 
   &__price-amount {
@@ -135,48 +136,51 @@
         }
       }
     }
-
-
   }
 
-}
-.single-chalet__gallery {
-  position: relative;
-  max-width: 952px;
-  width: 100%;
-  margin: 16px 0;
+  &__count {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: #fff;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 600;
+    width: 107px;
+    z-index: 1;
+  }
+
+ &__expand {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  &__gallery {
+    position: relative;
+    max-width: 952px;
+    width: 100%;
+    margin: 16px 0;
+
+     img {
+      width: 100%;
+      display: block;
+    }
+  }
 }
 
 .single-chalet__gallery .swiper {
   max-width: 952px;
   margin: 0 auto;
-}
-
-.single-chalet__count {
-  position: absolute;
-  left: 16px;
-  top: 16px;
-  background: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  width: 107px;
-  z-index: 1;
-}
-
-.single-chalet__expand {
-  position: absolute;
-  right: 40px;
-  bottom: 20px;
-  background: transparent;
-  border: none;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
 }
 
 .swiper-button-next {
@@ -238,11 +242,6 @@
     width: 100%;
     object-fit: cover;
   }
-}
-
-.single-chalet__gallery img {
-  width: 100%;
-  display: block;
 }
 
 @media (max-width: 992px) {
