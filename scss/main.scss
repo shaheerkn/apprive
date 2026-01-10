@@ -2,6 +2,7 @@
 @use "base/variables" as *;
 @use "base/typography" as *;
 @use "components/btns" as *;
+@use "components/key-features";
 @use "base/global" as *;
 
 @use "layout/header" as *;
@@ -13,7 +14,6 @@
 @use "layout/brand-values" as *;
 @use "layout/footer" as *;
 @use 'layout/single-chalet' as *;
-@use "layout/single-chalet__features" as *;
 @use "layout/chalet-about" as *;
 @use "layout/breadcrumb" as *;
 @use "layout/courchevel" as *;
@@ -23,4 +23,5 @@
 @use "layout/courchevel-inspirations" as *;
 @use "layout/courchevel-concierge" as *;
 @use "layout/single-chalet-details" as *;
+@use "layout/details-sevices" as *;
 
