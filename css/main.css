@@ -26,7 +26,7 @@ input {
   --color-white: #FFFFFF;
   --background-brand-values: linear-gradient(to right, #4D81A3, #9BB69F);
   --single-chalet-content-background: #E4ECF3;
-  --chalet-features-list-icon-background: #9BB69F;
+  --key-features__icon-background: #9BB69F;
   --footer-container-background: #00000026;
   --courchevel-background: #B78A67;
 }
@@ -42,7 +42,7 @@ input {
   --color-white: #000;
   --background-brand-values: linear-gradient(96.6deg, #E2C0A2 0%, #F9E7DF 100%);
   --single-chalet-content-background:#F8EADE;
-  --chalet-features-list-icon-background: #8CB8BB;
+  --key-features__icon-background: #8CB8BB;
   --footer-container-background:#00000026;
   --courchevel-background: #F1D5BD;
 }
@@ -2221,32 +2221,32 @@ img {
     bottom: 12px;
   }
 }
-.chalet-features {
+.key-features {
   max-width: 1192px;
   margin-inline: 0 auto;
   background: #F5F5F5;
 }
 @media (max-width: 992px) {
-  .chalet-features {
+  .key-features {
     margin-inline: 0;
     max-width: 100%;
     padding-inline: 24px;
   }
 }
-.chalet-features__container {
+.key-features__container {
   max-width: 992px;
   margin-inline: auto 0;
   padding: 60px 0 60px 40px;
 }
 @media (max-width: 992px) {
-  .chalet-features__container {
+  .key-features__container {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding-inline: 0;
   }
 }
-.chalet-features__content {
+.key-features__content {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2254,44 +2254,44 @@ img {
   justify-content: space-between;
 }
 @media (max-width: 768px) {
-  .chalet-features__content {
+  .key-features__content {
     justify-content: space-around;
   }
 }
-.chalet-features__content h2 {
+.key-features__content h2 {
   font-size: 36px;
   font-weight: 600;
   text-transform: uppercase;
 }
 @media (max-width: 768px) {
-  .chalet-features__content h2 {
+  .key-features__content h2 {
     font-size: 16px;
   }
 }
-.chalet-features__content span {
+.key-features__content span {
   width: 660px;
   height: 1px;
   background: #000;
   display: block;
 }
 @media (max-width: 768px) {
-  .chalet-features__content span {
+  .key-features__content span {
     width: 255px;
   }
 }
-.chalet-features__list {
+.key-features__list {
   display: flex;
   gap: 120px;
 }
 @media (max-width: 768px) {
-  .chalet-features__list {
+  .key-features__list {
     gap: 30px;
   }
 }
-.chalet-features__list ul {
+.key-features__list ul {
   list-style: none;
 }
-.chalet-features__list ul li {
+.key-features__list ul li {
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -2300,31 +2300,31 @@ img {
   margin-bottom: 24px;
 }
 @media (max-width: 768px) {
-  .chalet-features__list ul li {
+  .key-features__list ul li {
     gap: 8px;
   }
 }
-.chalet-features__list ul li span {
+.key-features__list ul li span {
   width: 64px;
   height: 64px;
-  background: var(--chalet-features-list-icon-background);
+  background: var(--key-features__icon-background);
   border-radius: 8px;
   padding: 8px;
   display: grid;
   place-items: center;
 }
 @media (max-width: 768px) {
-  .chalet-features__list ul li span {
+  .key-features__list ul li span {
     width: 36px;
     height: 36px;
   }
-  .chalet-features__list ul li span svg {
+  .key-features__list ul li span svg {
     width: 15px;
     height: 15px;
   }
 }
 @media (max-width: 768px) {
-  .chalet-features__list ul li {
+  .key-features__list ul li {
     font-size: 12px;
   }
 }
@@ -2931,6 +2931,63 @@ img {
 .courchevel-concierge__list {
   list-style: disc;
   font-size: 22px;
+}
+
+.details-content span {
+  width: 482px;
+}
+@media (max-width: 768px) {
+  .details-content span {
+    width: 176px;
+  }
+}
+.details__title {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.details__list {
+  gap: 24px;
+}
+.details__list ul {
+  max-width: 464px;
+}
+.details__list ul li {
+  font-size: 20px;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .details__list ul li {
+    font-size: 12px;
+  }
+}
+.details__list ul li span {
+  background: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: block;
+}
+.details__list ul li span svg path {
+  fill: var(--color-2);
+}
+@media (max-width: 768px) {
+  .details__list ul li span {
+    width: 20px;
+    height: 20px;
+  }
+}
+.details__garllery {
+  display: flex;
+  margin-top: 60px;
+  gap: 24px;
+  justify-content: space-between;
+  padding-right: 24px;
+}
+@media (max-width: 992px) {
+  .details__garllery {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
