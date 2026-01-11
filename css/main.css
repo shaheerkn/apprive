@@ -3052,4 +3052,51 @@ img {
   margin: 14px 0 16px 0;
 }
 
+.information.key-features {
+  background: none;
+  position: relative;
+  overflow: hidden;
+}
+.information.key-features img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .information .key-features__list {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.information .key-features__list ul li {
+  font-size: 20px;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .information .key-features__list ul li {
+    font-size: 12px;
+  }
+}
+.information .key-features__list ul li span {
+  padding: 0;
+  background: none;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.information .key-features__list ul li span svg path {
+  fill: var(--color-2);
+}
+.information h4 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .information h4 {
+    font-size: 14px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
