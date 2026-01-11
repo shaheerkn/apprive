@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/main.css">
   <title>Single Chalet Page</title>
 </head>
@@ -662,9 +663,84 @@
       </div>
     </div>
   </section>
+
+  <section class="featured">
+    <div class="featured-container">
+      <div class="featured__content">
+        <h2>YOU MAY ALSO LIKE</h2>
+        <span></span>
+      </div>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./assets/images/featured-product_for-winter.svg" class="for-winter" alt="featured-product">
+            <img src="./assets/images/featured-product-for-summer.svg" class="for-summer" alt="featured-product">
+             <div class="courchevel-chalets__details">
+               <div class="courchevel-chalets__info">
+                 <div>
+                   <h6 class="courchevel-chalets__name for-winter">Chalet Mazot Cannors</h6>
+                   <h6 class="courchevel-chalets__name for-summer">Destiny Resort</h6>
+                   <p class="courchevel-chalets__location for-winter">Courchevel 1850</p>
+                   <p class="courchevel-chalets__location for-summer">Infinity pool · Sea view · Direct </p>
+                 </div>
+                 <div>
+                   <p class="courchevel-chalets__capacity featured-cpacity">10 Guests</p>
+                 </div>
+               </div>
+               <p class="courchevel-chalets__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
+               <p class="courchevel-chalets__amenities for-summer">beach access</p>
+               <a href="#" class="courchevel-chalets__link">View Property <img src="./assets/icons/arrow-up.svg" alt="arrow" class="courchevel-chalets__arrow"></a>
+             </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/feature-silde-two-winter.svg" class="for-winter" alt="featured-product">
+            <img src="./assets/images/feautured-slide-two-summer.svg" class="for-summer" alt="featured-product">
+               <div class="courchevel-chalets__details">
+               <div class="courchevel-chalets__info">
+                 <div>
+                   <h6 class="courchevel-chalets__name for-winter">Chalet Mazot Cannors</h6>
+                    <h6 class="courchevel-chalets__name for-summer">Villa Amra</h6>
+                   <p class="courchevel-chalets__location for-winter">Courchevel 1850</p>
+                   <p class="courchevel-chalets__location for-summer">Sunset lounge · Private terrace · </p>
+                 </div>
+                 <div>
+                   <p class="courchevel-chalets__capacity">10 Guests</p>
+                 </div>
+               </div>
+               <p class="courchevel-chalets__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
+               <p class="courchevel-chalets__amenities for-summer">Heated pool</p>
+               <a href="#" class="courchevel-chalets__link">View Property <img src="./assets/icons/arrow-up.svg" alt="arrow" class="courchevel-chalets__arrow"></a>
+             </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/featured-product_for-winter.svg" alt="featured-product">
+               <div class="courchevel-chalets__details">
+               <div class="courchevel-chalets__info">
+                 <div>
+                   <h6 class="courchevel-chalets__name">Chalet Mazot Cannors</h6>
+                   <p class="courchevel-chalets__location">Courchevel 1850</p>
+                 </div>
+                 <div>
+                   <p class="courchevel-chalets__capacity">10 Guests</p>
+                 </div>
+               </div>
+               <p class="courchevel-chalets__amenities">Spa · Fireplace · Ski-in/ski-out</p>
+               <a href="#" class="courchevel-chalets__link">Request Availability <img src="./assets/icons/arrow-up.svg" alt="arrow" class="courchevel-chalets__arrow"></a>
+             </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
 </body>
 <script src="./js/color-scheme.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="./js/single-chalet-gallery.js"></script>
 <script src="./js/chalet-about.js"></script>
+<script src="./js/chalet-featured.js"></script>
 </html>

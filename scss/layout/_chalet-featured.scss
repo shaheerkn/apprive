@@ -1,0 +1,122 @@
+.featured {
+  max-width: 1192px;
+  margin-inline: 0 auto;
+  background: #F5F5F5;
+
+  .featured-container {
+    max-width: 952px;
+    margin-inline: auto 0;
+    padding-block: 60px;
+
+    @media (max-width:768px) {
+      padding-inline: 20px;
+    }
+
+    .swiper {
+      position: relative;
+
+      .pagination {
+        position: absolute;
+        bottom: 0;
+      }
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 457px !important;
+          margin: 0;
+
+          @media (max-width: 768px) {
+            width: 100% !important;
+            margin-right: 0;
+          }
+          .courchevel-chalets__link {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .swiper-button-next,
+      .swiper-button-prev {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid black;
+        background: rgba(255, 255, 255, 0.8);
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: static;
+        margin-top: 20px;
+        transform: none;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+
+        &::after {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .swiper-button-next {
+        margin-left: 12px;
+      }
+
+      .swiper-button-prev {
+        margin-right: 12px;
+      }
+
+      .swiper-pagination {
+        display: none;
+      }
+
+      .pagination {
+        display: flex;
+        align-items: center;
+    }
+  }
+
+   &__content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      justify-content: space-around;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      @media (max-width:768px) {
+        font-size: 16px;
+      }
+    }
+
+    span {
+      width: 560px;
+      height: 1px;
+      background: #000;
+      display: block;
+
+      @media (max-width: 768px) {
+        width: 211px;
+      }
+    }
+  }
+}
+
