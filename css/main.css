@@ -31,6 +31,7 @@ input {
   --courchevel-background: #B78A67;
   --portfolio-background:#E4ECF3;
   --black-to-white: #000;
+  --services-intro-content-background: #B78A67;
 }
 
 .color-scheme-summer {
@@ -49,6 +50,7 @@ input {
   --courchevel-background: #F1D5BD;
   --portfolio-background:#66A1B1;
   --black-to-white: #fff;
+  --services-intro-content-background: #35656F;
 }
 
 body {
@@ -3635,6 +3637,86 @@ img {
 }
 .portfolio__property-group label:has(input[type=checkbox]:checked) {
   background-color: var(--color-1);
+}
+
+.services-intro .container {
+  max-width: 1680px;
+  margin-inline: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  padding: 0;
+}
+@media (max-width: 1200px) {
+  .services-intro .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-inline: 24px;
+  }
+}
+.services-intro__image-wrapper {
+  grid-column: 1/10;
+  grid-row: 1;
+  z-index: 1;
+}
+@media (max-width: 1200px) {
+  .services-intro__image-wrapper {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-64px);
+    z-index: 99;
+  }
+  .services-intro__image-wrapper img {
+    border-radius: 16px;
+  }
+}
+.services-intro__content {
+  grid-column: 6/-1;
+  grid-row: 1;
+  z-index: 2;
+  background: var(--services-intro-content-background);
+  color: #fff;
+  padding: 100px;
+}
+@media (max-width: 1200px) {
+  .services-intro__content {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    padding: 24px;
+  }
+  .services-intro__content span {
+    margin-inline: auto;
+  }
+}
+.services-intro__content h4 {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+@media (max-width: 1200px) {
+  .services-intro__content h4 {
+    font-size: 20px;
+  }
+}
+.services-intro__content span {
+  width: 100px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  margin-bottom: 24px;
+}
+.services-intro__content p {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */
