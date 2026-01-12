@@ -3216,6 +3216,8 @@ img {
 .products {
   max-width: 1920px;
   margin-inline: auto;
+  position: relative;
+  z-index: 1;
 }
 .products .container {
   display: flex;
@@ -3317,6 +3319,12 @@ img {
   height: 4px;
   border-radius: 50%;
   background: #000;
+}
+.products__water-mark {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=main.css.map */

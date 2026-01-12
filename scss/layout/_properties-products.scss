@@ -1,7 +1,8 @@
 .products {
   max-width: 1920px;
   margin-inline: auto;
-
+  position: relative;
+  z-index: 1;
    .container {
     display: flex;
     flex-direction: column;
@@ -117,5 +118,12 @@
         background: #000;
       }
     }
+  }
+
+  &__water-mark {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
   }
 }
