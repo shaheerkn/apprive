@@ -29,6 +29,8 @@ input {
   --key-features__icon-background: #9BB69F;
   --footer-container-background: #00000026;
   --courchevel-background: #B78A67;
+  --portfolio-background:#E4ECF3;
+  --black-to-white: #000;
 }
 
 .color-scheme-summer {
@@ -45,6 +47,8 @@ input {
   --key-features__icon-background: #8CB8BB;
   --footer-container-background:#00000026;
   --courchevel-background: #F1D5BD;
+  --portfolio-background:#66A1B1;
+  --black-to-white: #fff;
 }
 
 body {
@@ -3337,6 +3341,295 @@ img {
   right: 0;
   top: 0;
   z-index: -1;
+}
+
+.portfolio {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+.portfolio .container {
+  display: flex;
+  flex-direction: column;
+  background: var(--portfolio-background);
+  padding-block: 32px;
+  border-radius: 16px;
+  max-width: 1440px;
+  margin-block: 40px;
+}
+.portfolio__header {
+  text-align: center;
+  max-width: 1100px;
+  padding-inline: 20px;
+  margin-inline: auto;
+  color: var(--black-to-white);
+}
+.portfolio__header p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-block: 24px;
+}
+@media (max-width: 768px) {
+  .portfolio__header p {
+    display: none;
+  }
+}
+.portfolio__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.portfolio__text h4 {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .portfolio__text h4 {
+    font-size: 16px;
+  }
+}
+.portfolio__text span {
+  width: 100px;
+  height: 2px;
+  background: var(--black-to-white);
+  display: block;
+}
+@media (max-width: 768px) {
+  .portfolio__text span {
+    display: none;
+  }
+}
+.portfolio__inputs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.portfolio__inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.portfolio__inputs-container label {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--black-to-white);
+}
+.portfolio__inputs-values {
+  background: #fff;
+  padding: 12px 16px;
+  width: 298px;
+  border: 0;
+  color: #2C2C2C;
+}
+.portfolio__inputs-selection {
+  position: relative;
+}
+.portfolio__inputs-selection select {
+  padding-left: 40px;
+}
+.portfolio__inputs-selection button {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+.portfolio-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  gap: 16px;
+}
+.portfolio-btn button {
+  padding: 12px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  background: var(--color-1);
+}
+.portfolio-btn button img {
+  width: 20px;
+  height: 20px;
+}
+.portfolio__filter-modal {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  max-height: 47vh;
+  display: none;
+  position: absolute;
+  top: 148px;
+  right: 20px;
+  z-index: 999;
+  padding-block: 32px;
+}
+@media (max-width: 992px) {
+  .portfolio__filter-modal {
+    right: 0;
+    top: 100px;
+  }
+}
+.portfolio__filter-modal.is-open {
+  display: block;
+}
+.portfolio__filter-modal h3 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+.portfolio__filter-modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 99;
+}
+.portfolio__filter-modal__body {
+  padding: 20px;
+  overflow-y: auto;
+  background: #fff;
+  max-height: 47vh;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .portfolio__filter-modal__body {
+    max-height: 100vh;
+  }
+}
+.portfolio__filter-modal__footer {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.portfolio__filter-group {
+  margin-bottom: 24px;
+  border-bottom: 1px solid;
+  padding-block: 24px;
+}
+.portfolio__filter-group__title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.portfolio__filter-subgroup {
+  margin-bottom: 24px;
+}
+.portfolio__filter-subgroup p {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.portfolio__price-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-direction: column;
+}
+.portfolio__price-range__text {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+@media (max-width: 992px) {
+  .portfolio__price-range__text {
+    width: 100%;
+  }
+}
+.portfolio__price-range__text span {
+  font-size: 12px;
+  color: #666;
+  min-width: 60px;
+}
+.portfolio__price-range input[type=range] {
+  flex: 1;
+  width: 800px;
+}
+@media (max-width: 992px) {
+  .portfolio__price-range input[type=range] {
+    width: 100%;
+  }
+}
+.portfolio__pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.portfolio__pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+.portfolio__pill.active {
+  background: var(--color-1);
+  color: #fff;
+}
+.portfolio__checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 16px;
+}
+.portfolio__checkbox-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+.portfolio__checkbox-grid label {
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.portfolio__clear-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.portfolio__search-btn {
+  background: #5a98c0;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.portfolio__property-group label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 42px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.3s;
+  border-radius: 8px;
+}
+.portfolio__property-group label input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.portfolio__property-group label:has(input[type=checkbox]:checked) {
+  background-color: var(--color-1);
 }
 
 /*# sourceMappingURL=main.css.map */
