@@ -3,6 +3,7 @@
 @use "base/typography" as *;
 @use "components/btns" as *;
 @use "components/key-features";
+@use "components/divider" as *;
 @use "base/global" as *;
 
 @use "layout/header" as *;
@@ -31,3 +32,4 @@
 @use "layout/properties-products" as *;
 @use "layout/portfolio" as *;
 @use "layout/services-intro" as *;
+@use "layout/tiers" as *;

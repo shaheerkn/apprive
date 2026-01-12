@@ -1,0 +1,11 @@
+.divider {
+  width: 100px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  margin-bottom: 24px;
+
+  @media (max-width:992px) {
+    margin-inline: auto;
+  }
+}
