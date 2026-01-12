@@ -3347,6 +3347,11 @@ img {
   max-width: 1920px;
   margin-inline: auto;
 }
+@media (max-width: 992px) {
+  .portfolio {
+    padding-inline: 20px;
+  }
+}
 .portfolio .container {
   display: flex;
   flex-direction: column;
