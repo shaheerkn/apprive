@@ -8,8 +8,11 @@
     flex-direction: column;
     gap: 27px;
     margin-block: 27px;
-    max-width: 1440px;
-    padding: 0;
+    padding-inline: 40px;
+
+    @media (max-width:768px) {
+      padding-inline: 24px;
+    }
   }
 
   &__text {
@@ -81,8 +84,12 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
+    gap: 20px;
+    justify-content: space-between;
+
+    @media (max-width:1440px) {
+      justify-content: center;
+    }
   }
 
   &__actions {
@@ -98,13 +105,13 @@
     }
 
     button {
-     background: #F5F5F5;
-     text-align: center;
+      background: #F5F5F5;
+      text-align: center;
       font-size: 20px;
-     &:nth-child(2) {
-      background: #5A98C0;
-      color: #fff;
-     }
+      &:nth-child(2) {
+        background: #5A98C0;
+        color: #fff;
+      }
     }
 
     &-dots {
