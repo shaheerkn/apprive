@@ -1,0 +1,87 @@
+.brand-pillars {
+  max-width: 1920px;
+  margin-inline: auto;
+
+  .container {
+    max-width: 1440px;
+    background: #F5F5F5;
+    padding-block: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__header {
+    display: flex;
+    gap: 28px;
+    flex-direction: column;
+    align-items: center;
+    .divider {
+      background: #000;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    place-items: center;
+
+    @media (max-width:1240px) {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    @media (max-width:992px) {
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+
+  &__item {
+    max-width: 324px;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+
+    &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 100px;
+    background-color: #A9A9A9;
+
+    @media (max-width: 992px) {
+        left: auto;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        width: 100%;
+        height: 1px;
+    }
+  }
+    svg {
+      path {
+       fill: var(--icon-fill-color);
+     }
+    }
+
+    @media (max-width:992px) {
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    text-align: center;
+
+    h5 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-block: 24px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+}
