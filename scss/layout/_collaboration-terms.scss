@@ -1,0 +1,46 @@
+.collaboration-terms {
+  max-width: 1920px;
+  margin-inline: auto;
+  overflow: hidden;
+  .container {
+    max-width: 1440px;
+    margin-block: 100px;
+    position: relative;
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .secondary-title {
+    margin-bottom: 24px;
+    position: relative;
+    text-align: center;
+    padding-bottom: 24px;
+    &::before {
+      content: "";
+      width: 100px;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__content {
+    p {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      &:first-child {
+      font-size: 28px;
+      font-style: italic;
+      color: #5A98C0;
+    }
+    }
+  }
+}
