@@ -3,6 +3,7 @@
   margin-inline: auto;
   position: relative;
   z-index: 1;
+
    .container {
     display: flex;
     flex-direction: column;
@@ -82,8 +83,9 @@
   }
 
   &__content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
     gap: 20px;
     justify-content: space-between;
 

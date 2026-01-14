@@ -2,47 +2,13 @@
   max-width: 1920px;
   margin-inline: auto;
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__header {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-
-  &__title {
-    font-size: 40px;
-    font-weight: 500;
-    text-transform: uppercase;
-
+  .container {
+    max-width: 1440px;
+    padding: 0;
+    text-align: center;
     @media (max-width:992px) {
-      position: relative;
-      display: block;
-      color: transparent;
-      font-size: 20px;
-      &::before {
-        content: "FEATURED CHALETS";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        color: #000;
-        text-align: center;
-      }
+      padding-inline: 24px;
     }
-  }
-
-  &__divider {
-    display: block;
-    width: 100px;
-    height: 2px;
-    background: #000;
   }
 
   &__grid {
@@ -67,19 +33,25 @@
       max-width: 100%;
       width: 100%;
     }
-    img {
-      width: 100%;
-      object-fit: cover;
-      border-radius: 16px;
+
+    .item-image {
+      display: block;
+      img {
+        object-fit: cover;
+
+        @media (max-width:992px) {
+          width: 100%;
+        }
+      }
     }
   }
 
   &__info {
     display: flex;
     justify-content: space-between;
+    margin-top: 16px;
+    &-text {
 
-    div {
-      margin-top: 16px;
       h6 {
         font-size: 24px;
         font-weight: 600;
@@ -126,31 +98,17 @@
     background: #5A98C0;
     padding: 24px 48px;
     border-radius: 12px;
-
-    @media (max-width:992px) {
-      position: relative;
-      color: transparent;
-
-      &::before {
-        content: "Request Your Stay";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #fff;
-        font-size: 14px;
-        font-weight: 500;
-        border-radius: 0;
-      }
-    }
   }
 
   &__capacity {
-    width: 120px;
     border-radius: 100px;
     padding: 6px 12px;
     background: #EEEEEE;
     font-weight: 600;
-    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    max-width: 102px;
+    max-height: 32px;
   }
 }

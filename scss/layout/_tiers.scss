@@ -5,43 +5,19 @@
 
   .container {
     max-width: 1440px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    align-items: center;
-    padding-block: 100px;
 
     @media (max-width:992px) {
       gap: 16px;
     }
-  }
 
-  &__header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h4 {
-      font-size: 40px;
+    .section-title {
       margin-bottom: 48px;
-      font-weight: 600;
-      text-transform: uppercase;
-
-      @media (max-width:992px) {
-        font-size: 20px;
-        margin-bottom: 12px;
-      }
-    }
-
-    .divider {
-      background: #000;
     }
   }
 
   &__cards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 40px;
 
     @media (max-width:992px) {
@@ -84,6 +60,7 @@
     border-bottom: 1px solid #fff;
     max-width: 389px;
     padding-bottom: 40px;
+
     h5 {
       font-size: 28px;
       font-weight: 600;

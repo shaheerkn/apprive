@@ -18,6 +18,11 @@
       .header__logo path { fill: #000; }
     }
   }
+
+  &__modifier {
+    background: #000;
+    position: static;
+  }
 }
 
 .header .container {

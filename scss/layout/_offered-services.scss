@@ -6,21 +6,9 @@
 
   .container {
     max-width: 1440px;
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
-    padding-block: 100px;
-  }
-
-  &__header {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    align-items: center;
-  }
-
-  .divider {
-    background: #000;
+    .section-title {
+      margin-bottom: 64px;
+    }
   }
 
   &__items {
