@@ -1,0 +1,65 @@
+.partner-audience {
+  max-width: 1920px;
+  margin-inline: auto;
+  background: var(--color-6);
+
+  @media (max-width:992px) {
+    background: linear-gradient(90deg, #5A98C0 0%, #B78A67 100%);
+  }
+
+  .container {
+    max-width: 1440px;
+
+    .section-title {
+      color: #fff;
+      margin-bottom: 40px;
+      &::after {
+        background: #fff;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    place-items: center;
+
+    @media (max-width:992px) {
+      grid-template-columns: repeat(1,1fr);
+      gap: 12px;
+    }
+  }
+
+  &__card {
+    max-width: 700px;
+    border-radius: 16px;
+    padding: 64px 88px;
+    background: #fff;
+    text-align: center;
+
+    @media (max-width:992px) {
+      padding: 24px;
+    }
+
+    &-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--color-6);
+
+      @media (max-width:992px) {
+        color: #5A98C0;
+        font-size: 16px;
+      }
+    }
+
+    &-text {
+      font-size: 24px;
+      font-weight: 400;
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

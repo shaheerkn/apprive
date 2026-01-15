@@ -1,0 +1,38 @@
+.partner-about {
+  max-width: 1920px;
+  margin-inline: auto;
+
+  .container {
+    max-width: 1440px;
+    text-align: center;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+
+    @media (max-width:992px) {
+      font-size: 12px;
+    }
+  }
+
+  &__quote {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 500;
+    color: #5A98C0;
+
+    @media (max-width:992px) {
+      font-size: 12px;
+    }
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+  }
+}
