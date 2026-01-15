@@ -4,9 +4,11 @@
   overflow: hidden;
   .container {
     max-width: 1440px;
-    margin-block: 100px;
     position: relative;
 
+    .section-title {
+      margin-bottom: 40px;
+    }
     img {
       position: absolute;
       right: 0;

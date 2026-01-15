@@ -1,6 +1,14 @@
 .courchevel-chalets {
   max-width: 1920px;
   margin-inline: auto;
+  position: relative;
+
+  &__water-mark{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+  }
 
   .container {
     max-width: 1440px;
@@ -110,5 +118,9 @@
     font-size: 16px;
     max-width: 102px;
     max-height: 32px;
+  }
+
+  &__details {
+    text-align: start;
   }
 }

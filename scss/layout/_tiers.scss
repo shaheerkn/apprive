@@ -21,7 +21,8 @@
     gap: 40px;
 
     @media (max-width:992px) {
-      flex-direction: column;
+     grid-template-columns: repeat(1,1fr);
+     place-items: center;
     }
   }
 
@@ -64,16 +65,26 @@
     h5 {
       font-size: 28px;
       font-weight: 600;
+
+      @media (max-width:992px) {
+        font-size: 16px;
+      }
     }
 
-    p{
-      &:nth-child(1) {
-        font-size: 24px;
-      }
+    .content__primary-descirption {
+       font-size: 24px;
 
-      &:nth-child(2) {
+        @media (max-width:992px) {
+          font-size: 14px;
+        }
+    }
+
+    .content__secondary-descirption {
         font-size: 18px;
-      }
+
+        @media (max-width:992px) {
+          font-size: 12px;
+        }
     }
   }
 

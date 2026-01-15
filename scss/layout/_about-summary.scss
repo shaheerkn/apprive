@@ -9,8 +9,12 @@
     gap: 80px;
     color: #fff;
     padding: 0;
-    padding-block: 100px;
 
+    .section-title {
+      &::after {
+        display: none;
+      }
+    }
     @media (max-width:1040px) {
       flex-direction: column;
       align-items: center;

@@ -1,25 +1,14 @@
 .brand-pillars {
   max-width: 1920px;
   margin-inline: auto;
+  background: #F5F5F5;
 
   .container {
     max-width: 1440px;
-    background: #F5F5F5;
-    padding-block: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-  }
-
-  &__header {
-    display: flex;
-    gap: 28px;
-    flex-direction: column;
-    align-items: center;
-    .divider {
-      background: #000;
-    }
   }
 
   &__grid {
