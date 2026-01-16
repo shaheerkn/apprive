@@ -6,9 +6,7 @@
 
   .container {
     max-width: 1440px;
-    margin-inline: auto;
     text-align: center;
-    padding: 0;
   }
 
   &__list {
@@ -23,6 +21,7 @@
   }
 
   &__area {
+    width: 100%;
     max-width: 324px;
     text-align: center;
     position: relative;
@@ -31,10 +30,10 @@
       font-size: 28px;
       font-weight: 600;
       margin-bottom: 12px;
-    }
 
-    &-description {
-      font-size: 22px;
+      @media (max-width:992px) {
+        font-size: 16px;
+      }
     }
 
     &::before {
@@ -45,11 +44,24 @@
       transform: translateY(-50%);
       height: 80px;
       width: 2px;
-      background: #000;
+      background: rgb(0, 0, 0 , 0.5);
+
+      @media (max-width:992px) {
+        width: 80px;
+        height: 2px;
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        transform: translate(-50%);
+      }
     }
 
     &:last-child::before {
       display: none;
+    }
+
+    @media (max-width:992px) {
+      max-width: 100%;
     }
   }
 }

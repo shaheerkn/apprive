@@ -1,5 +1,4 @@
 .information {
-
   &.key-features {
     background: none;
     position: relative;
@@ -13,7 +12,6 @@
   }
 
   .key-features__list {
-
     @media (max-width:768px) {
       flex-direction: column;
       gap: 0;

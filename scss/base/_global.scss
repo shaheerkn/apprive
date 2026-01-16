@@ -175,3 +175,19 @@ img {
     }
   }
 }
+
+.text {
+  font-size: 24px;
+  font-weight: 600;
+  @media (max-width:992px) {
+    font-size: 16px;
+  }
+}
+
+.description {
+  font-size: 20px;
+
+  @media (max-width:992px) {
+    font-size: 12px;
+  }
+}

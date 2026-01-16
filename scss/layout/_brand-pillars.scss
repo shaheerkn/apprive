@@ -64,13 +64,21 @@
   &__content {
     text-align: center;
 
-    h5 {
+   &--title {
       font-size: 32px;
       font-weight: 600;
       margin-block: 24px;
+
+      @media (max-width:768px) {
+        font-size: 16px;
+      }
     }
-    p {
+    &--text {
       font-size: 22px;
+
+      @media (max-width:768px) {
+        font-size: 14px;
+      }
     }
   }
 }

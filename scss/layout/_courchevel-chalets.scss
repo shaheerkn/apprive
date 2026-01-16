@@ -14,8 +14,10 @@
     max-width: 1440px;
     padding: 0;
     text-align: center;
+    margin-bottom: 38px;
     @media (max-width:992px) {
       padding-inline: 24px;
+      font-size: 12px;
     }
   }
 
@@ -59,24 +61,18 @@
     justify-content: space-between;
     margin-top: 16px;
     &-text {
-
-      h6 {
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 4px;
-      }
-
-      p {
-        font-size: 20px;
+      .description {
         color: #585858;
+        font-weight: 500;
       }
+    }
+
+    &--description {
+      margin-top: 8px;
     }
   }
 
   &__amenities {
-    font-size: 20px;
-    color: #585858;
-    font-weight: 500;
     margin-block: 16px;
   }
 
@@ -106,6 +102,10 @@
     background: #5A98C0;
     padding: 24px 48px;
     border-radius: 12px;
+
+    @media (max-width:992px) {
+      font-size: 14px;
+    }
   }
 
   &__capacity {
@@ -118,6 +118,10 @@
     font-size: 16px;
     max-width: 102px;
     max-height: 32px;
+
+    @media (max-width:992px) {
+      font-size: 12px;
+    }
   }
 
   &__details {

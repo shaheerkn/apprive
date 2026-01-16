@@ -4,7 +4,6 @@
   .container {
     max-width: 1400px;
   }
-
   .section-title {
     margin-bottom: 40px;
   }
@@ -31,8 +30,8 @@
     @media (max-width: 992px) {
       display: flex;
       flex-direction: column;
-      gap: 72px;
-
+      gap: 16px;
+      align-items: start;
       &::before {
         content: "";
         position: absolute;
@@ -117,7 +116,7 @@
 
         .collaboration__content {
           grid-column: 2;
-          text-align: left;
+          text-align: right;
         }
       }
     }
@@ -139,6 +138,7 @@
     margin-top: 20px;
     @media (max-width: 992px) {
       max-width: 100%;
+      margin-top: 0;
     }
   }
 
@@ -151,6 +151,7 @@
     @media (max-width: 992px) {
       font-size: 14px;
       margin-top: 0;
+      margin-bottom: 12px;
     }
   }
 
@@ -167,10 +168,14 @@
     @media (max-width: 992px) {
       font-size: 10px;
       line-height: 1.6;
+      margin-bottom: 12px;
     }
   }
-  .grid-item-2 .collaboration__step-label {
-    text-align: right;
+
+  @media (max-width:992px) {
+    .grid-item-2 .collaboration__step-label {
+      text-align: right;
+    }
   }
 }
 

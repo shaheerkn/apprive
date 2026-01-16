@@ -1,6 +1,4 @@
 .work-pillars {
-  max-width: 1920px;
-  margin-inline: auto;
   background: var(--color-8);
 
   .container {
@@ -15,17 +13,14 @@
     text-align: center;
 
     &-description {
-      font-size: 24px;
+      font-weight: 500;
       color: #fff;
-
-      @media (max-width:768px) {
-        font-size: 16px;
-      }
     }
   }
 
   .section-title{
     color: #fff;
+    margin-bottom: 12px;
     &::after {
       background: #fff;
     }
@@ -60,22 +55,8 @@
     }
 
     &-title {
-      font-size: 24px;
       font-weight: 500;
       margin-bottom: 16px;
-
-      @media (max-width:768px) {
-        font-size: 16px;
-      }
-    }
-
-    &-description {
-      font-size: 20px;
-      font-weight: 400;
-
-      @media (max-width:768px) {
-        font-size: 12px;
-      }
     }
   }
 }

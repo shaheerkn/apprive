@@ -13,24 +13,6 @@
     padding: 0;
   }
 
-  &__header {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    align-items: center;
-    text-align: center;
-  }
-
-  &__title {
-    font-size: 40px;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-
-  .divider {
-    background: #000;
-  }
-
   &__services {
     display: grid;
     grid-template-columns: repeat(3,1fr);

@@ -4,15 +4,15 @@
 
   .container {
     max-width: 1440px;
-    margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 80px;
 
     @media (max-width: 992px) {
       text-align: center;
       flex-direction: column-reverse;
+      gap: 16px;
     }
   }
 
@@ -56,18 +56,25 @@
       }
 
       &::after {
-        left: 8%;
+        left: 0;
+        transform: translateX(0);
 
         @media (max-width:992px) {
           left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
     p {
-      font-size: 18px;
+      font-size: 24px;
       line-height: 1.6;
       margin-bottom: 20px;
       color: #333;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
     }
   }
 }

@@ -4,7 +4,6 @@
 
   .container {
     max-width: 1440px;
-    margin-inline: auto;
     display: flex;
     align-items: center;
     gap: 80px;
@@ -22,22 +21,29 @@
     align-items: start;
     gap: 24px;
     max-width: 650px;
+
     @media (max-width:1040px) {
       align-items: center;
     }
 
     .section-title {
       &::after {
-        left: 7%;
+        left: 0;
+        transform: translateX(0);
 
         @media (max-width:992px) {
           left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
     a {
       text-decoration: none;
       color: var(--color-1);
+
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
     }
   }
 
@@ -47,13 +53,13 @@
 
     @media (max-width:992px){
       font-size: 12px;
+      text-align: center;
     }
     p {
       font-style: italic;
       margin-bottom: 20px;
     }
   }
-
   &__media {
     max-width: 710px;
   }

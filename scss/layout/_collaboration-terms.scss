@@ -2,6 +2,7 @@
   max-width: 1920px;
   margin-inline: auto;
   overflow: hidden;
+
   .container {
     max-width: 1440px;
     position: relative;
@@ -16,25 +17,7 @@
     }
   }
 
-  .secondary-title {
-    margin-bottom: 24px;
-    position: relative;
-    text-align: center;
-    padding-bottom: 24px;
-    &::before {
-      content: "";
-      width: 100px;
-      height: 2px;
-      background: #000;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  &__content {
-    p {
+  &__text {
       font-size: 24px;
       text-align: center;
       margin-bottom: 24px;
@@ -42,7 +25,12 @@
       font-size: 28px;
       font-style: italic;
       color: #5A98C0;
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
     }
+    @media (max-width:992px) {
+      font-size: 12px;
     }
   }
 }

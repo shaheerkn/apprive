@@ -1,7 +1,9 @@
 .about-summary {
-  max-width: 1920px;
-  margin-inline: auto;
   background: var(--services-intro-content-background);
+
+  @media (max-width:992px) {
+    background: #5A98C0;
+  }
 
   .container {
     max-width: 1440px;
@@ -13,8 +15,14 @@
     .section-title {
       &::after {
         display: none;
+        background: #fff;
+
+        @media (max-width:992px) {
+          display: block;
+        }
       }
     }
+
     @media (max-width:1040px) {
       flex-direction: column;
       align-items: center;
@@ -22,11 +30,6 @@
       padding: 24px;
       gap: 12px;
     }
-  }
-
-  .secondary-title {
-    font-weight: 500;
-    color: #fff;
   }
 
   &__content {
@@ -39,7 +42,7 @@
         font-style: italic;
         margin-bottom: 0;
       }
-      @media (max-width:768px) {
+      @media (max-width:992px) {
         font-size: 12px;
       }
     }

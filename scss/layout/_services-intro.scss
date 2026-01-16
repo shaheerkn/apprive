@@ -1,16 +1,17 @@
 .services-intro {
   .container {
     max-width: 1680px;
-    margin-inline: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     padding: 0;
+    margin-inline: 0 auto;
     @media (max-width: 1200px) {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
       padding-inline: 24px;
+      margin-bottom: 24px;
     }
   }
 
@@ -24,24 +25,29 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      transform: translateY(-64px);
+      margin-top: -64px;
       z-index: 99;
-
       img {
         border-radius: 16px;
       }
     }
+
+    @media (max-width:768px) {
+      max-width: 344px;
+    }
   }
 
   &__content {
-    grid-column: 6 / -1;
+    grid-column: 7 / -1;
     grid-row: 1;
     z-index: 2;
     background: var(--services-intro-content-background);
     color: #fff;
     padding: 100px;
+    max-width: 775px;
+    border-radius: 16px;
 
-  @media (max-width: 1200px) {
+    @media (max-width: 1200px) {
       max-width: 100%;
       width: 100%;
       text-align: center;
@@ -53,21 +59,24 @@
     p {
       font-size: 24px;
       font-weight: 400;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
     }
   }
 
   .section-title {
     text-align: start;
-
+    margin-bottom: 24px;
     @media (max-width:1200px) {
       text-align: center;
     }
 
     &::after {
-      left: 7%;
+      left: 9%;
       background: #fff;
-
       @media (max-width:1200px) {
         left: 50%;
       }
