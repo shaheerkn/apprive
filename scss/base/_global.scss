@@ -13,7 +13,6 @@
   text-transform: uppercase;
   position: relative;
   padding-bottom: 28px;
-
   &::after {
     content: "";
     width: 100px;
@@ -73,5 +72,122 @@ img {
 .hide-on-tablet {
   @media (max-width: 1200px) {
     display: none;
+  }
+}
+
+.key-features {
+  max-width: 1192px;
+  margin-inline: 0 auto;
+  background: #F5F5F5;
+
+  @media (max-width:992px) {
+    margin-inline: 0;
+    max-width: 100%;
+    padding-inline: 24px;
+  }
+
+  &__container {
+    max-width: 992px;
+    margin-inline: auto 0;
+    padding: 60px 0 60px 40px;
+    @media (max-width:992px) {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding-inline: 0;
+    }
+  }
+
+  &-title {
+      font-size: 36px;
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 70px;
+
+      @media (max-width:768px) {
+        font-size: 16px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: #000;
+        width: 500px;
+        height: 3px;
+
+        @media (max-width:992px) {
+          width: 200px;
+        }
+      }
+    }
+
+  &__list {
+    display: flex;
+    gap: 120px;
+
+    @media (max-width:768px) {
+      gap: 30px;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 500;
+        gap: 24px;
+        margin-bottom: 24px;
+
+        @media (max-width:768px) {
+          gap: 8px;
+        }
+
+        span {
+          width: 64px;
+          height: 64px;
+          background: var(--key-features__icon-background);
+          border-radius: 8px;
+          padding: 8px;
+          display: grid;
+          place-items: center;
+
+          @media (max-width: 768px) {
+            width: 36px;
+            height: 36px;
+
+            svg {
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 600;
+  @media (max-width:992px) {
+    font-size: 16px;
+  }
+}
+
+.description {
+  font-size: 20px;
+
+  @media (max-width:992px) {
+    font-size: 12px;
   }
 }

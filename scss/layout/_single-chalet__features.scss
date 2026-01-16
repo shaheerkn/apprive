@@ -1,8 +1,6 @@
-.chalet-features {
-  max-width: 1192px;
-  margin-inline: 0 auto;
+.key-features {
   background: #F5F5F5;
-
+  margin-inline: auto 0;
   @media (max-width:992px) {
     margin-inline: 0;
     max-width: 100%;
@@ -12,8 +10,7 @@
   &__container {
     max-width: 992px;
     margin-inline: auto 0;
-    padding-block: 60px;
-
+    padding: 60px 0 60px 40px;
     @media (max-width:992px) {
       width: 100%;
       max-width: 100%;
@@ -81,7 +78,7 @@
         span {
           width: 64px;
           height: 64px;
-          background: var(--chalet-features-list-icon-background);
+          background: var(--key-features__icon-background);
           border-radius: 8px;
           padding: 8px;
           display: grid;

@@ -1,22 +1,27 @@
 .breadcrumb {
-  max-width: 1920px;
-  margin-inline: auto;
-
-  &__container {
-    max-width: 1440px;
+  .container {
     display: flex;
     align-items: center;
     gap: 11px;
-    margin-block: 19px;
-    margin-inline: auto;
-    padding-inline: 24px;
+    padding: 18px 64px;
     a {
       text-decoration: none;
       color: #000;
+      font-size: 20px;
     }
   }
 
   @media (max-width: 765px) {
     display: none;
+  }
+
+  &__modifier{
+    background: #f5f5f5;
+
+    .container {
+      margin-block: 0;
+      padding: 14px 45px 14px 45px;
+      max-width: 1440px;
+    }
   }
 }

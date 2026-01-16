@@ -1,12 +1,11 @@
 .chalets {
   background-color: #FFFFFF;
   position: relative;
-  
+
   .section-watermark {
     position: absolute;
     bottom: 100px;
     left: 0;
-
 
     @media (max-width: 992px) {
       display: none;
@@ -21,114 +20,93 @@
   .section-title {
     margin-bottom: 32px;
     color: #1F1F1F;
-    
+
     @media (max-width: 992px) {
       margin-bottom: 20px;
     }
   }
-}
+  &__content {
+    margin: 0 auto 64px;
+    text-align: center;
 
-.chalets__content {
-  margin: 0 auto 64px;
-  text-align: center;
+    @media (max-width: 992px) {
+      margin-bottom: 32px;
+    }
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #1F1F1F;
+    font-weight: 400;
 
-  @media (max-width: 992px) {
-    margin-bottom: 32px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 12px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #333333;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 64px;
+
+    @media (max-width: 1200px) {
+      gap: 32px;
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__image-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 5 / 4;
+    background-color: #F5F5F5;
+  
+    @media (max-width: 992px) {
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .text {
+    color: #1F1F1F;
+    margin-bottom: 8px;
+  }
+
+  .description {
+    font-weight: 500;
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.chalets__text {
-  font-size: 24px;
-  line-height: 1.7;
-  color: #1F1F1F;
-  margin-bottom: 24px;
-  font-weight: 400;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 
-  @media (max-width: 992px) {
-    font-size: 12px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    color: #333333;
-  }
-}
 
-.chalets__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 64px;
-
-  @media (max-width: 1200px) {
-    gap: 32px;
-  }
-
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-bottom: 40px;
-  }
-}
-
-.chalets__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.chalets__image-wrapper {
-  width: 100%;
-  margin-bottom: 24px;
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 5 / 4;
-  background-color: #F5F5F5;
-
-  @media (max-width: 992px) {
-    border-radius: 12px;
-    margin-bottom: 20px;
-  }
-}
-
-.chalets__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.chalets__card-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #1F1F1F;
-  margin-bottom: 8px;
-  text-align: center;
-  line-height: 1.4;
-
-  @media (max-width: 992px) {
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-}
-
-.chalets__card-location {
-  font-size: 20px;
-  font-weight: 400;
-  color: #585858;
-  text-align: center;
-  line-height: 1.5;
-
-  @media (max-width: 992px) {
-    font-size: 12px;
-  }
-}
-
-.chalets__actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 

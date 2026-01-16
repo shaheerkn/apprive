@@ -1,30 +1,18 @@
 .brand-values {
   background: var(--background-brand-values);
   color: var(--color-white);
-  max-width: 1920px;
-  margin: 0 auto;
   padding-block: 64px;
 
   .container {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
     gap: 40px;
-
-    @media(max-width: 765px) {
-      flex-direction: column;
+    max-width: 1440px;
+    @media(max-width: 768px) {
+      grid-template-columns: repeat(1,1fr);
       padding-inline: 24px;
-    }
-
-    span {
-      width: 2px;
-      height: 350px;
-      background-color: var(--color-border);
-
-      @media(max-width: 765px) {
-        width: 100%;
-        height: 2px;
-      }
     }
   }
 
@@ -36,18 +24,45 @@
     gap: 24px;
     padding-inline: 38px;
     color: inherit;
-  
+    position: relative;
+    width: 100%;
+    @media (max-width:768px) {
+      padding-bottom: 24px;
+    }
+
     svg path {
       fill: currentColor;
     }
+
     &-title {
       font-size: 32px;
       font-weight: 500;
     }
-    
+
     &-description {
       font-size: 24px;
       text-align: center;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--color-border);
+
+      @media (max-width:768px) {
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        top: auto;
+      }
+    }
+
+    &:last-child::after {
+      display: none;
     }
   }
 }

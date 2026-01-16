@@ -1,29 +1,39 @@
 .courchevel {
-  margin-inline: auto;
-  position: relative;
-  
+
   &__content {
     padding-block: 100px 300px;
     color: var(--color-white);
     z-index: 1;
     background: var(--courchevel-background);
+    position: relative;
+
+    @media (max-width: 768px) {
+      padding-block: 100px 140px;
+    }
 
     .container {
       max-width: 1440px;
       display: flex;
       gap: 77px;
-    }
-
-    span {
-      width: 50px;
-      height: 2px;
-      background: #fff;
-      display: none;
 
       @media (max-width:768px) {
-        display: block;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .section-title {
+        &::after {
+          display: none;
+          background: #fff;
+
+          @media (max-width:992px) {
+            display: block;
+          }
+        }
       }
     }
+
     @media (max-width:992px) {
       flex-direction: column;
       align-items: center;
@@ -39,17 +49,6 @@
 
     @media (max-width:768px) {
       font-size: 20px;
-      position: relative;
-      color: transparent;
-
-      &::before {
-          content: "A DESTINATION OF WINTER PRESTIGE";
-          color: #fff;
-          line-height: 1.2;
-          display: block;
-          text-align: center;
-          width: 100%;
-        }
     }
   }
 
@@ -57,47 +56,27 @@
     max-width: 781px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    font-size: 24px;
+    gap: 24px;
 
-    @media (max-width:768px) {
-      font-size: 12px;
-
-      p {
-        position: relative;
-        color: transparent;
-
-          &::before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            color: #fff;
-            line-height: 1.2;
-            text-align: center;
-            width: 100%;
-            display: block;
-          }
-          &:nth-child(1)::before {
-            content: "Courchevel stands as one of the world’s most sophisticated winter resorts — where elite skiing meets Michelin dining,";
-          }
-
-          &:nth-child(2)::before {
-            content: "refined alpine living, and absolute discretion. From the exclusive Courchevel 1850 to the authentic charm of Le Praz,";
-          }
-
-          &:nth-child(3)::before {
-            content: "each area offers a distinct atmosphere and level of privacy.";
-          }
+    p {
+      font-size: 24px;
+      @media (max-width:768px) {
+        font-size: 12px;
       }
-
     }
+
   }
 
   &__gallery {
     width: 100%;
     max-width: 1440px;
     margin-top: -242px;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width:768px) {
+      margin-top: -150px;
+    }
 
     img {
       width: 100%;
@@ -110,6 +89,6 @@
     position: absolute;
     left: 0;
     top: 0;
-    // display: none;
+    z-index: -1;
   }
 }

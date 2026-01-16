@@ -18,6 +18,11 @@
       .header__logo path { fill: #000; }
     }
   }
+
+  &__modifier {
+    background: #000;
+    position: static;
+  }
 }
 
 .header .container {
@@ -519,7 +524,7 @@
   justify-content: space-between;
   width: 20px;
   height: 14px;
-  
+
   span {
     display: block;
     width: 100%;

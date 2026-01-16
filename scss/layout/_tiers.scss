@@ -1,0 +1,112 @@
+.tiers {
+  max-width: 1920px;
+  margin-inline: auto;
+  background: #F5F5F5;
+
+  .container {
+    max-width: 1440px;
+
+    @media (max-width:992px) {
+      gap: 16px;
+    }
+
+    .section-title {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+
+    @media (max-width:992px) {
+     grid-template-columns: repeat(1,1fr);
+     place-items: center;
+    }
+  }
+
+  &__card {
+    max-width: 453px;
+  }
+  &-logo{
+    padding: 117px 123px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  &-logo__one  {
+    background: linear-gradient(113.75deg, #B27F1F 0%, #FFDD00 50.96%, #F3A80A 100%);
+  }
+
+  &-logo__two {
+    background: linear-gradient(113.75deg, #757575 0%, #F5F5F5 50.96%, #BDBDBD 100%);
+  }
+
+  &-logo__three{
+    background: linear-gradient(113.75deg, #C1B5C4 0%, #E6E1E7 50.96%, #979199 100%);
+  }
+
+  &__body {
+    padding: 32px 26px 24px 26px;
+    background: #323232;
+    color: #fff;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid #fff;
+    max-width: 389px;
+    padding-bottom: 40px;
+
+    h5 {
+      font-size: 28px;
+      font-weight: 600;
+
+      @media (max-width:992px) {
+        font-size: 16px;
+      }
+    }
+
+    .content__primary-descirption {
+       font-size: 24px;
+
+        @media (max-width:992px) {
+          font-size: 14px;
+        }
+    }
+
+    .content__secondary-descirption {
+        font-size: 18px;
+
+        @media (max-width:992px) {
+          font-size: 12px;
+        }
+    }
+  }
+
+  &__features {
+    background: #323232;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-block: 12px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    > * {
+      border-right: 1px solid white;
+      padding-right: 10px;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
