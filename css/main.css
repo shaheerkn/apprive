@@ -1302,7 +1302,6 @@ img {
     margin-bottom: 20px;
   }
 }
-
 .chalets__content {
   margin: 0 auto 64px;
   text-align: center;
@@ -1312,12 +1311,10 @@ img {
     margin-bottom: 32px;
   }
 }
-
 .chalets__text {
   font-size: 24px;
   line-height: 1.7;
   color: #1F1F1F;
-  margin-bottom: 24px;
   font-weight: 400;
 }
 .chalets__text:last-of-type {
@@ -1331,7 +1328,6 @@ img {
     color: #333333;
   }
 }
-
 .chalets__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1350,13 +1346,12 @@ img {
     margin-bottom: 40px;
   }
 }
-
 .chalets__card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
-
 .chalets__image-wrapper {
   width: 100%;
   margin-bottom: 24px;
@@ -1371,42 +1366,19 @@ img {
     margin-bottom: 20px;
   }
 }
-
 .chalets__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
-.chalets__card-title {
-  font-size: 24px;
-  font-weight: 600;
+.chalets .text {
   color: #1F1F1F;
   margin-bottom: 8px;
-  text-align: center;
-  line-height: 1.4;
 }
-@media (max-width: 992px) {
-  .chalets__card-title {
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
+.chalets .description {
+  font-weight: 500;
 }
-
-.chalets__card-location {
-  font-size: 20px;
-  font-weight: 400;
-  color: #585858;
-  text-align: center;
-  line-height: 1.5;
-}
-@media (max-width: 992px) {
-  .chalets__card-location {
-    font-size: 12px;
-  }
-}
-
 .chalets__actions {
   display: flex;
   justify-content: center;
@@ -1667,27 +1639,22 @@ img {
     gap: 40px;
   }
 }
-.concierge__content span {
-  width: 70px;
-  height: 2px;
-  background-color: #FFF;
+.concierge__content .section-title {
+  max-width: 350px;
+  text-align: start;
+  color: #fff;
+}
+.concierge__content .section-title::after {
+  background: #fff;
   display: none;
 }
 @media (max-width: 992px) {
-  .concierge__content span {
+  .concierge__content .section-title::after {
     display: block;
   }
 }
-
-.concierge__title {
-  font-size: 40px;
-  font-weight: 500;
-  color: #FFFFFF;
-  max-width: 350px;
-}
 @media (max-width: 992px) {
-  .concierge__title {
-    font-size: 32px;
+  .concierge__content .section-title {
     max-width: 100%;
     text-align: center;
   }
@@ -1702,7 +1669,6 @@ img {
 @media (max-width: 1200px) {
   .concierge__columns {
     gap: 40px;
-    max-width: 100%;
     text-transform: uppercase;
   }
 }
@@ -1721,7 +1687,7 @@ img {
 @media (max-width: 992px) {
   .concierge__column {
     background: rgba(0, 0, 0, 0.08);
-    padding: 12px;
+    padding: 18px;
     border-radius: 8px;
   }
 }
@@ -1752,7 +1718,6 @@ img {
 @media (max-width: 992px) {
   .concierge__list {
     gap: 8px;
-    list-style: none;
   }
 }
 .concierge__list li {
@@ -1775,8 +1740,6 @@ img {
 .brand-values {
   background: var(--background-brand-values);
   color: var(--color-white);
-  max-width: 1920px;
-  margin: 0 auto;
   padding-block: 64px;
 }
 .brand-values .container {
@@ -1842,8 +1805,6 @@ img {
 }
 
 .footer {
-  max-width: 1920px;
-  margin-inline: auto;
   padding: 100px 0 48px 0;
   background: var(--color-1);
 }
@@ -1854,6 +1815,7 @@ img {
 }
 .footer__booking {
   max-width: 1440px;
+  margin-inline: auto;
   background: var(--footer-container-background);
   color: #fff;
   display: flex;
@@ -2145,9 +2107,8 @@ img {
   max-width: 1920px;
   margin-inline: auto;
 }
-.single-chalet__container {
+.single-chalet .container {
   max-width: 1440px;
-  margin-inline: auto;
   display: flex;
   gap: 60px;
   align-items: center;
@@ -2155,7 +2116,7 @@ img {
   justify-content: center;
 }
 @media (max-width: 1440px) {
-  .single-chalet__container {
+  .single-chalet .container {
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -2381,11 +2342,11 @@ img {
   }
 }
 .chalet-about {
-  max-width: 1192px;
-  margin-inline: 0 auto;
   overflow: hidden;
   position: relative;
   z-index: 1;
+  max-width: 1192px;
+  margin-inline: 0 auto;
 }
 .chalet-about__container {
   margin-inline: auto 0;
@@ -2475,10 +2436,6 @@ img {
   }
 }
 
-.breadcrumb {
-  max-width: 1920px;
-  margin-inline: auto;
-}
 .breadcrumb .container {
   display: flex;
   align-items: center;
@@ -2504,9 +2461,6 @@ img {
   max-width: 1440px;
 }
 
-.courchevel {
-  margin-inline: auto;
-}
 .courchevel__content {
   padding-block: 100px 300px;
   color: var(--color-white);
@@ -2597,9 +2551,7 @@ img {
 }
 
 .courchevel-areas {
-  max-width: 1920px;
   background: #F5F5F5;
-  margin-inline: auto;
   margin-block: 100px;
 }
 .courchevel-areas .container {
@@ -2668,8 +2620,6 @@ img {
 }
 
 .courchevel-chalets {
-  max-width: 1920px;
-  margin-inline: auto;
   position: relative;
 }
 .courchevel-chalets__water-mark {
@@ -2742,6 +2692,8 @@ img {
 }
 .courchevel-chalets__link {
   text-decoration: none;
+  font-size: 16px;
+  margin-top: 16px;
   color: #fff;
   border-radius: 4px;
   padding: 20px 14px;
@@ -2792,8 +2744,6 @@ img {
 }
 
 .courchevel-inspirations {
-  max-width: 1920px;
-  margin-inline: auto;
   background: #F5F5F5;
 }
 .courchevel-inspirations .container {
@@ -2913,10 +2863,7 @@ img {
 }
 
 .courchevel-concierge {
-  max-width: 1920px;
-  margin-inline: auto;
   padding-inline: 20px;
-  margin-bottom: 100px;
 }
 .courchevel-concierge .container {
   max-width: 1440px;
@@ -3138,9 +3085,8 @@ img {
 }
 
 .featured {
-  max-width: 1192px;
-  margin-inline: 0 auto;
   background: #F5F5F5;
+  max-width: 1192px;
 }
 .featured .featured-container {
   max-width: 952px;
@@ -3255,8 +3201,6 @@ img {
 }
 
 .products {
-  max-width: 1920px;
-  margin-inline: auto;
   position: relative;
   z-index: 1;
   padding-block: 24px;
@@ -3410,10 +3354,6 @@ img {
   z-index: -1;
 }
 
-.portfolio {
-  max-width: 1920px;
-  margin-inline: auto;
-}
 @media (max-width: 992px) {
   .portfolio {
     padding-inline: 20px;
@@ -3902,8 +3842,6 @@ img {
 }
 
 .offered-services {
-  max-width: 1920px;
-  margin-inline: auto;
   position: relative;
   overflow: hidden;
 }
@@ -3977,8 +3915,6 @@ img {
 }
 
 .featured-services {
-  max-width: 1920px;
-  margin-inline: auto;
   background: var(--services-intro-content-background);
 }
 .featured-services .container {
@@ -4042,9 +3978,6 @@ img {
   font-size: 18px;
 }
 
-.about-intro {
-  max-width: 1920px;
-}
 .about-intro .container {
   max-width: 1440px;
   display: flex;
@@ -4132,8 +4065,6 @@ img {
 }
 
 .brand-pillars {
-  max-width: 1920px;
-  margin-inline: auto;
   background: #F5F5F5;
 }
 .brand-pillars .container {
@@ -4214,10 +4145,6 @@ img {
   }
 }
 
-.founder-note {
-  max-width: 1920px;
-  margin-inline: auto;
-}
 .founder-note .container {
   max-width: 1440px;
   display: flex;
@@ -4607,8 +4534,6 @@ img {
 }
 
 .collaboration-terms {
-  max-width: 1920px;
-  margin-inline: auto;
   overflow: hidden;
 }
 .collaboration-terms .container {
@@ -4644,10 +4569,6 @@ img {
   }
 }
 
-.about {
-  max-width: 1920px;
-  margin-inline: auto;
-}
 .about .container {
   max-width: 1440px;
   display: flex;
@@ -4722,8 +4643,6 @@ img {
 }
 
 .process {
-  max-width: 1920px;
-  margin-inline: auto;
   background: #F5F5F5;
   overflow-x: hidden;
   position: relative;
@@ -4966,8 +4885,6 @@ img {
 }
 
 .design-philosophy {
-  max-width: 1920px;
-  margin-inline: auto;
   position: relative;
   z-index: 1;
 }
@@ -5047,10 +4964,6 @@ img {
   }
 }
 
-.partner-about {
-  max-width: 1920px;
-  margin-inline: auto;
-}
 .partner-about .container {
   max-width: 1440px;
   text-align: center;
@@ -5084,8 +4997,6 @@ img {
 }
 
 .partner-audience {
-  max-width: 1920px;
-  margin-inline: auto;
   background: var(--color-6);
 }
 @media (max-width: 992px) {
@@ -5150,8 +5061,6 @@ img {
 }
 
 .partner-services {
-  max-width: 1920px;
-  margin-inline: auto;
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -5266,8 +5175,6 @@ img {
 }
 
 .partner-process {
-  max-width: 1920px;
-  margin-inline: auto;
   background: #F5F5F5;
 }
 .partner-process .container {

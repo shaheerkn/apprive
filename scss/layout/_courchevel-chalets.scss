@@ -1,6 +1,4 @@
 .courchevel-chalets {
-  max-width: 1920px;
-  margin-inline: auto;
   position: relative;
 
   &__water-mark{
@@ -78,6 +76,8 @@
 
   &__link {
     text-decoration: none;
+    font-size: 16px;
+    margin-top: 16px;
     color: #fff;
     border-radius: 4px;
     padding: 20px 14px;

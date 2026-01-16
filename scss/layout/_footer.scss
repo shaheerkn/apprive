@@ -1,6 +1,4 @@
 .footer {
-  max-width: 1920px;
-  margin-inline: auto;
   padding: 100px 0 48px 0;
   background: var(--color-1);
 
@@ -10,6 +8,7 @@
 
   &__booking {
     max-width: 1440px;
+    margin-inline: auto;
     background: var(--footer-container-background);
     color: #fff;
     display: flex;

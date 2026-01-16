@@ -1,8 +1,6 @@
 .key-features {
-  max-width: 1192px;
-  margin-inline: 0 auto;
   background: #F5F5F5;
-
+  margin-inline: auto 0;
   @media (max-width:992px) {
     margin-inline: 0;
     max-width: 100%;
