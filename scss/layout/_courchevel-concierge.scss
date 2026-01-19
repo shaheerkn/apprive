@@ -1,56 +1,61 @@
 .courchevel-concierge {
-  padding-inline: 20px;
-
-  .container {
-    max-width: 1440px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    padding: 0;
-  }
 
   &__services {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 40px;
     place-items: center;
-
+    margin-top: 40px;
     @media (max-width:992px) {
      grid-template-columns: repeat(1,1fr);
      width: 100%;
+     margin-top: 12px;
+     gap: 12px;
     }
   }
 
   &__category {
-    max-width: 453px;
+    width: 100%;
+    max-width: 497px;
     padding: 36px;
     background: #F5F5F5;
     border-radius: 16px;
-    width: 100%;
 
     @media (max-width:992px) {
       max-width: 100%;
+      padding: 16px;
     }
 
     &-title {
       font-size: 28px;
       font-weight: 600;
       margin-bottom: 16px;
-      margin-left: -25px;
 
       @media (max-width:992px) {
         font-size: 16px;
+        margin-top: 12px;
       }
     }
   }
 
   &__list {
+    padding-left: 30px;
     list-style: disc;
-    font-size: 22px;
-
-    @media (max-width:992px) {
-      font-size: 14px;
+    li {
+      font-size: 22px;
+      padding-left: 10px;
+      font-weight: 400;
+      @media (max-width:992px) {
+        font-size: 14px;
+      }
     }
   }
+  .color-scheme-summer .courchevel-concierge__list > li.for-winter {
+    display: list-item !important;
+  }
+
+  .color-scheme-summer .courchevel-concierge__list > li.for-summer {
+    display: none !important;
+  }
+
 }

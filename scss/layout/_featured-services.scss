@@ -2,7 +2,6 @@
   background: var(--services-intro-content-background);
 
   .container {
-    max-width: 1440px;
     .section-title {
       color: #fff;
       margin-bottom: 48px;
@@ -25,15 +24,15 @@
 
   &__card {
     width: 100%;
-    max-width: 464px;
     max-width: 586px;
     padding: 24px;
     background: #fff;
     border-radius: 16px;
-
+    min-height: 604px;
     @media (max-width:992px) {
       max-width: 100%;
       overflow: hidden;
+      min-height: fit-content;
     }
 
     a {
@@ -41,11 +40,11 @@
       img {
         object-fit: cover;
         width: 100%;
-
+        max-height: 400px;
         @media (max-width:992px) {
           width: 100%;
           max-width: 100%;
-          height: auto;
+          max-height: fit-content;
         }
       }
     }
@@ -58,10 +57,23 @@
     h6 {
       font-size: 28px;
       font-weight: 600;
+      margin-bottom: 12px;
     }
 
     p {
       font-size: 18px;
+    }
+
+    @media (max-width: 992px) {
+      padding: 16px;
+
+      p {
+        font-size: 12px;
+      }
+
+      h6 {
+        font-size: 16px;
+      }
     }
   }
 }

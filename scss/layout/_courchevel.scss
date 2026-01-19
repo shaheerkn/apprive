@@ -1,5 +1,9 @@
 .courchevel {
 
+  @media (max-width:992px) {
+     padding-inline: 24px;
+  }
+
   &__content {
     padding-block: 100px 300px;
     color: var(--color-white);
@@ -8,7 +12,9 @@
     position: relative;
 
     @media (max-width: 768px) {
-      padding-block: 100px 140px;
+      padding-block: 24px 140px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
     }
 
     .container {
@@ -23,11 +29,15 @@
       }
 
       .section-title {
+        text-align: start;
         &::after {
           display: none;
           background: #fff;
+        }
 
-          @media (max-width:992px) {
+        @media (max-width:992px) {
+          text-align: center;
+          &::after {
             display: block;
           }
         }
@@ -62,6 +72,7 @@
       font-size: 24px;
       @media (max-width:768px) {
         font-size: 12px;
+        font-weight: 400;
       }
     }
 
@@ -75,7 +86,7 @@
     z-index: 1;
 
     @media (max-width:768px) {
-      margin-top: -150px;
+      margin-top: -106px;
     }
 
     img {

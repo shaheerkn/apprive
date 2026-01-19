@@ -141,8 +141,10 @@
         </button>
 
         <div class="header__season-toggle">
-          <span class="header__season-text for-winter">Winter</span>
-          <span class="header__season-text for-summer">Summer</span>
+          <div class="toggle-text">
+            <span class="header__season-text for-winter">Winter</span>
+            <span class="header__season-text for-summer">Summer</span>
+          </div>
           <label class="header__toggle-switch">
             <input type="checkbox" class="header__toggle-input">
             <span class="header__toggle-slider">
@@ -298,7 +300,7 @@
     </div>
   </section>
 
-  <section class="breadcrumb breadcrumb__modifier">
+  <section class="breadcrumb breadcrumb__modifier breadcrumb__mobile-hide">
     <div class="container">
       <a href="#" class="breadcrumb__home">
         <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -331,21 +333,21 @@
     </div>
   </section>
 
-  <section class="tiers section">
+  <section class="plan-cards section">
     <div class="container">
       <h4 class="section-title">OUR CONCIERGE LEVELS</h4>
 
-      <div class="tiers__cards">
-        <article class="tiers__card">
-          <div class="tiers-logo__one tiers-logo"><img src="./assets/icons/sevices_card-logo.svg" alt="logo"></div>
-          <div class="tiers__body">
-            <div class="tiers__content">
+      <div class="plan-cards__cards">
+        <article class="plan-cards__card">
+          <div class="plan-cards-logo__one plan-cards-logo"><img src="./assets/icons/sevices_card-logo.svg" alt="logo"></div>
+          <div class="plan-cards__body">
+            <div class="plan-cards__content">
               <h5>Essential Concierge</h5>
-              <p class="content__primary-descirption">Perfect for seamless stays.</p>
-              <p class="content__secondary-descirption">Travel organisation, welcome coordination, in-destination support, and restaurant bookings.</p>
+              <p class="plan-cards__primary-descirption">Perfect for seamless stays.</p>
+              <p class="plan-cards__secondary-descirption">Travel organisation, welcome coordination, in-destination support, and restaurant bookings.</p>
             </div>
 
-            <div class="tiers__features">
+            <div class="plan-cards__features">
               <svg width="30" height="17" viewBox="0 0 30 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.17325 16.7884C5.25975 16.7884 4.48325 16.4688 3.84375 15.8295C3.20425 15.19 2.8845 14.4135 2.8845 13.5H0V1.5C0 1.0875 0.146875 0.734375 0.440625 0.440625C0.734375 0.146875 1.0875 0 1.5 0H21.1155L29.25 7.67325V13.5H26.8268C26.8268 14.4135 26.5071 15.19 25.8679 15.8295C25.2284 16.4688 24.4519 16.7884 23.5384 16.7884C22.6249 16.7884 21.8485 16.4688 21.2093 15.8295C20.5698 15.19 20.25 14.4135 20.25 13.5H9.46163C9.46163 14.4038 9.14188 15.1778 8.50238 15.822C7.86288 16.4663 7.0865 16.7884 6.17325 16.7884ZM18 6.8655H26.1923L20.4806 1.5H18V6.8655ZM9.75 6.8655H16.5V1.5H9.75V6.8655ZM1.5 6.8655H8.25V1.5H1.5V6.8655ZM6.17325 15.375C6.69825 15.375 7.142 15.1938 7.5045 14.8313C7.867 14.4688 8.04825 14.025 8.04825 13.5C8.04825 12.975 7.867 12.5313 7.5045 12.1688C7.142 11.8063 6.69825 11.625 6.17325 11.625C5.64825 11.625 5.2045 11.8063 4.842 12.1688C4.4795 12.5313 4.29825 12.975 4.29825 13.5C4.29825 14.025 4.4795 14.4688 4.842 14.8313C5.2045 15.1938 5.64825 15.375 6.17325 15.375ZM23.5384 15.375C24.0634 15.375 24.5071 15.1938 24.8696 14.8313C25.2321 14.4688 25.4134 14.025 25.4134 13.5C25.4134 12.975 25.2321 12.5313 24.8696 12.1688C24.5071 11.8063 24.0634 11.625 23.5384 11.625C23.0134 11.625 22.5696 11.8063 22.2071 12.1688C21.8446 12.5313 21.6634 12.975 21.6634 13.5C21.6634 14.025 21.8446 14.4688 22.2071 14.8313C22.5696 15.1938 23.0134 15.375 23.5384 15.375ZM1.5 12H3.27675C3.49025 11.55 3.85763 11.1394 4.37888 10.7681C4.90013 10.3971 5.49825 10.2116 6.17325 10.2116C6.84825 10.2116 7.43188 10.3828 7.92413 10.725C8.41638 11.0673 8.79813 11.4923 9.06938 12H20.6423C20.8558 11.55 21.2231 11.1394 21.7444 10.7681C22.2654 10.3971 22.8634 10.2116 23.5384 10.2116C24.2134 10.2116 24.797 10.3828 25.2893 10.725C25.7818 11.0673 26.1635 11.4923 26.4345 12H27.75V8.3655H1.5V12Z" fill="white"/>
               </svg>
@@ -365,16 +367,16 @@
           </div>
         </article>
 
-        <article class="tiers__card">
-          <div class="tiers-logo__two tiers-logo"><img src="./assets/icons/sevices_card-logo.svg" alt="logo"></div>
-          <div class="tiers__body">
-            <div class="tiers__content">
+        <article class="plan-cards__card">
+          <div class="plan-cards-logo__two plan-cards-logo"><img src="./assets/icons/sevices_card-logo.svg" alt="logo"></div>
+          <div class="plan-cards__body">
+            <div class="plan-cards__content">
               <h5>Tailored Concierge</h5>
-              <p class="content__primary-descirption">For curated lifestyle experiences</p>
-              <p class="content__secondary-descirption">Private chef arrangements, exclusive reservations, transfers, events, VIP requests</p>
+              <p class="plan-cards__primary-descirption">For curated lifestyle experiences</p>
+              <p class="plan-cards__secondary-descirption">Private chef arrangements, exclusive reservations, transfers, events, VIP requests</p>
             </div>
 
-            <div class="tiers__features">
+            <div class="plan-cards__features">
               <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.17325 15.6634H10.6733V9.92325H9.17325V15.6634ZM3.4905 13.9905C2.45575 13.473 1.61538 12.733 0.969375 11.7705C0.323125 10.808 0 9.747 0 8.5875C0 7.0395 0.54275 5.72125 1.62825 4.63275C2.714 3.54425 4.03087 3 5.57887 3C5.87413 3 6.1755 3.025 6.483 3.075C6.79075 3.125 7.09225 3.1875 7.3875 3.2625L7.647 3.32025L7.79137 3.08925C8.33937 2.17975 9.04125 1.4375 9.897 0.8625C10.7528 0.2875 11.7038 0 12.75 0C13.7963 0 14.7473 0.2875 15.603 0.8625C16.4588 1.4375 17.1702 2.17975 17.7375 3.08925L17.8819 3.32025L18.1125 3.2625C18.3983 3.1875 18.6841 3.125 18.9701 3.075C19.2559 3.025 19.5536 3 19.8634 3C21.4306 3 22.7619 3.54388 23.8571 4.63163C24.9524 5.71938 25.5 7.04763 25.5 8.61638C25.5 9.77588 25.1817 10.8321 24.5452 11.7851C23.9088 12.7379 23.0635 13.4709 22.0095 13.9841V21.3461H3.4905V13.9905ZM14.8556 15.6634H16.3556V9.92325H14.8556V15.6634ZM4.9905 19.8461H20.5095V13.0181L21.7268 12.4241C22.4345 12.0799 22.9951 11.5708 23.4086 10.8968C23.8221 10.2228 24.0289 9.48213 24.0289 8.67488C24.0289 7.50588 23.6149 6.51787 22.7869 5.71087C21.9591 4.90362 20.9654 4.5 19.8056 4.5C19.5499 4.5 19.3048 4.52025 19.0702 4.56075C18.8355 4.601 18.6028 4.65862 18.372 4.73362L17.1866 5.07675L16.4569 3.84825C16.0491 3.15775 15.5255 2.59375 14.886 2.15625C14.2465 1.71875 13.5393 1.5 12.7643 1.5C11.9893 1.5 11.2821 1.71875 10.6429 2.15625C10.0034 2.59375 9.47975 3.15775 9.072 3.84825L8.34225 5.07675L7.11938 4.73362C6.88863 4.66437 6.6545 4.60812 6.417 4.56487C6.1795 4.52162 5.93575 4.5 5.68575 4.5C4.526 4.5 3.5385 4.90137 2.72325 5.70412C1.90775 6.50712 1.5 7.48987 1.5 8.65237C1.5 9.45537 1.7055 10.192 2.1165 10.8622C2.5275 11.5325 3.08925 12.0531 3.80175 12.4241L4.9905 13.0181V19.8461ZM3.4905 21.3461H4.9905V25.5H20.5095V21.3461H22.0095V27H3.4905V21.3461Z" fill="white"/>
               </svg>
@@ -398,17 +400,17 @@
           </div>
         </article>
 
-        <article class="tiers__card">
-          <div class="tiers-logo__three tiers-logo"><img src="./assets/icons/sevices_card-logo.svg" alt="logo"></div>
+        <article class="plan-cards__card">
+          <div class="plan-cards-logo__three plan-cards-logo"><img src="./assets/icons/sevices_card-logo.svg" alt="logo"></div>
 
-          <div class="tiers__body">
-            <div class="tiers__content">
+          <div class="plan-cards__body">
+            <div class="plan-cards__content">
               <h5>Full Concierge</h5>
-              <p class="content__primary-descirption">Dedicated assistance from start to finish.</p>
-              <p class="content__secondary-descirption">Personal host, 24/7 support, bespoke itinerary creation, private access, in-villa coordination</p>
+              <p class="plan-cards__primary-descirption">Dedicated assistance from start to finish.</p>
+              <p class="plan-cards__secondary-descirption">Personal host, 24/7 support, bespoke itinerary creation, private access, in-villa coordination</p>
             </div>
 
-            <div class="tiers__features">
+            <div class="plan-cards__features">
               <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.42325 27C1.73275 27 1.15625 26.7688 0.69375 26.3063C0.23125 25.8438 0 25.2673 0 24.5768V2.42325C0 1.73275 0.23125 1.15625 0.69375 0.69375C1.15625 0.23125 1.73275 0 2.42325 0H18.6056C19.2961 0 19.8726 0.23125 20.3351 0.69375C20.7976 1.15625 21.0289 1.73275 21.0289 2.42325V24.5768C21.0289 25.2673 20.7976 25.8438 20.3351 26.3063C19.8726 26.7688 19.2961 27 18.6056 27H15.0866L13.7018 24.1733H7.32675L5.94225 27H2.42325ZM2.42325 25.5H4.9905L6.375 22.6733H14.625L16.0384 25.5H18.6056C18.8749 25.5 19.0961 25.4135 19.2694 25.2405C19.4424 25.0673 19.5289 24.846 19.5289 24.5768V2.42325C19.5289 2.154 19.4424 1.93275 19.2694 1.7595C19.0961 1.5865 18.8749 1.5 18.6056 1.5H2.42325C2.154 1.5 1.93275 1.5865 1.7595 1.7595C1.5865 1.93275 1.5 2.154 1.5 2.42325V24.5768C1.5 24.846 1.5865 25.0673 1.7595 25.2405C1.93275 25.4135 2.154 25.5 2.42325 25.5ZM5.53838 17.0483H15.4616V16.8C15.4616 15.75 14.9375 15.0289 13.8893 14.6366C12.8413 14.2444 11.7115 14.0483 10.5 14.0483C9.2885 14.0483 8.15875 14.2444 7.11075 14.6366C6.0625 15.0289 5.53838 15.75 5.53838 16.8V17.0483ZM10.5 11.625C11.1328 11.625 11.6659 11.4081 12.0994 10.9744C12.5331 10.5409 12.75 10.0078 12.75 9.375C12.75 8.74225 12.5331 8.20912 12.0994 7.77562C11.6659 7.34187 11.1328 7.125 10.5 7.125C9.86725 7.125 9.33413 7.34187 8.90063 7.77562C8.46688 8.20912 8.25 8.74225 8.25 9.375C8.25 10.0078 8.46688 10.5409 8.90063 10.9744C9.33413 11.4081 9.86725 11.625 10.5 11.625Z" fill="white"/>
               </svg>

@@ -61,9 +61,28 @@
         padding: 22px 32px;
         gap: 12px;
         width: 100%;
+        border: 0.5px solid #8B8B8B;
 
         @media (max-width: 765px) {
           padding: 12px;
+        }
+
+        input {
+          border: none;
+          outline: none;
+          font-size: 20px;
+          width: 100%;
+          color: #585858;
+          @media (max-width:992px) {
+            font-size: 12px;
+          }
+        }
+
+        @media (max-width:992px) {
+          svg {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
 
@@ -84,6 +103,10 @@
       font-size: 20px;
       padding: 20px 32px;
       border-radius: 8px;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
     }
 
     &__submit {
@@ -94,19 +117,14 @@
       padding: 20px 32px;
       border-radius: 8px;
       cursor: pointer;
+      font-weight: 600;
 
       @media (max-width:765px) {
         padding: 12px;
         font-size: 12px;
+        font-weight: 500;
       }
     }
-  }
-
-  input {
-    border: none;
-    outline: none;
-    font-size: 20px;
-    width: 100%;
   }
 
   &-bottom {
@@ -124,6 +142,7 @@
       align-items: start;
       gap: 16px;
       margin-top: 24px;
+      padding-bottom: 16px;
     }
 
     &__left {
@@ -140,19 +159,24 @@
       }
 
       &-logo {
-
         img {
           width: 180px;
+
+          @media (max-width:992px) {
+            width: 140px;
+          }
         }
 
         &___text{
           font-size: 24px;
           margin-top: 24px;
           text-transform: capitalize;
+          font-weight: 400;
 
-          @media (max-width:765px) {
+          @media (max-width:992px) {
             font-size: 14px;
             font-weight: 500;
+            margin-top: 12px;
           }
         }
       }
@@ -162,14 +186,23 @@
           font-size: 24px;
           font-weight: 600;
           margin-bottom: 20px;
+
+          @media (max-width:992px) {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+          }
         }
       }
     }
 
     &__socials {
         display: flex;
-        gap: 16px;
-        margin-top: 12px;
+        gap: 12px;
+
+        @media (max-width:992px) {
+          gap: 6px;
+        }
 
       a {
         text-decoration: none;
@@ -239,6 +272,7 @@
           @media (max-width:992px) {
             font-size: 16px;
             font-weight: 500;
+            margin-bottom: 8px;
           }
         }
 
@@ -258,9 +292,10 @@
         li {
           a {
             text-decoration: none;
-            color: #FFFFFF;
+            color: #fff;
             font-size: 20px;
             display: flex;
+            font-weight: 400;
             gap: 5px;
             &:hover {
               text-decoration: underline;
@@ -309,10 +344,12 @@
     color: #FFF;
     font-size: 24px;
     margin-top: 40px;
+    font-weight: 400;
 
     @media (max-width:765px) {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
+      margin-top: 16px;
     }
   }
 }
