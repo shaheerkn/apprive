@@ -18,16 +18,20 @@
       .header__logo path { fill: #000; }
     }
   }
-
-  &__modifier {
-    background: #000;
-    position: static;
-  }
 }
 
 .header .container {
   padding: 0 64px;
 }
+
+.header__modifier {
+    background: #000;
+    position: static;
+
+    .container {
+      padding: 0 24px;
+    }
+  }
 
 .header__container {
   width: 100%;

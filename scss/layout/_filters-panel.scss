@@ -33,6 +33,7 @@
     font-size: 20px;
     font-weight: 400;
     margin-block: 24px;
+
     @media (max-width:992px) {
       display: none;
     }
@@ -86,6 +87,10 @@
 
       @media (max-width:992px) {
         font-size: 12px;
+      }
+
+      @media (max-width:400px) {
+        width: 100%;
       }
     }
 
@@ -149,9 +154,10 @@
     @media (max-width:992px) {
       left: 50%;
       right: auto;
-      top: 50%;
+      top: 14%;
       transform: translate(-50%);
       width: 88%;
+      max-height: max-content;
     }
 
     &.is-open {
@@ -201,10 +207,19 @@
     padding-block: 24px;
 
     &__title {
-      font-size: 14px;
+      font-size: 22px;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 24px;
     }
+      @media (max-width:992px) {
+        padding-block: 12px;
+        margin-block: 12px;
+
+       &__title {
+         font-size: 16px;
+         margin-bottom: 12px;
+       }
+      }
   }
 
   &__filter-subgroup {
@@ -213,6 +228,15 @@
     p {
       margin-bottom: 12px;
       font-size: 18px;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+    }
+
+    @media (max-width:992px) {
+      margin-bottom: 12px;
     }
   }
   &__price-range {
@@ -231,9 +255,13 @@
       }
 
       span {
-        font-size: 12px;
+        font-size: 18px;
         color: #666;
         min-width: 60px;
+        font-weight: 500;
+        @media (max-width:992px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -281,13 +309,93 @@
     border-radius: 20px;
     border: 1px solid #ddd;
     background: #fff;
-    font-size: 13px;
+    font-size: 18px;
     cursor: pointer;
 
     &.active {
       background:var(  --color-1);
       color: #fff;
     }
+
+    @media (max-width:992px) {
+      font-size: 12px;
+
+      &-hide {
+        display: none;
+      }
+    }
+  }
+
+  .filters-panel__pill-mobile {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: none;
+
+    @media (max-width:992px) {
+      display: block;
+    }
+    .dropdown-state {
+      display: none;
+
+      // When checkbox is checked, show the options
+      &:checked + .custom-select-trigger + .custom-options {
+        display: block;
+      }
+
+      // Optional: Rotate arrow when open
+      &:checked + .custom-select-trigger .arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+  .custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #585858;
+    font-size: 16px;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    user-select: none;
+
+    // .arrow {
+      
+    // }
+  }
+
+  .custom-options {
+    display: none; // Hidden until checkbox is checked
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0; // CRITICAL: This keeps it from overflowing the screen
+    background: white;
+    border: 1px solid #585858;
+    border-top: none;
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 0 0 10px 10px;
+
+    li {
+      label {
+        display: block;
+        padding: 12px 16px;
+        cursor: pointer;
+        white-space: normal; // Prevents the text from pushing the width out
+        word-wrap: break-word; // Breaks long words
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
   }
   &__checkbox-grid {
     display: grid;
@@ -299,11 +407,15 @@
     }
 
     label {
-      font-size: 12px;
+      font-size: 18px;
       display: flex;
       gap: 8px;
       align-items: center;
       cursor: pointer;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
     }
   }
   &__clear-btn {

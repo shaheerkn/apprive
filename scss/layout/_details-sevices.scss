@@ -6,7 +6,7 @@
   .details__list {
     gap: 168px;
     @media (max-width:768px) {
-      gap: 42px;
+      gap: 12px;
     }
   }
 
@@ -15,11 +15,5 @@
     right: 0;
     top: 0;
     z-index: -1;
-  }
-
-  @media (max-width:768px) {
-  .details__title {
-      font-size: 14px;
-    }
   }
 }

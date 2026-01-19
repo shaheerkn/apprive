@@ -2,10 +2,6 @@
   padding: 80px 0;
   background-color: #fff;
 
-  &__container {
-    max-width: 1440px;
-  }
-
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -85,6 +81,23 @@
 
     &:hover {
       background-color: #4A7A9C;
+    }
+  }
+
+  @media (max-width:992px) {
+    &__title {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    &__location, &__excerpt {
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    &__link {
+      font-size: 10px;
+      padding: 8px 16px;
     }
   }
 }

@@ -4,14 +4,15 @@
   position: relative;
   z-index: 1;
   color: var(--color-white);
-  img {
-    position: absolute;
-    top: 0;
-    right: -150px;
-    z-index: -1;
-  }
+
 }
 
+.water-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 .concierge__content {
   display: flex;
   align-items: flex-start;
@@ -29,7 +30,13 @@
   .section-title {
     max-width: 350px;
     text-align: start;
+    padding: 0;
 
+    @media (max-width: 992px) {
+      max-width: 100%;
+      text-align: center;
+      padding-bottom: 24px;
+    }
     &::after {
       background: var(--color-white);
       display: none;
@@ -109,6 +116,7 @@
 
     @media (max-width: 992px) {
       font-size: 10px;
+      text-transform: capitalize;
     }
 
     &::marker {

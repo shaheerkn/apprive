@@ -7,7 +7,7 @@
   <title>Properties</title>
 </head>
 <body class="color-scheme-winter">
-  <header class="header header-modifier">
+  <header class="header header__modifier">
     <div class="container">
       <div class="header__container">
       <button class="header__menu-toggle" aria-label="Toggle menu">
@@ -276,7 +276,7 @@
 
             <div class="filters-panel__filter-subgroup">
               <p>Bedrooms</p>
-              <div class="filters-panel__pill-group">
+              <div class="filters-panel__pill-group filters-panel__pill-hide">
                 <button class="filters-panel__pill active">All</button>
                 <button class="filters-panel__pill">Studio</button>
                 <button class="filters-panel__pill">1</button>
@@ -286,11 +286,30 @@
                 <button class="filters-panel__pill">5</button>
                 <button class="filters-panel__pill">6+</button>
               </div>
+
+              <div class="filters-panel__pill-mobile">
+                <input type="checkbox" id="dropdown-toggle" class="dropdown-state">
+
+                <label for="dropdown-toggle" class="custom-select-trigger">
+                  <span>All</span>
+                  <div class="arrow">
+                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.42313 5.01292L0 0.589792L0.589792 0L4.42313 3.83333L8.25646 0L8.84625 0.589792L4.42313 5.01292Z" fill="#2C2C2C"/>
+                    </svg>
+
+                  </div>
+                </label>
+
+                <ul class="custom-options">
+                  <li><label for="dropdown-toggle">All</label></li>
+                  <li><label for="dropdown-toggle">More Options</label></li>
+                </ul>
+              </div>
             </div>
 
             <div class="filters-panel__filter-subgroup">
               <p>Beds</p>
-              <div class="filters-panel__pill-group">
+              <div class="filters-panel__pill-group filters-panel__pill-hide">
                 <button class="filters-panel__pill active">All</button>
                 <button class="filters-panel__pill">1</button>
                 <button class="filters-panel__pill">2</button>
@@ -299,7 +318,25 @@
                 <button class="filters-panel__pill">5</button>
                 <button class="filters-panel__pill">6</button>
                 <button class="filters-panel__pill">7</button>
-                <button class="filters-panel__portfolio__pill">8+</button>
+                <button class="filters-panel__pill">8+</button>
+              </div>
+
+              <div class="filters-panel__pill-mobile">
+                <input type="checkbox" id="dropdown-toggle" class="dropdown-state">
+
+                <label for="dropdown-toggle" class="custom-select-trigger">
+                  <span>All</span>
+                  <div class="arrow">
+                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.42313 5.01292L0 0.589792L0.589792 0L4.42313 3.83333L8.25646 0L8.84625 0.589792L4.42313 5.01292Z" fill="#2C2C2C"/>
+                    </svg>
+                  </div>
+                </label>
+
+                <ul class="custom-options">
+                  <li><label for="dropdown-toggle">All</label></li>
+                  <li><label for="dropdown-toggle">More Options</label></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -739,8 +776,8 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__booking">
-        <h5 class="section-title">Let Us Plan Your Courchevel Stay</h5>
-        <div>
+        <h5 class="section-title">LET US PLAN YOUR STAY</h5>
+        <div class="mobile-hide__descirption">
           <p class="footer__booking-description">Plan your luxury winter stay in Courchevel with AR PRIVÉ.</p>
           <P class="footer__booking-description">Our team provides private concierge assistance 24/7, managing every aspect of your chalet experience.</P>
         </div>

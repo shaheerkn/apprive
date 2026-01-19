@@ -1,5 +1,17 @@
-.courchevel-concierge {
+.service-orchestration {
+ position: relative;
+ z-index: 2;
+  .water-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 
+  .container {
+    position: relative;
+    z-index: 3;
+  }
   &__services {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -50,11 +62,11 @@
       }
     }
   }
-  .color-scheme-summer .courchevel-concierge__list > li.for-winter {
+  .color-scheme-summer .service-orchestration__list > li.for-winter {
     display: list-item !important;
   }
 
-  .color-scheme-summer .courchevel-concierge__list > li.for-summer {
+  .color-scheme-summer .service-orchestration__list > li.for-summer {
     display: none !important;
   }
 
