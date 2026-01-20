@@ -13,7 +13,6 @@
   text-transform: uppercase;
   position: relative;
   padding-bottom: 28px;
-
   &::after {
     content: "";
     width: 100px;
@@ -73,5 +72,44 @@ img {
 .hide-on-tablet {
   @media (max-width: 1200px) {
     display: none;
+  }
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 600;
+  @media (max-width:992px) {
+    font-size: 16px;
+  }
+}
+
+.description {
+  font-size: 20px;
+
+  @media (max-width:992px) {
+    font-size: 12px;
+  }
+}
+
+.for-mobile.for-winter,.for-mobile.for-summer {
+    display: none !important;
+}
+
+@media (max-width:992px) {
+  .for-desktop.for-winter,.for-desktop.for-summer {
+    display: none !important;
+  }
+  .color-scheme-winter .for-mobile.for-winter {
+    display: block !important;
+  }
+  .color-scheme-winter .for-mobile.for-summer {
+    display: none !important;
+  }
+
+  .color-scheme-summer .for-mobile.for-summer {
+    display: block !important;
+  }
+  .color-scheme-summer .for-mobile.for-winter {
+    display: none !important;
   }
 }

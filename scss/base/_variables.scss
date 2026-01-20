@@ -4,14 +4,25 @@
   --color-3: #B1C9DC;
   --color-4: #9BB69F;
   --color-5: #B78A67;
+  --color-6: #B78A67;
+  --color-7: #B78A67;
+  --color-8: #9BB69F;
+  --color-9: #B1C9DC;
+  --color-10:#5A98C0;
+  --color-11:#B78A67;
   --color-border: #FFFFFF80;
   --color-white: #FFFFFF;
   --background-brand-values: linear-gradient(to right, #4D81A3, #9BB69F);
   --single-chalet-content-background: #E4ECF3;
-  --chalet-features-list-icon-background: #9BB69F;
+  --key-features__icon-background: #9BB69F;
   --footer-container-background: #00000026;
   --courchevel-background: #B78A67;
-
+  --portfolio-background:#E4ECF3;
+  --black-to-white: #000;
+  --services-intro-content-background: #B78A67;
+  --offered-services__subtitle-color: #5A98C0;
+  --icon-fill-color: #B78A67;
+  --target-cards-for-mobile_bg: linear-gradient(90deg, #5A98C0 0%, #B78A67 100%);
 }
 
 .color-scheme-summer {
@@ -19,13 +30,24 @@
   --color-2: #66A1B1;
   --color-3: #8CB8BB;
   --color-4: #C1D0C9;
-  --color-5:  #8CB8BB;
-  --color-6: #F9E7DF;
+  --color-5: #66A1B1;
+  --color-6: #35656F;
+  --color-7 : #66A1B1;
+  --color-8: #35656F;
+  --color-9: #C1D0C9;
+  --color-10: #F1D5BD;
+  --color-11: #C1D0C9;
   --color-border:  #00000080;
   --color-white: #000;
   --background-brand-values: linear-gradient(96.6deg, #E2C0A2 0%, #F9E7DF 100%);
-   --single-chalet-content-background:#F8EADE;
-   --chalet-features-list-icon-background: #8CB8BB;
+  --single-chalet-content-background:#F8EADE;
+  --key-features__icon-background: #8CB8BB;
   --footer-container-background:#00000026;
   --courchevel-background: #F1D5BD;
+  --portfolio-background:#66A1B1;
+  --black-to-white: #fff;
+  --services-intro-content-background: #35656F;
+  --offered-services__subtitle-color: #8CB8BB;
+  --icon-fill-color:#66A1B1;
+  --target-cards-for-mobile_bg: linear-gradient(90deg, #35656F 0%, #66A1B1 100%);
 }

@@ -1,0 +1,19 @@
+.details--services {
+  background: none;
+  position: relative;
+  overflow: hidden;
+
+  .details__list {
+    gap: 168px;
+    @media (max-width:768px) {
+      gap: 12px;
+    }
+  }
+
+  img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,23 @@
+.journal-hero {
+  .hero {
+    .container {
+      max-width: 1113px;
+    }
+
+    &__description-secondary {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 500;
+      line-height: 1.5;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+      }
+    }
+
+    &__description {
+      margin-bottom: 24px;
+    }
+  }
+}
