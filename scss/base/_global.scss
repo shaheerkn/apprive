@@ -62,16 +62,16 @@ img {
 }
 
 .hide-on-desktop {
-  display: none;
+  display: none !important;
 
   @media (max-width: 1200px) {
-    display: block;
+    display: block !important;
   }
 }
 
 .hide-on-tablet {
   @media (max-width: 1200px) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -111,5 +111,24 @@ img {
   }
   .color-scheme-summer .for-mobile.for-winter {
     display: none !important;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+}
+
+body:has(.is-open) {
+  overflow: hidden;
+  
+  .overlay {
+    display: block;
   }
 }

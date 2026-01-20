@@ -24,8 +24,9 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       gap: 16px;
-      margin: 0 -15px;
+      margin-right: -24px;
       padding: 0 15px 20px 15px;
+    
       &::-webkit-scrollbar {
         display: none;
       }
@@ -48,7 +49,7 @@
     }
   }
 
-  &-logo{
+  &-logo {
     padding: 117px 123px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
