@@ -160,6 +160,16 @@
     }
   }
 
+  &__image {
+    overflow: hidden;
+
+    img {
+      max-height: 350px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+  }
     &__mobile-action {
       display: none;
       width: 100%;
