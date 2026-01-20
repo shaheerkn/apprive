@@ -3,9 +3,12 @@
   overflow: hidden;
 
   .container {
-    max-width: 1440px;
     .section-title {
       margin-bottom: 64px;
+
+      @media (max-width:992px) {
+        margin-bottom: 16px;
+      }
     }
   }
 
@@ -56,6 +59,10 @@
       font-size: 32px;
       font-weight: 600;
       color: var( --offered-services__subtitle-color);
+
+      @media (max-width:992px) {
+        font-size: 16px;
+      }
     }
 
     ul {
@@ -68,11 +75,28 @@
       li {
         font-size: 22px;
         font-weight: 400;
+
+        @media (max-width:992px) {
+          font-size: 14px;
+        }
       }
     }
 
-    svg path {
-      fill: var(--services-intro-content-background);
+    svg {
+      path {
+       fill: var(--services-intro-content-background);
+     }
+
+     @media (max-width:992px) {
+       width: 40px;
+       height: 40px;
+     }
+    }
+
+    @media (max-width:992px) {
+      gap: 8px;
+      width: 100%;
+      padding: 16px;
     }
   }
 

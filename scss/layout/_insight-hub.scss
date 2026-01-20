@@ -1,0 +1,134 @@
+.insight-hub {
+  background: #F5F5F5;;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__header {
+    text-align: center;
+
+    .section-title {
+      margin-bottom: 24px;
+
+      @media (max-width:992px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 24px;
+
+    @media (max-width:992px) {
+      font-size: 12px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(1,1fr);
+      place-items: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+
+    @media (max-width:992px) {
+      gap: 4px;
+      margin-top: 8px;
+    }
+  }
+
+  &__card {
+    max-width: 453px;
+    overflow: hidden;
+
+    &-image {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        @media (max-width:992px) {
+          border-radius: 0;
+        }
+      }
+    }
+
+    @media (max-width:992px) {
+      padding: 16px;
+      background: #D8E4EE;
+      max-width: 100%;
+    }
+    @media (max-width:992px) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    color:#585858;
+    font-weight: 600;
+
+    @media (max-width:992px) {
+      font-size: 9px;
+    }
+  }
+
+  &__article-title {
+    font-size: 18px;
+    font-weight: 600;
+
+    @media (max-width:992px) {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &__excerpt {
+    color: #585858;
+    font-size: 16px;
+
+    @media (max-width:992px) {
+      font-size: 12px;
+    }
+  }
+
+  &__read-more {
+    width: 140px;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    background: #5A98C0;
+    transition: all 0.3s ease-in;
+    font-size: 16px;
+
+    &:hover {
+      background: #000;
+    }
+
+  }
+
+  @media (max-width:992px) {
+    .insight-hub__read-more.for-winter {
+      display: none !important;
+    }
+  }
+}

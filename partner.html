@@ -10,13 +10,13 @@
   <header class="header">
     <div class="container">
       <div class="header__container">
-      <button class="header__menu-toggle" aria-label="Toggle menu">
-        <div class="header__hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
+        <button class="header__menu-toggle" aria-label="Toggle menu">
+          <div class="header__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
 
       <div class="header__logo" >
         <svg width="109" height="28" viewBox="0 0 109 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,8 +141,11 @@
         </button>
 
         <div class="header__season-toggle">
-          <span class="header__season-text for-winter">Winter</span>
-          <span class="header__season-text for-summer">Summer</span>
+          <div class="toggle-text">
+            <span class="header__season-text for-winter">Winter</span>
+            <span class="header__season-text for-summer">Summer</span>
+          </div>
+        
           <label class="header__toggle-switch">
             <input type="checkbox" class="header__toggle-input">
             <span class="header__toggle-slider">
@@ -292,10 +295,14 @@
     <div class="container">
       <h1 class="hero__title">Partner with AR PRIVÉ</h1>
       <p class="hero__description">For private owners and professional villa managers seeking discreet, high-end clientele</p>
+      <div class="hero__actions hero__partner-action">
+        <a href="#" class="btn btn--solid--white">Request Your Stay</a>
+      </div>
     </div>
+
   </section>
 
-  <section class="breadcrumb breadcrumb__modifier">
+  <section class="breadcrumb breadcrumb__modifier breadcrumb__mobile-hide">
     <div class="container">
       <a href="#" class="breadcrumb__home">
         <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -311,35 +318,35 @@
     </div>
   </section>
 
-  <section class="partner-about section">
+  <section class="text-block section">
     <div class="container">
       <h4 class="section-title">ABOUT AR PRIVÉ</h4>
 
-      <div class="partner-about__content">
-        <p class="partner-about__text">AR PRIVÉ is a boutique hospitality curator specializing in high-end seasonal destinations. We represent a selective portfolio of villas and chalets, collaborating with private owners and professional property managers who value discretion, respect and refined service.</p>
-        <p class="partner-about__text">Our work goes beyond booking: we protect your asset, welcome only vetted guests, and deliver concierge-level hosting on your behalf.</p>
-        <blockquote class="partner-about__quote">
+      <div class="text-block__content">
+        <p class="text-block__text">AR PRIVÉ is a boutique hospitality curator specializing in high-end seasonal destinations. We represent a selective portfolio of villas and chalets, collaborating with private owners and professional property managers who value discretion, respect and refined service.</p>
+        <p class="text-block__text">Our work goes beyond booking: we protect your asset, welcome only vetted guests, and deliver concierge-level hosting on your behalf.</p>
+        <blockquote class="text-block__quote">
           “We are not a marketplace — we are your local, trusted partner.”
         </blockquote>
       </div>
     </div>
   </section>
 
-  <section class="partner-audience section">
+  <section class="target-cards section">
     <div class="container">
       <h4 class="section-title">WHO THIS IS FOR</h4>
 
-      <div class="partner-audience__grid">
-        <article class="partner-audience__card">
-          <h5 class="partner-audience__card-title">For Private Owners</h5>
-          <p class="partner-audience__card-text">
+      <div class="target-cards__grid">
+        <article class="target-cards__card">
+          <h5 class="target-cards__card-title">For Private Owners</h5>
+          <p class="target-cards__card-text">
             Homes of exceptional quality seeking vetted, respectful guests — with full service support.
           </p>
         </article>
 
-        <article class="partner-audience__card">
-          <h5 class="partner-audience__card-title">For Property Managers</h5>
-          <p class="partner-audience__card-text">
+        <article class="target-cards__card">
+          <h5 class="target-cards__card-title">For Property Managers</h5>
+          <p class="target-cards__card-text">
             Professional partners looking to expand their reach to an ultra-high-net-worth clientele.
           </p>
         </article>
@@ -432,29 +439,29 @@
     </div>
   </section>
 
-  <section class="partner-submission section">
-    <img src="./assets/images/_submission_water-mark.svg" alt="water mark" class="partner-submission__water-mark">
+  <section class="contact-form section">
+    <img src="./assets/images/_submission_water-mark.svg" alt="water mark" class="contact-form__water-mark">
     <div class="container">
-      <div class="partner-submission__header">
+      <div class="contact-form__header">
         <h2 class="section-title">SUBMIT YOUR PROPERTY TO AR PRIVÉ</h2>
-        <p class="partner-submission__subtitle">Share your details to join our private portfolio. All information remains confidential.</p>
-        <span class="partner-submission__disclaimer">ONLY ELIGIBLE PROPERTIES WILL BE REVIEWED.</span>
+        <p class="contact-form__subtitle">Share your details to join our private portfolio. All information remains confidential.</p>
+        <span class="contact-form__disclaimer">ONLY ELIGIBLE PROPERTIES WILL BE REVIEWED.</span>
       </div>
 
-      <div class="partner-submission__layout">
-        <form action="#" class="partner-submission__form">
+      <div class="contact-form__layout">
+        <form action="#" class="contact-form__form">
 
-          <div class="partner-submission__section">
-            <h3 class="partner-submission__group-title">Property Details</h3>
-            <div class="partner-submission__group">
-              <div class="partner-submission__row">
-                <div class="partner-submission__field">
+          <div class="contact-form__section">
+            <h3 class="contact-form__group-title">Property Details</h3>
+            <div class="contact-form__group">
+              <div class="contact-form__row">
+                <div class="contact-form__field">
                   <label>Location (Destination)</label>
                   <select>
                     <option>Courchevel</option>
                   </select>
                 </div>
-                <div class="partner-submission__field">
+                <div class="contact-form__field">
                   <label>Property Type</label>
                   <select>
                     <option>Chalet</option>
@@ -463,67 +470,67 @@
               </div>
             </div>
 
-            <div class="partner-submission__group partner-submission__group--primary">
-              <div class="partner-submission__field">
+            <div class="contact-form__group contact-form__group--primary">
+              <div class="contact-form__field">
                 <label>Capacity (number of guests) *</label>
                 <input type="text" placeholder="04">
               </div>
-              <div class="partner-submission__row partner-submission__row--btm-border">
-                <div class="partner-submission__field">
+              <div class="contact-form__row contact-form__row--btm-border">
+                <div class="contact-form__field">
                   <label>Number of Bathrooms *</label>
                   <input type="text" placeholder="02">
                 </div>
-                <div class="partner-submission__field">
+                <div class="contact-form__field">
                   <label>Number of Bedrooms *</label>
                   <input type="text" placeholder="02">
                 </div>
               </div>
-              <div class="partner-submission__field">
+              <div class="contact-form__field">
                 <label>Surface Area (optional) (m²)</label>
                 <input type="text" placeholder="100">
               </div>
-              <div class="partner-submission__row">
-                <div class="partner-submission__field">
+              <div class="contact-form__row">
+                <div class="contact-form__field">
                   <label>Link to Property Photos (URL) *</label>
                   <input type="url" placeholder="https://photos/properties.com">
                 </div>
-                <div class="partner-submission__field">
+                <div class="contact-form__field">
                   <label>Link to Floor Plan (optional) (URL)</label>
                   <input type="url" placeholder="https://floor/plan.com">
                 </div>
               </div>
-              <div class="partner-submission__field">
+              <div class="contact-form__field">
                 <label>Private Notes (optional)</label>
                 <textarea placeholder="Message"></textarea>
               </div>
             </div>
           </div>
 
-          <div class="partner-submission__section">
-            <h3 class="partner-submission__group-title">Owner/Manager Information</h3>
-            <div class="partner-submission__group partner-submission__group--primary">
-              <div class="partner-submission__row">
-                <div class="partner-submission__field">
+          <div class="contact-form__section">
+            <h3 class="contact-form__group-title">Owner/Manager Information</h3>
+            <div class="contact-form__group contact-form__group--primary">
+              <div class="contact-form__row">
+                <div class="contact-form__field">
                   <label>Full Name *</label>
                   <input type="text" placeholder="Aldo Ruta">
                 </div>
-                <div class="partner-submission__field">
+                <div class="contact-form__field">
                   <label>Email *</label>
                   <input type="email" placeholder="aldo.ruta@email.com">
                 </div>
               </div>
-              <div class="partner-submission__row">
-                <div class="partner-submission__field">
+              <div class="contact-form__row">
+                <div class="contact-form__field">
                   <label>Mobile Phone *</label>
-                  <div class="partner-submission__tel-input">
-                    <div class="partner-submission__flag-box">
-                      <img src="./assets/images/_country-flag.svg" alt="Italy" class="partner-submission__flag-icon">
-                      <span class="partner-submission__flag-arrow"></span>
+                  <div class="contact-form__tel-input">
+                    <div class="contact-form__flag-box">
+                      <img src="./assets/images/_country-flag.svg" alt="Italy" class="contact-form__flag-icon">
+                      <span class="contact-form__flag-arrow"></span>
                     </div>
                     <input type="tel" placeholder="+39 334 905 1603">
                   </div>
                 </div>
-                <div class="partner-submission__field">
+                <div class="contact-form__field">
                   <label>Role *</label>
                   <select>
                     <option>Owner</option>
@@ -534,27 +541,27 @@
             </div>
           </div>
 
-          <div class="partner-submission__section">
-            <h3 class="partner-submission__group-title">Tell Us More (Optional)</h3>
-            <div class="partner-submission__field">
-              <textarea class="partner-submission__textarea" placeholder="Message"></textarea>
+          <div class="contact-form__section">
+            <h3 class="contact-form__group-title">Tell Us More (Optional)</h3>
+            <div class="contact-form__field">
+              <textarea class="contact-form__textarea" placeholder="Message"></textarea>
             </div>
           </div>
 
-          <div class="partner-submission__footer">
-            <h3 class="partner-submission__group-title">Confidentiality Note:</h3>
-            <p class="partner-submission__note">Your information is used exclusively to evaluate eligibility for our private portfolio. We do not publish or share property content without written consent.</p>
-            <button type="submit" class="partner-submission__submit">Submit Property Application</button>
-            <p class="partner-submission__sub-note">Properties must meet curated standards in design, maintenance and hospitality potential. This avoids low-quality submissions.</p>
+          <div class="contact-form__footer">
+            <h3 class="contact-form__group-title">Confidentiality Note:</h3>
+            <p class="contact-form__note">Your information is used exclusively to evaluate eligibility for our private portfolio. We do not publish or share property content without written consent.</p>
+            <button type="submit" class="contact-form__submit">Submit Property Application</button>
+            <p class="contact-form__sub-note">Properties must meet curated standards in design, maintenance and hospitality potential. This avoids low-quality submissions.</p>
           </div>
         </form>
 
-        <aside class="partner-submission__gallery">
-          <div class="partner-submission__image-wrapper partner-submission__image-wrapper__primary">
+        <aside class="contact-form__gallery">
+          <div class="contact-form__image-wrapper contact-form__image-wrapper__primary">
             <img src="./assets/images/partner-submission_winter-primary.png" alt="Luxury Interior" class="for-winter">
             <img src="./assets/images/partner-submission-summer-primary.png" alt="Luxury Interior" class="for-summer">
           </div>
-          <div class="partner-submission__image-wrapper partner-submission__image-wrapper__secondary">
+          <div class="contact-form__image-wrapper contact-form__image-wrapper__secondary">
             <img src="./assets/images/parnter-sumbission_winter-secondary.png" alt="Mountain Sunset" class="for-winter">
             <img src="./assets/images/partner-submission-summer-secondary.png" alt="Mountain Sunset" class="for-summer">
           </div>
@@ -595,12 +602,8 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__booking">
-        <h5 class="section-title">Let Us Plan Your Courchevel Stay</h5>
-        <div>
-          <p class="footer__booking-description">Plan your luxury winter stay in Courchevel with AR PRIVÉ.</p>
-          <P class="footer__booking-description">Our team provides private concierge assistance 24/7, managing every aspect of your chalet experience.</P>
-        </div>
+      <div class="footer__booking mobile-display__block">
+        <h5 class="section-title">LET US PLAN YOUR STAY</h5>
 
         <form action="#" class="footer-form">
           <div class="footer-form__group">

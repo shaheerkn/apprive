@@ -24,6 +24,7 @@
     }
 
     .section-title {
+      margin-block: 24px;
       &::after {
         left: 0;
         transform: translateX(0);
@@ -33,14 +34,25 @@
           transform: translateX(-50%);
         }
       }
+
+      @media (max-width:992px) {
+        margin-block: 12px;
+      }
     }
+
     a {
       text-decoration: none;
       color: var(--color-1);
+      font-size: 24px;
+      font-weight: 600;
 
       @media (max-width:992px) {
         font-size: 12px;
       }
+    }
+
+    @media (max-width:992px) {
+      gap: 12px;
     }
   }
 
@@ -55,6 +67,11 @@
     p {
       font-style: italic;
       margin-bottom: 20px;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
     }
   }
   &__media {

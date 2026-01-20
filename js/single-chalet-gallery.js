@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const gallery = document.querySelector('.single-chalet__gallery');
+  const gallery = document.querySelector('.product-detail__gallery');
   if (!gallery) return;
 
   const swiperContainer = gallery.querySelector('.mySwiper');
   const slides = swiperContainer ? swiperContainer.querySelectorAll('.swiper-slide') : [];
   const total = slides.length || 0;
-  const countEl = gallery.querySelector('.single-chalet__count');
+  const countEl = gallery.querySelector('.product-detail__count');
   const nextBtn = gallery.querySelector('.swiper-button-next');
   const prevBtn = gallery.querySelector('.swiper-button-prev');
-  const expandBtn = gallery.querySelector('.single-chalet__expand');
+  const expandBtn = gallery.querySelector('.product-detail__expand');
 
   let index = 1;
 

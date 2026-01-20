@@ -18,16 +18,20 @@
       .header__logo path { fill: #000; }
     }
   }
-
-  &__modifier {
-    background: #000;
-    position: static;
-  }
 }
 
 .header .container {
   padding: 0 64px;
 }
+
+.header__modifier {
+    background: #000;
+    position: static;
+
+    .container {
+      padding: 0 24px;
+    }
+  }
 
 .header__container {
   width: 100%;
@@ -195,7 +199,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
-  background: #5A98C0;
+  background: var(--color-10);
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -250,6 +254,10 @@
   color: inherit;
   font-size: 14px;
   font-weight: 400;
+
+  @media (max-width:992px) {
+    display: none !important;
+  }
 }
 
 .header__toggle-switch {
@@ -354,31 +362,30 @@
   height: 14px;
 }
 
-// Light header variant (for summer mode)
 .header--light {
   background: #FFFFFF;
   border-top: 1px solid #E0E0E0;
-  
+
   .header__nav-link {
     color: #000;
   }
-  
+
   .header__nav-item:not(:last-child)::after {
     color: #000;
   }
-  
+
   .header__season-text {
     color: #000;
   }
-  
+
   .header__lang-btn {
     background: #F4D4C0;
-    
+
     svg:last-child path {
       stroke: #000;
     }
   }
-  
+
   .header__icon-btn img {
     filter: brightness(0);
   }
@@ -693,6 +700,16 @@
 // Show mobile menu on smaller screens only
 @media (min-width: 1200px) {
   .mobile-menu {
+    display: none;
+  }
+}
+
+.toggle-text {
+  width: 63px;
+  overflow: hidden;
+}
+@media (max-width:993px) {
+  .toggle-text {
     display: none;
   }
 }

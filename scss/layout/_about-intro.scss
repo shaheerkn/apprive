@@ -1,13 +1,12 @@
 .about-intro {
   .container {
-    max-width: 1440px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 80px;
     @media (max-width:1240px) {
       flex-direction: column-reverse;
       margin-bottom: 0;
-      margin-block: 24px;
+      gap: 16px;
     }
   }
 
@@ -16,7 +15,7 @@
     gap: 20px;
     align-items: center;
 
-      @media (max-width:768px) {
+      @media (max-width:992px) {
         gap: 16px;
     }
   }
@@ -66,6 +65,10 @@
 
     :nth-child(1) {
       margin-bottom: 24px;
+
+      @media (max-width:992px) {
+        margin-bottom: 12px;
+      }
     }
     p {
       font-size: 24px;
@@ -75,8 +78,9 @@
         text-transform: uppercase;
       }
 
-      @media (max-width:1240px) {
+      @media (max-width:992px) {
         font-size: 12px;
+        margin-bottom: 12px;
       }
     }
 
