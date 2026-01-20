@@ -471,12 +471,12 @@ img {
 .header__lang-btn:hover {
   background-color: #4a87ab;
 }
-.header__lang-btn svg:first-child {
+.header__lang-btn img:first-child {
   width: 18px;
   height: 13px;
   flex-shrink: 0;
 }
-.header__lang-btn svg:last-child {
+.header__lang-btn svg:first-child {
   width: 10px;
   height: 6px;
   flex-shrink: 0;
