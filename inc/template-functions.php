@@ -37,18 +37,36 @@ function ar_pingback_header() {
 add_action( 'wp_head', 'ar_pingback_header' );
 
 /**
- * Save ACF Json to theme directory
- * 
- * @param mixed $path
- * @return string
+ * Save ACF field groups to the inc/acf-json/field-groups folder.
  */
-function ar_acf_json_save_point($path)
-{
-	$path = get_template_directory() . '/inc/acf-json';
-
-	return $path;
+function ar_acf_field_groups_save_folder( $path ) {
+  return get_stylesheet_directory() . '/inc/acf-json/field-groups';
 }
-add_filter('acf/settings/save_json', 'ar_acf_json_save_point');
+add_filter( 'acf/settings/save_json/type=acf-field-group', 'ar_acf_field_groups_save_folder' );
+
+/**
+ * Save ACF post types to the inc/acf-json/post-types folder.
+ */
+function ar_acf_cpt_save_folder( $path ) {
+  return get_stylesheet_directory() . '/inc/acf-json/post-types';
+}
+add_filter( 'acf/settings/save_json/type=acf-post-type', 'ar_acf_cpt_save_folder' );
+
+/**
+ * Save ACF taxonomies to the inc/acf-json/taxonomies folder.
+ */
+function ar_acf_taxonomy_save_folder( $path ) {
+  return get_stylesheet_directory() . '/inc/acf-json/taxonomies';
+}
+add_filter( 'acf/settings/save_json/type=acf-taxonomy', 'ar_acf_taxonomy_save_folder' );
+
+/**
+ * Save ACF options to the inc/acf-json/options-pages folder.
+ */
+function ar_acf_options_save_folder( $path ) {
+  return get_stylesheet_directory() . '/inc/acf-json/options-pages';
+}
+add_filter( 'acf/settings/save_json/type=acf-ui-options-page', 'ar_acf_options_save_folder' );
 
 /**
  * Load ACF Json from theme directory
@@ -57,7 +75,15 @@ add_filter('acf/settings/save_json', 'ar_acf_json_save_point');
  * @return array
  */
 function ar_acf_json_load_point($paths) {
-	$paths[] = get_template_directory() . '/inc/acf-json';
-	return $paths;
+	// Remove the original path (optional).
+  unset($paths[0]);
+
+  // Append the new path and return it.
+  $paths[] = get_stylesheet_directory() . '/inc/acf-json/field-groups';
+  $paths[] = get_stylesheet_directory() . '/inc/acf-json/post-types';
+  $paths[] = get_stylesheet_directory() . '/inc/acf-json/taxonomies';
+  $paths[] = get_stylesheet_directory() . '/inc/acf-json/options-pages';
+
+  return $paths;
 }
 add_filter('acf/settings/load_json', 'ar_acf_json_load_point');

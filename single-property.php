@@ -1,10 +1,4 @@
-<?php
-  get_header();
-  // wp_enqueue_style('ar-swiper-css');
-  // wp_enqueue_script('ar-chalet-about');
-  // wp_enqueue_script('ar-chalet-featured');
-  // wp_enqueue_script('ar-single-chalet-gallery');
-?>
+<?php get_header(); ?>
 
 <section class="breadcrumb breadcrumb__modifier">
   <div class="container single-chalet__links">
