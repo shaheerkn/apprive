@@ -141,15 +141,18 @@ function ar_scripts() {
 	wp_enqueue_style( 'ar-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'ar-style', 'rtl', 'replace' );
 
+	wp_enqueue_style( 'ar-swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'ar-main', get_template_directory_uri() . '/css/main.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'ar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ar-color-scheme', get_template_directory_uri() . '/js/color-scheme.js', array(), _S_VERSION, true );
 
-	wp_register_script( 'ar-chalet-about', get_template_directory_uri() . '/js/chalet-about.js', array(), _S_VERSION, true );
-	wp_register_script( 'ar-chalet-featured', get_template_directory_uri() . '/js/chalet-featured.js', array(), _S_VERSION, true );
-	wp_register_script( 'ar-filter', get_template_directory_uri() . '/js/filter.js', array(), _S_VERSION, true );
-	wp_register_script( 'ar-single-chalet-gallery', get_template_directory_uri() . '/js/single-chalet-gallery.js', array(), _S_VERSION, true );
+	// Swiper Slider
+	wp_enqueue_script( 'ar-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ar-chalet-about', get_template_directory_uri() . '/js/chalet-about.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ar-chalet-featured', get_template_directory_uri() . '/js/chalet-featured.js', array('ar-swiper-js'), _S_VERSION, true );
+	wp_enqueue_script( 'ar-single-chalet-gallery', get_template_directory_uri() . '/js/single-chalet-gallery.js', array('ar-swiper-js'), _S_VERSION, true );
+	wp_enqueue_script( 'ar-filter', get_template_directory_uri() . '/js/filter.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

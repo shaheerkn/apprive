@@ -190,7 +190,6 @@
   <script>
     AOS.init();
   </script>
-  <script src="js/color-scheme.js"></script>
 
 <?php wp_footer(); ?>
 

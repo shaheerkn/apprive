@@ -30,7 +30,7 @@
 <?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ar' ); ?></a>
 
-	<header class="header">
+	<header class="header <?php echo !is_front_page() ? 'header__modifier' : ''; ?>">
     <div class="container">
       <div class="header__container">
       <button class="header__menu-toggle" aria-label="Toggle menu">

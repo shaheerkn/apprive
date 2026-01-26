@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+  get_header();
+  // wp_enqueue_style('ar-swiper-css');
+  // wp_enqueue_script('ar-chalet-about');
+  // wp_enqueue_script('ar-chalet-featured');
+  // wp_enqueue_script('ar-single-chalet-gallery');
+?>
 
 <section class="breadcrumb breadcrumb__modifier">
   <div class="container single-chalet__links">
@@ -57,23 +63,23 @@
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="./assets/images/sildeOne.png" alt="Winter slide" class="for-winter">
-                <img src="./assets/images/silde-for-summer.png" alt="summer Slide" class="for-summer">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sildeOne.png" alt="Winter slide" class="for-winter">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/silde-for-summer.png" alt="summer Slide" class="for-summer">
               </div>
               <div class="swiper-slide">
-                <img src="./assets/images/silde-for-summer.png" alt="summer Slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/silde-for-summer.png" alt="summer Slide">
               </div>
               <div class="swiper-slide">
-                <img src="./assets/images/sildeOne.png" alt="Winter slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sildeOne.png" alt="Winter slide">
               </div>
               <div class="swiper-slide">
-                <img src="./assets/images/silde-for-summer.png" alt="summer Slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/silde-for-summer.png" alt="summer Slide">
               </div>
               <div class="swiper-slide">
-                <img src="./assets/images/sildeOne.png" alt="Winter slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sildeOne.png" alt="Winter slide">
               </div>
-              <div class="swiper-slide"><img src="./assets/images/silde-for-summer.png" alt="summer Slide"></div>
-              <div class="swiper-slide"><img src="./assets/images/sildeOne.png" alt="Winter slide"></div>
+              <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/silde-for-summer.png" alt="summer Slide"></div>
+              <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/sildeOne.png" alt="Winter slide"></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -205,7 +211,7 @@
 
 <section class="chalet-about key-features">
   <div class="key-features__container chalet-about__container">
-    <img src="./assets/images/section-watermark.svg" alt="water-mark">
+    <img src="<?php echo get_template_directory_uri() ?>/assets/images/section-watermark.svg" alt="water-mark">
     <h2 class="key-features-title">About the Chalet</h2>
 
     <div class="chalet-about__text">
@@ -299,15 +305,15 @@
       </ul>
     </div>
     <figure class="details__garllery">
-      <img src="./assets/images/room-details.png" alt="room details">
-      <img src="./assets/images/room-details__secondary.png" alt="space details">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/room-details.png" alt="room details">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/room-details__secondary.png" alt="space details">
     </figure>
   </div>
 </section>
 
 <section class="details key-features details--services">
   <div class="key-features__container">
-    <img src="./assets/images/servicee-water-mark.svg" alt="water-mark">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/servicee-water-mark.svg" alt="water-mark">
     <h2 class="key-features-title">IN-CHALET SERVICES</h2>
 
     <h4 class="details__title">Available services (through AR PRIVÉ concierge)</h4>
@@ -418,14 +424,14 @@
           Quiet, private, and prestigious neighborhood
         </li>
       </ul>
-      <img src="./assets/images/location-context-winter.svg" class="for-winter" alt="location">
-      <img src="./assets/images/location-context-summer.svg" class="for-summer" alt="location">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-context-winter.svg" class="for-winter" alt="location">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-context-summer.svg" class="for-summer" alt="location">
     </div>
   </div>
 </section>
 
 <section class="key-features information">
-  <img src="./assets/images/chalet-info__water-mark.svg" alt="water-mark">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/chalet-info__water-mark.svg" alt="water-mark">
   <div class="key-features__container">
     <h2 class="key-features-title">GOOD TO KNOW</h2>
     <h4>Useful information</h4>
@@ -484,8 +490,8 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="./assets/images/featured-product_for-winter.svg" class="for-winter" alt="featured-product">
-          <img src="./assets/images/featured-product-for-summer.svg" class="for-summer" alt="featured-product">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured-product_for-winter.svg" class="for-winter" alt="featured-product">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured-product-for-summer.svg" class="for-summer" alt="featured-product">
             <div class="showcase__details">
               <div class="showcase__info">
                 <div>
@@ -500,12 +506,12 @@
               </div>
               <p class="showcase__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
               <p class="showcase__amenities for-summer">beach access</p>
-              <a href="#" class="showcase__link">View Property <img src="./assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
+              <a href="#" class="showcase__link">View Property <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
             </div>
         </div>
         <div class="swiper-slide">
-          <img src="./assets/images/feature-silde-two-winter.svg" class="for-winter" alt="featured-product">
-          <img src="./assets/images/feautured-slide-two-summer.svg" class="for-summer" alt="featured-product">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature-silde-two-winter.svg" class="for-winter" alt="featured-product">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feautured-slide-two-summer.svg" class="for-summer" alt="featured-product">
               <div class="showcase__details">
               <div class="showcase__info">
                 <div>
@@ -520,11 +526,11 @@
               </div>
               <p class="showcase__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
               <p class="showcase__amenities for-summer">Heated pool</p>
-              <a href="#" class="showcase__link">View Property <img src="./assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
+              <a href="#" class="showcase__link">View Property <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
             </div>
         </div>
         <div class="swiper-slide">
-          <img src="./assets/images/featured-product_for-winter.svg" alt="featured-product">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured-product_for-winter.svg" alt="featured-product">
               <div class="showcase__details">
               <div class="showcase__info">
                 <div>
@@ -536,7 +542,7 @@
                 </div>
               </div>
               <p class="showcase__amenities">Spa · Fireplace · Ski-in/ski-out</p>
-              <a href="#" class="showcase__link">Request Availability <img src="./assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
+              <a href="#" class="showcase__link">Request Availability <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
             </div>
         </div>
       </div>
