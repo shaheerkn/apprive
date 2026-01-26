@@ -1,4 +1,20 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: Properties
+ * Template Post Type: page
+ *
+ * @package arprive
+ * @subpackage arprive/templates
+ * @since 1.0.0
+ * @version 1.0.0
+ * @author Arprive
+ * @link https://arprive.com
+ * @license GPL-2.0+
+ * @copyright 2026 Arprive
+ */
+
+  get_header();
+?>
 
 <section class="breadcrumb breadcrumb__modifier">
   <div class="container single-chalet__links">

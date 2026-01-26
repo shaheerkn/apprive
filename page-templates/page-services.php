@@ -1,4 +1,20 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: Services
+ * Template Post Type: page
+ *
+ * @package arprive
+ * @subpackage arprive/templates
+ * @since 1.0.0
+ * @version 1.0.0
+ * @author Arprive
+ * @link https://arprive.com
+ * @license GPL-2.0+
+ * @copyright 2026 Arprive
+ */
+
+  get_header();
+?>
 
 <section class="hero">
   <div class="hero__img">
