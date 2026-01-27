@@ -1,1 +1,37 @@
-node_modules
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# WordPress
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+
+# Theme Build Files
+dist/
+build/
+*.css.map
+*.js.map
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ACF Backup (keep only active field groups in inc/acf-json/)
+acf-export-*.json

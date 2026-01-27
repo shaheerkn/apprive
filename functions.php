@@ -187,3 +187,55 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Enable SVG upload support for ACF icon fields
+ *
+ * Adds SVG MIME type to WordPress allowed upload types.
+ * SVGs are sanitized on upload by ACF Pro.
+ *
+ * @param array $mimes Existing MIME types.
+ * @return array Modified MIME types with SVG support.
+ */
+function ar_enable_svg_upload( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'ar_enable_svg_upload' );
+
+/**
+ * Fix SVG thumbnail display in WordPress media library
+ *
+ * @param array  $response   Attachment response data.
+ * @param object $attachment Attachment object.
+ * @param array  $meta       Attachment metadata.
+ * @return array Modified response with SVG dimensions.
+ */
+function ar_fix_svg_thumb_display( $response, $attachment, $meta ) {
+	if ( $response['type'] === 'image' && $response['subtype'] === 'svg+xml' && class_exists( 'SimpleXMLElement' ) ) {
+		try {
+			$path = get_attached_file( $attachment->ID );
+			if ( @file_exists( $path ) ) {
+				$svg = @simplexml_load_file( $path );
+				if ( $svg !== false ) {
+					$attributes = $svg->attributes();
+					$width      = (string) $attributes->width;
+					$height     = (string) $attributes->height;
+					if ( $width && $height ) {
+						$response['sizes'] = array(
+							'full' => array(
+								'url' => $response['url'],
+								'width' => intval( $width ),
+								'height' => intval( $height ),
+								'orientation' => intval( $width ) > intval( $height ) ? 'landscape' : 'portrait',
+							),
+						);
+					}
+				}
+			}
+		} catch ( Exception $e ) {
+			// Silently fail - SVG will still be uploadable
+		}
+	}
+	return $response;
+}
+add_filter( 'wp_prepare_attachment_for_js', 'ar_fix_svg_thumb_display', 10, 3 );

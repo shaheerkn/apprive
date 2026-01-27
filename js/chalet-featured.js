@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const swiperContainer = document.querySelector('.featured .mySwiper');
+  const swiperContainer = document.querySelector('.featured .swiper-wrapper');
   if (!swiperContainer) return;
 
-  const swiper = new Swiper(swiperContainer, {
+  const swiper = new Swiper('.featured-swiper', {
     slidesPerView: 2,
     slidesPerGroup: 2,
     spaceBetween: 40,
