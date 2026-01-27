@@ -58,10 +58,13 @@
             "taxonomy": "destination",
             "add_term": 1,
             "save_terms": 1,
-            "load_terms": 0,
+            "load_terms": 1,
             "return_format": "object",
             "field_type": "select",
             "allow_null": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
             "allow_in_bindings": 0,
             "bidirectional": 0,
             "multiple": 0,
@@ -180,7 +183,7 @@
                     "label": "Access Type",
                     "name": "access_type",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "taxonomy",
                     "instructions": "Type of property access (e.g., \"Ski-in\/Ski-out\", \"5 min walk to slopes\").",
                     "required": 0,
                     "conditional_logic": 0,
@@ -189,12 +192,20 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": 100,
+                    "taxonomy": "access-type",
+                    "add_term": 1,
+                    "save_terms": 1,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
                     "allow_in_bindings": 0,
-                    "placeholder": "e.g., Ski-in\/Ski-out",
-                    "prepend": "",
-                    "append": ""
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": []
                 },
                 {
                     "key": "field_prop_specs_staff_availability",
@@ -217,7 +228,12 @@
                     "prepend": "",
                     "append": ""
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_tab_pricing_booking",
@@ -318,7 +334,12 @@
                     "prepend": "",
                     "append": ""
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_prop_booking",
@@ -372,7 +393,12 @@
                     "allow_in_bindings": 0,
                     "placeholder": "https:\/\/wa.me\/1234567890"
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_tab_gallery_media",
@@ -606,7 +632,9 @@
                     "mime_types": "svg",
                     "allow_in_bindings": 0,
                     "preview_size": "thumbnail",
-                    "parent_repeater": "field_prop_key_features"
+                    "parent_repeater": "field_prop_key_features",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
                 },
                 {
                     "key": "field_prop_key_features_label",
@@ -630,7 +658,8 @@
                     "append": "",
                     "parent_repeater": "field_prop_key_features"
                 }
-            ]
+            ],
+            "acfe_repeater_stylised_button": 0
         },
         {
             "key": "field_prop_room_details",
@@ -679,7 +708,9 @@
                     "mime_types": "svg",
                     "allow_in_bindings": 0,
                     "preview_size": "thumbnail",
-                    "parent_repeater": "field_prop_room_details"
+                    "parent_repeater": "field_prop_room_details",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
                 },
                 {
                     "key": "field_prop_room_details_description",
@@ -703,7 +734,8 @@
                     "append": "",
                     "parent_repeater": "field_prop_room_details"
                 }
-            ]
+            ],
+            "acfe_repeater_stylised_button": 0
         },
         {
             "key": "field_tab_services_extras",
@@ -770,7 +802,9 @@
                     "mime_types": "svg",
                     "allow_in_bindings": 0,
                     "preview_size": "thumbnail",
-                    "parent_repeater": "field_prop_services"
+                    "parent_repeater": "field_prop_services",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
                 },
                 {
                     "key": "field_prop_services_label",
@@ -794,7 +828,8 @@
                     "append": "",
                     "parent_repeater": "field_prop_services"
                 }
-            ]
+            ],
+            "acfe_repeater_stylised_button": 0
         },
         {
             "key": "field_tab_location_context",
@@ -937,7 +972,8 @@
                             "append": "",
                             "parent_repeater": "field_prop_location_context_features"
                         }
-                    ]
+                    ],
+                    "acfe_repeater_stylised_button": 0
                 },
                 {
                     "key": "field_697877214755e",
@@ -959,7 +995,12 @@
                     "height": "",
                     "allow_in_bindings": 0
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_tab_info",
@@ -1081,7 +1122,8 @@
                             "append": "",
                             "parent_repeater": "field_prop_info_items"
                         }
-                    ]
+                    ],
+                    "acfe_repeater_stylised_button": 0
                 },
                 {
                     "key": "field_prop_info_watermark",
@@ -1107,9 +1149,16 @@
                     "max_size": "",
                     "mime_types": "",
                     "allow_in_bindings": 0,
-                    "preview_size": "medium"
+                    "preview_size": "medium",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         },
         {
             "key": "field_tab_featured",
@@ -1196,7 +1245,12 @@
                     "bidirectional": 0,
                     "bidirectional_target": []
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -1218,5 +1272,11 @@
     "description": "Complete field group for property post type with 8 organized tabs.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1769502555
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1769536579
 }

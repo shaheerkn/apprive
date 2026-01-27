@@ -14,35 +14,48 @@
  */
 
   get_header();
+
+  $destination = get_queried_object();
 ?>
 
 <section class="breadcrumb breadcrumb__modifier">
   <div class="container single-chalet__links">
-    <a href="#" class="breadcrumb__home">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="breadcrumb__home">
       <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.33333 19.718H6.25633V11.872H12.4103V19.718H17.3333V7.718L9.33333 1.66667L1.33333 7.718V19.718ZM0 21.0513V7.05133L9.33333 0L18.6667 7.05133V21.0513H11.077V13.2053H7.58967V21.0513H0Z" fill="#1F1F1F"/>
       </svg>
     </a>
 
-      <a href="#" class="breadcrumb__arrow">
-        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-        </svg>
-      </a>
+    <?php if ( $destination && ! is_wp_error( $destination ) ) : ?>
+			<!-- Breadcrumb arrow separator -->
+			<span class="breadcrumb__arrow">
+				<svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+				</svg>
+			</span>
 
-        <a href="#" class="breadcrumb__current">Courchevel</a>
+			<!-- Destination breadcrumb (T098-T100, T103) -->
+			<a href="<?php echo esc_url( get_term_link( $destination ) ); ?>" class="breadcrumb__current">
+				<?php echo esc_html( $destination->name ); ?>
+			</a>
+		<?php endif; ?>
+    
+    <!-- Breadcrumb arrow separator -->
+    <a href="#" class="breadcrumb__arrow">
+      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+      </svg>
+    </a>
 
-      <a href="#" class="breadcrumb__arrow">
-        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-        </svg>
-      </a>
-      <a href="#" class="breadcrumb__current">Properties</a>
-      <a href="#" class="breadcrumb-arrow__mobile">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.60104 6.25L6.42792 11.0769L5.83333 11.6667L0 5.83333L5.83333 0L6.42792 0.589792L1.60104 5.41667H11.6667V6.25H1.60104Z" fill="#1F1F1F"/>
-        </svg>
-      </a>
+    <!-- Property name breadcrumb -->
+		<span class="breadcrumb__current">Properties</span>
+
+    <!-- Mobile back arrow -->
+    <a href="#" class="breadcrumb-arrow__mobile">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.60104 6.25L6.42792 11.0769L5.83333 11.6667L0 5.83333L5.83333 0L6.42792 0.589792L1.60104 5.41667H11.6667V6.25H1.60104Z" fill="#1F1F1F"/>
+      </svg>
+    </a>
   </div>
 </section>
 

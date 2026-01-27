@@ -50,7 +50,7 @@ $location_text = get_field( 'prop_location_text' );
 
 		<?php if ( ! empty( $specs['access_type'] ) ) : ?>
 			<li class="product-detail__spec">
-				Access: <span class="product-detail__spec-value"><?php echo esc_html( $specs['access_type'] ); ?></span>
+				Access: <span class="product-detail__spec-value"><?php echo esc_html( get_term( $specs['access_type'] )->name ); ?></span>
 			</li>
 		<?php endif; ?>
 
