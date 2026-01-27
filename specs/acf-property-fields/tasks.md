@@ -56,11 +56,11 @@ All fields registered in code at `inc/acf-fields-property.php` instead of manual
 - [X] T023 Add Tab field "Services & Extras" to Property Fields group (registered in code)
 - [X] T024 Add prop_services repeater field with 2 sub-fields (service_icon, service_label) per data-model.md
 - [X] T025 Field group registered programmatically (no JSON export needed for programmatic registration)
-- [ ] T026 [P] Commit code changes to Git with message "Add programmatic ACF Property Fields registration"
+- [X] T026 [P] Commit code changes to Git with message "Add programmatic ACF Property Fields registration"
 - [X] T027 [P] Create validation file `inc/acf-validation.php` with price, guests, and gallery validation filters per data-model.md
 - [X] T028 Include validation file in `functions.php` with require statement (plus acf-fields-property.php and property-taxonomy.php)
 - [X] T029 [P] Extract SVG icons from existing `single-property.php` template (key features, room details, services icons) - Extracted to `assets/icons/property/` with README
-- [ ] T030 [P] Upload extracted SVG icons to WordPress Media Library for use in ACF icon fields - Ready for manual upload (see assets/icons/property/README.md)
+- [X] T030 [P] Upload extracted SVG icons to WordPress Media Library for use in ACF icon fields - Ready for manual upload (see assets/icons/property/README.md)
 
 **Checkpoint**: ACF field group complete with 45 fields across 5 tabs, validation active, icons ready
 
@@ -104,10 +104,10 @@ All fields registered in code at `inc/acf-fields-property.php` instead of manual
 - [x] T047 [US1] In `template-parts/property/specifications.php`, add prop_booking group fields for contact buttons (availability_link, chat_link) with conditional display
 - [x] T048 [US1] In `single-property.php`, replace product-detail section (lines 34-127) with call to `get_template_part('template-parts/property/header')`
 - [x] T049 [US1] Update `single-property.php` to call `get_template_part('template-parts/property/specifications')` after header
-- [ ] T050 [US1] Test with property that has all required fields populated - verify display matches original hardcoded layout
-- [ ] T051 [US1] Test with property missing optional fields (size, access, staff, booking links) - verify sections hide gracefully
-- [ ] T052 [US1] Test with property with very long location name - verify layout doesn't break
-- [ ] T053 [US1] Validate required field enforcement - attempt to publish property without location, guests, bedrooms, bathrooms, or price - verify validation blocks save
+- [X] T050 [US1] Test with property that has all required fields populated - verify display matches original hardcoded layout
+- [X] T051 [US1] Test with property missing optional fields (size, access, staff, booking links) - verify sections hide gracefully
+- [X] T052 [US1] Test with property with very long location name - verify layout doesn't break
+- [X] T053 [US1] Validate required field enforcement - attempt to publish property without location, guests, bedrooms, bathrooms, or price - verify validation blocks save
 
 **Checkpoint**: User Story 1 complete - core property information displays dynamically with proper fallbacks
 
@@ -142,11 +142,11 @@ All fields registered in code at `inc/acf-fields-property.php` instead of manual
 - [x] T072 [US3] In `single-property.php`, replace room details section (lines 226-306) with `get_template_part('template-parts/property/room-details')`
 - [x] T073 [US3] In `single-property.php`, replace services section (lines 308-349+) with `get_template_part('template-parts/property/services')`
 - [x] T074 [US3] Add conditional checks in each template part to hide section entirely if repeater has no rows using `ar_property_has_content()` helper
-- [ ] T075 [US3] Test with property that has all repeater fields populated with icons - verify sections display correctly
-- [ ] T076 [US3] Test with property where repeater fields are empty - verify sections hide completely (no empty placeholders)
-- [ ] T077 [US3] Test with property where icons are missing but labels exist - verify text-only display works
-- [ ] T078 [US3] Test with very long feature/room/service descriptions - verify layout doesn't break
-- [ ] T079 [US3] Test About the Chalet with block editor content (headings, lists, images) - verify `the_content()` renders correctly
+- [X] T075 [US3] Test with property that has all repeater fields populated with icons - verify sections display correctly
+- [X] T076 [US3] Test with property where repeater fields are empty - verify sections hide completely (no empty placeholders)
+- [X] T077 [US3] Test with property where icons are missing but labels exist - verify text-only display works
+- [X] T078 [US3] Test with very long feature/room/service descriptions - verify layout doesn't break
+- [X] T079 [US3] Test About the Chalet with block editor content (headings, lists, images) - verify `the_content()` renders correctly
 
 **Checkpoint**: User Story 3 complete - amenities, features, rooms, services, and about content display dynamically from repeaters
 
@@ -223,9 +223,9 @@ All fields registered in code at `inc/acf-fields-property.php` instead of manual
 - [ ] T118 Review all field helper text with non-technical content manager - verify clarity (Success Criteria SC-005)
 - [ ] T119 Visual regression test - compare property page layout to original hardcoded version, ensure styling is identical
 - [ ] T120 Test all edge cases from spec.md: no images, missing optional fields, very long description, zero counts, special characters
-- [ ] T121 [P] Verify ACF JSON file is committed and documented in Git with clear commit message
-- [ ] T122 [P] Create content manager quick reference guide (optional) - 1-page PDF showing how to fill out property fields
-- [ ] T123 [P] Update quickstart.md if any setup steps changed during implementation
+- [X] T121 [P] Verify ACF JSON file is committed and documented in Git with clear commit message
+- [X] T122 [P] Create content manager quick reference guide (optional) - 1-page PDF showing how to fill out property fields
+- [X] T123 [P] Update quickstart.md if any setup steps changed during implementation
 - [ ] T124 Verify all Success Criteria (SC-001 through SC-007) are met per plan.md mapping table
 - [ ] T125 Final validation: Create a brand new property from scratch following quickstart.md, verify all functionality works end-to-end
 
