@@ -153,7 +153,7 @@
     padding-bottom: 40px;
     border-bottom: 1px solid #FFFFFF;
     gap: 50px;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @media (max-width: 992px) {
       display: grid;
@@ -302,6 +302,7 @@
           display: flex;
           flex-direction: column;
           gap: 12px;
+          font-size: 20px;
 
           @media (max-width:432px) {
             align-items: center;
@@ -336,12 +337,6 @@
             @media (max-width:992px) {
               font-size: 11px;
               font-weight: 600;
-            }
-            span {
-              svg {
-                width: 14px;
-                height: 14px;
-              }
             }
           }
         }

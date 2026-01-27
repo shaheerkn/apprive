@@ -50,6 +50,8 @@ function ar_setup() {
 	register_nav_menus(
 		array(
 			'primary-menu' => esc_html__( 'Primary Menu', 'ar' ),
+			'footer-menu-destinations' => esc_html__( 'Footer Menu Destinations', 'ar' ),
+			'footer-menu-discover' => esc_html__( 'Footer Menu Discover', 'ar' ),
 		)
 	);
 
