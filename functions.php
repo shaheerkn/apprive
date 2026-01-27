@@ -239,3 +239,16 @@ function ar_fix_svg_thumb_display( $response, $attachment, $meta ) {
 	return $response;
 }
 add_filter( 'wp_prepare_attachment_for_js', 'ar_fix_svg_thumb_display', 10, 3 );
+
+/**
+ * Google Map API Key
+ *
+ * @param string $map Google Map iframe code.
+ * @return string Google Map iframe code.
+ */
+function my_acf_google_map_api( $api ){
+	// TODO: Remove this Google API key before production and Ask client to provide their own.
+	$api['key'] = 'AIzaSyBJihoxYNCcTDP0oPyFnYWKOLyDiBweRwo';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

@@ -795,6 +795,408 @@
                     "parent_repeater": "field_prop_services"
                 }
             ]
+        },
+        {
+            "key": "field_tab_location_context",
+            "label": "Location Context",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_location_context",
+            "label": "Location Context Section",
+            "name": "prop_location_context",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_location_context_title",
+                    "label": "Title",
+                    "name": "prop_location_context_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title for the location context section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "LOCATION CONTEXT",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_location_context_subtitle",
+                    "label": "Subtitle",
+                    "name": "prop_location_context_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Subtitle displayed above the location text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Location",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_location_context_location",
+                    "label": "Location Text",
+                    "name": "prop_location_context_location",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main location description text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "e.g., \"Courchevel 1850 – Bellecôte Area\"",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_location_context_features",
+                    "label": "Features",
+                    "name": "prop_location_context_features",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "List of location features\/highlights",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Feature",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_feature_text",
+                            "label": "Feature Text",
+                            "name": "feature_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "e.g., \"3 minutes from main slopes\"",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_prop_location_context_features"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_697877214755e",
+                    "label": "Map",
+                    "name": "prop_location_context_map",
+                    "aria-label": "",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "",
+                    "center_lng": "",
+                    "zoom": "",
+                    "height": "",
+                    "allow_in_bindings": 0
+                }
+            ]
+        },
+        {
+            "key": "field_tab_info",
+            "label": "Good to Know",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_info",
+            "label": "Information (Good to Know) Section",
+            "name": "prop_info",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_info_title",
+                    "label": "Title",
+                    "name": "prop_info_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title for the information section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "GOOD TO KNOW",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_info_subtitle",
+                    "label": "Subtitle",
+                    "name": "prop_info_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Subtitle displayed below the main title",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Useful information",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_info_items",
+                    "label": "Information Items",
+                    "name": "prop_info_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "List of useful information items (will be split into 2 columns automatically)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Information Item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_item_text",
+                            "label": "Item Text",
+                            "name": "item_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "e.g., \"Check-in: after 16:00\"",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_prop_info_items"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_prop_info_watermark",
+                    "label": "Watermark Image",
+                    "name": "prop_info_watermark",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Optional decorative watermark image (defaults to theme watermark if not set)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_tab_featured",
+            "label": "Featured Properties",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_featured",
+            "label": "Featured Properties Section",
+            "name": "prop_featured",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_featured_title",
+                    "label": "Title",
+                    "name": "prop_featured_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title for the featured properties section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "YOU MAY ALSO LIKE",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_featured_properties",
+                    "label": "Featured Properties",
+                    "name": "prop_featured_properties",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "Select related\/featured properties to display in the carousel",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "property"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "post_type"
+                    ],
+                    "return_format": "object",
+                    "min": 0,
+                    "max": 0,
+                    "allow_in_bindings": 0,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": []
+                }
+            ]
         }
     ],
     "location": [
@@ -813,8 +1215,8 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Complete field group for property post type with 5 organized tabs.",
+    "description": "Complete field group for property post type with 8 organized tabs.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1769497736
+    "modified": 1769502555
 }

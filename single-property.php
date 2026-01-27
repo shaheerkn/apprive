@@ -112,175 +112,28 @@ get_template_part( 'template-parts/property/room-details' );
 get_template_part( 'template-parts/property/services' );
 ?>
 
-<section class="key-features location-context">
-  <div class="key-features__container">
-    <h2 class="key-features-title">LOCATION CONTEXT</h2>
+<?php
+/**
+ * Location Context Template Part
+ * Displays location details with subtitle, features list, and optional seasonal images
+ */
+get_template_part( 'template-parts/property/location-context' );
+?>
 
-    <h4 class="location-context__subTitle">Location</h4>
-    <p class="location-context__text">Courchevel 1850 – Bellecôte Area</p>
-    <div class="key-features__list">
-      <ul>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#66A1B1"/>
-            </svg>
-          </span>
-          3 minutes from main slopes
-        </li>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#66A1B1"/>
-            </svg>
-          </span>
-          Immediate access to ski-in / ski-out
-        </li>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#66A1B1"/>
-            </svg>
-          </span>
-          Close to Michelin restaurants and luxury boutiques
-        </li>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#66A1B1"/>
-            </svg>
-          </span>
-          Quiet, private, and prestigious neighborhood
-        </li>
-      </ul>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-context-winter.svg" class="for-winter" alt="location">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-context-summer.svg" class="for-summer" alt="location">
-    </div>
-  </div>
-</section>
+<?php
+/**
+ * Information (Good to Know) Template Part
+ * Displays useful information items in two-column layout with decorative watermark
+ */
+get_template_part( 'template-parts/property/information' );
+?>
 
-<section class="key-features information">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/chalet-info__water-mark.svg" alt="water-mark">
-  <div class="key-features__container">
-    <h2 class="key-features-title">GOOD TO KNOW</h2>
-    <h4>Useful information</h4>
-    <div class="key-features__list">
-      <ul>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#5A98C0"/>
-            </svg>
-          </span>
-          Check-in: after 16:00
-        </li>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#5A98C0"/>
-            </svg>
-          </span>
-          Check-out: before 10:00
-        </li>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#5A98C0"/>
-            </svg>
-          </span>
-          Pets on request
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#5A98C0"/>
-            </svg>
-          </span>
-          Dedicated ski room
-        </li>
-        <li>
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 0L15.2411 8.75891L24 12L15.2411 15.2411L12 24L8.75891 15.2411L0 12L8.75891 8.75891L12 0Z" fill="#5A98C0"/>
-            </svg>
-          </span>
-          Private elevator
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="featured key-features">
-  <div class="key-features__container">
-    <h2 class="key-features-title">YOU MAY ALSO LIKE</h2>
-    <div class="swiper featured-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured-product_for-winter.svg" class="for-winter" alt="featured-product">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured-product-for-summer.svg" class="for-summer" alt="featured-product">
-            <div class="showcase__details">
-              <div class="showcase__info">
-                <div>
-                  <h6 class="showcase__name for-winter">Chalet Mazot Cannors</h6>
-                  <h6 class="showcase__name for-summer">Destiny Resort</h6>
-                  <p class="showcase__location for-winter">Courchevel 1850</p>
-                  <p class="showcase__location for-summer">Infinity pool · Sea view · Direct </p>
-                </div>
-                <div class="showcase__capacity">
-                  <p class="featured-cpacity">10 Guests</p>
-                </div>
-              </div>
-              <p class="showcase__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
-              <p class="showcase__amenities for-summer">beach access</p>
-              <a href="#" class="showcase__link">View Property <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
-            </div>
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature-silde-two-winter.svg" class="for-winter" alt="featured-product">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feautured-slide-two-summer.svg" class="for-summer" alt="featured-product">
-              <div class="showcase__details">
-              <div class="showcase__info">
-                <div>
-                  <h6 class="showcase__name for-winter">Chalet Mazot Cannors</h6>
-                  <h6 class="showcase__name for-summer">Villa Amra</h6>
-                  <p class="showcase__location for-winter">Courchevel 1850</p>
-                  <p class="showcase__location for-summer">Sunset lounge · Private terrace · </p>
-                </div>
-                <div class="showcase__capacity">
-                  <p class="featured-cpacity">10 Guests</p>
-                </div>
-              </div>
-              <p class="showcase__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
-              <p class="showcase__amenities for-summer">Heated pool</p>
-              <a href="#" class="showcase__link">View Property <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
-            </div>
-        </div>
-        <div class="swiper-slide">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured-product_for-winter.svg" alt="featured-product">
-              <div class="showcase__details">
-              <div class="showcase__info">
-                <div>
-                  <h6 class="showcase__name">Chalet Mazot Cannors</h6>
-                  <p class="showcase__location">Courchevel 1850</p>
-                </div>
-                <div class="showcase__capacity">
-                  <p class="featured-cpacity">10 Guests</p>
-                </div>
-              </div>
-              <p class="showcase__amenities">Spa · Fireplace · Ski-in/ski-out</p>
-              <a href="#" class="showcase__link">Request Availability <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="pagination">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </div>
-</section>
+<?php
+/**
+ * Featured Properties Template Part
+ * Displays related/featured properties in a swiper carousel
+ */
+get_template_part( 'template-parts/property/featured-properties' );
+?>
 
 <?php get_footer(); ?>
