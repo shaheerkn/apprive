@@ -122,4 +122,46 @@ jQuery(document).ready(function($) {
          fetchProperties();
     });
 
+    // Helper: Apply season filter logic
+    function applySeasonFilter(season) {
+        const $destinationSelect = $('#filter-destination');
+        
+        // Define mapping: Season -> Keyword to match in option text
+        const seasonMapping = {
+            'winter': ['Courchevel', 'Megeve', 'Val d\'Isere', 'Winter'],
+            'summer': ['Mykonos', 'Ibiza', 'St Tropez', 'Summer']
+        };
+
+        const keywords = seasonMapping[season] || [];
+        let foundMatch = false;
+
+        // Try to find a matching option
+        $destinationSelect.find('option').each(function() {
+            const text = $(this).text();
+            if (keywords.some(keyword => text.includes(keyword))) {
+                $destinationSelect.val($(this).val());
+                foundMatch = true;
+                return false; // Break loop
+            }
+        });
+
+        // If a match was found, trigger the filter
+        if (foundMatch) {
+            $('#filter-page').val(1);
+            fetchProperties(); // Refresh grid with new destination
+        }
+    }
+
+    // Handle Season Change (Winter/Summer Toggle)
+    document.addEventListener('seasonChange', function(e) {
+        applySeasonFilter(e.detail.season);
+    });
+
+    // Initial Load: Pre-select season destination if none selected
+    // Only if the dropdown is empty (All Destinations) to avoid overriding specific term archives
+    if ($('#filter-destination').val() === "") {
+        const initialSeason = $('body').hasClass('color-scheme-summer') ? 'summer' : 'winter';
+        applySeasonFilter(initialSeason);
+    }
+
 });

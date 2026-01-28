@@ -278,7 +278,7 @@ $property_query = new WP_Query( $args );
         if ( $property_query->have_posts() ) :
             while ( $property_query->have_posts() ) :
                 $property_query->the_post();
-                get_template_part( 'template-parts/property/card' );
+                get_template_part( 'template-parts/property/card', null, array( 'is_favourites' => false ) );
             endwhile;
             wp_reset_postdata();
         else :
