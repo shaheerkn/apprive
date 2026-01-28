@@ -194,6 +194,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Custom Header Nav Walker
+ */
+require get_template_directory() . '/inc/class-header-nav-walker.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';

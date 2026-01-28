@@ -117,7 +117,7 @@ function ar_filter_properties() {
             $args['meta_query'][] = array(
                 'key'     => 'prop_pricing_starting_price',
                 'value'   => $price_max,
-                'compare' => '=',
+                'compare' => '<=',
                 'type'    => 'NUMERIC',
             );
         }

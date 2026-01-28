@@ -56,14 +56,15 @@
 
       <nav class="header__nav">
         <?php
-        $header_menu_id = get_field('header_menu_select', 'option');
-        if( $header_menu_id ) {
+        $header_menu_location = get_nav_menu_locations();
+        if( $header_menu_location['primary-menu'] ) {
             wp_nav_menu( array(
-                'menu'            => $header_menu_id,
+                'theme_location'  => 'primary-menu',
                 'container'       => false,
                 'menu_class'      => 'header__nav-list',
                 'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 'fallback_cb'     => false,
+                'walker'          => new Ar_Header_Nav_Walker(),
             ) );
         } else {
         ?>

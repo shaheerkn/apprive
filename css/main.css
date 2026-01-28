@@ -428,6 +428,7 @@ img {
   visibility: hidden;
   transition: opacity 0.2s, visibility 0.2s;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
 }
 
 .header__mega-menu-item:hover .header__mega-menu-sub {

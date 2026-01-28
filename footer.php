@@ -133,8 +133,7 @@
 
             <?php 
               wp_nav_menu( array(
-                'menu'            => 'Footer Menu Destinations',
-                'menu_location'   => 'footer_menu_destinations',
+                'theme_location'   => 'footer-menu-destinations',
                 'container'       => false,
                 'items_wrap'      => '<ul>%3$s</ul>',
                 'fallback_cb'     => false,
@@ -146,8 +145,7 @@
             <h6>Discover Us</h6>
             <?php
               wp_nav_menu( array(
-                'menu'            => 'Footer Menu Discover',
-                'menu_location'   => 'footer_menu_discover',
+                'theme_location'   => 'footer-menu-discover',
                 'container'       => false,
                 'items_wrap'      => '<ul>%3$s</ul>',
                 'fallback_cb'     => false,
