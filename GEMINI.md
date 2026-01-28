@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- PHP 7.4+ + WordPress 6.0+, Advanced Custom Fields Pro (001-dynamic-properties)
+- MySQL (standard WP DB), User Meta for favorites (001-dynamic-properties)
+
+## Recent Changes
+- 001-dynamic-properties: Added PHP 7.4+ + WordPress 6.0+, Advanced Custom Fields Pro

@@ -156,6 +156,22 @@ function ar_scripts() {
 	wp_enqueue_script( 'ar-single-chalet-gallery', get_template_directory_uri() . '/js/single-chalet-gallery.js', array('ar-swiper-js'), _S_VERSION, true );
 	wp_enqueue_script( 'ar-filter', get_template_directory_uri() . '/js/filter.js', array(), _S_VERSION, true );
 
+    // Dynamic Properties Filter
+    wp_enqueue_script( 'ar-properties-filter', get_template_directory_uri() . '/js/properties-filter.js', array('jquery'), _S_VERSION, true );
+    wp_localize_script( 'ar-properties-filter', 'ar_filter_vars', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'nonce'   => wp_create_nonce( 'ar_filter_nonce' ),
+    ));
+
+    // Favorites
+    wp_enqueue_script( 'ar-favorites', get_template_directory_uri() . '/js/favorites.js', array('jquery'), _S_VERSION, true );
+    wp_localize_script( 'ar-favorites', 'ar_favorites_vars', array(
+        'ajaxurl'     => admin_url( 'admin-ajax.php' ),
+        'nonce'       => wp_create_nonce( 'ar_favorite_nonce' ),
+        'is_logged_in' => is_user_logged_in(),
+        'login_url'   => wp_login_url(),
+    ));
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -188,6 +204,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * AJAX Filters and Favorites
+ */
+require get_template_directory() . '/inc/ajax-filters.php';
+require get_template_directory() . '/inc/ajax-favorites.php';
 
 /**
  * Enable SVG upload support for ACF icon fields

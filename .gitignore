@@ -1,37 +1,40 @@
-# Node.js
-node_modules/
-npm-debug.log
-yarn-error.log
-package-lock.json
-
 # WordPress
-*.log
-.htaccess
-sitemap.xml
-sitemap.xml.gz
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+wp-content/themes/arprive/node_modules/
+wp-content/themes/arprive/vendor/
 
-# Theme Build Files
-dist/
-build/
-*.css.map
-*.js.map
-
-# Environment & Secrets
-.env
-.env.*
-!.env.example
-
-# OS Files
+# OS specific
 .DS_Store
 Thumbs.db
-*.tmp
-*.swp
 
-# IDE
+# Logs
+*.log
+debug.log
+
+# Editor
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# ACF Backup (keep only active field groups in inc/acf-json/)
-acf-export-*.json
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/
+*.css.map
+*.js.map
+
+# Sass cache
+.sass-cache/
+
+# NPM
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
