@@ -1938,6 +1938,12 @@ img {
     padding: 12px;
   }
 }
+.footer-form__group-item p {
+  display: contents;
+}
+.footer-form__group-item p span {
+  width: 100%;
+}
 .footer-form__group-item input {
   border: none;
   outline: none;
@@ -2209,6 +2215,10 @@ img {
     font-weight: 500;
     margin-top: 16px;
   }
+}
+
+.wpcf7 {
+  width: 100%;
 }
 
 .product-detail.section {

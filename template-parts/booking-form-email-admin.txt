@@ -1,0 +1,25 @@
+SUBJECT:
+New Private Booking Request from [your-name] - [your-destination]
+
+BODY:
+You have received a new private assistance request from the website footer booking form.
+
+--- CUSTOMER DETAILS ---   
+Name: [your-name]
+Email: [your-email]
+Phone: [your-phone]
+
+--- BOOKING DETAILS ---
+Destination: [your-destination]
+Number of Guests: [your-guest]
+Check-in Date: [check-in]
+Check-out Date: [check-out]
+
+--- MESSAGE ---
+[your-message]
+
+
+
+---
+This e-mail was sent from a contact form on ([_site_title] [_site_url]).
+Submission Date: [_date] [_time]

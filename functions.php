@@ -217,6 +217,53 @@ require get_template_directory() . '/inc/ajax-filters.php';
 require get_template_directory() . '/inc/ajax-favorites.php';
 
 /**
+ * Save Contact Form 7 submissions to a CSV file
+ */
+function ar_save_cf7_to_csv( $contact_form ) {
+    $submission = WPCF7_Submission::get_instance();
+    
+    if ( $submission ) {
+        $data = $submission->get_posted_data();
+        
+        // Exclude internal CF7 fields
+        $exclude = array( '_wpcf7', '_wpcf7_version', '_wpcf7_locale', '_wpcf7_unit_tag', '_wpcf7_container_post', '_wpcf7_posted_data_hash' );
+        
+        $log_data = array();
+        $log_data['date'] = date( 'Y-m-d H:i:s' );
+        
+        foreach ( $data as $key => $value ) {
+            if ( ! in_array( $key, $exclude ) ) {
+                $log_data[$key] = is_array( $value ) ? implode( ', ', $value ) : $value;
+            }
+        }
+
+        // Define file path
+        $upload_dir = wp_upload_dir();
+        $log_dir = $upload_dir['basedir'] . '/form-logs';
+        $file_path = $log_dir . '/submissions.csv';
+
+        // Create directory if it doesn't exist
+        if ( ! file_exists( $log_dir ) ) {
+            wp_mkdir_p( $log_dir );
+            // Add an index.php to prevent directory listing
+            file_put_contents( $log_dir . '/index.php', '<?php // Silence' );
+        }
+
+        $file_exists = file_exists( $file_path );
+        $handle = fopen( $file_path, 'a' );
+
+        // If file is new, add header row
+        if ( ! $file_exists ) {
+            fputcsv( $handle, array_keys( $log_data ) );
+        }
+
+        fputcsv( $handle, $log_data );
+        fclose( $handle );
+    }
+}
+add_action( 'wpcf7_before_send_mail', 'ar_save_cf7_to_csv' );
+
+/**
  * Enable SVG upload support for ACF icon fields
  *
  * Adds SVG MIME type to WordPress allowed upload types.

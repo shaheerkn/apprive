@@ -82,6 +82,14 @@
           padding: 12px;
         }
 
+        p {
+          display: contents;
+
+          span {
+            width: 100%;
+          }
+        }
+
         input {
           border: none;
           outline: none;
@@ -366,4 +374,8 @@
       margin-top: 16px;
     }
   }
+}
+
+.wpcf7 {
+  width: 100%;
 }
