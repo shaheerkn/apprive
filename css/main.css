@@ -6426,8 +6426,11 @@ img {
   display: block;
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: -12px;
   color: #333;
+}
+.contact-form__field #mobile_phone {
+  margin-bottom: 8px;
 }
 .contact-form__field input, .contact-form__field select, .contact-form__field textarea {
   width: 100%;
@@ -6450,9 +6453,6 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-}
-.contact-form__tel-input input {
-  padding-left: 90px !important;
 }
 .contact-form__flag-box {
   position: absolute;

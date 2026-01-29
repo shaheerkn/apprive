@@ -1,0 +1,92 @@
+<div class="contact-form__section">
+  <h3 class="contact-form__group-title">Property Details</h3>
+  <div class="contact-form__group">
+    <div class="contact-form__row">
+      <div class="contact-form__field">
+        <label>Location (Destination)</label>
+        [select property-location "Courchevel" "Mykonos"]
+      </div>
+      <div class="contact-form__field">
+        <label>Property Type</label>
+        [select property-type "Chalet" "Apartment"]
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form__group contact-form__group--primary">
+    <div class="contact-form__field">
+      <label>Capacity (number of guests) *</label>
+      [text* capacity placeholder "04"]
+    </div>
+    <div class="contact-form__row contact-form__row--btm-border">
+      <div class="contact-form__field">
+        <label>Number of Bathrooms *</label>
+        [text* bathrooms placeholder "02"]
+      </div>
+      <div class="contact-form__field">
+        <label>Number of Bedrooms *</label>
+        [text* bedrooms placeholder "02"]
+      </div>
+    </div>
+    <div class="contact-form__field">
+      <label>Surface Area (optional) (m²)</label>
+      [text surface-area placeholder "100"]
+    </div>
+    <div class="contact-form__row">
+      <div class="contact-form__field">
+        <label>Link to Property Photos (URL) *</label>
+        [url* photos-url placeholder "https://photos/properties.com"]
+      </div>
+      <div class="contact-form__field">
+        <label>Link to Floor Plan (optional) (URL)</label>
+        [url floor-plan-url placeholder "https://floor/plan.com"]
+      </div>
+    </div>
+    <div class="contact-form__field">
+      <label>Private Notes (optional)</label>
+      [textarea private-notes placeholder "Message"]
+    </div>
+  </div>
+</div>
+
+<div class="contact-form__section">
+  <h3 class="contact-form__group-title">Owner/Manager Information</h3>
+  <div class="contact-form__group contact-form__group--primary">
+    <div class="contact-form__row">
+      <div class="contact-form__field">
+        <label>Full Name *</label>
+        [text* your-name placeholder "Aldo Ruta"]
+      </div>
+      <div class="contact-form__field">
+        <label>Email *</label>
+        [email* your-email placeholder "aldo.ruta@email.com"]
+      </div>
+    </div>
+    <div class="contact-form__row">
+      <div class="contact-form__field">
+        <label id="mobile_phone">Mobile Phone *</label>
+        <div class="contact-form__tel-input">
+          [tel* your-phone placeholder "+39 334 905 1603"]
+        </div>
+      </div>
+      <div class="contact-form__field">
+        <label>Role *</label>
+        [select* user-role "Owner" "Manager"]
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-form__section">
+  <h3 class="contact-form__group-title">Tell Us More (Optional)</h3>
+  <div class="contact-form__field">
+    [textarea additional-message class:contact-form__textarea placeholder "Message"]
+  </div>
+</div>
+
+<div class="contact-form__footer">
+  <h3 class="contact-form__group-title">Confidentiality Note:</h3>
+  <p class="contact-form__note">Your information is used exclusively to evaluate eligibility for our private portfolio. We do not publish or share property content without written consent.</p>
+  [submit class:contact-form__submit "Submit Property Application"]
+  <p class="contact-form__sub-note">Properties must meet curated standards in design, maintenance and hospitality potential. This avoids low-quality submissions.</p>
+</div>

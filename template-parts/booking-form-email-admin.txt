@@ -2,7 +2,7 @@ SUBJECT:
 New Private Booking Request from [your-name] - [your-destination]
 
 BODY:
-You have received a new private assistance request from the website footer booking form.
+You have received a new private assistance request from [_site_title] Booking form.
 
 --- CUSTOMER DETAILS ---   
 Name: [your-name]

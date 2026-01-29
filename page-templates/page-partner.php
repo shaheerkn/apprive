@@ -18,8 +18,8 @@
 
 <section class="hero">
   <div class="hero__img">
-    <img src="assets/images/partner_hero-winter.png" alt="work hero winter" class="for-winter">
-    <img src="assets/images/partner__hero-summer.png" alt="work hero summer" class="for-summer">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner_hero-winter.png" alt="work hero winter" class="for-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner__hero-summer.png" alt="work hero summer" class="for-summer">
   </div>
   <div class="hero__overlay"></div>
   <div class="container">
@@ -85,7 +85,7 @@
 </section>
 
 <section class="partner-services section">
-  <img src="./assets/images/process-water-mark.svg" alt="water mark" class="partner-services__water-mark">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/process-water-mark.svg" alt="water mark" class="partner-services__water-mark">
   <div class="container">
     <div class="partner-services__header">
       <h4 class="section-title">WHAT WE DO FOR PROPERTY PARTNERS</h4>
@@ -138,8 +138,8 @@
 
     <div class="partner-process__layout">
       <div class="partner-process__media">
-        <img src="./assets/images/partner-process__media-winter.png" alt="partner process media" class="for-winter">
-        <img src="./assets/images/partner-process__media-summer.png" alt="partner process media" class="for-summer">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-process__media-winter.png" alt="partner process media" class="for-winter">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-process__media-summer.png" alt="partner process media" class="for-summer">
       </div>
 
       <div class="partner-process__steps">
@@ -170,7 +170,7 @@
 </section>
 
 <section class="contact-form section">
-  <img src="./assets/images/_submission_water-mark.svg" alt="water mark" class="contact-form__water-mark">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/_submission_water-mark.svg" alt="water mark" class="contact-form__water-mark">
   <div class="container">
     <div class="contact-form__header">
       <h2 class="section-title">SUBMIT YOUR PROPERTY TO AR PRIVÉ</h2>
@@ -179,7 +179,7 @@
     </div>
 
     <div class="contact-form__layout">
-      <form action="#" class="contact-form__form">
+      <!-- <form action="#" class="contact-form__form">
 
         <div class="contact-form__section">
           <h3 class="contact-form__group-title">Property Details</h3>
@@ -254,7 +254,7 @@
                 <label>Mobile Phone *</label>
                 <div class="contact-form__tel-input">
                   <div class="contact-form__flag-box">
-                    <img src="./assets/images/_country-flag.svg" alt="Italy" class="contact-form__flag-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/_country-flag.svg" alt="Italy" class="contact-form__flag-icon">
                     <span class="contact-form__flag-arrow"></span>
                   </div>
                   <input type="tel" placeholder="+39 334 905 1603">
@@ -284,16 +284,17 @@
           <button type="submit" class="contact-form__submit">Submit Property Application</button>
           <p class="contact-form__sub-note">Properties must meet curated standards in design, maintenance and hospitality potential. This avoids low-quality submissions.</p>
         </div>
-      </form>
+      </form> -->
+      <?php echo do_shortcode('[contact-form-7 id="d125491" title="Property Submission form"]'); ?>
 
       <aside class="contact-form__gallery">
         <div class="contact-form__image-wrapper contact-form__image-wrapper__primary">
-          <img src="./assets/images/partner-submission_winter-primary.png" alt="Luxury Interior" class="for-winter">
-          <img src="./assets/images/partner-submission-summer-primary.png" alt="Luxury Interior" class="for-summer">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-submission_winter-primary.png" alt="Luxury Interior" class="for-winter">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-submission-summer-primary.png" alt="Luxury Interior" class="for-summer">
         </div>
         <div class="contact-form__image-wrapper contact-form__image-wrapper__secondary">
-          <img src="./assets/images/parnter-sumbission_winter-secondary.png" alt="Mountain Sunset" class="for-winter">
-          <img src="./assets/images/partner-submission-summer-secondary.png" alt="Mountain Sunset" class="for-summer">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/parnter-sumbission_winter-secondary.png" alt="Mountain Sunset" class="for-winter">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-submission-summer-secondary.png" alt="Mountain Sunset" class="for-summer">
         </div>
       </aside>
     </div>
