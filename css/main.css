@@ -424,6 +424,7 @@ body:has(.is-open) .overlay {
   transition: opacity 0.2s, visibility 0.2s;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
 }
 
 .header__nav-item--has-dropdown:hover .header__mega-menu {
