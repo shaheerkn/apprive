@@ -1,0 +1,29 @@
+.header__favorite-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  .header__favorite-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #B78A67; // Gold/Bronze color matching theme
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    line-height: 1;
+    pointer-events: none; // Let clicks pass through to the link
+    
+    &.hidden {
+      display: none;
+    }
+  }
+}

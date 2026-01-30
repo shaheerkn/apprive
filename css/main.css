@@ -149,6 +149,34 @@ body {
   }
 }
 
+.header__favorite-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__favorite-btn .header__favorite-count {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: #B78A67;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+  pointer-events: none;
+}
+.header__favorite-btn .header__favorite-count.hidden {
+  display: none;
+}
+
 .section {
   padding-block: 100px;
 }

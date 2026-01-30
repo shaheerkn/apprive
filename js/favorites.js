@@ -38,6 +38,14 @@ jQuery(document).ready(function($) {
                         // But since template uses img vs svg tag swap:
                         $btn.html('<img src="' + getThemeUri() + '/assets/icons/fav.svg" alt="favorites">');
                     }
+                    
+                    // Update header count
+                    const $countEl = $('.header__favorite-count');
+                    if (response.data.count > 0) {
+                        $countEl.text(response.data.count).removeClass('hidden');
+                    } else {
+                        $countEl.text(0).addClass('hidden');
+                    }
                 } else {
                     // Handle error (e.g., unauthorized)
                     if (response.data && response.data.redirect) {
