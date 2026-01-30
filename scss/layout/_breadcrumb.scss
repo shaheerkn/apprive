@@ -20,9 +20,8 @@
   }
 
   @media (max-width:992px) {
-    &__current,&__home,&__arrow {
-      display: none;
-    }
+    display: none;
+    
     .container {
       padding-inline: 16px;
     }

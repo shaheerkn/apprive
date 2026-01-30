@@ -2792,7 +2792,7 @@ body {
   }
 }
 @media (max-width: 992px) {
-  .breadcrumb__current, .breadcrumb__home, .breadcrumb__arrow {
+  .breadcrumb {
     display: none;
   }
   .breadcrumb .container {
@@ -3144,6 +3144,7 @@ body {
   font-weight: 600;
   max-width: 409px;
   margin-inline: auto;
+  display: block;
 }
 @media (max-width: 992px) {
   .showcase__view-all span {

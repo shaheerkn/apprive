@@ -116,8 +116,8 @@
         <p class="chalets__text">Each chalet is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
       </div>
 
-      <div class="chalets__grid">
-        <div class="chalets__card" data-aos="fade-up" data-aos-delay="200">
+      <div class="chalets__grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="chalets__card">
           <a href="#" class="chalets__image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-1.jpg" alt="Chalet Mazot Cannors" class="chalets__image">
           </a>
@@ -125,7 +125,7 @@
           <p class="description">Courchevel 1850</p>
         </div>
 
-        <div class="chalets__card" data-aos="fade-up" data-aos-delay="400">
+        <div class="chalets__card">
           <a href="#" class="chalets__image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-2.png" alt="Chalet Overview" class="chalets__image">
           </a>
@@ -133,7 +133,7 @@
           <p class="description">Courchevel 1650</p>
         </div>
 
-        <div class="chalets__card" data-aos="fade-up" data-aos-delay="400">
+        <div class="chalets__card">
           <a href="#" class="chalets__image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-3.png" alt="Chalet Sommet" class="chalets__image">
           </a>
