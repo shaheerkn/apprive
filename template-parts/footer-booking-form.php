@@ -1,4 +1,4 @@
-<div class="footer__booking">
+<div id="request" class="footer__booking">
   <h5 class="section-title"><?php the_field('footer_booking_title', 'option'); ?></h5>
   <div class="mobile-hide__descirption footer__booking-description">
       <?php the_field('footer_booking_description', 'option'); ?>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <section class="hero">
+<section class="hero">
     <div class="hero__img">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-winter-desktop.jpg" alt="" class="for-winter">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-summer-desktop.jpg" alt="" class="for-summer">
@@ -17,7 +17,7 @@
       <p class="hero__description hero__description-mobile">Where refinement, discretion, and personal attention define every moment.</p>
       
       <div class="hero__actions" data-aos="fade-up" data-aos-delay="800">
-        <a href="#" class="btn btn--solid--white">Request Your Stay</a>
+        <a href="#request" class="btn btn--solid--white">Request Your Stay</a>
         <a href="#" class="btn btn--outline-white">Chat with us <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-whatsapp.svg" alt="WhatsApp" /></a>
       </div>
     </div>
@@ -77,30 +77,29 @@
 
       <div class="destination__content">
         <div class="destination__text-content">
-          <div class="destination__text-content-header">
+          <div class="destination__titles">
             <h3 class="destination__title for-winter">Courchevel <span class="destination__subtitle">Winter</span></h3>
             <h3 class="destination__title for-summer">Mykonos <span class="destination__subtitle">Summer</span></h3>
-
-            <p class="destination__description hide-on-desktop">Courchevel is one of the most prestigious alpine destinations in the world, offering luxury chalets, ski-in ski-out access and refined winter hospitality in the heart of the French Alps.</p>
             <a href="#" class="btn btn--solid--primary">Discover Courchevel <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
           </div>
 
-          <p class="destination__description hide-on-tablet for-winter">Courchevel is one of the most prestigious alpine destinations in the world, offering luxury chalets, ski-in ski-out access and refined winter hospitality in the heart of the French Alps.</p>
-          <p class="destination__description hide-on-tablet for-summer">Mykonos is one of the most iconic summer destinations in the Mediterranean, renowned for its luxury villas, crystal-clear sea views and refined lifestyle experiences in the heart of the Greek islands.</p>
+          <p class="destination__description for-winter">Courchevel is one of the most prestigious alpine destinations in the world, offering luxury chalets, ski-in ski-out access and refined winter hospitality in the heart of the French Alps.</p>
+          <p class="destination__description for-summer">Mykonos is one of the most iconic summer destinations in the Mediterranean, renowned for its luxury villas, crystal-clear sea views and refined lifestyle experiences in the heart of the Greek islands.</p>
         </div>
 
         <div class="destination__images">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-1.jpg" alt="Courchevel Winter" class="destination__image destination__image--main for-winter">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-1-summer.jpg" alt="Courchevel Summer" class="destination__image destination__image--main for-summer">
-          
+
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-2.jpg" alt="Courchevel Chalet" class="destination__image destination__image--small for-winter" 
-          data-aos="fade-up"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine">
+            data-aos="fade-up"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-2-summer.jpg" alt="Courchevel Chalet Summer" class="destination__image destination__image--small for-summer" 
-          data-aos="fade-up"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine">
+            data-aos="fade-up"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
         </div>
       </div>
     </div>
@@ -144,7 +143,7 @@
       </div>
 
       <div class="chalets__actions">
-        <a cl href="./partner.html" class="btn btn--outline-primary">View Private Portfolio</a>
+        <a cl href="<?php echo home_url(); ?>/partner" class="btn btn--outline-primary">View Private Portfolio</a>
       </div>
     </div>
   </section>

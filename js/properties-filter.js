@@ -7,8 +7,12 @@ jQuery(document).ready(function($) {
     const $clearBtn = $('#clear-filters');
     const $priceRange = $('#filter-price-range');
     const $priceDisplay = $('#price-display');
-    const $bedroomInput = $('#filter-bedrooms');
-    const $bedroomPills = $('.filters-panel__pill');
+    
+    // New selectors for sync logic
+    const $bedroomsRadios = $('input[name="bedrooms"]');
+    const $bedroomsSelect = $('#bedrooms'); // Select ID from new markup
+    const $bedsRadios = $('input[name="beds"]');
+    const $bedsSelect = $('#beds'); // Select ID from new markup
 
     function fetchProperties() {
         // Collect form data
@@ -52,7 +56,8 @@ jQuery(document).ready(function($) {
         $('#filter-page').val(1);
         fetchProperties();
         // Close modal if open (optional UI enhancement)
-        $('.filters-panel__filter-modal').removeClass('is-open');
+        $('.filters__modal').removeClass('is-open');
+        $('body').css('overflow', '');
     });
 
     // Sort Change
@@ -90,33 +95,62 @@ jQuery(document).ready(function($) {
         $priceDisplay.text(Number($(this).val()).toLocaleString());
     });
 
-    // Bedroom Pills
-    $bedroomPills.on('click', function() {
-        $bedroomPills.removeClass('active');
-        $(this).addClass('active');
-        $bedroomInput.val($(this).data('value'));
+    // --- Synchronization Logic for Bedrooms & Beds ---
+
+    // Sync Bedrooms: Radio -> Select
+    $bedroomsRadios.on('change', function() {
+        $bedroomsSelect.val($(this).val());
+    });
+
+    // Sync Bedrooms: Select -> Radio
+    $bedroomsSelect.on('change', function() {
+        let val = $(this).val();
+        // Uncheck all first
+        $bedroomsRadios.prop('checked', false);
+        // Check the matching radio
+        $bedroomsRadios.filter(`[value="${val}"]`).prop('checked', true);
+    });
+
+    // Sync Beds: Radio -> Select
+    $bedsRadios.on('change', function() {
+        $bedsSelect.val($(this).val());
+    });
+
+    // Sync Beds: Select -> Radio
+    $bedsSelect.on('change', function() {
+        let val = $(this).val();
+        $bedsRadios.prop('checked', false);
+        $bedsRadios.filter(`[value="${val}"]`).prop('checked', true);
     });
 
     // Clear Filters
     $clearBtn.on('click', function() {
         $filterForm[0].reset();
-        $bedroomInput.val('');
-        $bedroomPills.removeClass('active');
-        $bedroomPills.first().addClass('active'); // Reset to 'All'
-        $priceRange.val(25000).trigger('input'); // Reset price
         
-        // Reset select dropdowns specifically
-        $filterForm.find('select').prop('selectedIndex', 0);
+        // Reset Price
+        $priceRange.val(25000).trigger('input'); 
+        
+        // Reset Bedrooms & Beds to 'All' (empty value)
+        // Reset selects
+        $bedroomsSelect.val('');
+        $bedsSelect.val('');
+        
+        // Reset radios (check the one with value="" or first one)
+        $bedroomsRadios.prop('checked', false);
+        $bedroomsRadios.filter('[value=""]').prop('checked', true);
+        
+        $bedsRadios.prop('checked', false);
+        $bedsRadios.filter('[value=""]').prop('checked', true);
+
+        // Reset other checkboxes
         $filterForm.find('input[type="checkbox"]').prop('checked', false);
+        $filterForm.find('select').prop('selectedIndex', 0); // Resets top bar selects too
 
         $('#filter-page').val(1);
         fetchProperties();
     });
 
-    // Auto-search on select change (Destination, Guests) if desired?
-    // Spec implies "Search" button click, so we'll stick to form submit primarily.
-    // However, changing Destination in main bar typically triggers reload or fetch.
-    // Let's attach change listener to top bar selects for instant feedback.
+    // Auto-search on select change (Destination, Guests)
     $('#filter-destination, #filter-guests').on('change', function() {
          $('#filter-page').val(1);
          fetchProperties();

@@ -19,25 +19,41 @@
     grid-template-columns: repeat(3,1fr);
     gap: 40px;
 
-    @media (max-width:992px) {
-     grid-template-columns: repeat(1,1fr);
-     place-items: center;
+    @media (max-width: 992px) {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      margin-right: -24px;
+      padding: 0 15px 20px 15px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   }
 
   &__card {
     width: 100%;
     max-width: 453px;
+    display: flex;
+    flex-direction: column;
 
-    @media (max-width:992px) {
-      max-width: 100%;
+    @media (max-width: 992px) {
+      flex: 0 0 85%;
+      min-width: 280px;
+      height: auto;
+      scroll-snap-align: start;
     }
   }
 
-  &-logo{
+  &-logo {
     padding: 117px 123px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+
   }
   &-logo__one  {
     background: linear-gradient(113.75deg, #B27F1F 0%, #FFDD00 50.96%, #F3A80A 100%);
@@ -52,6 +68,7 @@
   }
 
   &__body {
+    flex-grow: 1;
     padding: 32px 32px 24px 32px;
     background: #323232;
     color: #fff;
@@ -88,9 +105,11 @@
     @media (max-width:992px) {
       padding-bottom: 12px;
       max-width: 100%;
+
       .plan-cards__secondary-descirption {
         font-size: 12px;
       }
+
       .plan-cards__primary-descirption {
         font-size: 14px;
       }

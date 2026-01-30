@@ -101,6 +101,16 @@ function ar_filter_properties() {
         );
     }
 
+    // Beds (mapped to max_guests as per spec/previous logic)
+    if ( ! empty( $_POST['beds'] ) ) {
+        $args['meta_query'][] = array(
+            'key'     => 'prop_specs_max_guests',
+            'value'   => intval( $_POST['beds'] ),
+            'compare' => '>=',
+            'type'    => 'NUMERIC',
+        );
+    }
+
     // Price Range (Max)
     // Note: Spec mentions range, but UI typically sends min/max or just max.
     // For this implementation assuming 'price_max' from the slider.
