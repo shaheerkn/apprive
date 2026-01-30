@@ -148,6 +148,7 @@ function ar_scripts() {
 
 	wp_enqueue_script( 'ar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ar-color-scheme', get_template_directory_uri() . '/js/color-scheme.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ar-mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), _S_VERSION, true );
 
 	// Swiper Slider
 	wp_enqueue_script( 'ar-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js', array(), _S_VERSION, true );

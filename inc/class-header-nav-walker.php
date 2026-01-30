@@ -24,10 +24,14 @@ class Ar_Header_Nav_Walker extends Walker_Nav_Menu {
         $classes = array( 'sub-menu' );
 
         // Custom classes based on depth.
-        if ( $depth === 0 ) {
-            $classes[] = 'header__mega-menu';
-        } elseif ( $depth === 1 ) {
-            $classes[] = 'header__mega-menu-sub';
+        if ( ! empty( $args->mobile ) ) {
+             $classes[] = 'mobile-menu__dropdown';
+        } else {
+            if ( $depth === 0 ) {
+                $classes[] = 'header__mega-menu';
+            } elseif ( $depth === 1 ) {
+                $classes[] = 'header__mega-menu-sub';
+            }
         }
 
         $class_names = implode( ' ', $classes );
@@ -51,14 +55,20 @@ class Ar_Header_Nav_Walker extends Walker_Nav_Menu {
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         
+        $is_mobile = ! empty( $args->mobile );
+
         // Custom Item Classes
-        if ( $depth === 0 ) {
-            $classes[] = 'header__nav-item';
-            if ( in_array( 'menu-item-has-children', $classes ) ) {
-                $classes[] = 'header__nav-item--has-dropdown';
+        if ( $is_mobile ) {
+            $classes[] = 'mobile-menu__item';
+        } else {
+            if ( $depth === 0 ) {
+                $classes[] = 'header__nav-item';
+                if ( in_array( 'menu-item-has-children', $classes ) ) {
+                    $classes[] = 'header__nav-item--has-dropdown';
+                }
+            } elseif ( $depth === 1 ) {
+                $classes[] = 'header__mega-menu-item';
             }
-        } elseif ( $depth === 1 ) {
-            $classes[] = 'header__mega-menu-item';
         }
 
         $class_names = implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
@@ -77,16 +87,24 @@ class Ar_Header_Nav_Walker extends Walker_Nav_Menu {
 
         // Custom Link Classes
         $link_class = '';
-        if ( $depth === 0 ) {
-            $link_class = 'header__nav-link';
-        } elseif ( $depth === 1 ) {
-            $link_class = 'header__mega-menu-link';
-            // Check if current item is active/current to add modifier
+        
+        if ( $is_mobile ) {
+            $link_class = 'mobile-menu__link';
             if ( in_array( 'current-menu-item', $item->classes ) ) {
-                $link_class .= ' header__mega-menu-link--active';
+                $link_class .= ' mobile-menu__link--active';
             }
-        } elseif ( $depth === 2 ) {
-            $link_class = 'header__mega-menu-sub-link';
+        } else {
+            if ( $depth === 0 ) {
+                $link_class = 'header__nav-link';
+            } elseif ( $depth === 1 ) {
+                $link_class = 'header__mega-menu-link';
+                // Check if current item is active/current to add modifier
+                if ( in_array( 'current-menu-item', $item->classes ) ) {
+                    $link_class .= ' header__mega-menu-link--active';
+                }
+            } elseif ( $depth === 2 ) {
+                $link_class = 'header__mega-menu-sub-link';
+            }
         }
         
         $atts['class'] = $link_class;
@@ -108,18 +126,20 @@ class Ar_Header_Nav_Walker extends Walker_Nav_Menu {
         $item_output .= '<a'. $attributes .'>';
         $item_output .= $args->link_before . $title . $args->link_after;
 
-        // Append SVG for items with children (Depth 0 and 1)
+        // Append Chevron for items with children
         if ( in_array( 'menu-item-has-children', $item->classes ) ) {
-            if ( $depth === 0 ) {
-                // Main Nav Chevron (White or current color)
-                $item_output .= '<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="currentColor"/>
-              </svg>';
-            } elseif ( $depth === 1 ) {
-                // Mega Menu Chevron (Image in static, let's use img for consistency or SVG)
-                // Static uses: <img src=".../icon-chevron-right.svg" class="header__chevron">
-                // We'll use the img tag to match the SCSS selector .header__chevron
-                $item_output .= '<img src="' . get_template_directory_uri() . '/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">';
+            if ( $is_mobile ) {
+                // Mobile Chevron
+                $item_output .= '<img src="' . get_template_directory_uri() . '/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">';
+            } else {
+                // Desktop Chevron
+                if ( $depth === 0 ) {
+                    $item_output .= '<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="currentColor"/>
+                  </svg>';
+                } elseif ( $depth === 1 ) {
+                    $item_output .= '<img src="' . get_template_directory_uri() . '/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">';
+                }
             }
         }
 

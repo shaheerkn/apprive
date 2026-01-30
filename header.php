@@ -68,77 +68,8 @@
                 'fallback_cb'     => false,
                 'walker'          => new Ar_Header_Nav_Walker(),
             ) );
-        } else {
+        }
         ?>
-        <ul class="header__nav-list">
-          <li class="header__nav-item header__nav-item--has-dropdown">
-            <a href="#" class="header__nav-link">
-              Destinations
-
-              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
-              </svg>
-            </a>
-
-            <div class="header__mega-menu">
-              <div class="header__mega-menu-item">
-                <a href="#" class="header__mega-menu-link">
-                  Winter
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">
-                </a>
-                <div class="header__mega-menu-sub">
-                  <a href="#" class="header__mega-menu-sub-link">
-                    Mykonos
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">
-                  </a>
-                </div>
-              </div>
-              <div class="header__mega-menu-item">
-                <a href="#" class="header__mega-menu-link header__mega-menu-link--active">
-                  Summer
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">
-              Service
-
-              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
-              </svg>
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">
-              Discover Us
-
-              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
-              </svg>
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">
-              Journal
-
-              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
-              </svg>
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">
-              Properties
-
-              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <?php } ?>
       </nav>
 
       <div class="header__utils">
@@ -270,29 +201,20 @@
         </svg>
       </div>
 
-      <nav class="mobile-menu__nav">
-        <a href="#" class="mobile-menu__link mobile-menu__link--active">Home</a>
-        <a href="#" class="mobile-menu__link">
-          Destinations
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
-        </a>
-        <a href="#" class="mobile-menu__link">
-          Service
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
-        </a>
-        <a href="#" class="mobile-menu__link">
-          Discover Us
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
-        </a>
-        <a href="#" class="mobile-menu__link">
-          Journal
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
-        </a>
-        <a href="#" class="mobile-menu__link">
-          Private Portfolio
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
-        </a>
-      </nav>
+      <?php
+        $header_menu_location = get_nav_menu_locations();
+        if( $header_menu_location['primary-menu'] ) {
+            wp_nav_menu( array(
+                'theme_location'  => 'primary-menu',
+                'container'       => false,
+                'menu_class'      => 'mobile-menu__nav',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'fallback_cb'     => false,
+                'walker'          => new Ar_Header_Nav_Walker(),
+                'mobile'          => true,
+            ) );
+        }
+      ?>
 
       <div class="mobile-menu__divider"></div>
 
@@ -318,9 +240,9 @@
           </svg>
         </a>
 
-        <a href="#" class="btn btn--solid--primary">Saved Items
-          <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 18.0833V1.88475C0 1.34769 0.179861 0.899306 0.539583 0.539583C0.899306 0.179861 1.34769 0 1.88475 0H12.1153C12.6523 0 13.1007 0.179861 13.4604 0.539583C13.8201 0.899306 14 1.34769 14 1.88475V18.0833L7 15.0768L0 18.0833ZM1.16667 16.275L7 13.7667L12.8333 16.275V1.88475C12.8333 1.70508 12.7586 1.54049 12.609 1.39096C12.4595 1.24143 12.2949 1.16667 12.1153 1.16667H1.88475C1.70508 1.16667 1.54049 1.24143 1.39096 1.39096C1.24143 1.54049 1.16667 1.70508 1.16667 1.88475V16.275Z" fill="white"/>
+        <a href="<?php echo home_url(); ?>/favourites" class="btn btn--solid--primary">Saved Items
+        <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5 18.671L9.61596 17.8725C7.71196 16.133 6.13696 14.644 4.89096 13.4056C3.64515 12.167 2.66175 11.0747 1.94075 10.1287C1.21975 9.18274 0.716042 8.32679 0.429625 7.56087C0.143208 6.79515 0 6.02486 0 5.25C0 3.76619 0.504097 2.52029 1.51229 1.51229C2.52029 0.504097 3.76619 0 5.25 0C6.27608 0 7.23858 0.2625 8.1375 0.7875C9.03642 1.3125 9.82392 2.07608 10.5 3.07825C11.1761 2.07608 11.9636 1.3125 12.8625 0.7875C13.7614 0.2625 14.7239 0 15.75 0C17.2338 0 18.4797 0.504097 19.4877 1.51229C20.4959 2.52029 21 3.76619 21 5.25C21 6.02486 20.8568 6.79515 20.5704 7.56087C20.284 8.32679 19.7803 9.18274 19.0592 10.1287C18.3383 11.0747 17.3585 12.167 16.1201 13.4056C14.8817 14.644 13.303 16.133 11.384 17.8725L10.5 18.671ZM10.5 17.0917C12.3667 15.4045 13.9028 13.9593 15.1083 12.756C16.3139 11.5526 17.2667 10.5086 17.9667 9.62383C18.6667 8.73911 19.1528 7.9554 19.425 7.27271C19.6972 6.58982 19.8333 5.91558 19.8333 5.25C19.8333 4.08333 19.4444 3.11111 18.6667 2.33333C17.8889 1.55556 16.9167 1.16667 15.75 1.16667C14.8211 1.16667 13.9641 1.43179 13.179 1.96204C12.3936 2.49229 11.6906 3.29058 11.0699 4.35692H9.93008C9.29444 3.27561 8.58774 2.47353 7.80996 1.95067C7.03218 1.428 6.17886 1.16667 5.25 1.16667C4.09831 1.16667 3.12978 1.55556 2.34442 2.33333C1.55925 3.11111 1.16667 4.08333 1.16667 5.25C1.16667 5.91558 1.30278 6.58982 1.575 7.27271C1.84722 7.9554 2.33333 8.73911 3.03333 9.62383C3.73333 10.5086 4.68611 11.5488 5.89167 12.7447C7.09722 13.9405 8.63333 15.3895 10.5 17.0917Z" fill="white"/>
           </svg>
         </a>
 
