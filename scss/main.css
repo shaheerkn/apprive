@@ -1002,6 +1002,9 @@ body {
 }
 
 @media (max-width: 993px) {
+  .toggle-text {
+    display: none;
+  }
   .mobile-menu__dropdown {
     position: absolute;
     top: 0;
