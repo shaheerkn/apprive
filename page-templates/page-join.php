@@ -18,8 +18,8 @@
 
 <section class="hero">
   <div class="hero__img">
-    <img src="assets/images/join-us-hero-winter.png" alt="" class="for-winter">
-    <img src="assets/images/join-use-hero-summer.png" alt="" class="for-summer">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-us-hero-winter.png" alt="" class="for-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-use-hero-summer.png" alt="" class="for-summer">
   </div>
   <div class="hero__overlay"></div>
   <div class="container">
@@ -30,25 +30,20 @@
 
 <section class="breadcrumb breadcrumb__modifier">
   <div class="container single-chalet__links">
-    <a href="#" class="breadcrumb__home">
+    <a href="<?php echo home_url('/'); ?>" class="breadcrumb__home">
       <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.33333 19.718H6.25633V11.872H12.4103V19.718H17.3333V7.718L9.33333 1.66667L1.33333 7.718V19.718ZM0 21.0513V7.05133L9.33333 0L18.6667 7.05133V21.0513H11.077V13.2053H7.58967V21.0513H0Z" fill="#1F1F1F"/>
       </svg>
     </a>
+    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+    </svg>
 
-    <a href="#" class="breadcrumb__arrow">
-      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-      </svg>
-    </a>
+    <a href="<?php echo home_url(); ?>/how-we-work" class="breadcrumb__current">Discover Us</a>
+    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+    </svg>
 
-    <a href="#" class="breadcrumb__current">Discover Us</a>
-
-    <a href="#" class="breadcrumb__arrow">
-      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-      </svg>
-    </a>
     <a href="#" class="breadcrumb__current">Join Us</a>
   </div>
 </section>
@@ -86,20 +81,20 @@
 
     <figure class="services-overview__gallery">
       <figure class="services-overview__image services-overview__image--1">
-        <img src="./assets/images/what-we-do__one.png" class="for-winter" alt="Luxury Interior">
-        <img src="./assets/images/services-overview_summer-one.png" class="for-summer" alt="Luxury Interior">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__one.png" class="for-winter" alt="Luxury Interior">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-one.png" class="for-summer" alt="Luxury Interior">
       </figure>
       <figure class="services-overview__image services-overview__image--2">
-        <img src="./assets/images/what-we-do__two.png" class="for-winter" alt="Pool View">
-        <img src="./assets/images/services-overview_summer-two.png" class="for-summer" alt="pool view">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__two.png" class="for-winter" alt="Pool View">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-two.png" class="for-summer" alt="pool view">
       </figure>
       <figure class="services-overview__image services-overview__image--3">
-        <img src="./assets/images/what-we-do__three.png" class="for-winter" alt="Winter Cabin">
-        <img src="./assets/images/services-overview_summer-three.png" class="for-summer" alt="Winter Cabin">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__three.png" class="for-winter" alt="Winter Cabin">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-three.png" class="for-summer" alt="Winter Cabin">
       </figure>
       <figure class="services-overview__image services-overview__image--4">
-        <img src="./assets/images/what-we-do__four.png" class="for-winter" alt="Summer Villa">
-        <img src="./assets/images/services-overview_summer-four.png" class="for-summer" alt="Summer Villa">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__four.png" class="for-winter" alt="Summer Villa">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-four.png" class="for-summer" alt="Summer Villa">
       </figure>
     </figure>
   </div>
@@ -145,7 +140,7 @@
 
 <section class="terms-overview section">
   <article class="container">
-    <img src="./assets/images/collaboration-terms__water-mark.svg" alt="water mark">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/collaboration-terms__water-mark.svg" alt="water mark">
     <h4 class="section-title">Private collaboration terms</h4>
     <article class="terms-overview__content">
       <p class="terms-overview__text">

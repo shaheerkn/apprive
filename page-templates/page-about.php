@@ -18,8 +18,8 @@
 
 <section class="hero hero-modifier">
   <div class="hero__img">
-    <img src="assets/images/about-hero-winter.png" alt="" class="for-winter">
-    <img src="assets/images/about-summer-hero.png" alt="" class="for-summer">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-hero-winter.png" alt="" class="for-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-summer-hero.png" alt="" class="for-summer">
   </div>
 
   <div class="hero__overlay"></div>
@@ -33,25 +33,19 @@
 
 <section class="breadcrumb single-chalet__breadcrumb breadcrumb__mobile-hide">
   <div class="container single-chalet__links">
-    <a href="#" class="breadcrumb__home" data-aos="fade-right" data-aos-delay="200">
+    <a href="<?php echo home_url('/'); ?>" class="breadcrumb__home" data-aos="fade-right" data-aos-delay="200">
       <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.33333 19.718H6.25633V11.872H12.4103V19.718H17.3333V7.718L9.33333 1.66667L1.33333 7.718V19.718ZM0 21.0513V7.05133L9.33333 0L18.6667 7.05133V21.0513H11.077V13.2053H7.58967V21.0513H0Z" fill="#1F1F1F"/>
       </svg>
     </a>
+    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" data-aos="fade-right" data-aos-delay="500">
+      <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+    </svg>
 
-    <a href="#" class="breadcrumb__arrow" data-aos="fade-right" data-aos-delay="300">
-      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-      </svg>
-    </a>
-
-    <a href="#" class="breadcrumb__current" data-aos="fade-right" data-aos-delay="400">Discover Us</a>
-
-    <a href="#" class="breadcrumb__arrow" data-aos="fade-right" data-aos-delay="500">
-      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-      </svg>
-    </a>
+    <a href="<?php echo home_url(); ?>/how-we-work" class="breadcrumb__current" data-aos="fade-right" data-aos-delay="400">Discover Us</a>
+    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" data-aos="fade-right" data-aos-delay="500">
+      <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+    </svg>
 
     <a href="#" class="breadcrumb__current" data-aos="fade-right" data-aos-delay="900">About Us</a>
   </div>
@@ -62,13 +56,13 @@
 
     <figure class="about-intro__gallery">
       <figure class="about-intro__image-wrapper about-intro__image-wrapper--primary" data-aos="fade-right" data-aos-delay="200">
-        <img src="./assets/images/about-intro-primary-winter.png" alt="Luxury Winter Cabin" class="for-winter">
-        <img src="./assets/images/about-intro-primary-summer.png" alt="Luxury Winter Cabin" class="for-summer">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-intro-primary-winter.png" alt="Luxury Winter Cabin" class="for-winter">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-intro-primary-summer.png" alt="Luxury Winter Cabin" class="for-summer">
       </figure>
 
       <figure class="about-intro__image-wrapper about-intro__image-wrapper--secondary" data-aos="fade-left" data-aos-delay="300">
-        <img src="./assets/images/about-intro-secondary-winter.png" alt="Luxury Summer Villa" class="for-winter">
-        <img src="./assets/images/about-intro-secondary-summer.png" alt="Luxury Summer Villa" class="for-summer">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-intro-secondary-winter.png" alt="Luxury Summer Villa" class="for-winter">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-intro-secondary-summer.png" alt="Luxury Summer Villa" class="for-summer">
       </figure>
     </figure>
 
@@ -158,7 +152,7 @@
       <a href="#" class="founder-note__signature">Aldo Ruta — Founder & Private Concierge</a>
     </div>
     <div class="founder-note__media">
-      <img src="./assets/images/founder.png" alt="founder image">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/founder.png" alt="founder image">
     </div>
   </div>
 </section>

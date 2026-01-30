@@ -18,8 +18,8 @@
 
 <section class="hero">
   <div class="hero__img">
-    <img src="assets/images/work-hero-winter.png"  class="for-winter" alt="work hero-winter">
-    <img src="assets/images/work-hero-summer.png" class="for-summer" alt="work hero-summer">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-hero-winter.png"  class="for-winter" alt="work hero-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-hero-summer.png" class="for-summer" alt="work hero-summer">
   </div>
   <div class="hero__overlay"></div>
   <div class="container">
@@ -28,31 +28,28 @@
     <p class="hero__description for-winter">From your first request to a seamless stay, we manage every step with care, discretion and precision.</p>
     <p class="hero__description for-summer">From your first request to a seamless stay, AR PRIVÉ manages every step with care,<br> discretion and precision — so you can simply enjoy the moment.</p>
     <div class="hero__actions">
-      <a href="#" class="btn btn--solid--white">Request Private Assistance</a>
+      <a href="#request" class="btn btn--solid--white">Request Private Assistance</a>
     </div>
   </div>
 </section>
 
 <section class="breadcrumb breadcrumb__modifier breadcrumb__mobile-hide">
   <div class="container">
-    <a href="#" class="breadcrumb__home">
+    <a href="<?php echo home_url('/'); ?>" class="breadcrumb__home">
       <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.33333 19.718H6.25633V11.872H12.4103V19.718H17.3333V7.718L9.33333 1.66667L1.33333 7.718V19.718ZM0 21.0513V7.05133L9.33333 0L18.6667 7.05133V21.0513H11.077V13.2053H7.58967V21.0513H0Z" fill="#1F1F1F"/>
       </svg>
     </a>
-      <a href="#" class="breadcrumb__arrow">
-        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-        </svg>
-      </a>
-        <a href="#" class="breadcrumb__current">Discover Us</a>
+    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+    </svg>
 
-      <a href="#" class="breadcrumb__arrow">
-        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
-        </svg>
-      </a>
-        <a href="#" class="breadcrumb__current">How we work</a>
+    <a href="<?php echo home_url(); ?>/how-we-work" class="breadcrumb__current">Discover Us</a>
+    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.13333 7.077L0 0.943667L0.943667 0L8.02067 7.077L0.943667 14.154L0 13.2103L6.13333 7.077Z" fill="black"/>
+    </svg>
+
+    <a href="#" class="breadcrumb__current">How we work</a>
   </div>
 </section>
 
@@ -60,13 +57,13 @@
   <div class="container">
     <div class="images-with__text__images">
       <div class="about__images-group__primary">
-        <img src="./assets/images/who-we-are__winter-hero.png" class="for-winter" alt="who we are">
-        <img src="./assets/images/Who-we-are-summer_hero.png" class="for-summer" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are__winter-hero.png" class="for-winter" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer_hero.png" class="for-summer" alt="who we are">
       </div>
 
       <div class="about__images-group__secondary">
-        <img src="./assets/images/who-we-are-winter.png" class="for-winter" alt="who we are">
-        <img src="./assets/images/Who-we-are-summer.png" class="for-summer" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are-winter.png" class="for-winter" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer.png" class="for-summer" alt="who we are">
       </div>
     </div>
 
@@ -79,7 +76,7 @@
 </section>
 
 <section class="our-process section">
-  <img src="./assets/images/process-water-mark.svg" class="our-process__water-mark" alt="water mark">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/process-water-mark.svg" class="our-process__water-mark" alt="water mark">
   <div class="container">
 
     <div class="our-process__step">
@@ -137,8 +134,8 @@
     <h4 class="section-title">Why AR PRIVÉ stands apart</h4>
 
     <div class="features-highlight__showcase">
-      <img src="./assets/images/work-feature-winter.png" class="for-winter" alt="work section image">
-      <img src="./assets/images/work-feature-summer.png" class="for-summer" alt="summer image of work section">
+      <img src="<?php echo get_template_directory_uri() ?>/assets/images/work-feature-winter.png" class="for-winter" alt="work section image">
+      <img src="<?php echo get_template_directory_uri() ?>/assets/images/work-feature-summer.png" class="for-summer" alt="summer image of work section">
     </div>
 
     <div class="features-highlight__grid">
@@ -219,7 +216,7 @@
 </section>
 
 <section class="philosophy section">
-  <img src="./assets/images/design-philasopy-water_mark.svg" alt="water mark" class="philosophy__water-mark">
+  <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philasopy-water_mark.svg" alt="water mark" class="philosophy__water-mark">
   <div class="container">
     <div class="philosophy__content">
       <h4 class="section-title">Thoughtfully designed. Quietly managed.</h4>
@@ -231,13 +228,13 @@
 
     <div class="philosophy__gallery">
       <div class="philosophy__column">
-        <img src="./assets/images/design-philosophy-winter_primary.png" alt="Interior design detail" class="for-winter">
-        <img src="./assets/images/design-philosophy-summer_primary.png" alt="Concierge service detail" class="for-summer">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-winter_primary.png" alt="Interior design detail" class="for-winter">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-summer_primary.png" alt="Concierge service detail" class="for-summer">
       </div>
 
       <div class="philosophy__column">
-        <img src="./assets/images/design-philosophy-winter-secondary.png" alt="Luxury stay experience" class="for-winter">
-        <img src="./assets/images/design-philosophy-summer_secondary.png" alt="Private hosting environment" class="for-summer">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-winter-secondary.png" alt="Luxury stay experience" class="for-winter">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-summer_secondary.png" alt="Private hosting environment" class="for-summer">
       </div>
     </div>
 

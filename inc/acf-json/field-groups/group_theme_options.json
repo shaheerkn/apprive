@@ -115,28 +115,6 @@
                     "acfe_thumbnail": 0
                 },
                 {
-                    "key": "field_brand_raw_svg",
-                    "label": "Raw SVG Code",
-                    "name": "raw_svg",
-                    "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "Paste SVG code here if not using an image file. This takes precedence over the image.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "parent_repeater": "field_brand_values",
-                    "acfe_textarea_code": 0
-                },
-                {
                     "key": "field_brand_title",
                     "label": "Title",
                     "name": "title",
@@ -487,11 +465,5 @@
     "description": "Global settings for Header, Footer, and Brand Values.",
     "show_in_rest": 0,
     "display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1769735412
+    "modified": 1769735671
 }

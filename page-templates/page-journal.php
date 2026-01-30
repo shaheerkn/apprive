@@ -18,8 +18,8 @@
 
 <section class="hero journal-hero">
   <div class="hero__img">
-    <img src="assets/images/journal-hero__winter.png" alt="" class="for-winter">
-    <img src="assets/images/join-us-hero-winter.png" alt="" class="for-summer">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-hero__winter.png" alt="" class="for-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-us-hero-winter.png" alt="" class="for-summer">
   </div>
   <div class="hero__overlay"></div>
   <div class="container">
@@ -85,7 +85,7 @@
     <div class="journal-articles__grid">
       <article class="journal-card">
         <a href="#" class="journal-card__image-wrapper">
-          <img src="./assets/images/journal-article__one.png" alt="Mountain View" class="journal-card__image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-article__one.png" alt="Mountain View" class="journal-card__image">
         </a>
         <div class="journal-card__content">
           <span class="journal-card__location">COURCHEVEL</span>
@@ -99,7 +99,7 @@
 
       <article class="journal-card">
         <a href="#" class="journal-card__image-wrapper">
-          <img src="./assets/images/journal-article__two.png" alt="Gym Interior" class="journal-card__image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-article__two.png" alt="Gym Interior" class="journal-card__image">
         </a>
         <div class="journal-card__content">
           <span class="journal-card__location">COURCHEVEL</span>
@@ -113,7 +113,7 @@
 
       <article class="journal-card">
         <div class="journal-card__image-wrapper">
-          <img src="./assets/images/journal-article__three.png" alt="Modern Bedroom" class="journal-card__image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-article__three.png" alt="Modern Bedroom" class="journal-card__image">
         </div>
         <div class="journal-card__content">
           <span class="journal-card__location">COURCHEVEL</span>
@@ -127,7 +127,7 @@
 
       <article class="journal-card">
         <a href="#" class="journal-card__image-wrapper">
-          <img src="./assets/images/journal-article__one.png" alt="Mountain View" class="journal-card__image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-article__one.png" alt="Mountain View" class="journal-card__image">
         </a>
         <div class="journal-card__content">
           <span class="journal-card__location">COURCHEVEL</span>
@@ -141,7 +141,7 @@
 
       <article class="journal-card">
         <a href="#" class="journal-card__image-wrapper">
-          <img src="./assets/images/journal-article__two.png" alt="Gym Interior" class="journal-card__image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-article__two.png" alt="Gym Interior" class="journal-card__image">
         </a>
         <div class="journal-card__content">
           <span class="journal-card__location">COURCHEVEL</span>
@@ -155,7 +155,7 @@
 
       <article class="journal-card">
         <div class="journal-card__image-wrapper">
-          <img src="./assets/images/journal-article__three.png" alt="Modern Bedroom" class="journal-card__image">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-article__three.png" alt="Modern Bedroom" class="journal-card__image">
         </div>
         <div class="journal-card__content">
           <span class="journal-card__location">COURCHEVEL</span>
