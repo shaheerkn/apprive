@@ -1,13 +1,9 @@
-# WordPress
-wp-config.php
-wp-content/uploads/
-wp-content/cache/
-wp-content/backups/
-wp-content/themes/arprive/vendor/
+# Node modules
 /node_modules
 
 # OS specific
 .DS_Store
+/.DS_Store
 Thumbs.db
 
 # Logs

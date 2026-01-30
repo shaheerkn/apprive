@@ -96,19 +96,29 @@ function ar_filter_properties() {
         $args['meta_query'][] = array(
             'key'     => 'prop_specs_max_guests',
             'value'   => intval( $_POST['guests'] ),
-            'compare' => '>=',
+            'compare' => '=',
             'type'    => 'NUMERIC',
         );
     }
 
     // Beds (mapped to max_guests as per spec/previous logic)
     if ( ! empty( $_POST['beds'] ) ) {
-        $args['meta_query'][] = array(
-            'key'     => 'prop_specs_max_guests',
-            'value'   => intval( $_POST['beds'] ),
-            'compare' => '>=',
-            'type'    => 'NUMERIC',
-        );
+        $beds_val = intval( $_POST['beds'] );
+        if ($beds_val == 8) {
+            $args['meta_query'][] = array(
+                'key'     => 'prop_specs_max_guests',
+                'value'   => 8,
+                'compare' => '>=',
+                'type'    => 'NUMERIC',
+            );
+        } else {
+            $args['meta_query'][] = array(
+                'key'     => 'prop_specs_max_guests',
+                'value'   => $beds_val,
+                'compare' => '=',
+                'type'    => 'NUMERIC',
+            );
+        }
     }
 
     // Price Range (Max)

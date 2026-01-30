@@ -178,7 +178,12 @@ $property_query = new WP_Query( $args );
                                 <?php for($i=1; $i<=6; $i++): ?>
                                 <label for="bedrooms-<?php echo $i; ?>">
                                     <input type="radio" name="bedrooms" id="bedrooms-<?php echo $i; ?>" value="<?php echo $i; ?>">
-                                    <?php echo $i; ?>
+                                    <?php
+                                        echo $i;
+                                        if( $i == 6 ) {
+                                            echo '+';
+                                        }
+                                    ?>
                                 </label>
                                 <?php endfor; ?>
                             </div>
@@ -188,7 +193,12 @@ $property_query = new WP_Query( $args );
                                     <option value="">All</option>
                                     <option value="studio">Studio</option>
                                     <?php for($i=1; $i<=5; $i++): ?>
-                                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                        <option value="<?php echo $i; ?>"><?php
+                                            echo $i;
+                                            if( $i == 6 ) {
+                                                echo '+';
+                                            }
+                                        ?></option>
                                     <?php endfor; ?>
                                 </select>
                             </div>
@@ -203,10 +213,15 @@ $property_query = new WP_Query( $args );
                                     All
                                 </label>
 
-                                <?php for($i=1; $i<=6; $i++): ?>
+                                <?php for($i=1; $i<=8; $i++): ?>
                                 <label for="beds-<?php echo $i; ?>">
                                     <input type="radio" name="beds" id="beds-<?php echo $i; ?>" value="<?php echo $i; ?>">
-                                    <?php echo $i; ?>
+                                    <?php
+                                        echo $i;
+                                        if( $i == 8 ) {
+                                            echo '+';
+                                        }
+                                    ?>
                                 </label>
                                 <?php endfor; ?>
                             </div>
@@ -214,8 +229,15 @@ $property_query = new WP_Query( $args );
                             <div class="hide-on-desktop">
                                 <select name="beds" id="beds">
                                     <option value="">All</option>
-                                    <?php for($i=1; $i<=6; $i++): ?>
-                                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                    <?php for($i=1; $i<=8; $i++): ?>
+                                        <option value="<?php echo $i; ?>">
+                                            <?php
+                                                echo $i;
+                                                if( $i == 8 ) {
+                                                    echo '+';
+                                                }
+                                            ?>
+                                        </option>
                                     <?php endfor; ?>
                                 </select>
                             </div>
