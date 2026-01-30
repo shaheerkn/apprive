@@ -3,8 +3,8 @@ wp-config.php
 wp-content/uploads/
 wp-content/cache/
 wp-content/backups/
-wp-content/themes/arprive/node_modules/
 wp-content/themes/arprive/vendor/
+/node_modules
 
 # OS specific
 .DS_Store
