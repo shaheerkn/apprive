@@ -1,5 +1,48 @@
 jQuery(document).ready(function($) {
-    
+
+    // Product detail header favorite button (single property page)
+    $(document).on('click', '.product-detail__action-btn--favorite', function(e) {
+        e.preventDefault();
+        const $btn = $(this);
+        const propertyId = $btn.data('id');
+        if (!propertyId) return;
+
+        if (!ar_favorites_vars.is_logged_in) {
+            window.location.href = ar_favorites_vars.login_url;
+            return;
+        }
+
+        $.ajax({
+            url: ar_favorites_vars.ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'toggle_favorite',
+                nonce: ar_favorites_vars.nonce,
+                property_id: propertyId
+            },
+            success: function(response) {
+                if (response.success) {
+                    if (response.data.is_favorite) {
+                        $btn.addClass('active').attr('aria-label', 'Remove from favorites');
+                    } else {
+                        $btn.removeClass('active').attr('aria-label', 'Add to favorites');
+                    }
+                    const $countEl = $('.header__favorite-count');
+                    if (response.data.count > 0) {
+                        $countEl.text(response.data.count).removeClass('hidden');
+                    } else {
+                        $countEl.text(0).addClass('hidden');
+                    }
+                } else if (response.data && response.data.redirect) {
+                    window.location.href = response.data.redirect;
+                }
+            },
+            error: function(err) {
+                console.error('Favorites AJAX Error:', err);
+            }
+        });
+    });
+
     $(document).on('click', '.listing-grid-fav', function(e) {
         e.preventDefault();
         

@@ -472,6 +472,11 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
+  overflow: hidden;
+}
+
+.mobile-menu__panel {
+  overflow: hidden;
 }
 
 .mobile-menu--active {
@@ -715,6 +720,7 @@
   .toggle-text {
     display: none;
   }
+
   // Mobile Menu Drill-down
   .mobile-menu__dropdown {
     position: absolute;

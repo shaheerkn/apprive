@@ -1,12 +1,12 @@
 .btn {
   text-decoration: none;
   font-weight: 600;
-  padding: 24px 46px;
+  padding: 12px 36px;
   display: inline-flex;
   align-items: center;
   gap: 16px;
   border-radius: 12px;
-  font-size: 24px;
+  font-size: 18px;
 
   @media (max-width: 992px) {
     padding: 12px 40px;
@@ -28,14 +28,9 @@
 .btn--outline-white {
   color: #FFFFFF;
   border: 2px solid #FFFFFF;
-  padding-inline: 58px;
 
-  &:has(svg, img) {
-    padding-block: 22px;
-
-    @media (max-width: 992px) {
-      padding-block: 12px;
-    }
+  svg, img {
+    width: 20px;
   }
 
   @media (max-width: 992px) {

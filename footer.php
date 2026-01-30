@@ -99,6 +99,7 @@
                 </span>
                 <a href="tel:<?php echo esc_attr(get_field('contact_phone', 'option')); ?>"><?php the_field('contact_phone', 'option'); ?></a>
               </li>
+        
               <li>
                 <span>
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,11 +143,6 @@
       ?>
     </div>
   </footer>
-
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 
 <?php wp_footer(); ?>
 

@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -73,13 +72,13 @@
       </nav>
 
       <div class="header__utils">
-        <button class="header__lang-btn">
+        <!-- <button class="header__lang-btn">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-us-flag.svg" alt="US Flag" class="header__lang-flag">
 
           <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L6 6L11 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </button> -->
 
         <a href="<?php echo home_url(); ?>/properties" class="header__icon-btn header__search-btn">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -218,7 +217,7 @@
 
       <div class="mobile-menu__divider"></div>
 
-      <div class="mobile-menu__language">
+      <!-- <div class="mobile-menu__language">
         <div class="mobile-menu__language-label">LANGUAGE</div>
         <div class="mobile-menu__language-selector">
           <span class="mobile-menu__language-text">English</span>
@@ -229,7 +228,7 @@
             </svg>
           </button>
         </div>
-      </div>
+      </div> -->
 
       <div class="mobile-menu__divider"></div>
 

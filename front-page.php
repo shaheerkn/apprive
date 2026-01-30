@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="hero">
+<section class="hero hero--home">
     <div class="hero__img">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-winter-desktop.jpg" alt="" class="for-winter">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-summer-desktop.jpg" alt="" class="for-summer">
@@ -8,15 +8,15 @@
   
     <div class="hero__overlay"></div>
     <div class="container">
-      <h2 class="hero__title hero__title-desktop for-winter" data-aos="fade-up" data-aos-delay="500">Luxury Chalets in Courchevel with Private Concierge</h2>
-      <h2 class="hero__title hero__title-desktop for-summer" data-aos="fade-up" data-aos-delay="500">Luxury Villas in Mykonos with Private Concierge</h2>
-      <h1 class="hero__title hero__title-mobile" data-aos="fade-up" data-aos-delay="500">Exclusive stays paired with truly private service.</h1>
+      <h2 class="hero__title hero__title-desktop for-winter">Luxury Chalets in Courchevel with Private Concierge</h2>
+      <h2 class="hero__title hero__title-desktop for-summer">Luxury Villas in Mykonos with Private Concierge</h2>
+      <h1 class="hero__title hero__title-mobile">Exclusive stays paired with truly private service.</h1>
       
-      <p class="hero__description hero__description-secondary for-winter" data-aos="fade-up" data-aos-delay="600">Exclusive winter stays paired with truly private service. <br> Ski-in ski-out chalets, refined hospitality and tailored experiences in Courchevel.</p>
-      <p class="hero__description hero__description-secondary for-summer" data-aos="fade-up" data-aos-delay="600">Exclusive summer stays paired with truly private service.Sea-view villas, refined hospitality and tailored experiences in Mykonos.</p>
+      <p class="hero__description hero__description-secondary for-winter">Exclusive winter stays paired with truly private service. <br> Ski-in ski-out chalets, refined hospitality and tailored experiences in Courchevel.</p>
+      <p class="hero__description hero__description-secondary for-summer">Exclusive summer stays paired with truly private service.Sea-view villas, refined hospitality and tailored experiences in Mykonos.</p>
       <p class="hero__description hero__description-mobile">Where refinement, discretion, and personal attention define every moment.</p>
       
-      <div class="hero__actions" data-aos="fade-up" data-aos-delay="800">
+      <div class="hero__actions">
         <a href="#request" class="btn btn--solid--white">Request Your Stay</a>
         <a href="#" class="btn btn--outline-white">Chat with us <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-whatsapp.svg" alt="WhatsApp" /></a>
       </div>
@@ -25,10 +25,10 @@
 
   <section class="how-works section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">How AR PRIVÉ works</h2>
+      <h2 class="section-title">How AR PRIVÉ works</h2>
 
       <div class="how-works__steps">
-        <div class="how-works__step" data-aos="fade-right" data-aos-delay="200">
+        <div class="how-works__step">
           <div class="how-works__step-icon">
             <span>1</span>
             <svg width="67" height="76" viewBox="0 0 67 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@
           <div class="how-works__step-line"></div>
         </div>
 
-        <div class="how-works__step" data-aos="fade-right" data-aos-delay="300">
+        <div class="how-works__step">
           <div class="how-works__step-icon">
             <span>2</span>
             <svg width="79" height="76" viewBox="0 0 79 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@
           <div class="how-works__step-line"></div>
         </div>
 
-        <div class="how-works__step" data-aos="fade-right" data-aos-delay="400">
+        <div class="how-works__step">
           <div class="how-works__step-icon">
             <span>3</span>
             <svg width="84" height="75" viewBox="0 0 84 75" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,14 +73,16 @@
 
   <section class="destination section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">DESTINATION</h2>
+      <h2 class="section-title">DESTINATION</h2>
 
       <div class="destination__content">
         <div class="destination__text-content">
           <div class="destination__titles">
             <h3 class="destination__title for-winter">Courchevel <span class="destination__subtitle">Winter</span></h3>
             <h3 class="destination__title for-summer">Mykonos <span class="destination__subtitle">Summer</span></h3>
-            <a href="#" class="btn btn--solid--primary">Discover Courchevel <img src="assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
+            
+            <a href="#" class="btn btn--solid--primary for-summer">Discover Mykonos <img src="assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
+            <a href="#" class="btn btn--solid--primary for-winter">Discover Courchevel <img src="assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
           </div>
 
           <p class="destination__description for-winter">Courchevel is one of the most prestigious alpine destinations in the world, offering luxury chalets, ski-in ski-out access and refined winter hospitality in the heart of the French Alps.</p>
@@ -91,15 +93,9 @@
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-1.jpg" alt="Courchevel Winter" class="destination__image destination__image--main for-winter">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-1-summer.jpg" alt="Courchevel Summer" class="destination__image destination__image--main for-summer">
 
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-2.jpg" alt="Courchevel Chalet" class="destination__image destination__image--small for-winter" 
-            data-aos="fade-up"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-2.jpg" alt="Courchevel Chalet" class="destination__image destination__image--small for-winter">
             
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-2-summer.jpg" alt="Courchevel Chalet Summer" class="destination__image destination__image--small for-summer" 
-            data-aos="fade-up"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-img-2-summer.jpg" alt="Courchevel Chalet Summer" class="destination__image destination__image--small for-summer">
         </div>
       </div>
     </div>
@@ -109,14 +105,14 @@
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section-watermark.svg" alt="" class="section-watermark" />
 
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">A CURATED COLLECTION OF LUXURY CHALETS IN COURCHEVEL</h2>
+      <h2 class="section-title">A CURATED COLLECTION OF LUXURY CHALETS IN COURCHEVEL</h2>
 
       <div class="chalets__content">
         <p class="chalets__text">We present a limited number of exclusive luxury chalets in Courchevel, carefully selected for location, architecture, privacy and quality.</p>
         <p class="chalets__text">Each chalet is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
       </div>
 
-      <div class="chalets__grid" data-aos="fade-up" data-aos-delay="200">
+      <div class="chalets__grid">
         <div class="chalets__card">
           <a href="#" class="chalets__image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-1.jpg" alt="Chalet Mazot Cannors" class="chalets__image">

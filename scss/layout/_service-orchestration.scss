@@ -1,6 +1,7 @@
 .service-orchestration {
- position: relative;
- z-index: 2;
+  position: relative;
+  z-index: 2;
+
   .water-mark {
     position: absolute;
     top: 0;
@@ -12,17 +13,19 @@
     position: relative;
     z-index: 3;
   }
+
   &__services {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 40px;
     place-items: center;
     margin-top: 40px;
-    @media (max-width:992px) {
-     grid-template-columns: repeat(1,1fr);
-     width: 100%;
-     margin-top: 12px;
-     gap: 12px;
+  
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(1,1fr);
+      width: 100%;
+      margin-top: 12px;
+      gap: 12px;
     }
   }
 

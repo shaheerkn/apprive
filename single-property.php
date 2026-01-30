@@ -11,6 +11,9 @@ get_header();
 
 // Get destination taxonomy for breadcrumbs (T098-T100)
 $destination = get_field( 'prop_location_taxonomy' );
+
+// Get pricing for sidebar (used by template-parts/property/header and sidebar block)
+$pricing = ar_get_property_pricing();
 ?>
 
 <section class="breadcrumb breadcrumb__modifier">
@@ -63,77 +66,95 @@ $destination = get_field( 'prop_location_taxonomy' );
 	</div>
 </section>
 
-<section class="product-detail section">
-  <div class="container">
-    <?php
-    /**
-     * Property Header Template Part
-     * Displays: title, location, action buttons (favorite/share), pricing, and specifications
-     * Implemented in T038-T049: User Story 1 - Property Information Display
-     */
-    get_template_part( 'template-parts/property/header' );
-    ?>
-  </div>
-</section>
+<div class="main-product-wrapper container">
+	<div class="product-detail__main-content">
+		<section class="product-detail section">
+			<div class="container">
+				<?php
+				/**
+				 * Property Header Template Part
+				 * Displays: title, location, action buttons (favorite/share), pricing, and specifications
+				 * Implemented in T038-T049: User Story 1 - Property Information Display
+				 */
+				get_template_part( 'template-parts/property/header' );
+				?>
+			</div>
+		</section>
 
-<?php
-/**
- * Key Features Template Part
- * Displays key features from prop_key_features repeater with icons
- * Implemented in T054-T061: User Story 3 - Amenities and Features Organization
- */
-get_template_part( 'template-parts/property/key-features' );
-?>
+		<?php
+		/**
+		 * Key Features Template Part
+		 * Displays key features from prop_key_features repeater with icons
+		 * Implemented in T054-T061: User Story 3 - Amenities and Features Organization
+		 */
+		get_template_part( 'template-parts/property/key-features' );
+		?>
 
-<?php
-/**
- * About the Chalet Template Part
- * Displays post content (the_content) for About the Chalet section
- * Implemented in T067-T069: User Story 3 - Amenities and Features Organization
- */
-get_template_part( 'template-parts/property/about' );
-?>
+		<?php
+		/**
+		 * About the Chalet Template Part
+		 * Displays post content (the_content) for About the Chalet section
+		 * Implemented in T067-T069: User Story 3 - Amenities and Features Organization
+		 */
+		get_template_part( 'template-parts/property/about' );
+		?>
 
-<?php
-/**
- * Room & Space Details Template Part
- * Displays room details from prop_room_details repeater with icons and optional gallery
- * Implemented in T062-T064, T072: User Story 3 - Amenities and Features Organization
- */
-get_template_part( 'template-parts/property/room-details' );
-?>
+		<?php
+		/**
+		 * Room & Space Details Template Part
+		 * Displays room details from prop_room_details repeater with icons and optional gallery
+		 * Implemented in T062-T064, T072: User Story 3 - Amenities and Features Organization
+		 */
+		get_template_part( 'template-parts/property/room-details' );
+		?>
 
-<?php
-/**
- * In-Chalet Services Template Part
- * Displays services from prop_services repeater with icons
- * Implemented in T065-T066, T073: User Story 3 - Amenities and Features Organization
- */
-get_template_part( 'template-parts/property/services' );
-?>
+		<?php
+		/**
+		 * In-Chalet Services Template Part
+		 * Displays services from prop_services repeater with icons
+		 * Implemented in T065-T066, T073: User Story 3 - Amenities and Features Organization
+		 */
+		get_template_part( 'template-parts/property/services' );
+		?>
 
-<?php
-/**
- * Location Context Template Part
- * Displays location details with subtitle, features list, and optional seasonal images
- */
-get_template_part( 'template-parts/property/location-context' );
-?>
+		<?php
+		/**
+		 * Location Context Template Part
+		 * Displays location details with subtitle, features list, and optional seasonal images
+		 */
+		get_template_part( 'template-parts/property/location-context' );
+		?>
 
-<?php
-/**
- * Information (Good to Know) Template Part
- * Displays useful information items in two-column layout with decorative watermark
- */
-get_template_part( 'template-parts/property/information' );
-?>
+		<?php
+		/**
+		 * Information (Good to Know) Template Part
+		 * Displays useful information items in two-column layout with decorative watermark
+		 */
+		get_template_part( 'template-parts/property/information' );
+		?>
 
-<?php
-/**
- * Featured Properties Template Part
- * Displays related/featured properties in a swiper carousel
- */
-get_template_part( 'template-parts/property/featured-properties' );
-?>
+		<?php
+		/**
+		 * Featured Properties Template Part
+		 * Displays related/featured properties in a swiper carousel
+		 */
+		get_template_part( 'template-parts/property/featured-properties' );
+		?>
+	</div>
+
+	<div class="product-detail__content">
+			<?php if ( $pricing ) : ?>
+				<div class="product-detail__price">
+					<p class="product-detail__price-label">Starting Price From</p>
+					<p class="product-detail__price-amount">
+						<?php echo esc_html( $pricing['formatted'] ); ?>
+					</p>
+				</div>
+			<?php endif; ?>
+
+			<!-- Specifications will be loaded from separate template part -->
+			<?php get_template_part( 'template-parts/property/specifications' ); ?>
+	</div>
+</div>
 
 <?php get_footer(); ?>

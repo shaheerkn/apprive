@@ -12,7 +12,7 @@
   &__container {
     max-width: 992px;
     margin-inline: auto 0;
-    padding: 60px 0 60px 40px;
+    padding: 60px 40px;
 
     @media (max-width:992px) {
       width: 100%;
@@ -28,48 +28,21 @@
   }
 
   &-title {
-      font-size: 36px;
-      font-weight: 600;
-      text-transform: uppercase;
-      position: relative;
-      margin-bottom: 48px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 28px;
 
-      @media (max-width:992px) {
-        font-size: 16px;
-        margin-bottom: 16px;
-      }
-
-      @media (max-width: 340px) {
-        text-align: center;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        background: #000;
-        width: min(660px, 100vw - 32px);
-        height: 1px;
-
-        @media (max-width:992px) {
-          width: 450px;
-        }
-
-        @media (max-width:768px) {
-          width: 450px;
-        }
-
-        @media (max-width:630px) {
-          width: 250px;
-        }
-
-        @media (max-width:435px) {
-          display: none;
-        }
-      }
+    @media (max-width:992px) {
+      font-size: 16px;
+      margin-bottom: 16px;
     }
+
+    @media (max-width: 340px) {
+      text-align: center;
+    }
+  }
 
   &__list {
     display: flex;

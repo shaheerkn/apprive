@@ -50,11 +50,14 @@
   }
 
   &-logo {
-    padding: 117px 123px;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-
   }
+
   &-logo__one  {
     background: linear-gradient(113.75deg, #B27F1F 0%, #FFDD00 50.96%, #F3A80A 100%);
   }
