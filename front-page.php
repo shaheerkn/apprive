@@ -81,8 +81,8 @@
             <h3 class="destination__title for-winter">Courchevel <span class="destination__subtitle">Winter</span></h3>
             <h3 class="destination__title for-summer">Mykonos <span class="destination__subtitle">Summer</span></h3>
             
-            <a href="#" class="btn btn--solid--primary for-summer">Discover Mykonos <img src="assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
-            <a href="#" class="btn btn--solid--primary for-winter">Discover Courchevel <img src="assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
+            <a href="#" class="btn btn--solid--primary for-summer">Discover Mykonos</a>
+            <a href="#" class="btn btn--solid--primary for-winter">Discover Courchevel</a>
           </div>
 
           <p class="destination__description for-winter">Courchevel is one of the most prestigious alpine destinations in the world, offering luxury chalets, ski-in ski-out access and refined winter hospitality in the heart of the French Alps.</p>
