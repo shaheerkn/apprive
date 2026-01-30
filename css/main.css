@@ -1008,6 +1008,7 @@ body:has(.is-open) .overlay {
   .mobile-menu__dropdown.is-open {
     transform: translateX(0);
     visibility: visible;
+    overflow: hidden;
   }
   .mobile-menu__item--back {
     border-bottom: 1px solid #E0E0E0;
