@@ -80,11 +80,11 @@
           <div class="destination__titles">
             <h3 class="destination__title for-winter">Courchevel <span class="destination__subtitle">Winter</span></h3>
             <h3 class="destination__title for-summer">Mykonos <span class="destination__subtitle">Summer</span></h3>
-            <a href="#" class="btn btn--solid--primary">Discover Courchevel <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
+            <a href="#" class="btn btn--solid--primary">Discover Courchevel <img src="assets/icons/icon-to-right-arrow-white.svg" alt="" /></a>
           </div>
 
           <p class="destination__description for-winter">Courchevel is one of the most prestigious alpine destinations in the world, offering luxury chalets, ski-in ski-out access and refined winter hospitality in the heart of the French Alps.</p>
-          <p class="destination__description for-summer">Mykonos is one of the most iconic summer destinations in the Mediterranean, renowned for its luxury villas, crystal-clear sea views and refined lifestyle experiences in the heart of the Greek islands.</p>
+          <p class="destination__description for-summer">Mykonos is one of the most iconic summer destinations in the Mediterranean, renowned for its luxury villas, crystal-clear sea views and refined lifestyle experiences in the heart of the Greek islands.</p>
         </div>
 
         <div class="destination__images">
@@ -149,13 +149,13 @@
   </section>
 
   <section class="concierge section">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section-watermarkTwo.svg" class="water-mark" data-aos="fade-up">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section-watermarkTwo.svg" class="water-mark">
 
     <div class="container">
       <div class="concierge__content">
-        <h2 class="section-title" data-aos="fade-up">CONCIERGE & PRIVATE SERVICES</h2>
+        <h2 class="section-title">CONCIERGE & PRIVATE SERVICES</h2>
         <div class="concierge__columns">
-          <div class="concierge__column" data-aos="fade-up" data-aos-delay="300">
+          <div class="concierge__column">
             <h3 class="concierge__column-title">Hosting & Lifestyle</h3>
             <ol class="concierge__list">
               <li>Restaurant and club booking</li>
@@ -164,7 +164,7 @@
             </ol>
           </div>
 
-          <div class="concierge__column" data-aos="fade-up" data-aos-delay="400">
+          <div class="concierge__column">
             <h3 class="concierge__column-title">Transfers & Mobility</h3>
             <ol class="concierge__list">
               <li>Chauffeured transport</li>
@@ -173,7 +173,7 @@
             </ol>
           </div>
 
-          <div class="concierge__column" data-aos="fade-up" data-aos-delay="500">
+          <div class="concierge__column">
             <h3 class="concierge__column-title">In-home Services</h3>
             <ol class="concierge__list">
               <li>Private chef</li>
