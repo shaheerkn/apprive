@@ -3,6 +3,49 @@
     "title": "Theme Options",
     "fields": [
         {
+            "key": "field_tab_general",
+            "label": "General",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_default_season",
+            "label": "Default Season",
+            "name": "default_season",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "Select the default season for the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "winter": "Winter",
+                "summer": "Summer"
+            },
+            "default_value": "winter",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_tab_brand_values",
             "label": "Brand Values",
             "name": "",
@@ -450,5 +493,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1769524245
+    "modified": 1769735412
 }

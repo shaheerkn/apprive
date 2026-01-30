@@ -22,7 +22,9 @@
 </head>
 
 <?php
-	$class = 'color-scheme-winter';
+	$default_season = get_field('default_season', 'option');
+	$season = $default_season ? $default_season : 'winter';
+	$class = 'color-scheme-' . $season;
 ?>
 
 
