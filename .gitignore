@@ -1,0 +1,36 @@
+# Node modules
+/node_modules
+
+# OS specific
+.DS_Store
+/.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+debug.log
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/
+*.css.map
+*.js.map
+
+# Sass cache
+.sass-cache/
+
+# NPM
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock

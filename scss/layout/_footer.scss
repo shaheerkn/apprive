@@ -82,6 +82,14 @@
           padding: 12px;
         }
 
+        p {
+          display: contents;
+
+          span {
+            width: 100%;
+          }
+        }
+
         input {
           border: none;
           outline: none;
@@ -153,7 +161,7 @@
     padding-bottom: 40px;
     border-bottom: 1px solid #FFFFFF;
     gap: 50px;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @media (max-width: 992px) {
       display: grid;
@@ -302,6 +310,7 @@
           display: flex;
           flex-direction: column;
           gap: 12px;
+          font-size: 20px;
 
           @media (max-width:432px) {
             align-items: center;
@@ -337,12 +346,6 @@
               font-size: 11px;
               font-weight: 600;
             }
-            span {
-              svg {
-                width: 14px;
-                height: 14px;
-              }
-            }
           }
         }
       }
@@ -371,4 +374,8 @@
       margin-top: 16px;
     }
   }
+}
+
+.wpcf7 {
+  width: 100%;
 }

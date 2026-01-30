@@ -1,0 +1,48 @@
+{
+  "_note": "This is a placeholder contract file. The actual ACF field group JSON will be generated after creating the field group in the WordPress admin and will be automatically saved to /inc/acf-json/field-groups/ by ACF's Local JSON feature.",
+  "_instructions": "To generate the complete field group JSON: 1) Create field group in ACF UI following data-model.md, 2) Publish field group, 3) Copy JSON file from /inc/acf-json/field-groups/group_*.json to this location for documentation",
+  "key": "group_property_fields",
+  "title": "Property Fields",
+  "fields": [
+    {
+      "key": "field_tab_basic_info",
+      "label": "Basic Information",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_prop_location_text",
+      "label": "Location Display Name",
+      "name": "prop_location_text",
+      "type": "text",
+      "instructions": "The location text shown on the property page (e.g., 'Courchevel 1850'). This appears in the header and breadcrumbs.",
+      "required": 1,
+      "maxlength": 100,
+      "placeholder": "e.g., Courchevel 1850"
+    },
+    {
+      "_note": "Additional fields will be added here when the complete field group is created in ACF UI. See data-model.md for full field structure."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "property"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Complete ACF field group for Property post type with 5 tab sections: Basic Info, Pricing & Booking, Gallery & Media, Features & Amenities, Services & Extras"
+}

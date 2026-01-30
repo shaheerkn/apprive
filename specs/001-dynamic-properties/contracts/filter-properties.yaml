@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: Property Filter API
+  version: 1.0.0
+paths:
+  /wp-admin/admin-ajax.php?action=filter_properties:
+    get:
+      summary: Filter properties based on criteria
+      parameters:
+        - name: destination
+          in: query
+          schema:
+            type: string
+          description: Destination taxonomy term slug or ID
+        - name: guests
+          in: query
+          schema:
+            type: integer
+          description: Minimum number of guests
+        - name: price_min
+          in: query
+          schema:
+            type: integer
+        - name: price_max
+          in: query
+          schema:
+            type: integer
+        - name: bedrooms
+          in: query
+          schema:
+            type: integer
+        - name: wellness
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+          description: Array of term IDs
+        - name: amenities
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: property_type
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: location
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+          description: Access Type taxonomy term IDs
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [default, price_asc, price_desc]
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      html:
+                        type: string
+                        description: Rendered HTML of property cards
+                      pagination:
+                        type: object
+                        properties:
+                          max_pages:
+                            type: integer
+                          current_page:
+                            type: integer
+                          found_posts:
+                            type: integer

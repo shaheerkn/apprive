@@ -1,0 +1,33 @@
+Subject: New Property Submission: [property-type] in [property-location] from [your-name]
+
+From: [your-name] <[your-email]>
+Message Body:
+You have received a new private assistance request from [_site_title] Property Submission form.
+
+--- OWNER/MANAGER INFORMATION ---
+Full Name: [your-name]
+Email: [your-email]
+Mobile Phone: [your-phone]
+Role: [user-role]
+
+--- PROPERTY DETAILS ---
+Location: [property-location]
+Property Type: [property-type]
+Capacity (Guests): [capacity]
+Number of Bathrooms: [bathrooms]
+Number of Bedrooms: [bedrooms]
+Surface Area: [surface-area] m²
+
+--- LINKS & MEDIA ---
+Photos URL: [photos-url]
+Floor Plan URL: [floor-plan-url]
+
+--- NOTES & ADDITIONAL INFO ---
+Private Notes:
+[private-notes]
+
+Tell Us More (Additional Message):
+[additional-message]
+
+-- 
+This e-mail was sent from a contact form on ([_site_title] [_site_url])

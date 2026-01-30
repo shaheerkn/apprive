@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Favorites API
+  version: 1.0.0
+paths:
+  /wp-admin/admin-ajax.php?action=toggle_favorite:
+    post:
+      summary: Toggle property favorite status
+      parameters:
+        - name: property_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: _ajax_nonce
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      is_favorite:
+                        type: boolean
+                        description: True if added, False if removed
+                      favorites_count:
+                        type: integer
+                        description: (Optional) Total favorites count for user
+        '401':
+          description: Unauthorized (User not logged in)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    properties:
+                      redirect:
+                        type: string
+                        description: URL to login page

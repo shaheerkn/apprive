@@ -29,6 +29,8 @@ const headerToggle = document.querySelector('.header__season-toggle .header__tog
 const mobileToggle = document.querySelector('.mobile-menu__season-toggle .header__toggle-input');
 
 function updateColorScheme(isChecked) {
+  const season = isChecked ? 'winter' : 'summer';
+  
   if (isChecked) {
     document.body.classList.remove('color-scheme-summer');
     document.body.classList.add('color-scheme-winter');
@@ -36,6 +38,10 @@ function updateColorScheme(isChecked) {
     document.body.classList.remove('color-scheme-winter');
     document.body.classList.add('color-scheme-summer');
   }
+
+  // Dispatch custom event
+  const event = new CustomEvent('seasonChange', { detail: { season: season } });
+  document.dispatchEvent(event);
 }
 
 function syncToggles(sourceToggle, targetToggle) {

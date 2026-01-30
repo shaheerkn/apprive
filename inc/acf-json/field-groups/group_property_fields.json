@@ -1,0 +1,1282 @@
+{
+    "key": "group_property_fields",
+    "title": "Property Fields",
+    "fields": [
+        {
+            "key": "field_tab_basic_info",
+            "label": "Basic Information",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_location_text",
+            "label": "Location Display Name",
+            "name": "prop_location_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The location text shown on the property page (e.g., \"Courchevel 1850\"). This appears in the header and breadcrumbs.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 100,
+            "allow_in_bindings": 0,
+            "placeholder": "e.g., Courchevel 1850",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_prop_location_taxonomy",
+            "label": "Destination\/Location",
+            "name": "prop_location_taxonomy",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the destination for this property. Used for breadcrumb navigation and property filtering.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "destination",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "field_type": "select",
+            "allow_null": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_prop_specs",
+            "label": "Property Specifications",
+            "name": "prop_specs",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Enter the core specifications for this property. These display in the specifications grid.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_specs_max_guests",
+                    "label": "Maximum Guests",
+                    "name": "max_guests",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "Maximum number of guests this property can accommodate.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 1,
+                    "max": 50,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "guests"
+                },
+                {
+                    "key": "field_prop_specs_bedroom_count",
+                    "label": "Number of Bedrooms",
+                    "name": "bedroom_count",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "Total number of bedrooms in the property.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 0,
+                    "max": 20,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "bedrooms"
+                },
+                {
+                    "key": "field_prop_specs_bathroom_count",
+                    "label": "Number of Bathrooms",
+                    "name": "bathroom_count",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "Total number of bathrooms in the property.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 0,
+                    "max": 20,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "bathrooms"
+                },
+                {
+                    "key": "field_prop_specs_size_sqm",
+                    "label": "Property Size",
+                    "name": "size_sqm",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "Total property size in square meters.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 1,
+                    "max": 10000,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "m²"
+                },
+                {
+                    "key": "field_prop_specs_access_type",
+                    "label": "Access Type",
+                    "name": "access_type",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "Type of property access (e.g., \"Ski-in\/Ski-out\", \"5 min walk to slopes\").",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "access-type",
+                    "add_term": 1,
+                    "save_terms": 1,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": []
+                },
+                {
+                    "key": "field_prop_specs_staff_availability",
+                    "label": "Staff Availability",
+                    "name": "staff_availability",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Staff availability information (e.g., \"Available on request\", \"Included\").",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Available on request",
+                    "maxlength": 100,
+                    "allow_in_bindings": 0,
+                    "placeholder": "e.g., Available on request",
+                    "prepend": "",
+                    "append": ""
+                }
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_tab_pricing_booking",
+            "label": "Pricing & Booking",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_pricing",
+            "label": "Pricing Information",
+            "name": "prop_pricing",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Enter pricing details for this property. Starting price is the base weekly rate shown on the property page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_pricing_starting_price",
+                    "label": "Starting Price",
+                    "name": "starting_price",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "Base price for this property. Do not include currency symbol.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 0,
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_pricing_currency",
+                    "label": "Currency Symbol",
+                    "name": "currency",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Currency symbol to display with the price (e.g., €, $, £).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "€",
+                    "maxlength": 5,
+                    "allow_in_bindings": 0,
+                    "placeholder": "€",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_pricing_price_period",
+                    "label": "Price Period",
+                    "name": "price_period",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "The period this price covers (e.g., \"\/week\", \"\/night\", \"\/month\").",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "\/week",
+                    "maxlength": 20,
+                    "allow_in_bindings": 0,
+                    "placeholder": "\/week",
+                    "prepend": "",
+                    "append": ""
+                }
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_prop_booking",
+            "label": "Contact & Booking Links",
+            "name": "prop_booking",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Links for availability inquiries and chat\/contact. Leave empty to hide these buttons.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_booking_availability_link",
+                    "label": "Availability Link",
+                    "name": "availability_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "URL for the \"Contact us for private availability\" button. Leave empty to hide this button.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "https:\/\/example.com\/contact"
+                },
+                {
+                    "key": "field_prop_booking_chat_link",
+                    "label": "Chat Link",
+                    "name": "chat_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "URL for the \"Chat with us\" button (e.g., WhatsApp link). Leave empty to hide this button.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "https:\/\/wa.me\/1234567890"
+                }
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_tab_gallery_media",
+            "label": "Gallery & Media",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_gallery",
+            "label": "Main Property Gallery",
+            "name": "prop_gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Upload images for the main property slider. Images will be displayed in the order shown here. Minimum 3 images recommended.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": 1,
+            "max": 20,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_prop_seasonal_toggle",
+            "label": "Use Seasonal Galleries",
+            "name": "prop_seasonal_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable this to show different images for winter and summer seasons. When enabled, winter gallery shows from November-March, summer gallery shows April-October. When disabled, only the main gallery above is used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "message": "Show seasonal galleries (winter\/summer)"
+        },
+        {
+            "key": "field_prop_winter_gallery",
+            "label": "Winter Gallery",
+            "name": "prop_winter_gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Images shown during winter season (November - March). Only used if \"Use Seasonal Galleries\" is enabled.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_prop_seasonal_toggle",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": 20,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_prop_summer_gallery",
+            "label": "Summer Gallery",
+            "name": "prop_summer_gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Images shown during summer season (April - October). Only used if \"Use Seasonal Galleries\" is enabled.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_prop_seasonal_toggle",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": 20,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_prop_room_images",
+            "label": "Room & Layout Images",
+            "name": "prop_room_images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Images showing room details and property layout. These appear in the \"Room & Space Details\" section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": 10,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_tab_features_amenities",
+            "label": "Features & Amenities",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_key_features",
+            "label": "Key Features",
+            "name": "prop_key_features",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add the highlighted features for this property. Each feature will be displayed in the \"Key Features\" section with an icon.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 10,
+            "collapsed": "",
+            "button_label": "Add Feature",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_prop_key_features_icon",
+                    "label": "Icon",
+                    "name": "feature_icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload an SVG icon for this feature. Recommended size: 40x40px. Use consistent icon style across all features.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_prop_key_features",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
+                },
+                {
+                    "key": "field_prop_key_features_label",
+                    "label": "Feature Text",
+                    "name": "feature_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "The text describing this feature (e.g., \"Private Spa & Sauna\", \"Indoor heated pool\").",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 100,
+                    "allow_in_bindings": 0,
+                    "placeholder": "e.g., Private Spa & Sauna",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_prop_key_features"
+                }
+            ],
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_prop_room_details",
+            "label": "Room & Space Details",
+            "name": "prop_room_details",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Detailed breakdown of rooms and spaces in the property. These appear in the \"Room & Space Details\" section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 20,
+            "collapsed": "",
+            "button_label": "Add Room Detail",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_prop_room_details_icon",
+                    "label": "Icon",
+                    "name": "room_icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload an SVG icon for this room type. Recommended size: 27x27px.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_prop_room_details",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
+                },
+                {
+                    "key": "field_prop_room_details_description",
+                    "label": "Room Description",
+                    "name": "room_description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Description of this room or space (e.g., \"1 Master bedroom (king size, en-suite bathroom, balcony)\", \"Large living room with fireplace\").",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 200,
+                    "allow_in_bindings": 0,
+                    "placeholder": "e.g., 1 Master bedroom (king size, en-suite)",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_prop_room_details"
+                }
+            ],
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_tab_services_extras",
+            "label": "Services & Extras",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_services",
+            "label": "In-Chalet Services",
+            "name": "prop_services",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Services available for this property (e.g., Private chef, Housekeeping, Butler). These appear in the \"In-Chalet Services\" section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 15,
+            "collapsed": "",
+            "button_label": "Add Service",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_prop_services_icon",
+                    "label": "Icon",
+                    "name": "service_icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload an SVG icon for this service. Recommended size: 30x30px.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_prop_services",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
+                },
+                {
+                    "key": "field_prop_services_label",
+                    "label": "Service Name",
+                    "name": "service_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Name of the service (e.g., \"Private chef\", \"Housekeeping staff\", \"Butler \/ host\").",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 100,
+                    "allow_in_bindings": 0,
+                    "placeholder": "e.g., Private chef",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_prop_services"
+                }
+            ],
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_tab_location_context",
+            "label": "Location Context",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_location_context",
+            "label": "Location Context Section",
+            "name": "prop_location_context",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_location_context_title",
+                    "label": "Title",
+                    "name": "prop_location_context_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title for the location context section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "LOCATION CONTEXT",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_location_context_subtitle",
+                    "label": "Subtitle",
+                    "name": "prop_location_context_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Subtitle displayed above the location text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Location",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_location_context_location",
+                    "label": "Location Text",
+                    "name": "prop_location_context_location",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main location description text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "e.g., \"Courchevel 1850 – Bellecôte Area\"",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_location_context_features",
+                    "label": "Features",
+                    "name": "prop_location_context_features",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "List of location features\/highlights",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Feature",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_feature_text",
+                            "label": "Feature Text",
+                            "name": "feature_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "e.g., \"3 minutes from main slopes\"",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_prop_location_context_features"
+                        }
+                    ],
+                    "acfe_repeater_stylised_button": 0
+                },
+                {
+                    "key": "field_697877214755e",
+                    "label": "Map",
+                    "name": "prop_location_context_map",
+                    "aria-label": "",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "",
+                    "center_lng": "",
+                    "zoom": "",
+                    "height": "",
+                    "allow_in_bindings": 0
+                }
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_tab_info",
+            "label": "Good to Know",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_info",
+            "label": "Information (Good to Know) Section",
+            "name": "prop_info",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_info_title",
+                    "label": "Title",
+                    "name": "prop_info_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title for the information section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "GOOD TO KNOW",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_info_subtitle",
+                    "label": "Subtitle",
+                    "name": "prop_info_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Subtitle displayed below the main title",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Useful information",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_info_items",
+                    "label": "Information Items",
+                    "name": "prop_info_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "List of useful information items (will be split into 2 columns automatically)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Information Item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_item_text",
+                            "label": "Item Text",
+                            "name": "item_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "e.g., \"Check-in: after 16:00\"",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_prop_info_items"
+                        }
+                    ],
+                    "acfe_repeater_stylised_button": 0
+                },
+                {
+                    "key": "field_prop_info_watermark",
+                    "label": "Watermark Image",
+                    "name": "prop_info_watermark",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Optional decorative watermark image (defaults to theme watermark if not set)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
+                }
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_tab_featured",
+            "label": "Featured Properties",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_prop_featured",
+            "label": "Featured Properties Section",
+            "name": "prop_featured",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_prop_featured_title",
+                    "label": "Title",
+                    "name": "prop_featured_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title for the featured properties section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "YOU MAY ALSO LIKE",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_prop_featured_properties",
+                    "label": "Featured Properties",
+                    "name": "prop_featured_properties",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "Select related\/featured properties to display in the carousel",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "property"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "post_type"
+                    ],
+                    "return_format": "object",
+                    "min": 0,
+                    "max": 0,
+                    "allow_in_bindings": 0,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": []
+                }
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "property"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Complete field group for property post type with 8 organized tabs.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1769536579
+}

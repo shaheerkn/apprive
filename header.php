@@ -1,0 +1,329 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package arprive
+ */
+
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<?php wp_head(); ?>
+</head>
+
+<?php
+	$default_season = get_field('default_season', 'option');
+	$season = $default_season ? $default_season : 'winter';
+	$class = 'color-scheme-' . $season;
+?>
+
+
+<body <?php body_class($class); ?>>
+<?php wp_body_open(); ?>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ar' ); ?></a>
+
+	<header class="header <?php echo !is_front_page() ? 'header__modifier' : ''; ?>">
+    <div class="container">
+      <div class="header__container">
+      <button class="header__menu-toggle" aria-label="Toggle menu">
+        <div class="header__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button> 
+
+      <a href="<?php echo home_url(); ?>" class="header__logo">
+        <svg width="109" height="28" viewBox="0 0 109 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.7061 15.2674C18.9383 15.1975 19.1671 15.1175 19.4026 15.0576C21.079 14.6429 22.1651 13.592 22.6626 11.9365C23.3027 9.77135 23.1451 7.69783 21.8766 5.78254C21.2448 4.82822 20.3842 4.22698 19.2119 4.11706C19.0721 4.09162 18.935 4.05315 18.8023 4.00214L18.8156 3.88722C19.2434 3.91387 19.6712 3.93552 20.0974 3.96883C21.2581 4.06043 22.3674 4.30193 23.4038 4.84321C25.5827 5.99905 26.3023 8.00761 26.0785 10.236C25.7684 13.3471 23.5547 14.8261 20.9298 15.2325C20.5418 15.2907 20.1488 15.3224 19.9233 15.3474C20.4953 15.4789 21.2498 15.5822 21.9529 15.8287C24.0522 16.5665 25.2776 18.1137 25.6109 20.2838C25.8314 21.7112 25.8497 23.1701 25.9259 24.6141C25.9724 25.4685 26.0553 26.3129 26.6605 26.9674C26.9507 27.2822 27.3487 27.4954 27.7019 27.7535C27.781 27.7973 27.8527 27.8535 27.9141 27.9201C26.4217 28.0583 24.9675 28.0283 23.6807 27.1106C22.8085 26.4861 22.4603 25.5601 22.3376 24.5625C22.1801 23.2884 22.1353 22.001 22.0192 20.7202C21.9463 19.9174 21.8506 19.1169 21.7323 18.3186C21.5317 16.9979 20.7474 16.1635 19.512 15.7254C19.2384 15.6272 18.9714 15.5172 18.7012 15.4123L18.7061 15.2674Z" fill="white"/>
+          <path d="M6.12539 10.3376C5.73571 10.1511 5.94796 9.96621 6.02424 9.81965C6.462 8.97026 6.91137 8.12753 7.35909 7.28313C7.8068 6.43873 8.27109 5.56602 8.72875 4.70997C8.81332 4.55341 8.9095 4.40352 9.07532 4.12372C12.5708 12.103 16.0298 19.9907 19.5319 28H16.3233C13.385 21.3464 10.4483 14.6962 7.4536 7.91934L6.12539 10.3376Z" fill="white"/>
+          <path d="M0 27.9534C0.424499 27.6702 0.844023 27.4704 1.16074 27.1623C1.85221 26.4961 2.02963 25.61 2.06777 24.6757C2.12084 23.36 2.16063 22.0393 2.28997 20.7302C2.5984 17.5991 4.79717 15.4923 7.91624 15.2674C8.37059 15.2325 8.82162 15.1875 9.2743 15.1458L9.31244 15.2841C9.11511 15.364 8.92111 15.4606 8.71715 15.5222C7.05895 16.0219 6.34427 17.2493 6.19503 18.8749C6.02921 20.5953 5.9264 22.3207 5.79375 24.0378C5.63953 26.0364 4.72752 27.2439 2.9632 27.7652C2.63391 27.8661 2.29377 27.927 1.95004 27.9467C1.31495 27.975 0.676545 27.9534 0 27.9534Z" fill="white"/>
+          <path d="M40.722 6.07066H47.3963C51.7225 6.07066 54.0025 8.82869 54.0025 12.4295C54.0025 16.0569 51.7225 18.8166 47.4095 18.8166H42.6721V26.6226H40.722V6.07066ZM47.3266 17.0628C50.5004 17.0628 52.0658 15.1042 52.0658 12.4278C52.0658 9.75137 50.5004 7.81941 47.3134 7.81941H42.6704V17.0628H47.3266Z" fill="white"/>
+          <path d="M56.9773 6.07066H63.6516C67.9778 6.07066 70.2579 8.6355 70.2579 12.2629C70.2579 14.6495 69.0358 16.7464 66.7276 17.7407C68.2796 18.2503 69.2828 19.3945 69.8052 20.8301C70.1202 21.6845 70.3026 22.7604 70.3673 24.0162C70.4048 24.9071 70.5811 25.7865 70.8896 26.6226H68.719C68.5107 25.8623 68.3954 25.0793 68.3758 24.291C68.336 23.1601 68.1834 22.0692 67.8137 21.1732C67.1123 19.546 65.6099 18.4318 63.2884 18.3602H58.9274V26.6226H56.9773V6.07066ZM63.5836 16.5998C66.7557 16.5998 68.3211 14.9177 68.3211 12.2696C68.3211 9.57982 66.7557 7.82774 63.5687 7.82774H58.9257V16.5998H63.5836Z" fill="white"/>
+          <path d="M75.3071 26.6226H73.357V6.07066H75.3071V26.6226Z" fill="white"/>
+          <path d="M77.403 6.07066H79.4492L84.3111 19.5061C84.792 20.8018 85.3956 22.6088 86.1235 25.0238C86.8647 22.5539 87.4501 20.8018 87.9226 19.5061L92.7016 6.07066H94.776L87.2643 26.6226H84.9694L77.403 6.07066Z" fill="white"/>
+          <path d="M96.8587 6.07066H108.808V7.82108H98.8087V15.409H108.176V17.1611H98.8087V24.8722H109V26.6226H96.8587V6.07066ZM104.08 0H106.194L103.654 3.97383H102.102L104.08 0Z" fill="white"/>
+        </svg>
+      </a>
+
+      <nav class="header__nav">
+        <?php
+        $header_menu_location = get_nav_menu_locations();
+        if( $header_menu_location['primary-menu'] ) {
+            wp_nav_menu( array(
+                'theme_location'  => 'primary-menu',
+                'container'       => false,
+                'menu_class'      => 'header__nav-list',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'fallback_cb'     => false,
+                'walker'          => new Ar_Header_Nav_Walker(),
+            ) );
+        } else {
+        ?>
+        <ul class="header__nav-list">
+          <li class="header__nav-item header__nav-item--has-dropdown">
+            <a href="#" class="header__nav-link">
+              Destinations
+
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
+              </svg>
+            </a>
+
+            <div class="header__mega-menu">
+              <div class="header__mega-menu-item">
+                <a href="#" class="header__mega-menu-link">
+                  Winter
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">
+                </a>
+                <div class="header__mega-menu-sub">
+                  <a href="#" class="header__mega-menu-sub-link">
+                    Mykonos
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">
+                  </a>
+                </div>
+              </div>
+              <div class="header__mega-menu-item">
+                <a href="#" class="header__mega-menu-link header__mega-menu-link--active">
+                  Summer
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="header__chevron">
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">
+              Service
+
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">
+              Discover Us
+
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">
+              Journal
+
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">
+              Properties
+
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.36667 6.19238L0 0.825708L0.825708 0L7.01808 6.19238L0.825708 12.3848L0 11.559L5.36667 6.19238Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <?php } ?>
+      </nav>
+
+      <div class="header__utils">
+        <button class="header__lang-btn">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-us-flag.svg" alt="US Flag" class="header__lang-flag">
+
+          <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6 6L11 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <a href="<?php echo home_url(); ?>/properties" class="header__icon-btn header__search-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.2895 19.1152L10.9845 11.8102C10.4011 12.3068 9.73029 12.6912 8.97196 12.9634C8.21363 13.2356 7.4516 13.3717 6.68588 13.3717C4.81726 13.3717 3.23575 12.7249 1.94133 11.4313C0.647111 10.1377 0 8.55711 0 6.68967C0 4.82203 0.646819 3.24012 1.94046 1.94396C3.2341 0.647985 4.81464 0 6.68208 0C8.54972 0 10.1316 0.647111 11.4278 1.94133C12.7238 3.23575 13.3718 4.81726 13.3718 6.68587C13.3718 7.49651 13.2282 8.281 12.941 9.03933C12.6538 9.79767 12.2768 10.446 11.8102 10.9845L19.1152 18.2898L18.2895 19.1152ZM6.68588 12.2051C8.23385 12.2051 9.54071 11.6722 10.6065 10.6065C11.6722 9.5409 12.2051 8.23404 12.2051 6.68587C12.2051 5.13771 11.6722 3.83085 10.6065 2.76529C9.54071 1.69954 8.23385 1.16667 6.68588 1.16667C5.13771 1.16667 3.83085 1.69954 2.76529 2.76529C1.69954 3.83085 1.16667 5.13771 1.16667 6.68587C1.16667 8.23404 1.69954 9.5409 2.76529 10.6065C3.83085 11.6722 5.13771 12.2051 6.68588 12.2051Z" fill="white"/>
+          </svg>
+        </a>
+
+        <a href="#request" class="header__icon-btn header__contact-btn">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.4192 18.6667C15.4524 18.6667 13.4362 18.1742 11.3706 17.1894C9.30504 16.2043 7.38597 14.8218 5.61342 13.0419C3.84106 11.2621 2.46235 9.34315 1.47729 7.28496C0.49243 5.22676 0 3.21426 0 1.24746C0 0.891042 0.116667 0.594027 0.35 0.356416C0.583333 0.118805 0.875 0 1.225 0H4.11017C4.42731 0 4.704 0.0998478 4.94025 0.299542C5.17669 0.499237 5.33682 0.755416 5.42062 1.06808L5.99929 3.85C6.05315 4.17608 6.04343 4.46104 5.97012 4.70487C5.89682 4.94871 5.76742 5.1484 5.58192 5.30396L3.02225 7.69096C3.50078 8.55993 4.02986 9.36726 4.6095 10.113C5.18914 10.8587 5.80728 11.565 6.46392 12.2319C7.14136 12.9096 7.87053 13.5397 8.65142 14.1222C9.43211 14.7048 10.2891 15.2548 11.2225 15.7725L13.7174 13.2326C13.9073 13.0277 14.1208 12.8927 14.3579 12.8278C14.5949 12.7627 14.857 12.7495 15.1442 12.7884L17.5986 13.291C17.9157 13.3687 18.1731 13.5285 18.3706 13.7702C18.568 14.0117 18.6667 14.2887 18.6667 14.6014V17.4417C18.6667 17.7917 18.5479 18.0833 18.3102 18.3167C18.0726 18.55 17.7756 18.6667 17.4192 18.6667ZM2.47479 6.59604L4.71392 4.53658C4.78858 4.47669 4.83719 4.39444 4.85975 4.28983C4.88211 4.18503 4.87832 4.08781 4.84837 3.99817L4.33008 1.52571C4.30014 1.40593 4.24783 1.31619 4.17317 1.2565C4.0983 1.19661 4.00108 1.16667 3.8815 1.16667H1.4875C1.39767 1.16667 1.3229 1.19661 1.26321 1.2565C1.20332 1.31619 1.17337 1.39096 1.17337 1.48079C1.19574 2.27801 1.32067 3.11033 1.54817 3.97775C1.77547 4.84536 2.08435 5.71813 2.47479 6.59604ZM12.3331 16.3199C13.1212 16.7104 13.9614 16.999 14.8537 17.1859C15.7458 17.3729 16.5232 17.4732 17.1859 17.4866C17.2757 17.4866 17.3505 17.4566 17.4102 17.3967C17.4701 17.3369 17.5 17.2621 17.5 17.1725V14.8301C17.5 14.7105 17.4701 14.6133 17.4102 14.5384C17.3505 14.4637 17.2607 14.4114 17.141 14.3815L14.9826 13.9393C14.893 13.9094 14.8145 13.9057 14.7472 13.9282C14.6798 13.9506 14.6087 13.9992 14.534 14.0741L12.3331 16.3199Z" fill="white"/>
+          </svg>
+        </a>
+
+        <a href="<?php echo home_url(); ?>/favourites" class="header__icon-btn header__favorite-btn">
+          <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5 18.671L9.61596 17.8725C7.71196 16.133 6.13696 14.644 4.89096 13.4056C3.64515 12.167 2.66175 11.0747 1.94075 10.1287C1.21975 9.18274 0.716042 8.32679 0.429625 7.56087C0.143208 6.79515 0 6.02486 0 5.25C0 3.76619 0.504097 2.52029 1.51229 1.51229C2.52029 0.504097 3.76619 0 5.25 0C6.27608 0 7.23858 0.2625 8.1375 0.7875C9.03642 1.3125 9.82392 2.07608 10.5 3.07825C11.1761 2.07608 11.9636 1.3125 12.8625 0.7875C13.7614 0.2625 14.7239 0 15.75 0C17.2338 0 18.4797 0.504097 19.4877 1.51229C20.4959 2.52029 21 3.76619 21 5.25C21 6.02486 20.8568 6.79515 20.5704 7.56087C20.284 8.32679 19.7803 9.18274 19.0592 10.1287C18.3383 11.0747 17.3585 12.167 16.1201 13.4056C14.8817 14.644 13.303 16.133 11.384 17.8725L10.5 18.671ZM10.5 17.0917C12.3667 15.4045 13.9028 13.9593 15.1083 12.756C16.3139 11.5526 17.2667 10.5086 17.9667 9.62383C18.6667 8.73911 19.1528 7.9554 19.425 7.27271C19.6972 6.58982 19.8333 5.91558 19.8333 5.25C19.8333 4.08333 19.4444 3.11111 18.6667 2.33333C17.8889 1.55556 16.9167 1.16667 15.75 1.16667C14.8211 1.16667 13.9641 1.43179 13.179 1.96204C12.3936 2.49229 11.6906 3.29058 11.0699 4.35692H9.93008C9.29444 3.27561 8.58774 2.47353 7.80996 1.95067C7.03218 1.428 6.17886 1.16667 5.25 1.16667C4.09831 1.16667 3.12978 1.55556 2.34442 2.33333C1.55925 3.11111 1.16667 4.08333 1.16667 5.25C1.16667 5.91558 1.30278 6.58982 1.575 7.27271C1.84722 7.9554 2.33333 8.73911 3.03333 9.62383C3.73333 10.5086 4.68611 11.5488 5.89167 12.7447C7.09722 13.9405 8.63333 15.3895 10.5 17.0917Z" fill="white"/>
+          </svg>
+          
+          <?php
+            $fav_count = 0;
+            if ( is_user_logged_in() ) {
+                $user_id = get_current_user_id();
+                $favorites = get_user_meta( $user_id, 'favorite_properties', true );
+                if ( is_array( $favorites ) ) {
+                    $fav_count = count( $favorites );
+                }
+            }
+          ?>
+          <span class="header__favorite-count <?php echo $fav_count === 0 ? 'hidden' : ''; ?>"><?php echo esc_html($fav_count); ?></span>
+        </a>
+
+        <div class="header__season-toggle">
+          <div class="toggle-text">
+            <span class="header__season-text for-winter">Winter</span>
+            <span class="header__season-text for-summer">Summer</span>
+          </div>
+
+          <label class="header__toggle-switch">
+            <input type="checkbox" class="header__toggle-input">
+            <span class="header__toggle-slider">
+              <span class="header__toggle-icon-wrapper header__toggle-icon-wrapper--left">
+                <svg class="header__toggle-icon header__toggle-icon--snow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1V11M1 6H11M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <svg class="header__toggle-icon header__toggle-icon--snow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1V11M1 6H11M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="header__toggle-icon-wrapper header__toggle-icon-wrapper--right">
+                <svg class="header__toggle-icon header__toggle-icon--sun" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7" cy="7" r="3" fill="white"/>
+                  <path d="M7 0V2M7 12V14M0 7H2M12 7H14M2.343 2.343L3.757 3.757M10.243 10.243L11.657 11.657M2.343 11.657L3.757 10.243M10.243 3.757L11.657 2.343" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+	<div class="mobile-menu">
+    <div class="mobile-menu__overlay"></div>
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__header">
+        <button class="mobile-menu__back">
+          <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 11.6667V10.5H13.3268V11.6667H0ZM17.841 10.6123L13.0174 5.83333L17.841 1.07683L18.6667 1.90254L14.6685 5.83333L18.6667 9.78658L17.841 10.6123ZM0 6.41667V5.25H10.0065V6.41667H0ZM0 1.16667V0H13.3268V1.16667H0Z" fill="#1F1F1F"/>
+          </svg>
+        </button>
+
+        <div class="mobile-menu__logo">
+          <?php 
+          $header_logo = get_field('header_logo', 'option');
+          if( $header_logo ): ?>
+            <a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url($header_logo); ?>" alt="<?php bloginfo('name'); ?>"></a>
+          <?php else: ?>
+          <svg width="109" height="28" viewBox="0 0 109 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.7061 15.2674C18.9383 15.1975 19.1671 15.1175 19.4026 15.0576C21.079 14.6429 22.1651 13.592 22.6626 11.9365C23.3027 9.77135 23.1451 7.69783 21.8766 5.78254C21.2448 4.82822 20.3842 4.22698 19.2119 4.11706C19.0721 4.09162 18.935 4.05315 18.8023 4.00214L18.8156 3.88722C19.2434 3.91387 19.6712 3.93552 20.0974 3.96883C21.2581 4.06043 22.3674 4.30193 23.4038 4.84321C25.5827 5.99905 26.3023 8.00761 26.0785 10.236C25.7684 13.3471 23.5547 14.8261 20.9298 15.2325C20.5418 15.2907 20.1488 15.3224 19.9233 15.3474C20.4953 15.4789 21.2498 15.5822 21.9529 15.8287C24.0522 16.5665 25.2776 18.1137 25.6109 20.2838C25.8314 21.7112 25.8497 23.1701 25.9259 24.6141C25.9724 25.4685 26.0553 26.3129 26.6605 26.9674C26.9507 27.2822 27.3487 27.4954 27.7019 27.7535C27.781 27.7973 27.8527 27.8535 27.9141 27.9201C26.4217 28.0583 24.9675 28.0283 23.6807 27.1106C22.8085 26.4861 22.4603 25.5601 22.3376 24.5625C22.1801 23.2884 22.1353 22.001 22.0192 20.7202C21.9463 19.9174 21.8506 19.1169 21.7323 18.3186C21.5317 16.9979 20.7474 16.1635 19.512 15.7254C19.2384 15.6272 18.9714 15.5172 18.7012 15.4123L18.7061 15.2674Z" fill="#000"/>
+            <path d="M6.12539 10.3376C5.73571 10.1511 5.94796 9.96621 6.02424 9.81965C6.462 8.97026 6.91137 8.12753 7.35909 7.28313C7.8068 6.43873 8.27109 5.56602 8.72875 4.70997C8.81332 4.55341 8.9095 4.40352 9.07532 4.12372C12.5708 12.103 16.0298 19.9907 19.5319 28H16.3233C13.385 21.3464 10.4483 14.6962 7.4536 7.91934L6.12539 10.3376Z" fill="#000"/>
+            <path d="M0 27.9534C0.424499 27.6702 0.844023 27.4704 1.16074 27.1623C1.85221 26.4961 2.02963 25.61 2.06777 24.6757C2.12084 23.36 2.16063 22.0393 2.28997 20.7302C2.5984 17.5991 4.79717 15.4923 7.91624 15.2674C8.37059 15.2325 8.82162 15.1875 9.2743 15.1458L9.31244 15.2841C9.11511 15.364 8.92111 15.4606 8.71715 15.5222C7.05895 16.0219 6.34427 17.2493 6.19503 18.8749C6.02921 20.5953 5.9264 22.3207 5.79375 24.0378C5.63953 26.0364 4.72752 27.2439 2.9632 27.7652C2.63391 27.8661 2.29377 27.927 1.95004 27.9467C1.31495 27.975 0.676545 27.9534 0 27.9534Z" fill="#000"/>
+            <path d="M40.722 6.07066H47.3963C51.7225 6.07066 54.0025 8.82869 54.0025 12.4295C54.0025 16.0569 51.7225 18.8166 47.4095 18.8166H42.6721V26.6226H40.722V6.07066ZM47.3266 17.0628C50.5004 17.0628 52.0658 15.1042 52.0658 12.4278C52.0658 9.75137 50.5004 7.81941 47.3134 7.81941H42.6704V17.0628H47.3266Z" fill="#000"/>
+            <path d="M56.9773 6.07066H63.6516C67.9778 6.07066 70.2579 8.6355 70.2579 12.2629C70.2579 14.6495 69.0358 16.7464 66.7276 17.7407C68.2796 18.2503 69.2828 19.3945 69.8052 20.8301C70.1202 21.6845 70.3026 22.7604 70.3673 24.0162C70.4048 24.9071 70.5811 25.7865 70.8896 26.6226H68.719C68.5107 25.8623 68.3954 25.0793 68.3758 24.291C68.336 23.1601 68.1834 22.0692 67.8137 21.1732C67.1123 19.546 65.6099 18.4318 63.2884 18.3602H58.9274V26.6226H56.9773V6.07066ZM63.5836 16.5998C66.7557 16.5998 68.3211 14.9177 68.3211 12.2696C68.3211 9.57982 66.7557 7.82774 63.5687 7.82774H58.9257V16.5998H63.5836Z" fill="#000"/>
+            <path d="M75.3071 26.6226H73.357V6.07066H75.3071V26.6226Z" fill="#000"/>
+            <path d="M77.403 6.07066H79.4492L84.3111 19.5061C84.792 20.8018 85.3956 22.6088 86.1235 25.0238C86.8647 22.5539 87.4501 20.8018 87.9226 19.5061L92.7016 6.07066H94.776L87.2643 26.6226H84.9694L77.403 6.07066Z" fill="#000"/>
+            <path d="M96.8587 6.07066H108.808V7.82108H98.8087V15.409H108.176V17.1611H98.8087V24.8722H109V26.6226H96.8587V6.07066ZM104.08 0H106.194L103.654 3.97383H102.102L104.08 0Z" fill="#000"/>
+          </svg>
+          <?php endif; ?>
+        </div>
+
+        <div class="mobile-menu__season-toggle">
+          <label class="header__toggle-switch">
+            <input type="checkbox" class="header__toggle-input">
+            <span class="header__toggle-slider">
+              <span class="header__toggle-icon-wrapper header__toggle-icon-wrapper--left">
+                <svg class="header__toggle-icon header__toggle-icon--snow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1V11M1 6H11M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <svg class="header__toggle-icon header__toggle-icon--snow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1V11M1 6H11M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="header__toggle-icon-wrapper header__toggle-icon-wrapper--right">
+                <svg class="header__toggle-icon header__toggle-icon--sun" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7" cy="7" r="3" fill="white"/>
+                  <path d="M7 0V2M7 12V14M0 7H2M12 7H14M2.343 2.343L3.757 3.757M10.243 10.243L11.657 11.657M2.343 11.657L3.757 10.243M10.243 3.757L11.657 2.343" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mobile-menu__search">
+        <input type="text" placeholder="Search" class="mobile-menu__search-input">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mobile-menu__search-icon">
+          <path d="M18.2895 19.1152L10.9845 11.8102C10.4011 12.3068 9.73029 12.6912 8.97196 12.9634C8.21363 13.2356 7.4516 13.3717 6.68588 13.3717C4.81726 13.3717 3.23575 12.7249 1.94133 11.4313C0.647111 10.1377 0 8.55711 0 6.68967C0 4.82203 0.646819 3.24012 1.94046 1.94396C3.2341 0.647985 4.81464 0 6.68208 0C8.54972 0 10.1316 0.647111 11.4278 1.94133C12.7238 3.23575 13.3718 4.81726 13.3718 6.68587C13.3718 7.49651 13.2282 8.281 12.941 9.03933C12.6538 9.79767 12.2768 10.446 11.8102 10.9845L19.1152 18.2898L18.2895 19.1152ZM6.68588 12.2051C8.23385 12.2051 9.54071 11.6722 10.6065 10.6065C11.6722 9.5409 12.2051 8.23404 12.2051 6.68587C12.2051 5.13771 11.6722 3.83085 10.6065 2.76529C9.54071 1.69954 8.23385 1.16667 6.68588 1.16667C5.13771 1.16667 3.83085 1.69954 2.76529 2.76529C1.69954 3.83085 1.16667 5.13771 1.16667 6.68587C1.16667 8.23404 1.69954 9.5409 2.76529 10.6065C3.83085 11.6722 5.13771 12.2051 6.68588 12.2051Z" fill="#999"/>
+        </svg>
+      </div>
+
+      <nav class="mobile-menu__nav">
+        <a href="#" class="mobile-menu__link mobile-menu__link--active">Home</a>
+        <a href="#" class="mobile-menu__link">
+          Destinations
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
+        </a>
+        <a href="#" class="mobile-menu__link">
+          Service
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
+        </a>
+        <a href="#" class="mobile-menu__link">
+          Discover Us
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
+        </a>
+        <a href="#" class="mobile-menu__link">
+          Journal
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
+        </a>
+        <a href="#" class="mobile-menu__link">
+          Private Portfolio
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-chevron-right.svg" alt="" class="mobile-menu__chevron-icon">
+        </a>
+      </nav>
+
+      <div class="mobile-menu__divider"></div>
+
+      <div class="mobile-menu__language">
+        <div class="mobile-menu__language-label">LANGUAGE</div>
+        <div class="mobile-menu__language-selector">
+          <span class="mobile-menu__language-text">English</span>
+          <button class="mobile-menu__language-btn">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-us-flag.svg" alt="US Flag" class="header__lang-flag">
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L6 6L11 1" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu__divider"></div>
+
+      <div class="mobile-menu__actions">
+        <a href="#" class="btn btn--solid--primary">Make a Call
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.4192 18.6667C15.4524 18.6667 13.4362 18.1742 11.3706 17.1894C9.30504 16.2043 7.38597 14.8218 5.61342 13.0419C3.84106 11.2621 2.46235 9.34315 1.47729 7.28496C0.49243 5.22676 0 3.21426 0 1.24746C0 0.891042 0.116667 0.594027 0.35 0.356416C0.583333 0.118805 0.875 0 1.225 0H4.11017C4.42731 0 4.704 0.0998478 4.94025 0.299542C5.17669 0.499237 5.33682 0.755416 5.42062 1.06808L5.99929 3.85C6.05315 4.17608 6.04343 4.46104 5.97012 4.70487C5.89682 4.94871 5.76742 5.1484 5.58192 5.30396L3.02225 7.69096C3.50078 8.55993 4.02986 9.36726 4.6095 10.113C5.18914 10.8587 5.80728 11.565 6.46392 12.2319C7.14136 12.9096 7.87053 13.5397 8.65142 14.1222C9.43211 14.7048 10.2891 15.2548 11.2225 15.7725L13.7174 13.2326C13.9073 13.0277 14.1208 12.8927 14.3579 12.8278C14.5949 12.7627 14.857 12.7495 15.1442 12.7884L17.5986 13.291C17.9157 13.3687 18.1731 13.5285 18.3706 13.7702C18.568 14.0117 18.6667 14.2887 18.6667 14.6014V17.4417C18.6667 17.7917 18.5479 18.0833 18.3102 18.3167C18.0726 18.55 17.7756 18.6667 17.4192 18.6667ZM2.47479 6.59604L4.71392 4.53658C4.78858 4.47669 4.83719 4.39444 4.85975 4.28983C4.88211 4.18503 4.87832 4.08781 4.84837 3.99817L4.33008 1.52571C4.30014 1.40593 4.24783 1.31619 4.17317 1.2565C4.0983 1.19661 4.00108 1.16667 3.8815 1.16667H1.4875C1.39767 1.16667 1.3229 1.19661 1.26321 1.2565C1.20332 1.31619 1.17337 1.39096 1.17337 1.48079C1.19574 2.27801 1.32067 3.11033 1.54817 3.97775C1.77547 4.84536 2.08435 5.71813 2.47479 6.59604ZM12.3331 16.3199C13.1212 16.7104 13.9614 16.999 14.8537 17.1859C15.7458 17.3729 16.5232 17.4732 17.1859 17.4866C17.2757 17.4866 17.3505 17.4566 17.4102 17.3967C17.4701 17.3369 17.5 17.2621 17.5 17.1725V14.8301C17.5 14.7105 17.4701 14.6133 17.4102 14.5384C17.3505 14.4637 17.2607 14.4114 17.141 14.3815L14.9826 13.9393C14.893 13.9094 14.8145 13.9057 14.7472 13.9282C14.6798 13.9506 14.6087 13.9992 14.534 14.0741L12.3331 16.3199Z" fill="white"/>
+          </svg>
+        </a>
+
+        <a href="#" class="btn btn--solid--primary">Saved Items
+          <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 18.0833V1.88475C0 1.34769 0.179861 0.899306 0.539583 0.539583C0.899306 0.179861 1.34769 0 1.88475 0H12.1153C12.6523 0 13.1007 0.179861 13.4604 0.539583C13.8201 0.899306 14 1.34769 14 1.88475V18.0833L7 15.0768L0 18.0833ZM1.16667 16.275L7 13.7667L12.8333 16.275V1.88475C12.8333 1.70508 12.7586 1.54049 12.609 1.39096C12.4595 1.24143 12.2949 1.16667 12.1153 1.16667H1.88475C1.70508 1.16667 1.54049 1.24143 1.39096 1.39096C1.24143 1.54049 1.16667 1.70508 1.16667 1.88475V16.275Z" fill="white"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
