@@ -149,6 +149,19 @@ body {
   align-items: center;
   justify-content: center;
 }
+.header__favorite-btn .header__favorite-icon path {
+  fill: #fff;
+}
+.header__favorite-btn .header__favorite-icon-filled {
+  display: none;
+  fill: red !important;
+}
+.header__favorite-btn--has-items .header__favorite-icon-outline {
+  display: none;
+}
+.header__favorite-btn--has-items .header__favorite-icon-filled {
+  display: block;
+}
 .header__favorite-btn .header__favorite-count {
   position: absolute;
   top: -5px;
@@ -347,11 +360,18 @@ body {
 }
 
 .product-detail__content {
-  width: 440px;
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
   flex-shrink: 0;
   position: sticky;
   top: 50px;
   margin-top: 100px;
+}
+@media (max-width: 1024px) {
+  .product-detail__content {
+    margin-top: 0;
+  }
 }
 
 .header {
@@ -372,6 +392,9 @@ body {
     background: #fff;
   }
   .header:hover .header__logo path {
+    fill: #000;
+  }
+  .header:hover .header__favorite-icon path {
     fill: #000;
   }
 }
@@ -2107,7 +2130,7 @@ body {
     gap: 8px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 500px) {
   .footer-form__group-row {
     flex-direction: column;
   }
@@ -2419,8 +2442,18 @@ body {
     height: 24px;
   }
 }
-.product-detail__actions .product-detail__action-btn--favorite.active svg path {
-  fill: #c00;
+.product-detail__actions .product-detail__action-btn--favorite .product-detail__favorite-icon path {
+  fill: #1f1f1f;
+}
+.product-detail__actions .product-detail__action-btn--favorite .product-detail__favorite-icon-filled {
+  display: none;
+}
+.product-detail__actions .product-detail__action-btn--favorite.active .product-detail__favorite-icon-outline {
+  display: none;
+}
+.product-detail__actions .product-detail__action-btn--favorite.active .product-detail__favorite-icon-filled {
+  display: block;
+  fill: #E63946;
 }
 .product-detail__content {
   padding: 24px;
@@ -2432,7 +2465,7 @@ body {
 @media (max-width: 1000px) {
   .product-detail__content {
     padding: 16px;
-    max-width: 100%;
+    max-width: calc(100% - 40px);
   }
 }
 .product-detail__price {

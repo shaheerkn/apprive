@@ -1,9 +1,32 @@
+$header-fav-red: #E63946;
+
 .header__favorite-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
+
+  // Override .header__icon-btn svg path { fill: currentColor } so heart uses red
+  .header__favorite-icon path {
+    fill: #fff;
+  }
+
+  // Default: show outlined heart, hide filled
+  .header__favorite-icon-filled {
+    display: none;
+    fill: red !important;
+  }
+
+  // When user has favorites: show filled heart, hide outline
+  &--has-items {
+    .header__favorite-icon-outline {
+      display: none;
+    }
+    .header__favorite-icon-filled {
+      display: block;
+    }
+  }
+
   .header__favorite-count {
     position: absolute;
     top: -5px;

@@ -79,9 +79,24 @@
       }
     }
 
-    .product-detail__action-btn--favorite.active svg path {
-      fill: #c00;
-      
+    .product-detail__action-btn--favorite {
+      .product-detail__favorite-icon path {
+        fill: #1f1f1f;
+      }
+      // Default: show outline, hide filled
+      .product-detail__favorite-icon-filled {
+        display: none;
+      }
+      // When active (favorited): show filled red heart, hide outline
+      &.active {
+        .product-detail__favorite-icon-outline {
+          display: none;
+        }
+        .product-detail__favorite-icon-filled {
+          display: block;
+          fill: #E63946;
+        }
+      }
     }
   }
 
@@ -92,14 +107,9 @@
     width: 100%;
     max-width: 536px;
 
-    // @media (max-width:1440px) {
-    //   padding: 10px;
-    //   max-width: 450px;
-    // }
-
     @media (max-width: 1000px) {
       padding: 16px;
-      max-width: 100%;
+      max-width: calc(100% - 40px);
     }
   }
 

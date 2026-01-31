@@ -28,10 +28,13 @@ jQuery(document).ready(function($) {
                         $btn.removeClass('active').attr('aria-label', 'Add to favorites');
                     }
                     const $countEl = $('.header__favorite-count');
+                    const $favBtn = $('.header__favorite-btn');
                     if (response.data.count > 0) {
                         $countEl.text(response.data.count).removeClass('hidden');
+                        $favBtn.addClass('header__favorite-btn--has-items');
                     } else {
                         $countEl.text(0).addClass('hidden');
+                        $favBtn.removeClass('header__favorite-btn--has-items');
                     }
                 } else if (response.data && response.data.redirect) {
                     window.location.href = response.data.redirect;
@@ -82,12 +85,15 @@ jQuery(document).ready(function($) {
                         $btn.html('<img src="' + getThemeUri() + '/assets/icons/fav.svg" alt="favorites">');
                     }
                     
-                    // Update header count
+                    // Update header count and icon state (outline vs filled)
                     const $countEl = $('.header__favorite-count');
+                    const $favBtn = $('.header__favorite-btn');
                     if (response.data.count > 0) {
                         $countEl.text(response.data.count).removeClass('hidden');
+                        $favBtn.addClass('header__favorite-btn--has-items');
                     } else {
                         $countEl.text(0).addClass('hidden');
+                        $favBtn.removeClass('header__favorite-btn--has-items');
                     }
                 } else {
                     // Handle error (e.g., unauthorized)
