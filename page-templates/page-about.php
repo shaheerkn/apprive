@@ -149,7 +149,7 @@
         <p>Our mission is simple — to offer refined discretion, personal attention, and access to experiences that feel both intimate and exceptional.</p>
         <p>This is hospitality as it should be: thoughtful, honest, and quietly unforgettable.</p>
       </div>
-      <a href="#" class="founder-note__signature">Aldo Ruta — Founder & Private Concierge</a>
+      <a href="#" class="founder-note__signature">Aldo Ruta <br> Founder & Private Concierge</a>
     </div>
     <div class="founder-note__media">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/founder.png" alt="founder image">
