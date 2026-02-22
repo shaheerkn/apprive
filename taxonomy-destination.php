@@ -74,19 +74,25 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
   </div>
 </section>
 
-<section class="spotlight">
-  <div class="spotlight__content">
-    <div class="container">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/courchevel-water-mark.svg" alt="section-watermark" class="spotlight__waterMark">
-      <h3 class="section-title"><?php echo esc_html($spotlight_title); ?></h3>
-      <div class="spotlight__description">
-        <?php echo wp_kses_post($spotlight_desc); ?>
-      </div>
-    </div>
+<section class="section destination-showcase">
+  <div class="destination-showcase__water-mark">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-showcase-water-mark.svg" alt="destination showcase water mark background">
   </div>
 
   <div class="container">
-    <div class="spotlight__gallery">
+    <div class="destination-showcase__content">
+      <div class="destination-showcase__header">
+        <h3 class="destination-showcase__title"><?php echo esc_html($spotlight_title); ?></h3>
+      </div>
+
+      <div class="destination-showcase__body">
+        <div class="destination-showcase__text">
+          <?php echo wp_kses_post($spotlight_desc); ?>
+        </div>
+      </div>
+    </div>
+
+    <div class="destination-showcase__media">
       <?php if($spotlight_img): ?><img src="<?php echo esc_url($spotlight_img); ?>" alt="winter" class=""><?php endif; ?>
     </div>
   </div>
@@ -219,7 +225,14 @@ if( $related_posts ): ?>
     <div class="service-orchestration__services">
       <?php while(have_rows('dest_services_cats', $destination)): the_row(); ?>
       <div class="service-orchestration__category">
-        <h6 class="service-orchestration__category-title "><?php the_sub_field('svc_cat_title'); ?></h6>
+        <svg width="54" height="18" viewBox="0 0 54 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0L11.4308 6.56918L18 9L11.4308 11.4308L9 18L6.56918 11.4308L0 9L6.56918 6.56918L9 0Z" fill="#5A98C0"/>
+          <path d="M27 0L29.4308 6.56918L36 9L29.4308 11.4308L27 18L24.5692 11.4308L18 9L24.5692 6.56918L27 0Z" fill="#5A98C0"/>
+          <path d="M45 0L47.4308 6.56918L54 9L47.4308 11.4308L45 18L42.5692 11.4308L36 9L42.5692 6.56918L45 0Z" fill="#5A98C0"/>
+        </svg>
+
+        <h6 class="service-orchestration__category-title "><?php the_sub_field('svc_category_title'); ?></h6>
+        
         <ul class="service-orchestration__list">
           <?php if(have_rows('svc_items')): while(have_rows('svc_items')): the_row(); ?>
             <li class="service-orchestration__item "><?php the_sub_field('svc_item'); ?></li>
@@ -231,5 +244,82 @@ if( $related_posts ): ?>
   </div>
 </section>
 <?php endif; ?>
+
+<section class="section company-partners">
+  <div class="container">
+    <h3 class="section-title">Our Partners</h3>
+  </div>
+  
+  <div class="company-partners__container">
+    <div class="company-partners__body">
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-1.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-1.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-2.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-2.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-3.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-3.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-4.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-4.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-5.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-5.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-6.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-6.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-7.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-7.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-8.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-8.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-9.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-9.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-10.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-10.png" alt="partner logo"></a>
+    </div>
+  
+    <div class="company-partners__body">
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-1.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-1.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-2.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-2.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-3.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-3.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-4.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-4.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-5.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-5.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-6.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-6.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-7.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-7.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-8.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-8.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-9.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-9.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-10.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-10.png" alt="partner logo"></a>
+    </div>
+  
+    <div class="company-partners__body">
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-1.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-1.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-2.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-2.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-3.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-3.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-4.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-4.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-5.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-5.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-6.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-6.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-7.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-7.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-8.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-8.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-9.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-9.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-winter"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-10.png" alt="partner logo"></a>
+      <a href="#" class="company-partners__logo for-summer"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-logo-summer-10.png" alt="partner logo"></a>
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>

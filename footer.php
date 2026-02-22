@@ -11,7 +11,7 @@
 
 ?>
 
-<?php if( have_rows('brand_values', 'option') ): ?>
+<?php if ( is_front_page() && have_rows('brand_values', 'option') ) : ?>
   <section class="brand-values">
     <div class="container">
       <?php 

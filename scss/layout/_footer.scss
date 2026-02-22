@@ -14,9 +14,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 16px;
+    border-radius: 0;
     padding: 64px;
-    gap: 40px;
+    gap: 32px;
 
     .section-title {
       color: #FFF;
@@ -59,80 +59,156 @@
   &-form {
     width: 100%;
 
-    &__group {
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    &__field {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 8px;
 
-      @media (max-width: 765px) {
-        gap: 8px;
+      label {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+
+        .required {
+          color: #D4A04A;
+        }
+
+        @media (max-width: 765px) {
+          font-size: 13px;
+        }
       }
 
-      &-item {
-        display: flex;
-        align-items: center;
-        background: #FFFFFF;
-        border-radius: 8px;
-        padding: 22px 32px;
-        gap: 12px;
+      p {
+        margin: 0;
+      }
+
+      input,
+      select {
+        border: none;
+        outline: none;
+        font-size: 16px;
         width: 100%;
-        border: 0.5px solid #8B8B8B;
+        color: #585858;
+        background: #FFFFFF;
+        padding: 18px 20px;
+        font-family: inherit;
 
-        @media (max-width: 765px) {
-          padding: 12px;
+        &::placeholder {
+          color: #B0B0B0;
         }
 
-        p {
-          display: contents;
-
-          span {
-            width: 100%;
-          }
-        }
-
-        input {
-          border: none;
-          outline: none;
-          font-size: 20px;
-          width: 100%;
-          color: #585858;
-          @media (max-width:992px) {
-            font-size: 12px;
-          }
-        }
-
-        @media (max-width:992px) {
-          svg {
-            width: 20px;
-            height: 20px;
-          }
+        @media (max-width: 992px) {
+          font-size: 13px;
+          padding: 14px 16px;
         }
       }
 
-      &-row {
-        display: flex;
-        gap: 16px;
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23585858' stroke-width='1.5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        padding-right: 44px;
+        cursor: pointer;
+      }
 
-        @media (max-width: 765px) {
-          gap: 8px;
+      .wpcf7-form-control-wrap {
+        width: 100%;
+      }
+    }
+
+    &__message {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @media (max-width: 992px) {
+        margin-top: 16px;
+      }
+
+      label {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+
+        .required {
+          color: #D4A04A;
         }
 
-        @media (max-width: 500px) {
-          flex-direction: column;
+        @media (max-width: 765px) {
+          font-size: 13px;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+
+      textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 18px 20px;
+        min-height: 140px;
+        resize: vertical;
+        font-family: inherit;
+
+        &::placeholder {
+          color: #B0B0B0;
+        }
+
+        @media (max-width: 992px) {
+          font-size: 13px;
+          padding: 14px 16px;
+          min-height: 100px;
         }
       }
     }
 
-    &__textfield {
-      width: 100%;
-      border: none;
-      outline: none;
-      font-size: 20px;
-      padding: 20px 32px;
-      border-radius: 8px;
+    &__consent {
+      margin-top: 24px;
+      color: #fff;
+      font-size: 16px;
 
-      @media (max-width:992px) {
-        font-size: 12px;
+      @media (max-width: 992px) {
+        margin-top: 16px;
+        font-size: 13px;
+      }
+
+      .wpcf7-list-item {
+        margin: 0;
+      }
+
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        accent-color: var(--color-5);
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      .wpcf7-list-item-label {
+        vertical-align: middle;
       }
     }
 
@@ -140,16 +216,28 @@
       width: 100%;
       background: var(--color-5);
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       padding: 20px 32px;
-      border-radius: 8px;
+      border: none;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
+      margin-top: 24px;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      transition: opacity 0.3s ease;
 
-      @media (max-width:765px) {
-        padding: 12px;
-        font-size: 12px;
-        font-weight: 500;
+      &:hover {
+        opacity: 0.9;
+      }
+
+      @media (max-width: 992px) {
+        margin-top: 16px;
+      }
+
+      @media (max-width: 765px) {
+        padding: 14px;
+        font-size: 14px;
+        font-weight: 600;
       }
     }
   }
