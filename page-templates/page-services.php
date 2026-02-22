@@ -49,13 +49,10 @@
 
   <section class="services-intro">
     <div class="container">
-
-      <figure class="services-intro__image-wrapper">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-intro.png" alt="Private concierge services" class="services-intro__image">
-      </figure>
+      <div class="services-intro__image-wrapper for-summer" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/services-hero.jpg');"></div>
+      <div class="services-intro__image-wrapper for-winter" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/services-hero-winter.jpg');"></div>
 
       <article class="services-intro__content">
-
         <h4 class="section-title">We take care of everything. Privately.</h4>
 
         <div class="services-intro__description">
@@ -74,7 +71,7 @@
 
       <div class="plan-cards__cards">
         <article class="plan-cards__card">
-          <div class="plan-cards-logo__two plan-cards-logo"><img src="<?php echo get_template_directory_uri() ?>/assets/icons/sevices_card-logo.svg" alt="logo"></div>
+          <div class="plan-cards-logo"><img src="<?php echo get_template_directory_uri() ?>/assets/images/silver.jpg" alt="logo"></div>
           <div class="plan-cards__body">
             <div class="plan-cards__content">
 
@@ -111,7 +108,7 @@
         </article>
 
         <article class="plan-cards__card">
-          <div class="plan-cards-logo__one plan-cards-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/sevices_card-logo.svg" alt="logo"></div>
+          <div class="plan-cards-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/gold.jpg" alt="logo"></div>
           <div class="plan-cards__body">
             <div class="plan-cards__content">
 
@@ -143,7 +140,7 @@
 
         <article class="plan-cards__card">
 
-          <div class="plan-cards-logo__three plan-cards-logo"><img src="<?php echo get_template_directory_uri() ?>/assets/icons/sevices_card-logo.svg" alt="logo"></div>
+          <div class="plan-cards-logo"><img src="<?php echo get_template_directory_uri() ?>/assets/images/platinum.png" alt="logo"></div>
 
           <div class="plan-cards__body">
             <div class="plan-cards__content">
@@ -184,8 +181,77 @@
     </div>
   </section>
 
-  <section class="offered-services section">
+  <section class="concierge-services section">
+    <div class="concierge-services__container">
+        <h2 class="section-title">Concierge & Private Services</h2>
 
+      <div class="concierge-services__grid">
+        <article class="concierge-services__item">
+          <h3 class="concierge-services__item-title">Hosting & Lifestyle</h3>
+
+          <div class="concierge-services__image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-1.png" alt="Luxury chalet" class="concierge-services__image for-winter">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-1.png" alt="Luxury chalet" class="concierge-services__image for-summer">
+
+            <ul class="concierge-services__list">
+              <li class="concierge-services__list-item">Restaurant and club booking</li>
+              <li class="concierge-services__list-item">Private events and arrangements</li>
+              <li class="concierge-services__list-item">In-destination assistance</li>
+            </ul>
+          </div>
+
+        </article>
+
+        <article class="concierge-services__item concierge-services__item--active">
+          <h3 class="concierge-services__item-title">Transfers & Mobility</h3>
+
+          <div class="concierge-services__image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-2.png" alt="Skiers on mountain" class="concierge-services__image for-winter">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-2.png" alt="Luxury chalet" class="concierge-services__image for-summer">
+
+            <ul class="concierge-services__list">
+              <li class="concierge-services__list-item">Restaurant and club booking</li>
+              <li class="concierge-services__list-item">Private events and arrangements</li>
+              <li class="concierge-services__list-item">In-destination assistance</li>
+            </ul>
+          </div>
+
+        </article>
+
+        <article class="concierge-services__item">
+          <h3 class="concierge-services__item-title">In-Home Services</h3>
+
+          <div class="concierge-services__image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-3.png" alt="Private dining setup" class="concierge-services__image for-winter">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-3.png" alt="Luxury chalet" class="concierge-services__image for-summer">
+
+            <ul class="concierge-services__list">
+              <li class="concierge-services__list-item">Restaurant and club booking</li>
+              <li class="concierge-services__list-item">Private events and arrangements</li>
+              <li class="concierge-services__list-item">In-destination assistance</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="concierge-services__item">
+          <h3 class="concierge-services__item-title">Experiences</h3>
+
+          <div class="concierge-services__image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-4.png" alt="Courchevel resort" class="concierge-services__image for-winter">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-4.png" alt="Luxury chalet" class="concierge-services__image for-summer">
+
+            <ul class="concierge-services__list">
+              <li class="concierge-services__list-item">Restaurant and club booking</li>
+              <li class="concierge-services__list-item">Private events and arrangements</li>
+              <li class="concierge-services__list-item">In-destination assistance</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="offered-services section">
     <figure class="offered-services__water-mark">
       <img src="<?php echo get_template_directory_uri() ?>/assets/images/offered-services-water_mark.svg" alt="water mark">
     </figure>
@@ -263,7 +329,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="featured-services section">
     <div class="container">

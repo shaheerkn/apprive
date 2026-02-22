@@ -1,27 +1,19 @@
 .featured-services {
-  background: var(--services-intro-content-background);
+  // background: var(--services-intro-content-background);
 
   .container {
     .section-title {
-      color: #fff;
       margin-bottom: 48px;
-      &::after {
-        background: #fff;
-      }
     }
   }
 
   &__body {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
-    justify-content: center;
-
-    @media (max-width:1440px) {
-      flex-wrap: wrap;
-    }
 
     @media (max-width: 992px) {
+      display: flex;
       flex-wrap: nowrap;
       justify-content: flex-start;
       overflow-x: auto;
@@ -38,10 +30,9 @@
   &__card {
     width: 100%;
     max-width: 586px;
-    padding: 24px;
-    background: #fff;
-    border-radius: 16px;
-    min-height: 604px;
+    padding: 12px;
+    background: #2C2C2C;
+    color: #fff;
 
     @media (max-width: 992px) {
       flex: 0 0 85%;
@@ -68,16 +59,16 @@
 
   &__content {
     text-align: center;
-    padding: 32px 8px 8px 8px;
+    padding: 24px;
 
     h6 {
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 500;
       margin-bottom: 12px;
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     @media (max-width: 992px) {
