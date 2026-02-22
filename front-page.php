@@ -138,7 +138,7 @@
       </div>
 
       <div class="chalets__actions">
-        <a cl href="<?php echo home_url(); ?>/partner" class="btn btn--outline-primary">View Private Portfolio</a>
+        <a cl href="<?php echo home_url(); ?>/partner" class="btn work-proces__btn">View Private Portfolio</a>
       </div>
     </div>
   </section>
