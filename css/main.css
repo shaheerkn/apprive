@@ -1053,6 +1053,7 @@ body {
 .toggle-text {
   width: 63px;
   overflow: hidden;
+  text-align: right;
 }
 
 @media (max-width: 993px) {
