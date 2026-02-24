@@ -43,7 +43,6 @@
         <div class="footer-bottom__left">
           <div class="footer-bottom__left-logo">
             <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo-main.svg" alt="logo"></a>
-            <p class="footer-bottom__left-logo___text"><?php the_field('footer_slogan', 'option'); ?></p>
           </div>
 
           <div class="footer-bottom__left-contact">

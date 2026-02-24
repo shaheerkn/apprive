@@ -31,6 +31,7 @@ $transition-speed: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       margin-inline: 0;
       padding-inline: 24px;
       box-sizing: border-box;
+      padding-top: 2px;
 
       &::-webkit-scrollbar {
         display: none;
@@ -57,9 +58,19 @@ $transition-speed: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       padding-top: 16px;
       width: 100%;
       text-align: center;
-      border-top: 3px solid transparent;
-      transition: border-color $transition-speed;
       order: -1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--color-6);
+        border-radius: 20px;
+        visibility: hidden;
+      }
 
       @media (max-width: 992px) {
         margin-bottom: 16px;
@@ -76,8 +87,8 @@ $transition-speed: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     &:hover {
-      .concierge-services__item-title {
-        border-top-color: var(--color-6);
+      .concierge-services__item-title::after {
+        visibility: visible;
       }
 
       .concierge-services__image {
@@ -143,6 +154,12 @@ $transition-speed: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     visibility: hidden;
     transition: opacity $transition-speed, visibility $transition-speed;
 
+    @media (max-width: 992px) {
+      font-size: 12px;
+      top: 0;
+      padding: 18px 8px;
+    }
+
     &-item {
       font-size: 14px;
       margin-bottom: 0.75rem;
@@ -158,9 +175,11 @@ $transition-speed: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         color: $color-text;
       }
 
-        @media (max-width: 992px) {
-          font-size: 12px;
-        }
+      @media (max-width: 992px) {
+        font-size: 12px;
+        top: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

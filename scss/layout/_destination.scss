@@ -20,7 +20,7 @@
     font-size: 14px;
     font-weight: 500;
     padding: 14px 24px;
-    max-width: 200px;
+    max-width: max-content;
   }
 
   .secondary-title {
@@ -50,14 +50,17 @@
   &__gallery {
     display: flex;
     position: relative;
+    margin-right: -60px;
+
+    @media (max-width: 1200px) {
+      margin-inline: -20px;
+    }
 
     @media (max-width: 768px) {
       justify-content: flex-start;
       overflow-x: auto;
     }
   }
-
- 
 
   @media (max-width: 992px) {
     &__body {
@@ -76,7 +79,7 @@
     }
 
     .secondary-title {
-      font-size: 16x;
+      font-size: 16px;
       padding-bottom: 6px;
 
       &::after {

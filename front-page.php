@@ -13,7 +13,7 @@
       <h1 class="hero__title hero__title-mobile">Exclusive stays paired with truly private service.</h1>
       
       <p class="hero__description hero__description-secondary for-winter">Exclusive winter stays paired with truly private service. <br> Ski-in ski-out chalets, refined hospitality and tailored experiences in Courchevel.</p>
-      <p class="hero__description hero__description-secondary for-summer">Exclusive summer stays paired with truly private service.Sea-view villas, refined hospitality and tailored experiences in Mykonos.</p>
+      <p class="hero__description hero__description-secondary for-summer">Exclusive summer stays paired with truly private service. <br> Sea-view villas, refined hospitality and tailored experiences in Mykonos.</p>
       <p class="hero__description hero__description-mobile">Where refinement, discretion, and personal attention define every moment.</p>
       
       <div class="hero__actions">
@@ -77,8 +77,7 @@
 
   <section class="section singature-destination">
     <div class="container">
-      <h2 class="section-title for-winter">DESTINATION</h2>
-      <h2 class="section-title for-summer">Signature Destinations</h2>
+      <h2 class="section-title">DESTINATION</h2>
 
       <div class="singature-destination__body">
         <div class="singature-destination__content">
@@ -122,7 +121,7 @@
 
         <div class="chalets__card">
           <a href="#" class="chalets__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-2.png" alt="Chalet Overview" class="chalets__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-2.jpg" alt="Chalet Overview" class="chalets__image">
           </a>
           <h3 class="text">Chalet Overview</h3>
           <p class="description">Courchevel 1650</p>
@@ -130,7 +129,7 @@
 
         <div class="chalets__card">
           <a href="#" class="chalets__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-3.png" alt="Chalet Sommet" class="chalets__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-3.jpg" alt="Chalet Sommet" class="chalets__image">
           </a>
           <h3 class="text">Chalet Sommet</h3>
           <p class="description">Courchevel 1850</p>
@@ -145,7 +144,7 @@
 
   <section class="concierge-services section">
     <div class="concierge-services__container">
-        <h2 class="section-title">Concierge & Private Services</h2>
+      <h2 class="section-title">Concierge & Private Services</h2>
 
       <div class="concierge-services__grid">
         <article class="concierge-services__item">
