@@ -69,6 +69,12 @@
         </article>
       </div>
 
+      <div class="work-proces__dots">
+        <span class="work-proces__dot active"></span>
+        <span class="work-proces__dot"></span>
+        <span class="work-proces__dot"></span>
+      </div>
+
       <p class="work-proces__description for-winter">Our private concierge service in Courchevel ensures discretion, confidentiality and seamless assistance before and throughout your stay.</p>
       <p class="work-proces__description for-summer">AR Privé provides private concierge support ensuring discretion, continuity and seamless coordination from the first enquiry to the final moment of your stay.</p>
       <a href="#" class="btn work-proces__btn">Start Your Request</a>
@@ -147,7 +153,7 @@
       <h2 class="section-title">Concierge & Private Services</h2>
 
       <div class="concierge-services__grid">
-        <article class="concierge-services__item">
+        <article class="concierge-services__item concierge-services__item--active">
           <h3 class="concierge-services__item-title">Hosting & Lifestyle</h3>
 
           <div class="concierge-services__image-wrapper">
@@ -163,7 +169,7 @@
 
         </article>
 
-        <article class="concierge-services__item concierge-services__item--active">
+        <article class="concierge-services__item">
           <h3 class="concierge-services__item-title">Transfers & Mobility</h3>
 
           <div class="concierge-services__image-wrapper">
@@ -208,6 +214,13 @@
             </ul>
           </div>
         </article>
+      </div>
+
+      <div class="concierge-services__dots">
+        <span class="concierge-services__dot active"></span>
+        <span class="concierge-services__dot"></span>
+        <span class="concierge-services__dot"></span>
+        <span class="concierge-services__dot"></span>
       </div>
     </div>
   </section>

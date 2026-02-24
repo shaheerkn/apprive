@@ -1445,7 +1445,7 @@ body:has(.is-open) .overlay {
   width: 100%;
   gap: 40px;
 }
-@media (max-width: 992px) {
+@media (max-width: 1320px) {
   .work-proces__content {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -1528,6 +1528,28 @@ body:has(.is-open) .overlay {
     left: 20px;
     right: 20px;
   }
+}
+.work-proces__dots {
+  display: none;
+  justify-content: center;
+  gap: 3px;
+}
+@media (max-width: 992px) {
+  .work-proces__dots {
+    display: flex;
+  }
+}
+.work-proces__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+.work-proces__dot.active {
+  width: 20px;
+  background: var(--color-1);
 }
 .work-proces__description {
   font-size: 16px;
@@ -1735,7 +1757,7 @@ body:has(.is-open) .overlay {
   position: relative;
   margin-right: -60px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .singature-destination__gallery {
     margin-inline: -20px;
   }
@@ -1788,7 +1810,7 @@ body:has(.is-open) .overlay {
   margin-top: 48px;
   border-top: 0.5px solid rgba(255, 255, 255, 0.2509803922);
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .concierge-services__grid {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -1868,6 +1890,22 @@ body:has(.is-open) .overlay {
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 992px) {
+  .concierge-services__item--active .concierge-services__item-title::after {
+    visibility: visible;
+  }
+  .concierge-services__item--active .concierge-services__image {
+    transform: scale(1.05);
+  }
+  .concierge-services__item--active .concierge-services__image-wrapper::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  .concierge-services__item--active .concierge-services__list {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .concierge-services__image-wrapper {
   position: relative;
   width: 100%;
@@ -1900,6 +1938,29 @@ body:has(.is-open) .overlay {
      object-fit: cover;
   display: block;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.concierge-services__dots {
+  display: none;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 16px;
+}
+@media (max-width: 992px) {
+  .concierge-services__dots {
+    display: flex;
+  }
+}
+.concierge-services__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.3137254902);
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+.concierge-services__dot.active {
+  width: 20px;
+  background: #fff;
 }
 .concierge-services__list {
   list-style: none;
@@ -2109,7 +2170,7 @@ body:has(.is-open) .overlay {
 .footer-form__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 12px;
 }
 @media (max-width: 992px) {
   .footer-form__grid {
@@ -2182,7 +2243,7 @@ body:has(.is-open) .overlay {
   width: 100%;
 }
 .footer-form__message {
-  margin-top: 24px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 8px;

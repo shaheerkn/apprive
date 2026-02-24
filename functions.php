@@ -156,6 +156,7 @@ function ar_scripts() {
 	wp_enqueue_script( 'ar-chalet-featured', get_template_directory_uri() . '/js/chalet-featured.js', array('ar-swiper-js'), _S_VERSION, true );
 	wp_enqueue_script( 'ar-single-chalet-gallery', get_template_directory_uri() . '/js/single-chalet-gallery.js', array('ar-swiper-js'), _S_VERSION, true );
 	wp_enqueue_script( 'ar-filter', get_template_directory_uri() . '/js/filter.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ar-work-process-dots', get_template_directory_uri() . '/js/work-process-dots.js', array(), _S_VERSION, true );
 
     // Dynamic Properties Filter
     wp_enqueue_script( 'ar-properties-filter', get_template_directory_uri() . '/js/properties-filter.js', array('jquery'), _S_VERSION, true );
