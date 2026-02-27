@@ -141,5 +141,10 @@
       width: 16px;
     }
   }
+
+  .hero__actions .btn:only-child {
+    width: auto;
+    padding-inline: 24px;
+  }
 }
 

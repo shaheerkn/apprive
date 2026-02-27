@@ -119,25 +119,25 @@
 
     <div class="showcase__grid">
       <article class="showcase__item">
-          <a href="#" class="item-image">
-          <img src="./assets/images/chalets-itemOne.png" alt="item featured item" class="showcase__image for-winter">
-          <img src="./assets/images/chalets-itemOne-summer.png" alt="featured item" class="showcase__image for-summer">
-          </a>
-          <div class="showcase__details">
-            <div class="showcase__info">
-              <div class="showcase__info-text">
-                <h6 class="text for-winter">Chalet Mazot Cannors</h6>
-                <h6 class="text for-summer">Destiny Resort</h6>
-                <p class="description for-winter">Courchevel 1850</p>
-              </div>
-              <div class="showcase__capacity">
-                <p>10 Guests</p>
-              </div>
+        <a href="#" class="item-image">
+        <img src="./assets/images/chalets-itemOne.png" alt="item featured item" class="showcase__image for-winter">
+        <img src="./assets/images/chalets-itemOne-summer.png" alt="featured item" class="showcase__image for-summer">
+        </a>
+        <div class="showcase__details">
+          <div class="showcase__info">
+            <div class="showcase__info-text">
+              <h6 class="text for-winter">Chalet Mazot Cannors</h6>
+              <h6 class="text for-summer">Destiny Resort</h6>
+              <p class="description for-winter">Courchevel 1850</p>
             </div>
-            <p class="showcase__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
-            <p class="showcase__amenities for-summer">Infinity pool · Sea view · Direct beach access</p>
-            <a href="#" class="showcase__link">Request Availability <img src="./assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
+            <div class="showcase__capacity">
+              <p>10 Guests</p>
+            </div>
           </div>
+          <p class="showcase__amenities for-winter">Spa · Fireplace · Ski-in/ski-out</p>
+          <p class="showcase__amenities for-summer">Infinity pool · Sea view · Direct beach access</p>
+          <a href="#" class="showcase__link">Request Availability <img src="./assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
+        </div>
       </article>
 
       <article class="showcase__item">

@@ -161,12 +161,12 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-1.png" alt="Luxury chalet" class="concierge-services__image for-summer">
 
             <ul class="concierge-services__list">
-              <li class="concierge-services__list-item">Restaurant and club booking</li>
-              <li class="concierge-services__list-item">Private events and arrangements</li>
-              <li class="concierge-services__list-item">In-destination assistance</li>
+              <li class="concierge-services__list-item">VIP tables &private venues</li>
+              <li class="concierge-services__list-item">Restaurant & club reservations</li>
+              <li class="concierge-services__list-item">Event organisation & celebration planning</li>
+              <li class="concierge-services__list-item">Local immersive experiences</li>
             </ul>
           </div>
-
         </article>
 
         <article class="concierge-services__item">
@@ -177,9 +177,12 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-2.png" alt="Luxury chalet" class="concierge-services__image for-summer">
 
             <ul class="concierge-services__list">
-              <li class="concierge-services__list-item">Restaurant and club booking</li>
-              <li class="concierge-services__list-item">Private events and arrangements</li>
-              <li class="concierge-services__list-item">In-destination assistance</li>
+              <li class="concierge-services__list-item for-summer">Rental Auto / Quad / Scooter</li>
+              <li class="concierge-services__list-item for-summer">Chauffer Service</li>
+              <li class="concierge-services__list-item for-summer">Helicopter connections</li>
+              <li class="concierge-services__list-item for-winter">Chauffeured travel</li>
+              <li class="concierge-services__list-item for-winter">Private driver</li>
+              <li class="concierge-services__list-item for-winter">Helicopter connections</li>
             </ul>
           </div>
 
@@ -189,13 +192,15 @@
           <h3 class="concierge-services__item-title">In-Home Services</h3>
 
           <div class="concierge-services__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-3.png" alt="Private dining setup" class="concierge-services__image for-winter">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-3.jpeg" alt="Private dining setup" class="concierge-services__image for-winter">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-3.png" alt="Luxury chalet" class="concierge-services__image for-summer">
 
             <ul class="concierge-services__list">
-              <li class="concierge-services__list-item">Restaurant and club booking</li>
-              <li class="concierge-services__list-item">Private events and arrangements</li>
-              <li class="concierge-services__list-item">In-destination assistance</li>
+
+              <li class="concierge-services__list-item">Private chef & mixologist</li>
+              <li class="concierge-services__list-item">Housekeeping & staffing</li>
+              <li class="concierge-services__list-item">Spa therapist & wellness treatments</li>
+              <li class="concierge-services__list-item">Private trainer & coaching</li>
             </ul>
           </div>
         </article>
@@ -208,9 +213,17 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-4.png" alt="Luxury chalet" class="concierge-services__image for-summer">
 
             <ul class="concierge-services__list">
-              <li class="concierge-services__list-item">Restaurant and club booking</li>
-              <li class="concierge-services__list-item">Private events and arrangements</li>
-              <li class="concierge-services__list-item">In-destination assistance</li>
+              <li class="concierge-services__list-item for-winter">Ski Schools</li>
+              <li class="concierge-services__list-item for-winter">ski touring</li>
+              <li class="concierge-services__list-item for-winter">dog sled ride</li>
+              <li class="concierge-services__list-item for-winter">snow scooter</li>
+              <li class="concierge-services__list-item for-winter">Ice climbing</li>
+
+              <li class="concierge-services__list-item for-summer">Private Yachting Adventure</li>
+              <li class="concierge-services__list-item for-summer">Greek Farmstead Cooking Session</li>
+              <li class="concierge-services__list-item for-summer">Exploring Ancient Delos</li>
+              <li class="concierge-services__list-item for-summer">Horse Riding</li>
+              <li class="concierge-services__list-item for-summer">Professional Mykonian PhotoShoot</li>
             </ul>
           </div>
         </article>

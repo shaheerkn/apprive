@@ -109,7 +109,13 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
         $a_desc_w = get_sub_field('area_description');
       ?>
       <div class="tiles-grid__tile">
-        <h5 class="tiles-grid__tile-title "><?php echo esc_html($a_title_w); ?></h5>
+        <h5 class="tiles-grid__tile-title ">
+          <?php
+            $a_title_escaped = esc_html($a_title_w);
+            $chora_text = esc_html('(Chora)');
+            echo str_replace($chora_text, '<span>' . $chora_text . '</span>', $a_title_escaped);
+          ?>
+        </h5>
         <p class="description "><?php echo esc_html($a_desc_w); ?></p>
       </div>
       <?php endwhile; ?>
@@ -157,30 +163,60 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
                     }
                 }
                 $feats_str = implode(' · ', $feats);
+
+                // Favorites check
+                $is_favorite = false;
+                if (is_user_logged_in()) {
+                    $favorites = get_user_meta(get_current_user_id(), 'favorite_properties', true);
+                    if (is_array($favorites) && in_array($prop_id, $favorites)) {
+                        $is_favorite = true;
+                    }
+                }
       ?>
       <article class="showcase__item">
-          <a href="<?php the_permalink(); ?>" class="item-image">
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title(); ?>" class="showcase__image ">
-          </a>
+          <div class="showcase__image-wrap">
+            <a href="<?php the_permalink(); ?>" class="item-image">
+              <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title(); ?>" class="showcase__image ">
+            </a>
+          </div>
+          
           <div class="showcase__details">
             <div class="showcase__info">
               <div class="showcase__info-text">
                 <h6 class="text "><?php the_title(); ?></h6>
-                <p class="description "><?php echo esc_html($location); ?></p>
+                <!-- <p class="description "><?php echo esc_html($location); ?></p> -->
+                <p class="showcase__amenities "><?php echo esc_html($feats_str); ?></p>
               </div>
+
               <div class="showcase__capacity">
+                <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($prop_id); ?>" aria-label="<?php echo $is_favorite ? 'Remove from favorites' : 'Add to favorites'; ?>">
+                  <?php if ($is_favorite) : ?>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
+                  <?php endif; ?>
+                </button>
+
                 <p><?php echo esc_html($max_guests); ?> Guests</p>
               </div>
             </div>
-            <p class="showcase__amenities "><?php echo esc_html($feats_str); ?></p>
-            <a href="#" class="showcase__link">Request Availability <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a>
+
+            <!-- <a href="#" class="showcase__link">Request Availability <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow"></a> -->
           </div>
       </article>
       <?php endwhile; wp_reset_postdata(); endif; ?>
     </div>
-    <!-- Link to full properties grid page or filter for this destination? 
-         Currently just a placeholder link. Could link to same page? -->
-    <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $term_id; ?>" class="showcase__view-all">
+
+    <div class="showcase__nav">
+      <button class="showcase__nav-btn showcase__nav-btn--prev" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13.5L6.75 9L11.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="showcase__nav-btn showcase__nav-btn--next" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.75 4.5L11.25 9L6.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $term_id; ?>" class="btn btn--solid--primary">
       <span class="">View All chalets in <?php echo esc_html($destination->name); ?></span>
     </a>
   </div>
@@ -321,5 +357,33 @@ if( $related_posts ): ?>
     </div>
   </div>
 </section>
+
+<script>
+jQuery(function($) {
+  var $grid = $('.showcase__grid');
+  var $prev = $('.showcase__nav-btn--prev');
+  var $next = $('.showcase__nav-btn--next');
+
+  function updateNavState() {
+    var scrollLeft = $grid.scrollLeft();
+    var maxScroll = $grid[0].scrollWidth - $grid[0].clientWidth;
+    $prev.toggleClass('disabled', scrollLeft <= 0);
+    $next.toggleClass('disabled', scrollLeft >= maxScroll - 1);
+  }
+
+  $prev.on('click', function() {
+    var item = $grid.find('.showcase__item').first().outerWidth(true);
+    $grid.animate({ scrollLeft: $grid.scrollLeft() - item }, 300, updateNavState);
+  });
+
+  $next.on('click', function() {
+    var item = $grid.find('.showcase__item').first().outerWidth(true);
+    $grid.animate({ scrollLeft: $grid.scrollLeft() + item }, 300, updateNavState);
+  });
+
+  $grid.on('scroll', updateNavState);
+  updateNavState();
+});
+</script>
 
 <?php get_footer(); ?>
