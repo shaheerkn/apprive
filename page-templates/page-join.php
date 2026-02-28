@@ -18,7 +18,7 @@
 
 <section class="hero">
   <div class="hero__img">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-us-hero-winter.png" alt="" class="for-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-us-hero-winter.jpg" alt="" class="for-winter">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-use-hero-summer.png" alt="" class="for-summer">
   </div>
   <div class="hero__overlay"></div>
@@ -74,27 +74,27 @@
           You remain their trusted advisor, while our local team discreetly curates and delivers the stay.
         </p>
         <p class="services-overview__text services-overview__text--italic">
-          Just share your clients' travel needs — with our B2B team — we take care of the rest.
+        Simply share your clients travel needs with our B2B team and we will take care of the rest
         </p>
       </div>
     </article>
 
     <figure class="services-overview__gallery">
       <figure class="services-overview__image services-overview__image--1">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__one.png" class="for-winter" alt="Luxury Interior">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-one.png" class="for-summer" alt="Luxury Interior">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__one.jpg" class="for-winter" alt="Luxury Interior">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-one.jpg" class="for-summer" alt="Luxury Interior">
       </figure>
       <figure class="services-overview__image services-overview__image--2">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__two.png" class="for-winter" alt="Pool View">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-two.png" class="for-summer" alt="pool view">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__two.jpg" class="for-winter" alt="Pool View">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-two.jpg" class="for-summer" alt="pool view">
       </figure>
       <figure class="services-overview__image services-overview__image--3">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__three.png" class="for-winter" alt="Winter Cabin">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-three.png" class="for-summer" alt="Winter Cabin">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__three.jpg" class="for-winter" alt="Winter Cabin">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-three.jpg" class="for-summer" alt="Winter Cabin">
       </figure>
       <figure class="services-overview__image services-overview__image--4">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__four.png" class="for-winter" alt="Summer Villa">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-four.png" class="for-summer" alt="Summer Villa">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/what-we-do__four.jpg" class="for-winter" alt="Summer Villa">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-overview_summer-four.jpg" class="for-summer" alt="Summer Villa">
       </figure>
     </figure>
   </div>
@@ -140,7 +140,7 @@
 
 <section class="terms-overview section">
   <article class="container">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/collaboration-terms__water-mark.svg" alt="water mark">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/collaboration-terms__water-mark.svg" alt="water mark" class="water-mark">
     <h4 class="section-title">Private collaboration terms</h4>
     <article class="terms-overview__content">
       <p class="terms-overview__text">

@@ -1,16 +1,39 @@
 .terms-overview{
+  background-color: #2C2C2C;
   overflow: hidden;
+  position: relative;
+
+  .water-mark {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+
+    @media (max-width:992px) {
+      left: 0;
+      bottom: 0;
+      top: 0;
+      height: 100%;
+      transform: none;
+    }
+  }
 
   .container {
-    position: relative;
 
     .section-title {
       margin-bottom: 40px;
+      color: #fff;
+
+      &::after {
+        background: #fff;
+      }
       
       @media (max-width:992px) {
         margin-bottom: 16px;
       }
     }
+    
     img {
       position: absolute;
       right: 0;
@@ -19,18 +42,21 @@
   }
 
   &__text {
-      font-size: 24px;
-      text-align: center;
-      margin-bottom: 24px;
-    
-      &:first-child {
-      font-size: 28px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #fff;
+  
+    &:first-child {
+      font-size: 18px;
       font-style: italic;
       color: #5A98C0;
+
       @media (max-width:992px) {
         font-size: 12px;
       }
     }
+
     @media (max-width:992px) {
       font-size: 12px;
       margin-block: 12px;
