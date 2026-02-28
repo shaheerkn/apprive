@@ -2,19 +2,18 @@
   position: relative;
   z-index: 1;
   padding-block: 24px;
-  border-top: 1px solid #585858;
+  border-top: 0.5px solid #828282;
 
-   .container {
+  .container {
     display: flex;
     flex-direction: column;
     gap: 27px;
     margin-block: 27px;
-    padding-inline: 40px;
 
     @media (max-width:768px) {
-      padding-inline: 24px;
       align-items: center;
       gap: 12px;
+      margin-bottom: 0;
     }
   }
 
@@ -22,6 +21,7 @@
     display: flex;
     font-size: 18px;
     font-weight: 400;
+    width: 100%;
 
     &-count {
       padding-right: 16px;
@@ -35,6 +35,8 @@
     &-select {
       border: none;
       padding-left: 16px;
+      font-size: 16px;
+      font-family: inherit;
 
       option {
         font-size: 16px;
@@ -60,9 +62,21 @@
     gap: 12px;
     margin-top: 12px;
 
+    @media (max-width:768px) {
+      gap: 4px !important;
+    }
+
     &-header {
       display: flex;
       justify-content: space-between;
+
+      .text {
+        font-size: 20px;
+
+        @media (max-width:768px) {
+          font-size: 16px;
+        }
+      }
     }
 
     &-details {
@@ -70,6 +84,10 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      @media (max-width:768px) {
+        gap: 4px;
+      }
 
       p {
         font-weight: 500;
@@ -82,7 +100,7 @@
 
     &-price {
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       span {
         font-size: 20px;
       }
@@ -97,11 +115,27 @@
     }
   }
 
-  &-fav {
-    background: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  &__info-features {
+    font-size: 14px;
+    font-weight: 400 !important;
+    color: #585858;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    aspect-ratio: 386/300;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width:768px) {
+      aspect-ratio: 392/250;
+    }
   }
 
   &__content {
@@ -163,7 +197,7 @@
     &__mobile-action {
       display: none;
       width: 100%;
-      background: #5A98C0;
+      background: var(--price);
       color: #fff;
       font-size: 14px;
       text-align: center;
@@ -171,10 +205,16 @@
       border-radius: 4px;
       text-decoration: none;
     }
-    @media (max-width:992px) {
 
+    @media (max-width:992px) {
       &__mobile-action {
+        margin-top: 16px;
         display: block;
+      }
+      
+      &__mobile-actions {
+        border-top: 0.5px solid #00000080;
+        width: 100%;
       }
     }
   &__water-mark {

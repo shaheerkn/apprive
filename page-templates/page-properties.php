@@ -81,7 +81,7 @@ $property_query = new WP_Query( $args );
   <div class="container">
     <div class="filters__header">
       <h4 class="section-title">Private Chalets & Villas Portfolio</h4>
-      <h4 class="filters__subtitle">Find the best stay of your dreams</h4>
+      <!-- <h4 class="filters__subtitle">Find the best stay of your dreams</h4> -->
       <p class="filters__text">Explore a curated selection of private chalets and villas, carefully chosen for location, design and privacy. All properties are available on request and supported by full private concierge service.</p>
     </div>
 
@@ -93,44 +93,37 @@ $property_query = new WP_Query( $args );
         <?php endif; ?>
 
         <div class="filters__content">
-            <div class="filters__input-group">
-                <label for="filter-destination">DESTINATION</label>
-                <select name="destination" id="filter-destination">
-                    <option value="">All Destinations</option>
-                    <?php
-                    $destinations = get_terms( array(
-                        'taxonomy' => 'destination',
-                        'hide_empty' => false,
-                    ) );
-                    if ( ! empty( $destinations ) && ! is_wp_error( $destinations ) ) {
-                        foreach ( $destinations as $term ) {
-                            $selected = ( $destination && is_a($destination, 'WP_Term') && $destination->term_id == $term->term_id ) ? 'selected' : '';
-                            echo '<option value="' . esc_attr( $term->term_id ) . '" ' . $selected . '>' . esc_html( $term->name ) . '</option>';
+            <div class="filters__input-group-container">
+                <div class="filters__input-group">
+                    <label for="filter-destination">DESTINATION</label>
+                    <select name="destination" id="filter-destination">
+                        <option value="">All Destinations</option>
+                        <?php
+                        $destinations = get_terms( array(
+                            'taxonomy' => 'destination',
+                            'hide_empty' => false,
+                        ) );
+                        if ( ! empty( $destinations ) && ! is_wp_error( $destinations ) ) {
+                            foreach ( $destinations as $term ) {
+                                $selected = ( $destination && is_a($destination, 'WP_Term') && $destination->term_id == $term->term_id ) ? 'selected' : '';
+                                echo '<option value="' . esc_attr( $term->term_id ) . '" ' . $selected . '>' . esc_html( $term->name ) . '</option>';
+                            }
                         }
-                    }
-                    ?>
-                </select>
+                        ?>
+                    </select>
+                </div>
+    
+                <div class="filters__input-group">
+                    <label for="guests">Guests</label>
+                    <select name="guests" id="guests">
+                        <option value="">Any</option>
+                        <?php for($i=1; $i<=20; $i++): ?>
+                            <option value="<?php echo $i; ?>"><?php echo sprintf('%02d', $i); ?></option>
+                        <?php endfor; ?>
+                    </select>
+                </div>
             </div>
 
-            <div class="filters__input-group">
-                <label for="filter-checkin">Check in Date</label>
-                <input type="date" name="checkin" id="filter-checkin">
-            </div>
-
-            <div class="filters__input-group">
-                <label for="filter-checkout">Check out Date</label>
-                <input type="date" name="checkout" id="filter-checkout">
-            </div>
-
-            <div class="filters__input-group">
-                <label for="guests">Guests</label>
-                <select name="guests" id="guests">
-                    <option value="">Any</option>
-                    <?php for($i=1; $i<=20; $i++): ?>
-                        <option value="<?php echo $i; ?>"><?php echo sprintf('%02d', $i); ?></option>
-                    <?php endfor; ?>
-                </select>
-            </div>
             <div class="filters__buttons">
                 <button type="button" class="filters__filter-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/filter.svg" alt="filter"></button>
                 <button type="submit" class="filters__search-btn"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-search.svg" alt="search"></button>
@@ -316,10 +309,10 @@ $property_query = new WP_Query( $args );
                 <div class="filters__modal-footer">
                     <button type="button" class="filters__clear-btn" id="clear-filters">Clear all</button>
                     <button type="submit" class="filters__search-btn">
+                        <span>Search</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.2895 19.1152L10.9845 11.8102C10.4011 12.3068 9.73029 12.6912 8.97196 12.9634C8.21363 13.2356 7.4516 13.3717 6.68588 13.3717C4.81726 13.3717 3.23575 12.7249 1.94133 11.4313C0.647111 10.1377 0 8.55711 0 6.68967C0 4.82203 0.646819 3.24012 1.94046 1.94396C3.2341 0.647985 4.81464 0 6.68208 0C8.54972 0 10.1316 0.647111 11.4278 1.94133C12.7238 3.23575 13.3718 4.81726 13.3718 6.68587C13.3718 7.49651 13.2282 8.281 12.941 9.03933C12.6538 9.79767 12.2768 10.446 11.8102 10.9845L19.1152 18.2898L18.2895 19.1152ZM6.68588 12.2051C8.23385 12.2051 9.54071 11.6722 10.6065 10.6065C11.6722 9.5409 12.2051 8.23404 12.2051 6.68587C12.2051 5.13771 11.6722 3.83085 10.6065 2.76529C9.54071 1.69954 8.23385 1.16667 6.68588 1.16667C5.13771 1.16667 3.83085 1.69954 2.76529 2.76529C1.69954 3.83085 1.16667 5.13771 1.16667 6.68587C1.16667 8.23404 1.69954 9.5409 2.76529 10.6065C3.83085 11.6722 5.13771 12.2051 6.68588 12.2051Z" fill="white"/>
                         </svg>
-                        <span>Search</span>
                     </button>
                 </div>
             </div>
@@ -371,7 +364,11 @@ $property_query = new WP_Query( $args );
         ?>
     </div>
 
-    <a href="#" class="listing-grid__mobile-action">Learn More</a>
+    <div class="listing-grid__mobile-actions">
+        <a href="#" class="listing-grid__mobile-action">Learn More</a>
+    </div>
+
+    <div class="overlay"></div>
   </div>
 </section>
 

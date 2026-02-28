@@ -59,17 +59,6 @@ if (is_user_logged_in()) {
 ?>
 
 <article class="listing-grid__item" data-id="<?php echo esc_attr($property_id); ?>">
-    <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($property_id); ?>">
-        <?php if (!$args['is_favourites'] && $is_favorite) : ?>
-             <!-- Filled Heart SVG (You might need to adjust the SVG path/fill) -->
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        <?php elseif (!$args['is_favourites']) : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav.svg" alt="favorites">
-        <?php endif; ?>
-    </button>
-
     <a href="<?php the_permalink(); ?>" class="listing-grid__image">
         <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php the_title_attribute(); ?>" class="for-winter">
         <img src="<?php echo esc_url($main_image_url); ?>" class="for-summer" alt="<?php the_title_attribute(); ?>">
@@ -78,7 +67,16 @@ if (is_user_logged_in()) {
         <div class="listing-grid__info-header">
             <h5 class="text for-winter"><?php the_title(); ?></h5>
             <h5 class="text for-summer"><?php the_title(); ?></h5>
-            <button class="listing-grid__info-share"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/share.svg" alt="share product"></button>
+            <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($property_id); ?>">
+                <?php if (!$args['is_favourites'] && $is_favorite) : ?>
+                    <!-- Filled Heart SVG (You might need to adjust the SVG path/fill) -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                <?php elseif (!$args['is_favourites']) : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
+                <?php endif; ?>
+            </button>
         </div>
 
         <div class="listing-grid__info-details">
