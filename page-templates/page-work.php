@@ -18,7 +18,7 @@
 
 <section class="hero">
   <div class="hero__img">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-hero-winter.png"  class="for-winter" alt="work hero-winter">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-hero-winter.jpg"  class="for-winter" alt="work hero-winter">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-hero-summer.png" class="for-summer" alt="work hero-summer">
   </div>
   <div class="hero__overlay"></div>
@@ -56,14 +56,16 @@
 <section class="images-with__text section">
   <div class="container">
     <div class="images-with__text__images">
-      <div class="about__images-group__primary">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are__winter-hero.png" class="for-winter" alt="who we are">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer_hero.png" class="for-summer" alt="who we are">
+      <div class="images-with__text__images-group__primary">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are__winter-hero.jpeg" class="for-winter for-desktop" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are__winter-hero-mobile.jpg" class="for-winter for-mobile" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer_hero.jpg" class="for-summer for-desktop" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer_hero-mobile.jpg" class="for-summer for-mobile" alt="who we are">
       </div>
 
-      <div class="about__images-group__secondary">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are-winter.png" class="for-winter" alt="who we are">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer.png" class="for-summer" alt="who we are">
+      <div class="images-with__text__images-group__secondary">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/who-we-are__winter.jpg" class="for-winter" alt="who we are">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Who-we-are-summer.jpg" class="for-summer" alt="who we are">
       </div>
     </div>
 
@@ -99,7 +101,7 @@
       </div>
       <div class="our-process__content">
         <h4 class="our-process__title">We Curate</h4>
-        <p class="process__description">We privately select the right home and design a tailored stay aligned with your lifestyle and rhythm</p>
+        <p class="our-process__description">We privately select the right home and design a tailored stay aligned with your lifestyle and rhythm</p>
       </div>
     </div>
 
@@ -133,80 +135,107 @@
   <div class="container">
     <h4 class="section-title">Why AR PRIVÉ stands apart</h4>
 
-    <div class="features-highlight__showcase">
-      <img src="<?php echo get_template_directory_uri() ?>/assets/images/work-feature-winter.png" class="for-winter" alt="work section image">
-      <img src="<?php echo get_template_directory_uri() ?>/assets/images/work-feature-summer.png" class="for-summer" alt="summer image of work section">
+    <div class="features-highlight__content">
+      <div class="features-highlight__showcase">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/work-feature-winter.jpg" class="for-winter" alt="work section image">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/work-feature-summer.jpg" class="for-summer" alt="summer image of work section">
+      </div>
+  
+      <div class="features-highlight__grid">
+        <article class="features-highlight__item">
+          <div class="features-highlight__icon-box">
+            <svg width="55" height="52" viewBox="0 0 55 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.992 41.8467V16.5567L1.51267 21.3747L0 19.408L26.2487 0L52.5567 19.426L51.0693 21.3747L26.2487 3.08733L10.454 14.7567V39.3847H20.2V41.8467H7.992ZM40.8987 49.4927C38.9062 50.8669 36.9584 51.528 35.0553 51.476C33.1518 51.424 31.4624 50.6602 29.9873 49.1847C28.5118 47.7096 27.748 46.0105 27.696 44.0873C27.644 42.1642 28.3051 40.2151 29.6793 38.24C28.3051 36.2476 27.644 34.2998 27.696 32.3967C27.748 30.4931 28.5118 28.8038 29.9873 27.3287C31.4624 25.8531 33.1616 25.0893 35.0847 25.0373C37.0078 24.9853 38.9569 25.6464 40.932 27.0207C42.9244 25.6464 44.8722 24.9853 46.7753 25.0373C48.6789 25.0893 50.3682 25.8531 51.8433 27.3287C53.3189 28.8038 54.0827 30.5029 54.1347 32.426C54.1867 34.3491 53.5256 36.2982 52.1513 38.2733C53.5256 40.2658 54.1867 42.2136 54.1347 44.1167C54.0827 46.0202 53.3189 47.7096 51.8433 49.1847C50.3682 50.6602 48.6691 51.424 46.746 51.476C44.8229 51.528 42.8738 50.8669 40.8987 49.4927ZM40.9153 46.4873L43.164 48.0153C44.2436 48.7696 45.44 49.0936 46.7533 48.9873C48.0667 48.8816 49.184 48.368 50.1053 47.4467C51.0267 46.5253 51.5489 45.408 51.672 44.0947C51.7951 42.7813 51.4796 41.5764 50.7253 40.48L49.146 38.2567L50.674 36.008C51.4282 34.9285 51.7522 33.732 51.646 32.4187C51.5402 31.1053 51.0267 29.988 50.1053 29.0667C49.184 28.1453 48.0667 27.6231 46.7533 27.5C45.44 27.3769 44.2436 27.6924 43.164 28.4467L40.9153 30.026L38.692 28.498C37.5956 27.7438 36.3907 27.4198 35.0773 27.526C33.764 27.6318 32.6467 28.1453 31.7253 29.0667C30.804 29.988 30.2818 31.1053 30.1587 32.4187C30.0356 33.732 30.3511 34.9285 31.1053 36.008L32.6847 38.2567L31.1567 40.48C30.4024 41.5764 30.0784 42.7813 30.1847 44.0947C30.2904 45.408 30.804 46.5253 31.7253 47.4467C32.6467 48.368 33.764 48.8902 35.0773 49.0133C36.3907 49.1364 37.5956 48.8209 38.692 48.0667L40.9153 46.4873ZM40.918 40.244C41.4633 40.244 41.9347 40.0487 42.332 39.658C42.7293 39.2678 42.928 38.7998 42.928 38.254C42.928 37.7087 42.7284 37.2373 42.3293 36.84C41.9307 36.4427 41.4584 36.244 40.9127 36.244C40.3673 36.244 39.9002 36.4436 39.5113 36.8427C39.1224 37.2413 38.928 37.7136 38.928 38.2593C38.928 38.8047 39.1233 39.2718 39.514 39.6607C39.9042 40.0496 40.3722 40.244 40.918 40.244Z" fill="#5A98C0"/>
+            </svg>
+          </div>
+  
+          <h5 class="features-highlight__title">Hand-selected private homes</h5>
+          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+        </article>
+        <article class="features-highlight__item">
+          <div class="features-highlight__icon-box">
+            <svg width="54" height="45" viewBox="0 0 54 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 44.462V35.218C0 34.1984 0.343556 33.3133 1.03067 32.5627C1.71778 31.8116 2.54933 31.4018 3.52533 31.3333H11.2333C11.9196 31.3333 12.58 31.5018 13.2147 31.8387C13.8493 32.1756 14.3769 32.6542 14.7973 33.2747C16.1547 35.1996 17.8549 36.6904 19.898 37.7473C21.9411 38.8047 24.1418 39.3333 26.5 39.3333C28.8689 39.3333 31.0833 38.8047 33.1433 37.7473C35.2033 36.6904 36.918 35.196 38.2873 33.264C38.7011 32.6507 39.2176 32.1756 39.8367 31.8387C40.4562 31.5018 41.0996 31.3333 41.7667 31.3333H49.4747C50.4813 31.4018 51.3333 31.8116 52.0307 32.5627C52.728 33.3133 53.0767 34.1984 53.0767 35.218V44.462H37.282V37.9027C35.7776 39.1387 34.1064 40.0964 32.2687 40.776C30.4304 41.4556 28.5051 41.7953 26.4927 41.7953C24.5251 41.7953 22.6262 41.4627 20.796 40.7973C18.9662 40.1324 17.2991 39.1822 15.7947 37.9467V44.462H0ZM6.702 26.4107C4.91933 26.4107 3.38244 25.7644 2.09133 24.472C0.799778 23.1796 0.154 21.6336 0.154 19.834C0.154 18.0096 0.802 16.4616 2.098 15.19C3.39444 13.918 4.93444 13.282 6.718 13.282C8.526 13.282 10.072 13.918 11.356 15.19C12.64 16.4616 13.282 18.0149 13.282 19.85C13.282 21.6407 12.6418 23.1818 11.3613 24.4733C10.0813 25.7649 8.52822 26.4107 6.702 26.4107ZM46.2913 26.4107C44.5091 26.4107 42.9722 25.7644 41.6807 24.472C40.3891 23.1796 39.7433 21.6336 39.7433 19.834C39.7433 18.0096 40.3916 16.4616 41.688 15.19C42.9844 13.918 44.5244 13.282 46.308 13.282C48.1156 13.282 49.6616 13.918 50.946 15.19C52.23 16.4616 52.872 18.0149 52.872 19.85C52.872 21.6407 52.2318 23.1818 50.9513 24.4733C49.6709 25.7649 48.1176 26.4107 46.2913 26.4107ZM26.5 20.2027C24.7924 18.8404 23.2022 17.5622 21.7293 16.368C20.2569 15.1742 18.9827 14.0136 17.9067 12.886C16.8302 11.7589 15.9869 10.6269 15.3767 9.49C14.7664 8.35311 14.4613 7.14889 14.4613 5.87734C14.4613 4.24756 15.0367 2.86067 16.1873 1.71667C17.3376 0.572222 18.7264 0 20.354 0C21.4753 0 22.5502 0.293334 23.5787 0.880001C24.6067 1.46622 25.5804 2.34467 26.5 3.51534C27.4196 2.37889 28.4096 1.50889 29.47 0.905335C30.5304 0.301779 31.6171 0 32.73 0C34.3184 0 35.688 0.580667 36.8387 1.742C37.9889 2.90333 38.564 4.33289 38.564 6.03067C38.564 7.25645 38.256 8.42356 37.64 9.532C37.0236 10.6409 36.1816 11.7564 35.114 12.8787C34.0464 14.0009 32.7764 15.156 31.304 16.344C29.8311 17.532 28.2298 18.8182 26.5 20.2027ZM26.5 17.0053C29.8724 14.4209 32.316 12.2624 33.8307 10.53C35.3453 8.79756 36.1027 7.27644 36.1027 5.96667C36.1027 4.99111 35.7689 4.16311 35.1013 3.48267C34.4342 2.80222 33.6269 2.462 32.6793 2.462C31.7598 2.462 30.9616 2.76667 30.2847 3.376C29.6078 3.98533 28.948 4.59689 28.3053 5.21067L26.508 6.926L24.6847 5.2C24.0487 4.59333 23.3978 3.98533 22.732 3.376C22.0662 2.76667 21.2736 2.462 20.354 2.462C19.3913 2.462 18.5789 2.79089 17.9167 3.44867C17.2544 4.10689 16.9233 4.91556 16.9233 5.87467C16.9233 7.25911 17.68 8.82356 19.1933 10.568C20.7071 12.3124 23.1427 14.4582 26.5 17.0053Z" fill="#5A98C0"/>
+            </svg>
+          </div>
+  
+          <h5 class="features-highlight__title">Hand-selected private homes</h5>
+          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+        </article>
+        <article class="features-highlight__item">
+          <div class="features-highlight__icon-box">
+            <svg width="42" height="62" viewBox="0 0 42 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.964 8.86134C19.7249 8.86134 18.6767 8.43267 17.8193 7.57533C16.962 6.718 16.5333 5.66978 16.5333 4.43067C16.5333 3.19111 16.962 2.14267 17.8193 1.28534C18.6767 0.428446 19.7249 0 20.964 0C22.2031 0 23.2513 0.428446 24.1087 1.28534C24.966 2.14267 25.3947 3.19111 25.3947 4.43067C25.3947 5.66978 24.966 6.718 24.1087 7.57533C23.2513 8.43267 22.2031 8.86134 20.964 8.86134ZM15.3227 48.6973V15.714C12.5587 15.4909 9.88533 15.184 7.30267 14.7933C4.71956 14.4027 2.28533 13.9364 0 13.3947L0.564 10.9333C3.90267 11.7418 7.24534 12.3302 10.592 12.6987C13.9391 13.0671 17.3964 13.2513 20.964 13.2513C24.5316 13.2513 27.9889 13.0671 31.336 12.6987C34.6827 12.3302 38.0253 11.7418 41.364 10.9333L41.928 13.3947C39.6427 13.9364 37.2071 14.4018 34.6213 14.7907C32.0351 15.1796 29.3631 15.4869 26.6053 15.7127V48.6973H24.1433V32.7587H17.7847V48.6973H15.3227ZM10.4207 61.6407C9.86289 61.6407 9.38845 61.4451 8.99733 61.054C8.60578 60.6629 8.41 60.1884 8.41 59.6307C8.41 59.0729 8.60578 58.5984 8.99733 58.2073C9.38845 57.8158 9.86289 57.62 10.4207 57.62C10.978 57.62 11.4524 57.8158 11.844 58.2073C12.2351 58.5984 12.4307 59.0729 12.4307 59.6307C12.4307 60.1884 12.2351 60.6629 11.844 61.054C11.4524 61.4451 10.978 61.6407 10.4207 61.6407ZM20.964 61.6407C20.4062 61.6407 19.9318 61.4451 19.5407 61.054C19.1496 60.6629 18.954 60.1884 18.954 59.6307C18.954 59.0729 19.1496 58.5984 19.5407 58.2073C19.9318 57.8158 20.4062 57.62 20.964 57.62C21.5218 57.62 21.9962 57.8158 22.3873 58.2073C22.7784 58.5984 22.974 59.0729 22.974 59.6307C22.974 60.1884 22.7784 60.6629 22.3873 61.054C21.9962 61.4451 21.5218 61.6407 20.964 61.6407ZM31.5073 61.6407C30.95 61.6407 30.4756 61.4451 30.084 61.054C29.6929 60.6629 29.4973 60.1884 29.4973 59.6307C29.4973 59.0729 29.6929 58.5984 30.084 58.2073C30.4756 57.8158 30.95 57.62 31.5073 57.62C32.0651 57.62 32.5396 57.8158 32.9307 58.2073C33.3222 58.5984 33.518 59.0729 33.518 59.6307C33.518 60.1884 33.3222 60.6629 32.9307 61.054C32.5396 61.4451 32.0651 61.6407 31.5073 61.6407Z" fill="#5A98C0"/>
+            </svg>
+          </div>
+  
+          <h5 class="features-highlight__title">Hand-selected private homes</h5>
+          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+        </article>
+        <article class="features-highlight__item">
+          <div class="features-highlight__icon-box">
+            <svg width="42" height="47" viewBox="0 0 42 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M31.5033 36.5947C32.6122 36.5947 33.55 36.2127 34.3167 35.4487C35.0833 34.6847 35.4667 33.7484 35.4667 32.64C35.4667 31.5311 35.0847 30.5933 34.3207 29.8267C33.5567 29.06 32.6202 28.6767 31.5113 28.6767C30.4029 28.6767 29.4653 29.0589 28.6987 29.8233C27.932 30.5873 27.5487 31.5236 27.5487 32.632C27.5487 33.7404 27.9307 34.678 28.6947 35.4447C29.4587 36.2113 30.3949 36.5947 31.5033 36.5947ZM31.5073 44.5127C32.9029 44.5127 34.1716 44.2116 35.3133 43.6093C36.4547 43.0067 37.4007 42.1633 38.1513 41.0793C37.1171 40.4793 36.0496 40.0196 34.9487 39.7C33.8482 39.3804 32.7036 39.2207 31.5147 39.2207C30.332 39.2207 29.1933 39.3804 28.0987 39.7C27.0036 40.0196 25.9476 40.4793 24.9307 41.0793C25.664 42.1633 26.5989 43.0067 27.7353 43.6093C28.8713 44.2116 30.1287 44.5127 31.5073 44.5127ZM18.2967 46.872C13.0464 45.3053 8.68445 42.1124 5.21067 37.2933C1.73689 32.4747 0 27.0373 0 20.9813V6.858L18.2973 0L36.5947 6.85134V21.9413C36.2271 21.8302 35.8164 21.7127 35.3627 21.5887C34.9089 21.4647 34.4991 21.3651 34.1333 21.29V8.52334L18.2973 2.62334L2.46133 8.516V20.9847C2.46133 23.7624 2.872 26.3898 3.69333 28.8667C4.51467 31.3436 5.62378 33.5893 7.02067 35.604C8.41711 37.6187 10.044 39.3478 11.9013 40.7913C13.7587 42.2349 15.7087 43.3036 17.7513 43.9973L17.9053 43.946C18.0711 44.3429 18.2929 44.7502 18.5707 45.168C18.8484 45.5858 19.1658 45.9904 19.5227 46.382C19.3467 46.4673 19.1382 46.5533 18.8973 46.64C18.6564 46.7262 18.4562 46.8036 18.2967 46.872ZM31.5107 46.9747C28.6196 46.9747 26.1664 45.9678 24.1513 43.954C22.1358 41.9407 21.128 39.4887 21.128 36.598C21.128 33.7069 22.1349 31.2538 24.1487 29.2387C26.162 27.2231 28.614 26.2153 31.5047 26.2153C34.3953 26.2153 36.8484 27.2222 38.864 29.236C40.8796 31.2493 41.8873 33.7013 41.8873 36.592C41.8873 39.4827 40.8804 41.9358 38.8667 43.9513C36.8533 45.9669 34.4013 46.9747 31.5107 46.9747Z" fill="#5A98C0"/>
+            </svg>
+          </div>
+  
+          <h5 class="features-highlight__title">Hand-selected private homes</h5>
+          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+        </article>
+      </div>
     </div>
 
-    <div class="features-highlight__grid">
-      <article class="features-highlight__item">
-        <div class="features-highlight__icon-box">
-          <svg width="55" height="52" viewBox="0 0 55 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.992 41.8467V16.5567L1.51267 21.3747L0 19.408L26.2487 0L52.5567 19.426L51.0693 21.3747L26.2487 3.08733L10.454 14.7567V39.3847H20.2V41.8467H7.992ZM40.8987 49.4927C38.9062 50.8669 36.9584 51.528 35.0553 51.476C33.1518 51.424 31.4624 50.6602 29.9873 49.1847C28.5118 47.7096 27.748 46.0105 27.696 44.0873C27.644 42.1642 28.3051 40.2151 29.6793 38.24C28.3051 36.2476 27.644 34.2998 27.696 32.3967C27.748 30.4931 28.5118 28.8038 29.9873 27.3287C31.4624 25.8531 33.1616 25.0893 35.0847 25.0373C37.0078 24.9853 38.9569 25.6464 40.932 27.0207C42.9244 25.6464 44.8722 24.9853 46.7753 25.0373C48.6789 25.0893 50.3682 25.8531 51.8433 27.3287C53.3189 28.8038 54.0827 30.5029 54.1347 32.426C54.1867 34.3491 53.5256 36.2982 52.1513 38.2733C53.5256 40.2658 54.1867 42.2136 54.1347 44.1167C54.0827 46.0202 53.3189 47.7096 51.8433 49.1847C50.3682 50.6602 48.6691 51.424 46.746 51.476C44.8229 51.528 42.8738 50.8669 40.8987 49.4927ZM40.9153 46.4873L43.164 48.0153C44.2436 48.7696 45.44 49.0936 46.7533 48.9873C48.0667 48.8816 49.184 48.368 50.1053 47.4467C51.0267 46.5253 51.5489 45.408 51.672 44.0947C51.7951 42.7813 51.4796 41.5764 50.7253 40.48L49.146 38.2567L50.674 36.008C51.4282 34.9285 51.7522 33.732 51.646 32.4187C51.5402 31.1053 51.0267 29.988 50.1053 29.0667C49.184 28.1453 48.0667 27.6231 46.7533 27.5C45.44 27.3769 44.2436 27.6924 43.164 28.4467L40.9153 30.026L38.692 28.498C37.5956 27.7438 36.3907 27.4198 35.0773 27.526C33.764 27.6318 32.6467 28.1453 31.7253 29.0667C30.804 29.988 30.2818 31.1053 30.1587 32.4187C30.0356 33.732 30.3511 34.9285 31.1053 36.008L32.6847 38.2567L31.1567 40.48C30.4024 41.5764 30.0784 42.7813 30.1847 44.0947C30.2904 45.408 30.804 46.5253 31.7253 47.4467C32.6467 48.368 33.764 48.8902 35.0773 49.0133C36.3907 49.1364 37.5956 48.8209 38.692 48.0667L40.9153 46.4873ZM40.918 40.244C41.4633 40.244 41.9347 40.0487 42.332 39.658C42.7293 39.2678 42.928 38.7998 42.928 38.254C42.928 37.7087 42.7284 37.2373 42.3293 36.84C41.9307 36.4427 41.4584 36.244 40.9127 36.244C40.3673 36.244 39.9002 36.4436 39.5113 36.8427C39.1224 37.2413 38.928 37.7136 38.928 38.2593C38.928 38.8047 39.1233 39.2718 39.514 39.6607C39.9042 40.0496 40.3722 40.244 40.918 40.244Z" fill="#5A98C0"/>
-          </svg>
-        </div>
-
-        <h5 class="features-highlight__title">Hand-selected private homes</h5>
-        <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
-      </article>
-      <article class="features-highlight__item">
-        <div class="features-highlight__icon-box">
-          <svg width="54" height="45" viewBox="0 0 54 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 44.462V35.218C0 34.1984 0.343556 33.3133 1.03067 32.5627C1.71778 31.8116 2.54933 31.4018 3.52533 31.3333H11.2333C11.9196 31.3333 12.58 31.5018 13.2147 31.8387C13.8493 32.1756 14.3769 32.6542 14.7973 33.2747C16.1547 35.1996 17.8549 36.6904 19.898 37.7473C21.9411 38.8047 24.1418 39.3333 26.5 39.3333C28.8689 39.3333 31.0833 38.8047 33.1433 37.7473C35.2033 36.6904 36.918 35.196 38.2873 33.264C38.7011 32.6507 39.2176 32.1756 39.8367 31.8387C40.4562 31.5018 41.0996 31.3333 41.7667 31.3333H49.4747C50.4813 31.4018 51.3333 31.8116 52.0307 32.5627C52.728 33.3133 53.0767 34.1984 53.0767 35.218V44.462H37.282V37.9027C35.7776 39.1387 34.1064 40.0964 32.2687 40.776C30.4304 41.4556 28.5051 41.7953 26.4927 41.7953C24.5251 41.7953 22.6262 41.4627 20.796 40.7973C18.9662 40.1324 17.2991 39.1822 15.7947 37.9467V44.462H0ZM6.702 26.4107C4.91933 26.4107 3.38244 25.7644 2.09133 24.472C0.799778 23.1796 0.154 21.6336 0.154 19.834C0.154 18.0096 0.802 16.4616 2.098 15.19C3.39444 13.918 4.93444 13.282 6.718 13.282C8.526 13.282 10.072 13.918 11.356 15.19C12.64 16.4616 13.282 18.0149 13.282 19.85C13.282 21.6407 12.6418 23.1818 11.3613 24.4733C10.0813 25.7649 8.52822 26.4107 6.702 26.4107ZM46.2913 26.4107C44.5091 26.4107 42.9722 25.7644 41.6807 24.472C40.3891 23.1796 39.7433 21.6336 39.7433 19.834C39.7433 18.0096 40.3916 16.4616 41.688 15.19C42.9844 13.918 44.5244 13.282 46.308 13.282C48.1156 13.282 49.6616 13.918 50.946 15.19C52.23 16.4616 52.872 18.0149 52.872 19.85C52.872 21.6407 52.2318 23.1818 50.9513 24.4733C49.6709 25.7649 48.1176 26.4107 46.2913 26.4107ZM26.5 20.2027C24.7924 18.8404 23.2022 17.5622 21.7293 16.368C20.2569 15.1742 18.9827 14.0136 17.9067 12.886C16.8302 11.7589 15.9869 10.6269 15.3767 9.49C14.7664 8.35311 14.4613 7.14889 14.4613 5.87734C14.4613 4.24756 15.0367 2.86067 16.1873 1.71667C17.3376 0.572222 18.7264 0 20.354 0C21.4753 0 22.5502 0.293334 23.5787 0.880001C24.6067 1.46622 25.5804 2.34467 26.5 3.51534C27.4196 2.37889 28.4096 1.50889 29.47 0.905335C30.5304 0.301779 31.6171 0 32.73 0C34.3184 0 35.688 0.580667 36.8387 1.742C37.9889 2.90333 38.564 4.33289 38.564 6.03067C38.564 7.25645 38.256 8.42356 37.64 9.532C37.0236 10.6409 36.1816 11.7564 35.114 12.8787C34.0464 14.0009 32.7764 15.156 31.304 16.344C29.8311 17.532 28.2298 18.8182 26.5 20.2027ZM26.5 17.0053C29.8724 14.4209 32.316 12.2624 33.8307 10.53C35.3453 8.79756 36.1027 7.27644 36.1027 5.96667C36.1027 4.99111 35.7689 4.16311 35.1013 3.48267C34.4342 2.80222 33.6269 2.462 32.6793 2.462C31.7598 2.462 30.9616 2.76667 30.2847 3.376C29.6078 3.98533 28.948 4.59689 28.3053 5.21067L26.508 6.926L24.6847 5.2C24.0487 4.59333 23.3978 3.98533 22.732 3.376C22.0662 2.76667 21.2736 2.462 20.354 2.462C19.3913 2.462 18.5789 2.79089 17.9167 3.44867C17.2544 4.10689 16.9233 4.91556 16.9233 5.87467C16.9233 7.25911 17.68 8.82356 19.1933 10.568C20.7071 12.3124 23.1427 14.4582 26.5 17.0053Z" fill="#5A98C0"/>
-          </svg>
-        </div>
-
-        <h5 class="features-highlight__title">Hand-selected private homes</h5>
-        <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
-      </article>
-      <article class="features-highlight__item">
-        <div class="features-highlight__icon-box">
-          <svg width="42" height="62" viewBox="0 0 42 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.964 8.86134C19.7249 8.86134 18.6767 8.43267 17.8193 7.57533C16.962 6.718 16.5333 5.66978 16.5333 4.43067C16.5333 3.19111 16.962 2.14267 17.8193 1.28534C18.6767 0.428446 19.7249 0 20.964 0C22.2031 0 23.2513 0.428446 24.1087 1.28534C24.966 2.14267 25.3947 3.19111 25.3947 4.43067C25.3947 5.66978 24.966 6.718 24.1087 7.57533C23.2513 8.43267 22.2031 8.86134 20.964 8.86134ZM15.3227 48.6973V15.714C12.5587 15.4909 9.88533 15.184 7.30267 14.7933C4.71956 14.4027 2.28533 13.9364 0 13.3947L0.564 10.9333C3.90267 11.7418 7.24534 12.3302 10.592 12.6987C13.9391 13.0671 17.3964 13.2513 20.964 13.2513C24.5316 13.2513 27.9889 13.0671 31.336 12.6987C34.6827 12.3302 38.0253 11.7418 41.364 10.9333L41.928 13.3947C39.6427 13.9364 37.2071 14.4018 34.6213 14.7907C32.0351 15.1796 29.3631 15.4869 26.6053 15.7127V48.6973H24.1433V32.7587H17.7847V48.6973H15.3227ZM10.4207 61.6407C9.86289 61.6407 9.38845 61.4451 8.99733 61.054C8.60578 60.6629 8.41 60.1884 8.41 59.6307C8.41 59.0729 8.60578 58.5984 8.99733 58.2073C9.38845 57.8158 9.86289 57.62 10.4207 57.62C10.978 57.62 11.4524 57.8158 11.844 58.2073C12.2351 58.5984 12.4307 59.0729 12.4307 59.6307C12.4307 60.1884 12.2351 60.6629 11.844 61.054C11.4524 61.4451 10.978 61.6407 10.4207 61.6407ZM20.964 61.6407C20.4062 61.6407 19.9318 61.4451 19.5407 61.054C19.1496 60.6629 18.954 60.1884 18.954 59.6307C18.954 59.0729 19.1496 58.5984 19.5407 58.2073C19.9318 57.8158 20.4062 57.62 20.964 57.62C21.5218 57.62 21.9962 57.8158 22.3873 58.2073C22.7784 58.5984 22.974 59.0729 22.974 59.6307C22.974 60.1884 22.7784 60.6629 22.3873 61.054C21.9962 61.4451 21.5218 61.6407 20.964 61.6407ZM31.5073 61.6407C30.95 61.6407 30.4756 61.4451 30.084 61.054C29.6929 60.6629 29.4973 60.1884 29.4973 59.6307C29.4973 59.0729 29.6929 58.5984 30.084 58.2073C30.4756 57.8158 30.95 57.62 31.5073 57.62C32.0651 57.62 32.5396 57.8158 32.9307 58.2073C33.3222 58.5984 33.518 59.0729 33.518 59.6307C33.518 60.1884 33.3222 60.6629 32.9307 61.054C32.5396 61.4451 32.0651 61.6407 31.5073 61.6407Z" fill="#5A98C0"/>
-          </svg>
-        </div>
-
-        <h5 class="features-highlight__title">Hand-selected private homes</h5>
-        <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
-      </article>
-      <article class="features-highlight__item">
-        <div class="features-highlight__icon-box">
-          <svg width="42" height="47" viewBox="0 0 42 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M31.5033 36.5947C32.6122 36.5947 33.55 36.2127 34.3167 35.4487C35.0833 34.6847 35.4667 33.7484 35.4667 32.64C35.4667 31.5311 35.0847 30.5933 34.3207 29.8267C33.5567 29.06 32.6202 28.6767 31.5113 28.6767C30.4029 28.6767 29.4653 29.0589 28.6987 29.8233C27.932 30.5873 27.5487 31.5236 27.5487 32.632C27.5487 33.7404 27.9307 34.678 28.6947 35.4447C29.4587 36.2113 30.3949 36.5947 31.5033 36.5947ZM31.5073 44.5127C32.9029 44.5127 34.1716 44.2116 35.3133 43.6093C36.4547 43.0067 37.4007 42.1633 38.1513 41.0793C37.1171 40.4793 36.0496 40.0196 34.9487 39.7C33.8482 39.3804 32.7036 39.2207 31.5147 39.2207C30.332 39.2207 29.1933 39.3804 28.0987 39.7C27.0036 40.0196 25.9476 40.4793 24.9307 41.0793C25.664 42.1633 26.5989 43.0067 27.7353 43.6093C28.8713 44.2116 30.1287 44.5127 31.5073 44.5127ZM18.2967 46.872C13.0464 45.3053 8.68445 42.1124 5.21067 37.2933C1.73689 32.4747 0 27.0373 0 20.9813V6.858L18.2973 0L36.5947 6.85134V21.9413C36.2271 21.8302 35.8164 21.7127 35.3627 21.5887C34.9089 21.4647 34.4991 21.3651 34.1333 21.29V8.52334L18.2973 2.62334L2.46133 8.516V20.9847C2.46133 23.7624 2.872 26.3898 3.69333 28.8667C4.51467 31.3436 5.62378 33.5893 7.02067 35.604C8.41711 37.6187 10.044 39.3478 11.9013 40.7913C13.7587 42.2349 15.7087 43.3036 17.7513 43.9973L17.9053 43.946C18.0711 44.3429 18.2929 44.7502 18.5707 45.168C18.8484 45.5858 19.1658 45.9904 19.5227 46.382C19.3467 46.4673 19.1382 46.5533 18.8973 46.64C18.6564 46.7262 18.4562 46.8036 18.2967 46.872ZM31.5107 46.9747C28.6196 46.9747 26.1664 45.9678 24.1513 43.954C22.1358 41.9407 21.128 39.4887 21.128 36.598C21.128 33.7069 22.1349 31.2538 24.1487 29.2387C26.162 27.2231 28.614 26.2153 31.5047 26.2153C34.3953 26.2153 36.8484 27.2222 38.864 29.236C40.8796 31.2493 41.8873 33.7013 41.8873 36.592C41.8873 39.4827 40.8804 41.9358 38.8667 43.9513C36.8533 45.9669 34.4013 46.9747 31.5107 46.9747Z" fill="#5A98C0"/>
-          </svg>
-        </div>
-
-        <h5 class="features-highlight__title">Hand-selected private homes</h5>
-        <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
-      </article>
-    </div>
   </div>
 </section>
 
 <section class="pillars-grid section">
+  <div>
+    <img src="<?php echo get_template_directory_uri() ?>/assets/images/pillers-watermark.svg" alt="pillars grid winter" class="pillars-grid__watermark" srcset="">
+  </div>
+
   <div class="container">
     <article class="pillars-grid__text">
       <h4 class="section-title">Our concierge pillars</h4>
       <p class="pillars-grid__text-description text">The essential areas we manage discreetly to ensure every stay flows effortlessly.</p>
     </article>
-    <div class="pillars-grid__grid">
 
+    <div class="pillars-grid__grid">
       <article class="pillars-grid__card">
+        <svg width="36" height="18" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0L11.4308 6.56918L18 9L11.4308 11.4308L9 18L6.56918 11.4308L0 9L6.56918 6.56918L9 0Z" fill="#35656F"/>
+          <path d="M27 0L29.4308 6.56918L36 9L29.4308 11.4308L27 18L24.5692 11.4308L18 9L24.5692 6.56918L27 0Z" fill="#35656F"/>
+        </svg>
+
         <h5 class="pillars-grid__card-title text">Private Hosting & Lifestyle</h5>
         <p class="description">Discreet management of your home environment, staff and daily flow.</p>
       </article>
 
       <article class="pillars-grid__card">
-        <h5 class="work-pillars__card-title text">Transfers & Mobility</h5>
+        <svg width="36" height="18" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0L11.4308 6.56918L18 9L11.4308 11.4308L9 18L6.56918 11.4308L0 9L6.56918 6.56918L9 0Z" fill="#35656F"/>
+          <path d="M27 0L29.4308 6.56918L36 9L29.4308 11.4308L27 18L24.5692 11.4308L18 9L24.5692 6.56918L27 0Z" fill="#35656F"/>
+        </svg>
+
+        <h5 class="pillars-grid__card-title text">Transfers & Mobility</h5>
         <p class="description">Chauffeured travel, helicopter connections, yacht arrangements and seamless logistics.</p>
       </article>
 
       <article class="pillars-grid__card">
-        <h5 class="work-pillars__card-title text">In-Home Services & Wellness</h5>
+        <svg width="36" height="18" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0L11.4308 6.56918L18 9L11.4308 11.4308L9 18L6.56918 11.4308L0 9L6.56918 6.56918L9 0Z" fill="#35656F"/>
+          <path d="M27 0L29.4308 6.56918L36 9L29.4308 11.4308L27 18L24.5692 11.4308L18 9L24.5692 6.56918L27 0Z" fill="#35656F"/>
+        </svg>
+
+        <h5 class="pillars-grid__card-title text">In-Home Services & Wellness</h5>
         <p class="description">Private chefs, wellness professionals, housekeeping and tailored in-residence care.</p>
       </article>
 
       <article class="pillars-grid__card">
+        <svg width="36" height="18" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 0L11.4308 6.56918L18 9L11.4308 11.4308L9 18L6.56918 11.4308L0 9L6.56918 6.56918L9 0Z" fill="#35656F"/>
+          <path d="M27 0L29.4308 6.56918L36 9L29.4308 11.4308L27 18L24.5692 11.4308L18 9L24.5692 6.56918L27 0Z" fill="#35656F"/>
+        </svg>
+
         <h5 class="pillars-grid__card-title text">Tailored Experiences</h5>
         <p class="description">Ski days, yacht excursions, cultural immersions and curated moments beyond the ordinary.</p>
       </article>
@@ -216,7 +245,6 @@
 </section>
 
 <section class="philosophy section">
-  <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philasopy-water_mark.svg" alt="water mark" class="philosophy__water-mark">
   <div class="container">
     <div class="philosophy__content">
       <h4 class="section-title">Thoughtfully designed. Quietly managed.</h4>
@@ -228,13 +256,13 @@
 
     <div class="philosophy__gallery">
       <div class="philosophy__column">
-        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-winter_primary.png" alt="Interior design detail" class="for-winter">
-        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-summer_primary.png" alt="Concierge service detail" class="for-summer">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-winter_primary.jpg" alt="Interior design detail" class="for-winter">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-summer_primary.jpg" alt="Concierge service detail" class="for-summer">
       </div>
 
       <div class="philosophy__column">
-        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-winter-secondary.png" alt="Luxury stay experience" class="for-winter">
-        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-summer_secondary.png" alt="Private hosting environment" class="for-summer">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-winter_secondary.jpg" alt="Luxury stay experience" class="for-winter">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/design-philosophy-summer_secondary.jpg" alt="Private hosting environment" class="for-summer">
       </div>
     </div>
 
