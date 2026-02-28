@@ -1,4 +1,12 @@
 .founder-note {
+  position: relative;
+
+  .founder-note-watermark {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
   .container {
     display: flex;
     align-items: center;
@@ -15,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 24px;
+    gap: 12px;
     max-width: 650px;
 
     @media (max-width:1040px) {
@@ -23,7 +31,6 @@
     }
 
     .section-title {
-      margin-block: 24px;
       &::after {
         left: 0;
         transform: translateX(0);
@@ -33,16 +40,12 @@
           transform: translateX(-50%);
         }
       }
-
-      @media (max-width:992px) {
-        margin-block: 12px;
-      }
     }
 
     a {
       text-decoration: none;
       color: var(--color-1);
-      font-size: 24px;
+      font-size: 16px;
       font-weight: 600;
 
       @media (max-width:992px) {
@@ -56,16 +59,21 @@
   }
 
   &__body {
-    font-size: 24px;
+    font-size: 16px;
     text-align: start;
 
     @media (max-width:992px){
       font-size: 12px;
       text-align: center;
     }
+
     p {
       font-style: italic;
       margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       @media (max-width:992px) {
         font-size: 12px;
@@ -74,6 +82,24 @@
     }
   }
   &__media {
-    max-width: 710px;
+    max-width: 426px;
+
+    @media (max-width: 500px) {
+      aspect-ratio: 392/368;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .founder-note__signature {
+    @media (max-width: 768px) {
+      br {
+        display: none;
+      }
+    }
   }
 }

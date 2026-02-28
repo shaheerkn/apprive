@@ -5234,7 +5234,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 .about-intro__gallery {
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: flex-start;
 }
 @media (max-width: 992px) {
   .about-intro__gallery {
@@ -5249,7 +5249,7 @@ body.term-courchevel .company-partners__logo.for-summer {
      object-fit: cover;
 }
 .about-intro__image-wrapper--primary {
-  padding-top: 150px;
+  padding-top: 60px;
 }
 @media (max-width: 1240px) {
   .about-intro__image-wrapper--primary {
@@ -5291,7 +5291,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .about-intro__description p {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -5317,7 +5317,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
 }
 @media (max-width: 992px) {
   .brand-pillars .container {
@@ -5337,10 +5337,11 @@ body.term-courchevel .company-partners__logo.for-summer {
 @media (max-width: 992px) {
   .brand-pillars__grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 .brand-pillars__item {
-  padding: 24px;
+  padding: 16px;
   text-align: center;
   position: relative;
 }
@@ -5356,21 +5357,13 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 @media (max-width: 992px) {
   .brand-pillars__item:not(:last-child)::after {
-    left: auto;
+    left: 50%;
+    transform: translateX(-50%);
     top: auto;
     bottom: 0;
-    transform: none;
-    width: 100%;
+    right: auto;
+    width: 120px;
     height: 1px;
-  }
-}
-.brand-pillars__item svg path {
-  fill: var(--icon-fill-color);
-}
-@media (max-width: 992px) {
-  .brand-pillars__item svg {
-    width: 40px;
-    height: 40px;
   }
 }
 @media (max-width: 992px) {
@@ -5380,8 +5373,21 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 @media (max-width: 992px) {
   .brand-pillars__item {
-    padding: 16px;
+    padding: 12px;
   }
+}
+.brand-pillars__icon {
+  width: 48px;
+  height: 48px;
+  margin-inline: auto;
+  padding: 5px;
+}
+.brand-pillars__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.brand-pillars__icon svg path {
+  fill: var(--icon-fill-color);
 }
 .brand-pillars__content {
   text-align: center;
@@ -5389,7 +5395,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 .brand-pillars__content--title {
   font-size: 24px;
   font-weight: 600;
-  margin-block: 24px;
+  margin-block: 12px;
 }
 @media (max-width: 992px) {
   .brand-pillars__content--title {
@@ -5402,10 +5408,19 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 @media (max-width: 768px) {
   .brand-pillars__content--text {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
+.founder-note {
+  position: relative;
+}
+.founder-note .founder-note-watermark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
 .founder-note .container {
   display: flex;
   align-items: center;
@@ -5422,16 +5437,13 @@ body.term-courchevel .company-partners__logo.for-summer {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 24px;
+  gap: 12px;
   max-width: 650px;
 }
 @media (max-width: 1040px) {
   .founder-note__content {
     align-items: center;
   }
-}
-.founder-note__content .section-title {
-  margin-block: 24px;
 }
 .founder-note__content .section-title::after {
   left: 0;
@@ -5443,15 +5455,10 @@ body.term-courchevel .company-partners__logo.for-summer {
     transform: translateX(-50%);
   }
 }
-@media (max-width: 992px) {
-  .founder-note__content .section-title {
-    margin-block: 12px;
-  }
-}
 .founder-note__content a {
   text-decoration: none;
   color: var(--color-1);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
 }
 @media (max-width: 992px) {
@@ -5465,7 +5472,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .founder-note__body {
-  font-size: 24px;
+  font-size: 16px;
   text-align: start;
 }
 @media (max-width: 992px) {
@@ -5478,6 +5485,9 @@ body.term-courchevel .company-partners__logo.for-summer {
   font-style: italic;
   margin-bottom: 20px;
 }
+.founder-note__body p:last-child {
+  margin-bottom: 0;
+}
 @media (max-width: 992px) {
   .founder-note__body p {
     font-size: 12px;
@@ -5485,7 +5495,23 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .founder-note__media {
-  max-width: 710px;
+  max-width: 426px;
+}
+@media (max-width: 500px) {
+  .founder-note__media {
+    aspect-ratio: 392/368;
+  }
+}
+.founder-note__media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  .founder-note .founder-note__signature br {
+    display: none;
+  }
 }
 
 .hero__modifier {
