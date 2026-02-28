@@ -4796,7 +4796,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 
 .filters__content {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 16px;
   justify-content: center;
   border-top: 0.5px solid rgba(255, 255, 255, 0.5019607843);
@@ -4861,6 +4861,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 @media (max-width: 768px) {
   .filters__buttons {

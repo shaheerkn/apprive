@@ -223,7 +223,7 @@
 
 .filters__content {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 16px;
   justify-content: center;
   border-top: 0.5px solid #FFFFFF80;
@@ -285,6 +285,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 
   @media (max-width: 768px) {
     width: 100%;
