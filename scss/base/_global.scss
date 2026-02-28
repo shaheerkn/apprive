@@ -153,11 +153,12 @@ body:has(.is-open) {
   @media (max-width: 1000px) {
     flex-direction: column;
     padding-inline: 0;
+    margin-bottom: 0;
   }
 }
 
 .product-detail__main-content {
-  max-width: calc(100% - 588px);
+  max-width: calc(100% - 420px);
 
   @media (max-width: 1000px) {
     max-width: 100%;
@@ -166,12 +167,12 @@ body:has(.is-open) {
 
 .product-detail__content {
   width: 100%;
-  max-width: 440px;
+  max-width: 330px;
   margin-inline: auto;
   flex-shrink: 0;
   position: sticky;
   top: 50px;
-  margin-top: 100px;
+  margin-top: 143px;
 
   @media (max-width: 1024px) {
     margin-top: 0;

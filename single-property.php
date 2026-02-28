@@ -78,6 +78,23 @@ $pricing = ar_get_property_pricing();
 				 */
 				get_template_part( 'template-parts/property/header' );
 				?>
+
+					<div class="product-detail__content product-detail__content--mobile">
+						<?php if ( $pricing ) : ?>
+							<div class="product-detail__price">
+								<p class="product-detail__price-label">Starting Price From</p>
+								<p class="product-detail__price-amount">
+									<?php
+									$formatted_price = esc_html( $pricing['formatted'] );
+									echo preg_replace( '/(\/(?:week|month|night|year))/', '<span>$1</span>', $formatted_price );
+									?>
+								</p>
+							</div>
+						<?php endif; ?>
+
+						<!-- Specifications will be loaded from separate template part -->
+						<?php get_template_part( 'template-parts/property/specifications' ); ?>
+				</div>
 			</div>
 		</section>
 
@@ -142,12 +159,15 @@ $pricing = ar_get_property_pricing();
 		?>
 	</div>
 
-	<div class="product-detail__content">
+	<div class="product-detail__content product-detail__content--desktop">
 			<?php if ( $pricing ) : ?>
 				<div class="product-detail__price">
 					<p class="product-detail__price-label">Starting Price From</p>
 					<p class="product-detail__price-amount">
-						<?php echo esc_html( $pricing['formatted'] ); ?>
+						<?php
+						$formatted_price = esc_html( $pricing['formatted'] );
+						echo preg_replace( '/(\/(?:week|month|night|year))/', '<span>$1</span>', $formatted_price );
+						?>
 					</p>
 				</div>
 			<?php endif; ?>

@@ -17,7 +17,7 @@ if ( ! ar_property_has_content( 'prop_key_features' ) ) {
 
 <section class="key-features">
 	<div class="key-features__container">
-		<h2 class="key-features-title">Key Features</h2>
+		<h2 class="key-features-title"><span class="title-text">Key Features</span> <span></span> </h2>
 
 		<div class="key-features__list">
 			<?php

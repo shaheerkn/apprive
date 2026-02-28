@@ -31,7 +31,7 @@ $watermark_image = $prop_info['prop_info_watermark'];
 
 	<div class="key-features__container">
 		<?php if ( $title ) : ?>
-			<h2 class="key-features-title"><?php echo esc_html( $title ); ?></h2>
+			<h2 class="key-features-title"><span class="title-text"><?php echo esc_html( $title ); ?></span> <span></span> </h2>
 		<?php endif; ?>
 
 		<?php if ( $subtitle ) : ?>

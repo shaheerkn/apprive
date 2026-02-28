@@ -27,7 +27,7 @@ $map = $prop_location_context['prop_location_context_map'];
 <section class="key-features location-context">
 	<div class="key-features__container">
 		<?php if ( $title ) : ?>
-			<h2 class="key-features-title"><?php echo esc_html( $title ); ?></h2>
+			<h2 class="key-features-title"><span class="title-text"><?php echo esc_html( $title ); ?></span> <span></span> </h2>
 		<?php endif; ?>
 
 		<?php if ( $subtitle ) : ?>
@@ -61,7 +61,7 @@ $map = $prop_location_context['prop_location_context_map'];
 						width="100%"
 						height="480"
 						frameborder="0"
-						style="border:0; border-radius: 15px;"
+						style="border:0;"
 						src="https://www.google.com/maps?q=<?php echo esc_attr( $map['lat'] ); ?>,<?php echo esc_attr( $map['lng'] ); ?>&amp;hl=en&amp;t=m&amp;z=14&amp;output=embed"
 						allowfullscreen
 						aria-label="Google Map location">

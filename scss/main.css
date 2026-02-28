@@ -42,6 +42,7 @@ input {
   --offered-services__subtitle-color: #5A98C0;
   --icon-fill-color: #B78A67;
   --target-cards-for-mobile_bg: linear-gradient(90deg, #5A98C0 0%, #B78A67 100%);
+  --price: #5A98C0;
 }
 
 .color-scheme-summer {
@@ -69,6 +70,7 @@ input {
   --offered-services__subtitle-color: #8CB8BB;
   --icon-fill-color:#66A1B1;
   --target-cards-for-mobile_bg: linear-gradient(90deg, #35656F 0%, #66A1B1 100%);
+  --price: #35656F;
 }
 
 body {
@@ -491,11 +493,12 @@ body:has(.is-open) .overlay {
   .main-product-wrapper {
     flex-direction: column;
     padding-inline: 0;
+    margin-bottom: 0;
   }
 }
 
 .product-detail__main-content {
-  max-width: calc(100% - 588px);
+  max-width: calc(100% - 420px);
 }
 @media (max-width: 1000px) {
   .product-detail__main-content {
@@ -505,12 +508,12 @@ body:has(.is-open) .overlay {
 
 .product-detail__content {
   width: 100%;
-  max-width: 440px;
+  max-width: 330px;
   margin-inline: auto;
   flex-shrink: 0;
   position: sticky;
   top: 50px;
-  margin-top: 100px;
+  margin-top: 143px;
 }
 @media (max-width: 1024px) {
   .product-detail__content {
@@ -2582,6 +2585,11 @@ body.term-courchevel .company-partners__logo.for-summer {
     padding-block: 24px;
   }
 }
+@media (min-width: 992px) {
+  .product-detail .container {
+    padding-inline: 0;
+  }
+}
 .product-detail__main {
   display: flex;
   gap: 48px;
@@ -2615,7 +2623,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .product-detail .section-title {
   text-align: left;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0;
   text-transform: capitalize;
 }
@@ -2623,13 +2631,17 @@ body.term-courchevel .company-partners__logo.for-summer {
   display: none;
 }
 .product-detail__location {
-  font-size: 24px;
+  font-size: 18px;
   color: #585858;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .product-detail__location {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .product-detail__actions {
@@ -2639,17 +2651,20 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .product-detail__actions button {
   cursor: pointer;
-}
-.product-detail__actions button svg {
-  font-size: 0;
-  width: 36px;
-  height: 36px;
+  padding: 4px;
+  width: 28px;
+  height: 28px;
 }
 @media (max-width: 992px) {
-  .product-detail__actions button svg {
+  .product-detail__actions button {
     width: 24px;
     height: 24px;
   }
+}
+.product-detail__actions button svg {
+  max-width: 100%;
+  max-height: 100%;
+  font-size: 0;
 }
 .product-detail__actions .product-detail__action-btn--favorite .product-detail__favorite-icon path {
   fill: #1f1f1f;
@@ -2665,24 +2680,37 @@ body.term-courchevel .company-partners__logo.for-summer {
   fill: #E63946;
 }
 .product-detail__content {
-  padding: 24px;
-  background: var(--single-chalet-content-background);
-  border-radius: 16px;
+  background: var(--background-brand-values);
+  padding: 20px;
   width: 100%;
-  max-width: 536px;
+  max-width: 380px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .product-detail__content {
     padding: 16px;
-    max-width: calc(100% - 40px);
+    max-width: 100%;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 992px) {
+  .product-detail__content--desktop {
+    display: none;
+  }
+}
+.product-detail__content--mobile {
+  display: block;
+}
+@media (min-width: 992px) {
+  .product-detail__content--mobile {
+    display: none;
   }
 }
 .product-detail__price {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 76px;
   padding-bottom: 24px;
+  color: var(--price);
 }
 @media (max-width: 992px) {
   .product-detail__price {
@@ -2695,7 +2723,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 @media (max-width: 992px) {
   .product-detail__price-label {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .product-detail__price-amount {
@@ -2708,7 +2736,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .product-detail__price-amount span {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 }
 @media (max-width: 992px) {
@@ -2722,11 +2750,11 @@ body.term-courchevel .company-partners__logo.for-summer {
   border-block: 1px solid rgba(0, 0, 0, 0.2509803922);
 }
 .product-detail__specs li {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 24px;
+  padding-bottom: 14px;
   font-weight: 400;
 }
 .product-detail__specs li span {
@@ -2734,7 +2762,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 @media (max-width: 992px) {
   .product-detail__specs li {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (max-width: 992px) {
@@ -2750,32 +2778,29 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .product-detail__contacts a {
   text-decoration: none;
-  padding: 20px 37px;
-  border-radius: 8px;
+  padding-block: 14px;
   text-align: center;
-  font-size: 20px;
   transition: all 0.3s ease;
+  font-size: 14px;
 }
 .product-detail__contacts a:nth-child(1) {
   background: var(--color-1);
   color: #fff;
 }
-.product-detail__contacts a:nth-child(1):hover {
-  background: var(--color-2);
-}
 .product-detail__contacts a:nth-child(2) {
   color: var(--color-1);
   border: 1px solid var(--color-1);
   display: flex;
-  gap: 16px;
+  gap: 8px;
   align-items: center;
   justify-content: center;
 }
+.product-detail__contacts a:nth-child(2) svg {
+  width: 17px;
+  height: 17px;
+}
 .product-detail__contacts a:nth-child(2) svg path {
   fill: var(--color-1);
-}
-.product-detail__contacts a:hover {
-  background: var(--color-9);
 }
 @media (max-width: 992px) {
   .product-detail__contacts {
@@ -2788,24 +2813,21 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .product-detail__count {
   position: absolute;
-  left: 20px;
+  left: 16px;
   top: 20px;
   background: #fff;
   color: #585858;
-  padding: 4px 12px;
-  border-radius: 100px;
   font-weight: 600;
-  width: 107px;
   z-index: 1;
+  font-size: 12px;
+  padding: 2px 8px;
 }
 .product-detail__expand {
   position: absolute;
-  right: 40px;
-  bottom: 20px;
+  right: 16px;
+  bottom: 14px;
   background: transparent;
   border: none;
-  padding: 8px;
-  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -2815,10 +2837,11 @@ body.term-courchevel .company-partners__logo.for-summer {
 .product-detail__gallery {
   position: relative;
   min-width: 0;
-  max-width: 952px;
   width: 100%;
-  margin: 16px 0;
-  aspect-ratio: 1/1;
+  margin: 16px 0 0;
+  aspect-ratio: 820/505;
+  height: 100%;
+  font-size: 0;
 }
 .product-detail__gallery img {
   width: 100%;
@@ -2826,22 +2849,27 @@ body.term-courchevel .company-partners__logo.for-summer {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 500px) {
+  .product-detail__gallery {
+    aspect-ratio: 392/505;
+  }
+}
 
 .product-detail__links a {
   font-size: 20px;
 }
 
 .product-detail__gallery .swiper {
-  max-width: 952px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .swiper-button-next {
-  right: 40px !important;
+  right: 12px !important;
 }
 
 .swiper-button-prev {
-  left: 10px !important;
+  left: 12px !important;
 }
 
 .swiper-button-next,
@@ -2855,7 +2883,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   align-items: center;
   justify-content: center;
   color: #fff;
-  padding: 8px;
+  padding: 10px;
 }
 
 .product-detail__gallery.is-expanded {
@@ -2912,6 +2940,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  background-color: #fff;
 }
 @media (max-width: 768px) {
   .chalet-about__container {
@@ -2925,24 +2954,6 @@ body.term-courchevel .company-partners__logo.for-summer {
   rotate: 180deg;
   z-index: -1;
   pointer-events: none;
-}
-.chalet-about__container .key-features-title::after {
-  width: 560px;
-}
-@media (max-width: 790px) {
-  .chalet-about__container .key-features-title::after {
-    width: 500px;
-  }
-}
-@media (max-width: 722px) {
-  .chalet-about__container .key-features-title::after {
-    width: 380px;
-  }
-}
-@media (max-width: 598px) {
-  .chalet-about__container .key-features-title::after {
-    width: 220px;
-  }
 }
 .chalet-about__content {
   display: flex;
@@ -2977,7 +2988,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .chalet-about__text p {
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.3;
   margin-block: 4px;
   font-weight: 400;
@@ -3669,6 +3680,9 @@ body.term-courchevel .company-partners__logo.for-summer {
   overflow: hidden;
   max-width: 1192px;
 }
+.key-features.chalet-about {
+  background: #fff;
+}
 @media (max-width: 992px) {
   .key-features {
     margin-inline: 0;
@@ -3679,7 +3693,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 .key-features__container {
   max-width: 992px;
   margin-inline: auto 0;
-  padding: 60px 40px;
+  padding: 40px;
 }
 @media (max-width: 992px) {
   .key-features__container {
@@ -3687,6 +3701,7 @@ body.term-courchevel .company-partners__logo.for-summer {
     max-width: 100%;
     margin: 0;
     padding-inline: 0;
+    padding-block: 24px;
   }
 }
 @media (max-width: 340px) {
@@ -3695,16 +3710,24 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .key-features-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   text-transform: uppercase;
   position: relative;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.key-features-title .title-text {
+  display: block;
+  flex-shrink: 0;
 }
 @media (max-width: 992px) {
   .key-features-title {
     font-size: 16px;
     margin-bottom: 16px;
+    font-weight: 500;
   }
 }
 @media (max-width: 340px) {
@@ -3712,9 +3735,14 @@ body.term-courchevel .company-partners__logo.for-summer {
     text-align: center;
   }
 }
+.key-features-title span:not(.title-text) {
+  display: block;
+  width: 100%;
+  height: 0.5px;
+  background-color: #000000;
+}
 .key-features__list {
   display: flex;
-  gap: 120px;
   justify-content: space-between;
   padding-right: 79px;
 }
@@ -3736,9 +3764,9 @@ body.term-courchevel .company-partners__logo.for-summer {
 .key-features__list ul li {
   display: flex;
   align-items: center;
-  font-size: 24px;
-  font-weight: 500;
-  gap: 24px;
+  font-size: 20px;
+  font-weight: 400;
+  gap: 12px;
   padding-bottom: 24px;
 }
 @media (max-width: 768px) {
@@ -3754,13 +3782,14 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .key-features__list ul li span {
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
   background: var(--key-features__icon-background);
-  border-radius: 8px;
   padding: 8px;
-  display: grid;
-  place-items: center;
+}
+.key-features__list ul li span svg {
+  max-width: 28px;
+  max-height: 28px;
 }
 @media (max-width: 768px) {
   .key-features__list ul li span {
@@ -3768,8 +3797,8 @@ body.term-courchevel .company-partners__logo.for-summer {
     height: 36px;
   }
   .key-features__list ul li span svg {
-    width: 15px;
-    height: 15px;
+    max-width: 20px;
+    max-height: 20px;
   }
 }
 @media (max-width: 992px) {
@@ -3779,19 +3808,6 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 
-.details .key-features-title::after {
-  width: 482px;
-}
-@media (max-width: 768px) {
-  .details .key-features-title::after {
-    width: 320px;
-  }
-}
-@media (max-width: 610px) {
-  .details .key-features-title::after {
-    width: 176px;
-  }
-}
 .details-content span {
   width: 482px;
 }
@@ -3801,7 +3817,8 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .details__title {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 24px;
 }
 @media (max-width: 768px) {
@@ -3817,14 +3834,18 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .details__list {
   gap: 24px;
-  padding-right: 10px;
+  padding-right: 0;
 }
 .details__list ul {
-  max-width: 464px;
+  max-width: 410px;
+  flex: 1;
 }
 .details__list ul li {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
+}
+.details__list ul li:last-child {
+  padding-bottom: 0;
 }
 @media (max-width: 768px) {
   .details__list ul li {
@@ -3833,10 +3854,16 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .details__list ul li span {
   background: none;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   padding: 0;
   display: block;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.details__list ul li span svg {
+  width: 100%;
+  height: 100%;
 }
 .details__list ul li span svg path {
   fill: var(--color-2);
@@ -3849,7 +3876,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .details__garllery {
   display: flex;
-  margin-top: 48px;
+  margin-top: 24px;
   gap: 24px;
   justify-content: space-between;
   padding-right: 24px;
@@ -3857,9 +3884,10 @@ body.term-courchevel .company-partners__logo.for-summer {
 @media (max-width: 992px) {
   .details__garllery {
     gap: 12px;
+    padding-right: 0;
   }
   .details__garllery img {
-    width: 190px;
+    height: 150px;
   }
 }
 @media (max-width: 400px) {
@@ -3894,12 +3922,13 @@ body.term-courchevel .company-partners__logo.for-summer {
 
 .location-context .key-features__list {
   flex-direction: column;
-  gap: 48px;
+  gap: 16px;
   padding-right: 24px;
 }
 .location-context .key-features__list ul li {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
+  padding-bottom: 16px;
 }
 .location-context .key-features__list ul li span {
   padding: 0;
@@ -3925,7 +3954,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .location-context__subTitle {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
 }
 @media (max-width: 992px) {
@@ -3939,7 +3968,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .location-context__text {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   margin: 14px 0 16px 0;
 }
@@ -3948,22 +3977,13 @@ body.term-courchevel .company-partners__logo.for-summer {
     font-size: 12px;
   }
 }
-.location-context .key-features-title::after {
-  width: min(506px, 100vw - 32px);
+
+.location-context__map iframe {
+  height: 410px;
 }
-@media (max-width: 790px) {
-  .location-context .key-features-title::after {
-    width: 420px;
-  }
-}
-@media (max-width: 722px) {
-  .location-context .key-features-title::after {
-    width: 380px;
-  }
-}
-@media (max-width: 598px) {
-  .location-context .key-features-title::after {
-    width: 220px;
+@media (max-width: 768px) {
+  .location-context__map iframe {
+    height: 190px;
   }
 }
 
@@ -4041,29 +4061,6 @@ body.term-courchevel .company-partners__logo.for-summer {
 .featured {
   background: #F5F5F5;
 }
-@media (max-width: 768px) {
-  .featured .key-features__container {
-    padding-inline: 20px;
-  }
-}
-.featured .key-features__container .key-features-title::after {
-  width: min(557px, 100vw - 32px);
-}
-@media (max-width: 992px) {
-  .featured .key-features__container .key-features-title::after {
-    width: 450px;
-  }
-}
-@media (max-width: 768px) {
-  .featured .key-features__container .key-features-title::after {
-    width: 300px;
-  }
-}
-@media (max-width: 566px) {
-  .featured .key-features__container .key-features-title::after {
-    width: 170px;
-  }
-}
 .featured .key-features__container .swiper {
   position: relative;
 }
@@ -4081,22 +4078,24 @@ body.term-courchevel .company-partners__logo.for-summer {
     margin-right: 0;
   }
 }
-.featured .key-features__container .swiper .swiper-wrapper .swiper-slide .showcase__link img {
-  width: 20px;
-  height: 20px;
-}
-.featured .key-features__container .swiper .swiper-wrapper .swiper-slide img {
+.featured .key-features__container .swiper .swiper-wrapper .swiper-slide .showcase__item {
   width: 100%;
-  height: auto;
+}
+.featured .key-features__container .swiper .swiper-wrapper .swiper-slide .showcase__item .item-image {
   display: block;
+  aspect-ratio: 386/400;
+  font-size: 0;
+}
+.featured .key-features__container .swiper .swiper-wrapper .swiper-slide .showcase__item .item-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 768px) {
-  .featured .key-features__container .swiper .swiper-wrapper .swiper-slide img {
-    width: 300px;
-    height: 206px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 16px;
+  .featured .key-features__container .swiper .swiper-wrapper .swiper-slide .showcase__item .item-image {
+    aspect-ratio: 320/400;
+    overflow: hidden;
   }
 }
 @media (max-width: 768px) {
@@ -4122,28 +4121,31 @@ body.term-courchevel .company-partners__logo.for-summer {
   bottom: auto;
   left: auto;
   right: auto;
-}
-.featured .key-features__container .swiper-button-next::after,
-.featured .key-features__container .swiper-button-prev::after {
-  font-size: 16px;
-  font-weight: bold;
+  padding: 15px;
 }
 @media (max-width: 768px) {
   .featured .key-features__container .swiper-button-next,
   .featured .key-features__container .swiper-button-prev {
     width: 32px;
     height: 32px;
-  }
-  .featured .key-features__container .swiper-button-next::after,
-  .featured .key-features__container .swiper-button-prev::after {
-    font-size: 12px;
+    padding: 8px;
   }
 }
 .featured .key-features__container .swiper-button-next {
   margin-left: 12px;
 }
+@media (max-width: 768px) {
+  .featured .key-features__container .swiper-button-next {
+    margin-left: 4px;
+  }
+}
 .featured .key-features__container .swiper-button-prev {
   margin-right: 12px;
+}
+@media (max-width: 768px) {
+  .featured .key-features__container .swiper-button-prev {
+    margin-right: 0;
+  }
 }
 .featured .key-features__container .swiper-pagination {
   display: none;
@@ -4185,12 +4187,37 @@ body.term-courchevel .company-partners__logo.for-summer {
     width: 211px;
   }
 }
+.featured .listing-grid-fav {
+  position: static;
+}
 @media (max-width: 768px) {
   .featured .showcase__details {
     max-width: 300px;
   }
 }
 
+@media (max-width: 768px) {
+  .featured .key-features-title {
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 8px;
+  }
+  .featured .key-features-title::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    height: 1px;
+    background-color: #000;
+    width: 50px;
+  }
+  .featured .key-features-title span:not(.title-text) {
+    display: none;
+  }
+}
 .header-modifier {
   background: #000;
   position: static;

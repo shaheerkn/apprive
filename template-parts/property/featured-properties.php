@@ -24,7 +24,7 @@ $featured_properties = $prop_featured['prop_featured_properties'];
 <section class="featured key-features">
 	<div class="key-features__container">
 		<?php if ( $title ) : ?>
-			<h2 class="key-features-title"><?php echo esc_html( $title ); ?></h2>
+			<h2 class="key-features-title"><span class="title-text"><?php echo esc_html( $title ); ?></span> <span></span> </h2>
 		<?php else : ?>
 			<h2 class="key-features-title">YOU MAY ALSO LIKE</h2>
 		<?php endif; ?>
@@ -65,32 +65,49 @@ $featured_properties = $prop_featured['prop_featured_properties'];
 						?>
 
 						<div class="swiper-slide">
-							<?php if ( $featured_image ) : ?>
-								<img src="<?php echo esc_url( $featured_image ); ?>" alt="<?php echo esc_attr( $property_title ); ?>">
-							<?php endif; ?>
+							<article class="showcase__item">
+								<div class="showcase__image-wrap">
+									<a href="<?php echo esc_url( $property_link ); ?>" class="item-image">
+										<?php if ( $featured_image ) : ?>
+											<img src="<?php echo esc_url( $featured_image ); ?>" alt="<?php echo esc_attr( $property_title ); ?>" class="showcase__image">
+										<?php endif; ?>
+									</a>
+								</div>
 
-							<div class="showcase__details">
-								<div class="showcase__info">
-									<div>
-										<h6 class="showcase__name"><?php echo esc_html( $property_title ); ?></h6>
-										<?php if ( $location ) : ?>
-											<p class="showcase__location"><?php echo esc_html( $location ); ?></p>
+								<div class="showcase__details">
+									<div class="showcase__info">
+										<div class="showcase__info-text">
+											<h6 class="text"><?php echo esc_html( $property_title ); ?></h6>
+											<?php if ( $amenities_text ) : ?>
+												<p class="showcase__amenities"><?php echo esc_html( $amenities_text ); ?></p>
+											<?php endif; ?>
+										</div>
+
+										<?php if ( $max_guests > 0 ) : ?>
+											<div class="showcase__capacity">
+												<?php
+												$is_favorite = false;
+												if ( is_user_logged_in() ) {
+													$favorites = get_user_meta( get_current_user_id(), 'favorite_properties', true );
+													if ( is_array( $favorites ) && in_array( $property_id, $favorites ) ) {
+														$is_favorite = true;
+													}
+												}
+												?>
+												<button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr( $property_id ); ?>" aria-label="<?php echo $is_favorite ? 'Remove from favorites' : 'Add to favorites'; ?>">
+													<?php if ( $is_favorite ) : ?>
+														<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+													<?php else : ?>
+														<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
+													<?php endif; ?>
+												</button>
+
+												<p><?php echo esc_html( $max_guests ); ?> Guests</p>
+											</div>
 										<?php endif; ?>
 									</div>
-									<?php if ( $max_guests > 0 ) : ?>
-										<div class="showcase__capacity">
-											<p class="featured-cpacity"><?php echo esc_html( $max_guests ); ?> Guests</p>
-										</div>
-									<?php endif; ?>
 								</div>
-								<?php if ( $amenities_text ) : ?>
-									<p class="showcase__amenities"><?php echo esc_html( $amenities_text ); ?></p>
-								<?php endif; ?>
-								<a href="<?php echo esc_url( $property_link ); ?>" class="showcase__link">
-									View Property
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-up.svg" alt="arrow" class="showcase__arrow">
-								</a>
-							</div>
+							</article>
 						</div>
 					<?php endforeach; ?>
 				</div>

@@ -18,7 +18,7 @@ if ( ! ar_property_has_content( 'prop_room_details' ) ) {
 
 <section class="details key-features">
 	<div class="key-features__container">
-		<h2 class="key-features-title">ROOM & SPACE DETAILS</h2>
+		<h2 class="key-features-title"><span class="title-text">ROOM & SPACE DETAILS</span> <span></span> </h2>
 		<h4 class="details__title">Layout</h4>
 
 		<div class="key-features__list details__list">
