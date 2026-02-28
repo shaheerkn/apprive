@@ -177,3 +177,12 @@ body:has(.is-open) {
     margin-top: 0;
   }
 }
+
+
+body.term-courchevel .company-partners__logo.for-winter {
+  display: block !important;
+}
+
+body.term-courchevel .company-partners__logo.for-summer {
+  display: none !important;
+}

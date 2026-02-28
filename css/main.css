@@ -517,6 +517,14 @@ body:has(.is-open) .overlay {
   }
 }
 
+body.term-courchevel .company-partners__logo.for-winter {
+  display: block !important;
+}
+
+body.term-courchevel .company-partners__logo.for-summer {
+  display: none !important;
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -2507,10 +2515,12 @@ body:has(.is-open) .overlay {
   .footer-bottom__right-list__contactInfo li {
     font-size: 11px;
     font-weight: 600;
+    white-space: nowrap;
   }
 }
 .footer-bottom__right-list__contactInfo li:last-child {
   font-size: 16px;
+  white-space: unset;
 }
 @media (max-width: 992px) {
   .footer-bottom__right-list__contactInfo li:last-child {

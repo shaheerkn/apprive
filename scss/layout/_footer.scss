@@ -423,10 +423,12 @@
             @media (max-width:992px) {
               font-size: 11px;
               font-weight: 600;
+              white-space: nowrap;
             }
 
             &:last-child {
               font-size: 16px;
+              white-space: unset;
 
               @media (max-width:992px) {
                 font-size: 11px;
