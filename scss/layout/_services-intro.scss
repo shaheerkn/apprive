@@ -2,6 +2,10 @@
   padding-block: 100px;
   position: relative;
 
+  @media (max-width: 768px) {
+    padding-block: 24px;
+  }
+
   &__image-wrapper {
     width: 100%;
     height: 100%;

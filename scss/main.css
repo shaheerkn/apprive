@@ -4898,6 +4898,11 @@ body.term-courchevel .company-partners__logo.for-summer {
   padding-block: 100px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .services-intro {
+    padding-block: 24px;
+  }
+}
 .services-intro__image-wrapper {
   width: 100%;
   height: 100%;
@@ -5501,6 +5506,11 @@ body.term-courchevel .company-partners__logo.for-summer {
   color: #fff;
   padding: 0;
 }
+.text-layout .container .section-title {
+  max-width: 150px;
+  flex-shrink: 0;
+  width: 100%;
+}
 .text-layout .container .section-title::after {
   display: none;
   background: #fff;
@@ -5522,13 +5532,13 @@ body.term-courchevel .company-partners__logo.for-summer {
   max-width: 1145px;
 }
 .text-layout__content p {
-  font-size: 24px;
+  font-size: 16px;
   margin-bottom: 15px;
   line-height: 1.5;
 }
 .text-layout__content p:last-child {
-  font-style: italic;
   margin-bottom: 0;
+  font-weight: 700;
 }
 @media (max-width: 992px) {
   .text-layout__content p {
