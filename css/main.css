@@ -1311,7 +1311,7 @@ body:has(.header__modifier) {
 }
 
 .header__mega-menu-link--active {
-  background-color: none;
+  background-color: transparent;
 }
 
 .hero {
