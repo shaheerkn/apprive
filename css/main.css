@@ -388,11 +388,14 @@ img {
 }
 
 .for-summer,
-.for-winter {
+.for-winter,
+.term-courchevel .for-winter,
+.term-mykonos .for-summer {
   display: none !important;
 }
 
-.color-scheme-winter .for-winter {
+.color-scheme-winter .for-winter,
+.term-courchevel .for-winter {
   display: block !important;
 }
 
@@ -400,7 +403,8 @@ img {
   display: flex !important;
 }
 
-.color-scheme-summer .for-summer {
+.color-scheme-summer .for-summer,
+.term-mykonos .for-summer {
   display: block !important;
 }
 
@@ -624,7 +628,7 @@ body:has(.header__modifier) {
   gap: 10px;
 }
 .header__nav-link:hover {
-  opacity: 0.8;
+  color: var(--color-1);
 }
 .header__nav-link svg {
   display: none;
@@ -2031,6 +2035,73 @@ body:has(.header__modifier) {
   display: inline-block;
 }
 
+.footer-form__field--dates {
+  width: 100%;
+  max-width: 204px;
+}
+@media (max-width: 992px) {
+  .footer-form__field--dates {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-form__field:has(+ .footer-form__field--dates) {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+.footer-form__date-range {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.footer-form__date-half {
+  flex: 1;
+  min-width: 0;
+}
+.footer-form__date-half .wpcf7-form-control-wrap {
+  width: 100%;
+}
+.footer-form__date-half input {
+  border: none;
+  outline: none;
+  font-size: 10px;
+  width: 100%;
+  color: #585858;
+  background: transparent;
+  padding: 18px 10px !important;
+  font-family: inherit;
+  cursor: pointer;
+}
+.footer-form__date-half input::placeholder {
+  color: #B0B0B0;
+}
+.footer-form__date-half input[type=date]::-webkit-datetime-edit-fields-wrapper {
+  font-size: 14px;
+}
+.footer-form__date-half input[type=date]::-webkit-inner-spin-button, .footer-form__date-half input[type=date]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+@media (max-width: 992px) {
+  .footer-form__date-half input {
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+}
+
+.footer-form__date-separator {
+  width: 1px;
+  height: 24px;
+  background: #D0D0D0;
+  flex-shrink: 0;
+}
+
 .brand-values {
   background: var(--background-brand-values);
   color: #585858;
@@ -2207,7 +2278,6 @@ body:has(.header__modifier) {
 .footer-form__field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 .footer-form__field label {
   font-size: 16px;

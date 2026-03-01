@@ -236,3 +236,75 @@ $transition-speed: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   margin-bottom: 4px;
   display: inline-block;
 }
+
+.footer-form__field--dates {
+  width: 100%;
+  max-width: 204px;
+
+  @media (max-width: 992px) {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+.footer-form__field:has(+ .footer-form__field--dates) {
+  @media (max-width: 992px) {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+.footer-form__date-range {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.footer-form__date-half {
+  flex: 1;
+  min-width: 0;
+
+  .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    font-size: 10px;
+    width: 100%;
+    color: #585858;
+    background: transparent;
+    padding: 18px 10px !important;;
+    font-family: inherit;
+    cursor: pointer;
+
+    &::placeholder {
+      color: #B0B0B0;
+    }
+
+    &[type="date"]::-webkit-datetime-edit-fields-wrapper {
+      font-size: 14px;
+    }
+
+    &[type="date"]::-webkit-inner-spin-button,
+    &[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+
+
+    @media (max-width: 992px) {
+      font-size: 13px;
+      padding: 14px 16px;
+    }
+  }
+}
+
+.footer-form__date-separator {
+  width: 1px;
+  height: 24px;
+  background: #D0D0D0;
+  flex-shrink: 0;
+}

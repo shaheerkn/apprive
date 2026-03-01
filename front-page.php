@@ -18,7 +18,7 @@
       
       <div class="hero__actions">
         <a href="#request" class="btn btn--solid--white">Request Your Stay</a>
-        <a href="#" class="btn btn--outline-white">Chat with us <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-whatsapp.svg" alt="WhatsApp" /></a>
+        <a href="https://wa.me/393349051603" target="_blank" class="btn btn--outline-white">Chat with us <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-whatsapp.svg" alt="WhatsApp" /></a>
       </div>
     </div>
   </section>

@@ -86,13 +86,7 @@ $featured_properties = $prop_featured['prop_featured_properties'];
 										<?php if ( $max_guests > 0 ) : ?>
 											<div class="showcase__capacity">
 												<?php
-												$is_favorite = false;
-												if ( is_user_logged_in() ) {
-													$favorites = get_user_meta( get_current_user_id(), 'favorite_properties', true );
-													if ( is_array( $favorites ) && in_array( $property_id, $favorites ) ) {
-														$is_favorite = true;
-													}
-												}
+												$is_favorite = false; // Active state is set via JS from localStorage
 												?>
 												<button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr( $property_id ); ?>" aria-label="<?php echo $is_favorite ? 'Remove from favorites' : 'Add to favorites'; ?>">
 													<?php if ( $is_favorite ) : ?>

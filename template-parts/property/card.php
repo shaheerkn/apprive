@@ -47,15 +47,8 @@ if (have_rows('prop_key_features')) {
 // If not enough features, maybe fallback to something else, or leave it.
 $features_string = implode(' · ', $features);
 
-// Favorites logic
+// Favorites logic — active state is set via JS from localStorage
 $is_favorite = false;
-if (is_user_logged_in()) {
-    $user_id = get_current_user_id();
-    $favorites = get_user_meta($user_id, 'favorite_properties', true);
-    if (is_array($favorites) && in_array($property_id, $favorites)) {
-        $is_favorite = true;
-    }
-}
 ?>
 
 <article class="listing-grid__item" data-id="<?php echo esc_attr($property_id); ?>">

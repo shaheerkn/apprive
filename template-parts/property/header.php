@@ -13,11 +13,7 @@
 $location_text = get_field( 'prop_location_text' );
 $pricing = ar_get_property_pricing();
 $property_id = get_the_ID();
-$is_favorite = false;
-if ( is_user_logged_in() ) {
-	$user_favorites = get_user_meta( get_current_user_id(), 'favorite_properties', true );
-	$is_favorite = is_array( $user_favorites ) && in_array( $property_id, $user_favorites );
-}
+$is_favorite = false; // Active state is set via JS from localStorage
 ?>
 
 <div class="product-detail__header">

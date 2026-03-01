@@ -1,79 +1,26 @@
 <?php
 /**
- * AJAX Favorites Handler
+ * AJAX Favorites Handler (localStorage-based)
+ *
+ * Favorites are stored in the browser's localStorage.
+ * These AJAX endpoints provide property data for display only.
  *
  * @package arprive
  */
 
-function ar_toggle_favorite() {
-    // Check if user is logged in
-    if ( ! is_user_logged_in() ) {
-        wp_send_json_error( array(
-            'message'  => 'Please login to add favorites.',
-            'redirect' => wp_login_url(),
-        ), 401 );
-    }
-
-    // Verify Nonce
-    if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'ar_favorite_nonce' ) ) {
-        wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
-    }
-
-    $property_id = isset( $_POST['property_id'] ) ? intval( $_POST['property_id'] ) : 0;
-
-    if ( ! $property_id || get_post_type( $property_id ) !== 'property' ) {
-        wp_send_json_error( array( 'message' => 'Invalid property' ) );
-    }
-
-    $user_id = get_current_user_id();
-    $favorites = get_user_meta( $user_id, 'favorite_properties', true );
-
-    if ( ! is_array( $favorites ) ) {
-        $favorites = array();
-    }
-
-    $is_favorite = false;
-
-    if ( in_array( $property_id, $favorites ) ) {
-        // Remove
-        $favorites = array_diff( $favorites, array( $property_id ) );
-        $is_favorite = false;
-    } else {
-        // Add
-        $favorites[] = $property_id;
-        $is_favorite = true;
-    }
-
-    // Reset keys and save
-    $favorites = array_values( $favorites );
-    update_user_meta( $user_id, 'favorite_properties', $favorites );
-
-    wp_send_json_success( array(
-        'is_favorite' => $is_favorite,
-        'count'       => count( $favorites ),
-    ) );
-}
-
-add_action( 'wp_ajax_toggle_favorite', 'ar_toggle_favorite' );
-// No nopriv action needed as guest logic is handled via JS redirect or 401 response
-
 /**
- * AJAX handler to get favorites for the header dropdown
+ * AJAX handler to get favorite properties by IDs (for header dropdown)
  */
-function ar_get_favorites() {
-    if ( ! is_user_logged_in() ) {
-        wp_send_json_success( array( 'items' => array(), 'count' => 0 ) );
-    }
+function ar_get_favorites_by_ids() {
+    $property_ids = isset( $_POST['property_ids'] ) ? array_map( 'intval', (array) $_POST['property_ids'] ) : array();
+    $property_ids = array_filter( $property_ids );
 
-    $user_id   = get_current_user_id();
-    $favorites = get_user_meta( $user_id, 'favorite_properties', true );
-
-    if ( ! is_array( $favorites ) || empty( $favorites ) ) {
+    if ( empty( $property_ids ) ) {
         wp_send_json_success( array( 'items' => array(), 'count' => 0 ) );
     }
 
     $items = array();
-    foreach ( $favorites as $property_id ) {
+    foreach ( $property_ids as $property_id ) {
         $post = get_post( $property_id );
         if ( ! $post || $post->post_type !== 'property' ) continue;
 
@@ -101,5 +48,41 @@ function ar_get_favorites() {
         'count' => count( $items ),
     ) );
 }
-add_action( 'wp_ajax_get_favorites', 'ar_get_favorites' );
-add_action( 'wp_ajax_nopriv_get_favorites', 'ar_get_favorites' );
+add_action( 'wp_ajax_get_favorites_by_ids', 'ar_get_favorites_by_ids' );
+add_action( 'wp_ajax_nopriv_get_favorites_by_ids', 'ar_get_favorites_by_ids' );
+
+/**
+ * AJAX handler to get rendered property cards by IDs (for favourites page)
+ */
+function ar_get_favorite_cards() {
+    $property_ids = isset( $_POST['property_ids'] ) ? array_map( 'intval', (array) $_POST['property_ids'] ) : array();
+    $property_ids = array_filter( $property_ids );
+
+    if ( empty( $property_ids ) ) {
+        wp_send_json_success( array( 'html' => '' ) );
+    }
+
+    $args = array(
+        'post_type'      => 'property',
+        'posts_per_page' => -1,
+        'post__in'       => $property_ids,
+        'post_status'    => 'publish',
+        'orderby'        => 'post__in',
+    );
+
+    $query = new WP_Query( $args );
+
+    ob_start();
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            get_template_part( 'template-parts/property/card', null, array( 'is_favourites' => true ) );
+        }
+        wp_reset_postdata();
+    }
+    $html = ob_get_clean();
+
+    wp_send_json_success( array( 'html' => $html ) );
+}
+add_action( 'wp_ajax_get_favorite_cards', 'ar_get_favorite_cards' );
+add_action( 'wp_ajax_nopriv_get_favorite_cards', 'ar_get_favorite_cards' );

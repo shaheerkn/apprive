@@ -168,11 +168,28 @@ function ar_scripts() {
     // Favorites
     wp_enqueue_script( 'ar-favorites', get_template_directory_uri() . '/js/favorites.js', array('jquery'), _S_VERSION, true );
     wp_localize_script( 'ar-favorites', 'ar_favorites_vars', array(
-        'ajaxurl'     => admin_url( 'admin-ajax.php' ),
-        'nonce'       => wp_create_nonce( 'ar_favorite_nonce' ),
-        'is_logged_in' => is_user_logged_in(),
-        'login_url'   => wp_login_url(),
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'nonce'   => wp_create_nonce( 'ar_favorite_nonce' ),
     ));
+
+    // Date picker inputs
+    wp_add_inline_script( 'ar-navigation', "
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.footer-form__date-input').forEach(function(input) {
+                input.addEventListener('focus', function() {
+                    if (this.type !== 'date') {
+                        this.type = 'date';
+                        this.showPicker && this.showPicker();
+                    }
+                });
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.type = 'text';
+                    }
+                });
+            });
+        });
+    " );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

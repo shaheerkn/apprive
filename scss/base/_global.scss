@@ -50,11 +50,14 @@ img {
 
 
 .for-summer,
-.for-winter {
+.for-winter,
+.term-courchevel .for-winter,
+.term-mykonos .for-summer {
   display: none !important;
 }
 
-.color-scheme-winter .for-winter {
+.color-scheme-winter .for-winter,
+.term-courchevel .for-winter {
   display: block !important;
 }
 
@@ -62,7 +65,8 @@ img {
   display: flex !important;
 }
 
-.color-scheme-summer .for-summer {
+.color-scheme-summer .for-summer,
+.term-mykonos .for-summer {
   display: block !important;
 }
 

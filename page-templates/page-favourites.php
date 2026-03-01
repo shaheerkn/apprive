@@ -14,36 +14,6 @@
  */
 
 get_header();
-
-// Fetch favorites
-$user_id = get_current_user_id();
-$favorites = array();
-
-if ( is_user_logged_in() ) {
-    $favorites = get_user_meta( $user_id, 'favorite_properties', true );
-}
-
-if ( empty( $favorites ) || ! is_array( $favorites ) ) {
-    $favorites = array( 0 ); // Force no results if empty
-}
-
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
-$args = array(
-    'post_type'      => 'property',
-    'posts_per_page' => 12,
-    'paged'          => $paged,
-    'post__in'       => $favorites,
-    'post_status'    => 'publish',
-    'orderby'        => 'post__in', // Maintain order of favorites added (optional)
-);
-
-// If user is not logged in or has no favorites, ensure query returns nothing (or handle UI below)
-if ( ! is_user_logged_in() || empty( $favorites ) || $favorites === array(0) ) {
-    // If we passed array(0), WP_Query returns nothing, which is correct.
-}
-
-$property_query = new WP_Query( $args );
 ?>
 
 <section class="hero">
@@ -81,44 +51,10 @@ $property_query = new WP_Query( $args );
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/propertiesProducts/water-mark.svg" class="listing-grid__water-mark" alt="water-mark">
     <div class="container">
       <h4 class="section-title">FIND YOUR SAVED DESTINATIONS</h4>
-      
-      <?php if ( ! is_user_logged_in() ) : ?>
-        <div class="listing-grid__empty">
-            <p>Please <a href="<?php echo wp_login_url( get_permalink() ); ?>">login</a> to view your favorite properties.</p>
-        </div>
-      <?php else : ?>
-      
-        <div class="listing-grid__content">
-            <?php
-            if ( $property_query->have_posts() ) :
-                while ( $property_query->have_posts() ) :
-                    $property_query->the_post();
-                    get_template_part( 'template-parts/property/card', null, array( 'is_favourites' => true ) );
-                endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<p>You haven\'t saved any properties yet.</p>';
-            endif;
-            ?>
-        </div>
 
-        <div class="listing-grid__actions">
-            <?php
-            $big = 999999999;
-            echo paginate_links( array(
-                'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                'format'    => '?paged=%#%',
-                'current'   => max( 1, $paged ),
-                'total'     => $property_query->max_num_pages,
-                'prev_text' => '<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.30775 18.6155L0 9.30775L9.30775 0L10.3713 1.0635L2.127 9.30775L10.3713 17.552L9.30775 18.6155Z" fill="black"/></svg>',
-                'next_text' => '<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.0635 18.6155L0 17.552L8.24425 9.30775L0 1.0635L1.0635 0L10.3712 9.30775L1.0635 18.6155Z" fill="black"/></svg>',
-                'type'      => 'list',
-                'mid_size'  => 1,
-            ) );
-            ?>
-        </div>
-
-      <?php endif; ?>
+      <div class="listing-grid__content listing-grid__content--favourites">
+          <p>Loading your favorites...</p>
+      </div>
     </div>
   </section>
 

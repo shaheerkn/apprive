@@ -97,7 +97,7 @@ body:has(.header__modifier) {
   gap: 10px;
   
   &:hover {
-    opacity: 0.8;
+    color: var(--color-1);
   }
 
   svg {

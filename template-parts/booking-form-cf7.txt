@@ -25,9 +25,17 @@
     [number* your-guest placeholder "20"]
   </div>
 
-  <div class="footer-form__field">
+  <div class="footer-form__field footer-form__field--dates">
     <label>Travel Dates <span class="required">*</span></label>
-    [text* travel-dates placeholder "Check-in → Check-in"]
+    <div class="footer-form__date-range">
+      <div class="footer-form__date-half">
+        [text* check-in class:footer-form__date-input placeholder "Check-in"]
+      </div>
+      <span class="footer-form__date-separator"></span>
+      <div class="footer-form__date-half">
+        [text* check-out class:footer-form__date-input placeholder "Check-out"]
+      </div>
+    </div>
   </div>
 
   <div class="footer-form__field">

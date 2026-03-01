@@ -1,5 +1,69 @@
 jQuery(document).ready(function($) {
 
+    // ─── LocalStorage helpers ─────────────────────────────────────────
+    var STORAGE_KEY = 'ar_favorites';
+
+    function getLocalFavorites() {
+        try {
+            var data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+            return Array.isArray(data) ? data : [];
+        } catch(e) {
+            return [];
+        }
+    }
+
+    function saveLocalFavorites(ids) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+    }
+
+    function isLocalFavorite(id) {
+        return getLocalFavorites().indexOf(id) !== -1;
+    }
+
+    function toggleLocalFavorite(id) {
+        var favorites = getLocalFavorites();
+        var index = favorites.indexOf(id);
+        var isFav;
+        if (index !== -1) {
+            favorites.splice(index, 1);
+            isFav = false;
+        } else {
+            favorites.push(id);
+            isFav = true;
+        }
+        saveLocalFavorites(favorites);
+        return { is_favorite: isFav, count: favorites.length };
+    }
+
+    // ─── UI sync on page load ─────────────────────────────────────────
+    function syncFavoritesUI() {
+        var favorites = getLocalFavorites();
+
+        // Update header count
+        updateHeaderCount(favorites.length);
+
+        // Mark active cards in listing grid
+        $('.listing-grid-fav').each(function() {
+            var $btn = $(this);
+            var id = parseInt($btn.data('id'), 10);
+            if (favorites.indexOf(id) !== -1) {
+                $btn.addClass('active');
+                $btn.html('<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            }
+        });
+
+        // Mark active on single property page
+        $('.product-detail__action-btn--favorite').each(function() {
+            var $btn = $(this);
+            var id = parseInt($btn.data('id'), 10);
+            if (favorites.indexOf(id) !== -1) {
+                $btn.addClass('active').attr('aria-label', 'Remove from favorites');
+            }
+        });
+    }
+
+    syncFavoritesUI();
+
     // ─── Favorites Dropdown (desktop) ───────────────────────────────────
     var $wrapper   = $('.header__favorite-wrapper');
     var $dropdown  = $('.fav-dropdown');
@@ -22,7 +86,6 @@ jQuery(document).ready(function($) {
         }, 200);
     }
 
-    // Hover behavior
     $wrapper.on('mouseenter', function() {
         openDropdown();
     });
@@ -30,7 +93,6 @@ jQuery(document).ready(function($) {
         closeDropdown();
     });
 
-    // Prevent link navigation on desktop when hovering — allow click to open dropdown
     $wrapper.find('.header__favorite-btn').on('click', function(e) {
         if ($(window).width() > 1200) {
             e.preventDefault();
@@ -42,12 +104,10 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Close button
     $dropdown.on('click', '.fav-dropdown__close', function() {
         $dropdown.fadeOut(150);
     });
 
-    // Close on click outside
     $(document).on('click', function(e) {
         if (!$(e.target).closest('.header__favorite-wrapper').length) {
             $dropdown.fadeOut(150);
@@ -55,14 +115,22 @@ jQuery(document).ready(function($) {
     });
 
     function loadFavorites() {
+        var favorites = getLocalFavorites();
+        if (favorites.length === 0) {
+            dropdownLoaded = true;
+            $itemsGrid.html('<div class="fav-dropdown__empty">No favorites yet</div>');
+            return;
+        }
+
         $itemsGrid.html('<div class="fav-dropdown__loading">Loading...</div>');
 
         $.ajax({
             url: ar_favorites_vars.ajaxurl,
             type: 'POST',
             data: {
-                action: 'get_favorites',
-                nonce: ar_favorites_vars.nonce
+                action: 'get_favorites_by_ids',
+                nonce: ar_favorites_vars.nonce,
+                property_ids: favorites
             },
             success: function(response) {
                 dropdownLoaded = true;
@@ -106,134 +174,98 @@ jQuery(document).ready(function($) {
         return div.innerHTML;
     }
 
-    // Remove favorite from dropdown
+    // ─── Remove favorite from dropdown ────────────────────────────────
     $dropdown.on('click', '.fav-dropdown__card-remove', function(e) {
         e.preventDefault();
         e.stopPropagation();
         var $btn  = $(this);
-        var propId = $btn.data('id');
+        var propId = parseInt($btn.data('id'), 10);
         var $card  = $btn.closest('.fav-dropdown__card');
 
-        $.ajax({
-            url: ar_favorites_vars.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'toggle_favorite',
-                nonce: ar_favorites_vars.nonce,
-                property_id: propId
-            },
-            success: function(response) {
-                if (response.success && !response.data.is_favorite) {
-                    $card.fadeOut(200, function() {
-                        $card.remove();
-                        if ($itemsGrid.children('.fav-dropdown__card').length === 0) {
-                            $itemsGrid.html('<div class="fav-dropdown__empty">No favorites yet</div>');
-                        }
-                    });
+        var result = toggleLocalFavorite(propId);
 
-                    // Update header count
-                    var $countEl = $('.header__favorite-count');
-                    var $favBtn  = $('.header__favorite-btn');
-                    if (response.data.count > 0) {
-                        $countEl.text(response.data.count).removeClass('hidden');
-                        $favBtn.addClass('header__favorite-btn--has-items');
-                    } else {
-                        $countEl.text(0).addClass('hidden');
-                        $favBtn.removeClass('header__favorite-btn--has-items');
-                    }
-
-                    // Also update any listing grid buttons
-                    $('.listing-grid-fav[data-id="' + propId + '"]').removeClass('active')
-                        .html('<img src="' + getThemeUri() + '/assets/icons/fav.svg" alt="favorites">');
-                }
+        $card.fadeOut(200, function() {
+            $card.remove();
+            if ($itemsGrid.children('.fav-dropdown__card').length === 0) {
+                $itemsGrid.html('<div class="fav-dropdown__empty">No favorites yet</div>');
             }
         });
-    });
 
+        updateHeaderCount(result.count);
+
+        // Also update any listing grid buttons
+        $('.listing-grid-fav[data-id="' + propId + '"]').removeClass('active')
+            .html('<img src="' + getThemeUri() + '/assets/icons/fav-black.svg" alt="favorites">');
+    });
 
     // ─── Product detail header favorite button (single property page) ───
     $(document).on('click', '.product-detail__action-btn--favorite', function(e) {
         e.preventDefault();
-        const $btn = $(this);
-        const propertyId = $btn.data('id');
+        var $btn = $(this);
+        var propertyId = parseInt($btn.data('id'), 10);
         if (!propertyId) return;
 
-        if (!ar_favorites_vars.is_logged_in) {
-            window.location.href = ar_favorites_vars.login_url;
-            return;
-        }
+        var result = toggleLocalFavorite(propertyId);
 
-        $.ajax({
-            url: ar_favorites_vars.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'toggle_favorite',
-                nonce: ar_favorites_vars.nonce,
-                property_id: propertyId
-            },
-            success: function(response) {
-                if (response.success) {
-                    if (response.data.is_favorite) {
-                        $btn.addClass('active').attr('aria-label', 'Remove from favorites');
-                    } else {
-                        $btn.removeClass('active').attr('aria-label', 'Add to favorites');
-                    }
-                    updateHeaderCount(response.data.count);
-                    // Mark dropdown as stale so it reloads
-                    dropdownLoaded = false;
-                } else if (response.data && response.data.redirect) {
-                    window.location.href = response.data.redirect;
-                }
-            },
-            error: function(err) {
-                console.error('Favorites AJAX Error:', err);
-            }
-        });
+        if (result.is_favorite) {
+            $btn.addClass('active').attr('aria-label', 'Remove from favorites');
+        } else {
+            $btn.removeClass('active').attr('aria-label', 'Add to favorites');
+        }
+        updateHeaderCount(result.count);
+        dropdownLoaded = false;
     });
 
     // ─── Listing grid favorite button ───────────────────────────────────
     $(document).on('click', '.listing-grid-fav', function(e) {
         e.preventDefault();
 
-        const $btn = $(this);
-        const propertyId = $btn.data('id');
+        var $btn = $(this);
+        var propertyId = parseInt($btn.data('id'), 10);
 
-        if (!ar_favorites_vars.is_logged_in) {
-            window.location.href = ar_favorites_vars.login_url;
-            return;
+        var result = toggleLocalFavorite(propertyId);
+
+        if (result.is_favorite) {
+            $btn.addClass('active');
+            $btn.html('<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+        } else {
+            $btn.removeClass('active');
+            $btn.html('<img src="' + getThemeUri() + '/assets/icons/fav-black.svg" alt="favorites">');
         }
-
-        $.ajax({
-            url: ar_favorites_vars.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'toggle_favorite',
-                nonce: ar_favorites_vars.nonce,
-                property_id: propertyId
-            },
-            success: function(response) {
-                if (response.success) {
-                    if (response.data.is_favorite) {
-                        $btn.addClass('active');
-                        $btn.html('<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
-                    } else {
-                        $btn.removeClass('active');
-                        $btn.html('<img src="' + getThemeUri() + '/assets/icons/fav.svg" alt="favorites">');
-                    }
-                    updateHeaderCount(response.data.count);
-                    // Mark dropdown as stale so it reloads
-                    dropdownLoaded = false;
-                } else {
-                    if (response.data && response.data.redirect) {
-                        window.location.href = response.data.redirect;
-                    }
-                }
-            },
-            error: function(error) {
-                console.error('Favorites AJAX Error:', error);
-            }
-        });
+        updateHeaderCount(result.count);
+        dropdownLoaded = false;
     });
+
+    // ─── Favourites page: load cards via AJAX from localStorage ───────
+    var $favPageGrid = $('.listing-grid__content--favourites');
+    if ($favPageGrid.length) {
+        var favorites = getLocalFavorites();
+        if (favorites.length === 0) {
+            $favPageGrid.html('<p>You haven\'t saved any properties yet.</p>');
+        } else {
+            $favPageGrid.html('<div class="fav-dropdown__loading">Loading your favorites...</div>');
+            $.ajax({
+                url: ar_favorites_vars.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'get_favorite_cards',
+                    nonce: ar_favorites_vars.nonce,
+                    property_ids: favorites
+                },
+                success: function(response) {
+                    if (response.success && response.data.html) {
+                        $favPageGrid.html(response.data.html);
+                        syncFavoritesUI();
+                    } else {
+                        $favPageGrid.html('<p>You haven\'t saved any properties yet.</p>');
+                    }
+                },
+                error: function() {
+                    $favPageGrid.html('<p>Could not load favorites.</p>');
+                }
+            });
+        }
+    }
 
     // ─── Shared helpers ─────────────────────────────────────────────────
     function updateHeaderCount(count) {
@@ -254,6 +286,6 @@ jQuery(document).ready(function($) {
             var src = $existingImg.attr('src');
             return src.substring(0, src.lastIndexOf('/assets'));
         }
-        return '/wp-content/themes/arprive'; // Fallback
+        return '/wp-content/themes/apprive'; // Fallback
     }
 });
