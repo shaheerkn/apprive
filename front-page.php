@@ -77,7 +77,7 @@
 
       <p class="work-proces__description for-winter">Our private concierge service in Courchevel ensures discretion, confidentiality and seamless assistance before and throughout your stay.</p>
       <p class="work-proces__description for-summer">AR Privé provides private concierge support ensuring discretion, continuity and seamless coordination from the first enquiry to the final moment of your stay.</p>
-      <a href="#" class="btn work-proces__btn">Start Your Request</a>
+      <a href="#request" class="btn work-proces__btn">Start Your Request</a>
     </div>
   </section>
 
@@ -93,8 +93,8 @@
           <p class="singature-destination__description for-winter">Courchevel represents alpine excellence, combining exceptional ski access with refined chalet living and world-class gastronomy in the heart of the French Alps.</p>
           <p class="singature-destination__description for-summer">Mykonos blends refined seaside living with vibrant island energy.Our curated villa collection offers privacy, panoramic Aegean views and effortless access to the island’s most sought-after beach clubs and lifestyle experiences.</p>
 
-          <a href="#" class="for-winter btn singature-destination__btn">Discover Courchevel</a>
-          <a href="#" class="for-summer btn singature-destination__btn">Discover Mykonos</a>
+          <a href="<?php echo home_url(); ?>/destination/courchevel/" class="for-winter btn singature-destination__btn">Discover Courchevel</a>
+          <a href="<?php echo home_url(); ?>/destination/mykonos/" class="for-summer btn singature-destination__btn">Discover Mykonos</a>
         </div>
 
         <div class="singature-destination__gallery">
@@ -109,7 +109,8 @@
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section-watermark.svg" alt="" class="section-watermark" />
 
     <div class="container">
-      <h2 class="section-title">A CURATED COLLECTION OF LUXURY CHALETS IN COURCHEVEL</h2>
+      <h2 class="section-title for-summer">A Curated Collection of Luxury Chalets in Courchevel</h2>
+      <h2 class="section-title for-winter">A CURATED COLLECTION OF LUXURY CHALETS IN COURCHEVEL</h2>
 
       <div class="chalets__content">
         <p class="chalets__text">We present a limited number of exclusive luxury chalets in Courchevel, carefully selected for location, architecture, privacy and quality.</p>
@@ -238,4 +239,5 @@
     </div>
   </section>
 <?php
+
 get_footer();
