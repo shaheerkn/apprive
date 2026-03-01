@@ -6807,6 +6807,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   position: relative;
   background-color: #fff;
   overflow: hidden;
+  border: 1px solid red;
 }
 @media (max-width: 992px) {
   .contact-form {

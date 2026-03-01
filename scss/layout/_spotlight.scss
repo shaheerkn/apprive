@@ -55,16 +55,16 @@ $primary-color: #fff;
       padding-bottom: 8px;
 
       &::after {
-      content: "";
-      width: 100px;
-      height: 2px;
-      background-color: #fff;
-      border-radius: 5px;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-  }
+        content: "";
+        width: 100px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 

@@ -159,8 +159,8 @@
             </svg>
           </div>
   
-          <h5 class="features-highlight__title">Hand-selected private homes</h5>
-          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+          <h5 class="features-highlight__title">Trusted local partners</h5>
+          <p class="features-highlight__description">Direct collaboration with verified professionals on-site, ensuring reliability and discretion.</p>
         </article>
         <article class="features-highlight__item">
           <div class="features-highlight__icon-box">
@@ -169,8 +169,8 @@
             </svg>
           </div>
   
-          <h5 class="features-highlight__title">Hand-selected private homes</h5>
-          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+          <h5 class="features-highlight__title">Personalised, never standardised</h5>
+          <p class="features-highlight__description">Every stay is designed by hand. No templates. No automated journeys.</p>
         </article>
         <article class="features-highlight__item">
           <div class="features-highlight__icon-box">
@@ -179,8 +179,8 @@
             </svg>
           </div>
   
-          <h5 class="features-highlight__title">Hand-selected private homes</h5>
-          <p class="features-highlight__description">A carefully curated portfolio, including confidential off-market properties shared privately.</p>
+          <h5 class="features-highlight__title">Privacy and high standards</h5>
+          <p class="features-highlight__description">Hospitality that respects your space, your time and your identity.</p>
         </article>
       </div>
     </div>

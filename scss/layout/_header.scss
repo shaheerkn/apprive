@@ -26,9 +26,16 @@
   }
 }
 
+body:has(.header__modifier) {
+  padding-top: 65px;
+
+  @media (max-width: 1200px) {
+    padding-top: 60px;
+  }
+}
+
 .header__modifier {
   background: #000;
-  position: static;
 
   .container {
     padding: 0 24px;

@@ -19,7 +19,7 @@
 <section class="hero journal-hero">
   <div class="hero__img">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-hero__winter.png" alt="" class="for-winter">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/join-us-hero-winter.png" alt="" class="for-summer">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/journal-hero-summer.jpg" alt="" class="for-summer">
   </div>
   <div class="hero__overlay"></div>
   <div class="container">
@@ -60,19 +60,25 @@
 
     <div class="journal-header__controls">
       <div class="journal-header__field">
+        <label for="journal-header__select" class="journal-header__label">All Articles</label>
         <select class="journal-header__select">
           <option value="all">All articles</option>
           <option value="travel">Refined Travel</option>
           <option value="luxury">Quiet Luxury</option>
         </select>
-        <span class="journal-header__arrow"></span>
+        <span class="journal-header__arrow">
+        <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.42313 5.01292L0 0.589792L0.589792 0L4.42313 3.83333L8.25646 0L8.84625 0.589792L4.42313 5.01292Z" fill="#828282"/>
+        </svg>
+        </span>
       </div>
 
       <div class="journal-header__field journal-header__field--search">
-        <input type="text" class="journal-header__input" placeholder="Search article">
+        <label for="journal-header__input" class="journal-header__label">Search Article</label>
+        <input type="text" class="journal-header__input" placeholder="Private Ski Access">
         <button type="button" class="journal-header__search-btn">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.9023 21.846L12.5537 13.4973C11.887 14.0649 11.1203 14.5042 10.2537 14.8153C9.387 15.1264 8.51611 15.282 7.641 15.282C5.50544 15.282 3.698 14.5428 2.21867 13.0643C0.739555 11.5859 0 9.77955 0 7.64533C0 5.51089 0.739222 3.703 2.21767 2.22167C3.69611 0.740554 5.50244 0 7.63667 0C9.77111 0 11.579 0.739555 13.0603 2.21867C14.5414 3.698 15.282 5.50544 15.282 7.641C15.282 8.56744 15.1179 9.464 14.7897 10.3307C14.4614 11.1973 14.0307 11.9383 13.4973 12.5537L21.846 20.9027L20.9023 21.846ZM7.641 13.9487C9.41011 13.9487 10.9037 13.3397 12.1217 12.1217C13.3397 10.9039 13.9487 9.41033 13.9487 7.641C13.9487 5.87167 13.3397 4.37811 12.1217 3.16033C10.9037 1.94233 9.41011 1.33333 7.641 1.33333C5.87167 1.33333 4.37811 1.94233 3.16033 3.16033C1.94233 4.37811 1.33333 5.87167 1.33333 7.641C1.33333 9.41033 1.94233 10.9039 3.16033 12.1217C4.37811 13.3397 5.87167 13.9487 7.641 13.9487Z" fill="black"/>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.4853 20.1537L13.2238 13.8922C12.7238 14.3179 12.1488 14.6474 11.4988 14.8807C10.8488 15.1141 10.1957 15.2307 9.53934 15.2307C7.93768 15.2307 6.58209 14.6763 5.47259 13.5675C4.36326 12.4586 3.80859 11.1039 3.80859 9.50323C3.80859 7.90239 4.36301 6.54648 5.47184 5.43548C6.58068 4.32464 7.93543 3.76923 9.53609 3.76923C11.1369 3.76923 12.4928 4.32389 13.6038 5.43323C14.7147 6.54273 15.2701 7.89831 15.2701 9.49998C15.2701 10.1948 15.147 10.8672 14.9008 11.5172C14.6547 12.1672 14.3316 12.723 13.9316 13.1845L20.1931 19.4462L19.4853 20.1537ZM9.53934 14.2307C10.8662 14.2307 11.9863 13.774 12.8998 12.8605C13.8133 11.9471 14.2701 10.827 14.2701 9.49998C14.2701 8.17298 13.8133 7.05281 12.8998 6.13948C11.9863 5.22598 10.8662 4.76923 9.53934 4.76923C8.21234 4.76923 7.09218 5.22598 6.17884 6.13948C5.26534 7.05281 4.80859 8.17298 4.80859 9.49998C4.80859 10.827 5.26534 11.9471 6.17884 12.8605C7.09218 13.774 8.21234 14.2307 9.53934 14.2307Z" fill="#828282"/>
           </svg>
         </button>
       </div>
@@ -93,7 +99,11 @@
           <p class="journal-card__excerpt">
             Discover hidden coves, discreet yacht routes and a quieter rhythm of island life.
           </p>
-          <a href="#" class="journal-card__link">Read more</a>
+          <a href="#" class="journal-card__link">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.6885 11.7885L0 11.1L10.0807 1H0.7885V0H11.7885V11H10.7885V1.70775L0.6885 11.7885Z" fill="black"/>
+            </svg>
+          </a>
         </div>
       </article>
 
@@ -107,7 +117,11 @@
           <p class="journal-card__excerpt">
             Discover hidden coves, discreet yacht routes and a quieter rhythm of island life.
           </p>
-          <a href="#" class="journal-card__link">Read more</a>
+          <a href="#" class="journal-card__link">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.6885 11.7885L0 11.1L10.0807 1H0.7885V0H11.7885V11H10.7885V1.70775L0.6885 11.7885Z" fill="black"/>
+            </svg>
+          </a>
         </div>
       </article>
 
@@ -121,7 +135,11 @@
           <p class="journal-card__excerpt">
             Discover hidden coves, discreet yacht routes and a quieter rhythm of island life.
           </p>
-          <a href="#" class="journal-card__link">Read more</a>
+          <a href="#" class="journal-card__link">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.6885 11.7885L0 11.1L10.0807 1H0.7885V0H11.7885V11H10.7885V1.70775L0.6885 11.7885Z" fill="black"/>
+            </svg>
+          </a>
         </div>
       </article>
 
@@ -135,7 +153,11 @@
           <p class="journal-card__excerpt">
             Discover hidden coves, discreet yacht routes and a quieter rhythm of island life.
           </p>
-          <a href="#" class="journal-card__link">Read more</a>
+          <a href="#" class="journal-card__link">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.6885 11.7885L0 11.1L10.0807 1H0.7885V0H11.7885V11H10.7885V1.70775L0.6885 11.7885Z" fill="black"/>
+            </svg>
+          </a>
         </div>
       </article>
 
@@ -149,7 +171,11 @@
           <p class="journal-card__excerpt">
             Discover hidden coves, discreet yacht routes and a quieter rhythm of island life.
           </p>
-          <a href="#" class="journal-card__link">Read more</a>
+          <a href="#" class="journal-card__link">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.6885 11.7885L0 11.1L10.0807 1H0.7885V0H11.7885V11H10.7885V1.70775L0.6885 11.7885Z" fill="black"/>
+            </svg>
+          </a>
         </div>
       </article>
 
@@ -163,7 +189,11 @@
           <p class="journal-card__excerpt">
             Discover hidden coves, discreet yacht routes and a quieter rhythm of island life.
           </p>
-          <a href="#" class="journal-card__link">Read more</a>
+          <a href="#" class="journal-card__link">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.6885 11.7885L0 11.1L10.0807 1H0.7885V0H11.7885V11H10.7885V1.70775L0.6885 11.7885Z" fill="black"/>
+            </svg>
+          </a>
         </div>
       </article>
     </div>
