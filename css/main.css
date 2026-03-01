@@ -531,6 +531,10 @@ body.term-courchevel .company-partners__logo.for-summer {
   display: none !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   position: relative;
   width: 100%;
