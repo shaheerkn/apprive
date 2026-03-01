@@ -1310,6 +1310,10 @@ body:has(.header__modifier) {
   height: 200px;
 }
 
+.header__mega-menu-link--active {
+  background-color: none;
+}
+
 .hero {
   position: relative;
   width: 100%;
