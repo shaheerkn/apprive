@@ -139,7 +139,7 @@
       <?php 
         $copyright = get_field('copyright_text', 'option');
         if( $copyright ) {
-          echo '<p class="footer-copyRight">' .'© ' . date('Y') . ' ' . esc_html($copyright) . '</p>';
+          echo '<p class="footer-copyRight">' .'© ' . date('Y') . ' ' . wp_kses_post($copyright) . '</p>';
         }
       ?>
     </div>

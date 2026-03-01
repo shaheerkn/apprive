@@ -2646,6 +2646,10 @@ body:has(.header__modifier) {
   margin-top: 24px;
   font-weight: 400;
 }
+.footer-copyRight a {
+  color: #FFF;
+  text-decoration: none;
+}
 @media (max-width: 765px) {
   .footer-copyRight {
     margin-top: 16px;
