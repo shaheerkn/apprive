@@ -535,6 +535,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.privacy-policy {
+  margin-block: 100px;
+}
+.privacy-policy .wp-block-heading {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
 .header {
   position: relative;
   width: 100%;
