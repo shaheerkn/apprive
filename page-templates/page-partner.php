@@ -87,7 +87,7 @@
   <img src="<?php echo get_template_directory_uri(); ?>/assets/images/process-water-mark.svg" alt="water mark" class="partner-services__water-mark">
   <div class="container">
     <div class="partner-services__header">
-      <h4 class="section-title">WHAT WE DO FOR PROPERTY PARTNERS</h4>
+      <h2 class="section-title">WHAT WE DO FOR PROPERTY PARTNERS</h2>
       <p class="partner-services__subheadline">Our role is to elevate your property while protecting it.</p>
     </div>
 
@@ -138,7 +138,7 @@
     <div class="partner-process__layout">
       <div class="partner-process__media">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-process__media-winter.png" alt="partner process media" class="for-winter">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-process__media-summer.png" alt="partner process media" class="for-summer">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partner-process__media-summer.jpg" alt="partner process media" class="for-summer">
       </div>
 
       <div class="partner-process__steps">

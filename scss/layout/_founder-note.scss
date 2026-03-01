@@ -82,9 +82,11 @@
     }
   }
   &__media {
+    aspect-ratio: 426/478;
     max-width: 426px;
-
+    
     @media (max-width: 500px) {
+      max-width: 100%;
       aspect-ratio: 392/368;
     }
 
@@ -92,6 +94,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top;
     }
   }
 

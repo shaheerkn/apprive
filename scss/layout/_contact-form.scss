@@ -4,6 +4,10 @@
   background-color: #fff;
   overflow: hidden;
 
+  @media (max-width:992px) {
+    padding: 24px 0;
+  }
+
   .container {
     position: relative;
     z-index: 2;
@@ -21,19 +25,12 @@
 
   &__header {
     text-align: center;
-
-    .section-title {
-      padding: 0;
-      &::after {
-        display: none;
-      }
-    }
   }
 
   &__subtitle {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 400;
-    margin-block: 16px;
+    margin-block: 12px;
 
     @media (max-width:1024px) {
       font-size: 12px;
@@ -42,35 +39,16 @@
   }
 
   &__disclaimer {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 1.5px;
     text-align: center;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 28px;
     display: inline-block;
-
-    &::after {
-      content: "";
-      width: 100px;
-      height: 3px;
-      background-color: #000;
-      border-radius: 5px;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
 
     @media (max-width: 992px) {
       font-size: 20px;
-      padding-bottom: 12px;
-
-      &::after {
-        height: 1px;
-        width: 50px;
-      }
     }
 
     @media (max-width:1024px) {
@@ -81,7 +59,7 @@
 
   &__layout {
     display: grid;
-    grid-template-columns: 1fr 450px;
+    grid-template-columns: 1fr 585px;
     gap: 24px;
 
     @media (max-width: 1024px) {
@@ -92,21 +70,20 @@
   }
 
   &__section {
-    margin-bottom: 40px;
+    margin-bottom: 16px;
     width: 100%;
   }
 
   &__group {
-    margin-bottom: 24px;
-    border-radius: 16px;
+    background: #F5F5F5;
+    margin-bottom: 16px;
+    padding: 16px;
 
     @media (max-width:992px) {
       margin-bottom: 12px;
     }
 
     &--primary {
-      background: #F5F5F5;
-      padding: 24px;
     }
 
     &-title {
@@ -124,17 +101,16 @@
   &__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 12px;
 
     &--btm-border {
-      border-bottom: 1px solid #828282;
-      padding-bottom: 10px;
+      border-bottom: 0.5px solid #828282;
+      padding-bottom: 24px;
     }
 
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
+    // @media (max-width: 600px) {
+    //   grid-template-columns: 1fr;
+    // }
 
     @media (max-width:992px) {
       gap: 12px;
@@ -142,15 +118,26 @@
     }
   }
 
-  &__field {
-    margin-bottom: 20px;
+  .contact-form__field + .contact-form__row {
+    margin-block: 16px;
+  }
 
+  .contact-form__row + .contact-form__row {
+    margin-top: 16px;
+  }
+
+  &__field {
     label {
       display: block;
       font-size: 14px;
       font-weight: 500;
       margin-bottom: -12px;
       color: #333;
+
+      @media (max-width:992px) {
+        font-size: 10px;
+        margin-bottom: -15px;
+      }
     }
 
     #mobile_phone {
@@ -159,12 +146,18 @@
 
     input, select, textarea {
       width: 100%;
-      padding: 14px 16px;
+      padding: 0 16px;
       border: 1px solid #E5E5E5;
-      border-radius: 4px;
-      font-size: 16px;
-      background-color: #FAFAFA;
+      font-size: 14px;
+      background-color: #FFF;
       transition: border-color 0.3s ease;
+      height: 42px;
+
+      @media (max-width:992px) {
+        font-size: 12px;
+        padding-left: 12px;
+        height: 29px;
+      }
 
       &:focus {
         outline: none;
@@ -173,8 +166,12 @@
     }
 
     textarea {
-      height: 120px;
+      min-height: 80px;
+      height: 100%;
+      max-height: 80px;
       resize: vertical;
+      padding-block: 12px;
+      font-family: inherit;
     }
   }
 
@@ -182,10 +179,6 @@
     position: relative;
     display: flex;
     align-items: center;
-
-    input {
-      // padding-left: 90px !important;
-    }
   }
 
   &__flag-box {
@@ -225,11 +218,10 @@
     text-align: left;
 
     .contact-form__note {
-      font-size: 16px;
-      font-style: italic;
+      font-size: 14px;
       color: #2C2C2C;
       line-height: 1.6;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
 
       @media (max-width:1024px) {
         font-size: 12px;
@@ -241,11 +233,10 @@
       width: 100%;
       background-color: #000;
       color: #fff;
-      padding: 20px 48px;
-      font-size: 20px;
+      padding: 14px 48px;
+      font-size: 14px;
       font-weight: 500;
       border: none;
-      border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
 
@@ -258,11 +249,15 @@
       }
     }
 
+    .wpcf7-spinner {
+      display: none;
+    }
+
     .contact-form__sub-note {
       font-size: 12px;
       color: #2C2C2C;
       margin-top: 8px;
-      font-weight: 500;
+      font-weight: 400;
 
       @media (max-width:1024px) {
         font-size: 10px;
@@ -284,16 +279,16 @@
       gap: 12px;
     }
     .contact-form__image-wrapper {
-      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 
       &__primary {
-        min-height: 877px;
+        max-width: 100%;
+        aspect-ratio: 585/737;
       }
 
       &__secondary {
-        min-height: 610px;
+        max-width: 100%;
+        aspect-ratio: 585/490;
       }
 
       img {

@@ -1,6 +1,6 @@
 <div class="contact-form__section">
-  <h3 class="contact-form__group-title">Property Details</h3>
   <div class="contact-form__group">
+    <h3 class="contact-form__group-title">Property Details</h3>
     <div class="contact-form__row">
       <div class="contact-form__field">
         <label>Location (Destination)</label>

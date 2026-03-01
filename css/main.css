@@ -5466,10 +5466,12 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .founder-note__media {
+  aspect-ratio: 426/478;
   max-width: 426px;
 }
 @media (max-width: 500px) {
   .founder-note__media {
+    max-width: 100%;
     aspect-ratio: 392/368;
   }
 }
@@ -5477,6 +5479,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 @media (max-width: 768px) {
   .founder-note .founder-note__signature br {
@@ -6445,9 +6448,9 @@ body.term-courchevel .company-partners__logo.for-summer {
   text-align: center;
 }
 .text-block__text {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
-  margin-block: 24px;
+  margin-block: 16px;
 }
 @media (max-width: 992px) {
   .text-block__text {
@@ -6456,8 +6459,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .text-block__quote {
-  font-size: 28px;
-  font-style: italic;
+  font-size: 18px;
   font-weight: 500;
   color: #5A98C0;
 }
@@ -6468,33 +6470,23 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 
 .target-cards {
-  background: var(--color-6);
-}
-@media (max-width: 992px) {
-  .target-cards {
-    background: var(--target-cards-for-mobile_bg);
-  }
+  background: #2C2C2C;
 }
 .target-cards .container {
   max-width: 1440px;
 }
 .target-cards .container .section-title {
   color: #fff;
-  margin-bottom: 40px;
 }
 .target-cards .container .section-title::after {
   background: #fff;
 }
-@media (max-width: 992px) {
-  .target-cards .container .section-title {
-    margin-bottom: 12px;
-  }
-}
 .target-cards__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 24px;
   place-items: center;
+  margin-top: 24px;
 }
 @media (max-width: 992px) {
   .target-cards__grid {
@@ -6504,31 +6496,29 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .target-cards__card {
   max-width: 700px;
-  border-radius: 16px;
-  padding: 64px 88px;
+  padding: 24px;
   background: #fff;
   text-align: center;
 }
 @media (max-width: 992px) {
   .target-cards__card {
-    padding: 24px;
+    padding: 12px;
   }
 }
 .target-cards__card-title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
-  margin-bottom: 24px;
-  color: var(--color-6);
+  margin-bottom: 12px;
+  color: #000000;
 }
 @media (max-width: 992px) {
   .target-cards__card-title {
-    color: #5A98C0;
     font-size: 16px;
     margin-bottom: 12px;
   }
 }
 .target-cards__card-text {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
 }
 @media (max-width: 992px) {
@@ -6543,11 +6533,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   overflow: hidden;
 }
 .partner-services .container .section-title {
-  padding: 0;
   margin-bottom: 12px;
-}
-.partner-services .container .section-title::after {
-  display: none;
 }
 .partner-services__header {
   margin-bottom: 40px;
@@ -6558,37 +6544,20 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .partner-services__subheadline {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   position: relative;
   text-align: center;
-  padding-bottom: 28px;
-}
-.partner-services__subheadline::after {
-  content: "";
-  width: 100px;
-  height: 3px;
-  background-color: #000;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 @media (max-width: 992px) {
   .partner-services__subheadline {
-    font-size: 20px;
-    padding-bottom: 12px;
-  }
-  .partner-services__subheadline::after {
-    height: 1px;
-    width: 50px;
+    font-size: 12px;
   }
 }
 .partner-services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 24px;
   place-items: center;
   position: relative;
   z-index: 3;
@@ -6602,21 +6571,18 @@ body.term-courchevel .company-partners__logo.for-summer {
 .partner-services__item {
   position: relative;
   z-index: 4;
-  background-color: #ffffff;
+  background-color: #F5F5F5;
   width: 100%;
   max-width: 453px;
-  box-shadow: 4px 4px 24px 0px rgba(0, 0, 0, 0.1019607843);
-  padding: 64px;
-  border-radius: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 24px;
+  gap: 16px;
 }
 @media (max-width: 992px) {
   .partner-services__item {
-    padding: 16px;
-    border-radius: 8px;
+    padding: 12px;
     max-width: 100%;
     align-items: center;
     text-align: center;
@@ -6624,7 +6590,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .partner-services__title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
 }
 @media (max-width: 992px) {
@@ -6633,32 +6599,38 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .partner-services__description {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
-  font-style: italic;
 }
 @media (max-width: 992px) {
   .partner-services__description {
     font-size: 12px;
   }
 }
+.partner-services__icon-wrapper {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+@media (max-width: 992px) {
+  .partner-services__icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+}
 .partner-services__icon-wrapper svg {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
 }
 .partner-services__icon-wrapper svg path {
   fill: var(--color-6);
 }
-@media (max-width: 992px) {
-  .partner-services__icon-wrapper svg {
-    width: 40px;
-    height: 40px;
-  }
-}
 .partner-services__water-mark {
   position: absolute;
-  right: 0;
-  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
   z-index: 1;
   pointer-events: none;
 }
@@ -6677,7 +6649,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 .partner-process__layout {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
 }
 @media (max-width: 992px) {
   .partner-process__layout {
@@ -6690,14 +6662,19 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .partner-process__media img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 16px;
+}
+@media (max-width: 500px) {
+  .partner-process__media {
+    aspect-ratio: 392/300;
+  }
 }
 .partner-process__steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 @media (max-width: 992px) {
   .partner-process__steps {
@@ -6706,7 +6683,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .partner-process__step {
   max-width: 392px;
-  padding-inline: 48px 32px;
+  padding-inline: 40px 16px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6716,15 +6693,23 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 @media (max-width: 992px) {
   .partner-process__step:not(:last-child) {
-    border-right: none;
     border-bottom: 1px solid #D1D1D1;
+  }
+}
+@media (max-width: 992px) {
+  .partner-process__step {
+    border: none;
     padding-bottom: 12px;
+    padding-inline: 28px 0;
+  }
+  .partner-process__step:not(:last-child) {
+    border-right: none;
   }
 }
 .partner-process__step-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 @media (max-width: 992px) {
   .partner-process__step-title {
@@ -6733,7 +6718,7 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .partner-process__step-text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
 }
 @media (max-width: 992px) {
@@ -6745,15 +6730,25 @@ body.term-courchevel .company-partners__logo.for-summer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  font-size: 14px;
   background: var(--color-1);
   color: white;
   font-weight: bold;
   position: absolute;
   top: 0;
   left: 0;
+}
+@media (max-width: 992px) {
+  .partner-process__step::before {
+    background: none;
+    color: var(--color-1);
+    width: auto;
+    height: auto;
+    font-size: 16px;
+  }
 }
 .partner-process__step:nth-child(1)::before {
   content: "1";
@@ -6774,6 +6769,11 @@ body.term-courchevel .company-partners__logo.for-summer {
   background-color: #fff;
   overflow: hidden;
 }
+@media (max-width: 992px) {
+  .contact-form {
+    padding: 24px 0;
+  }
+}
 .contact-form .container {
   position: relative;
   z-index: 2;
@@ -6791,16 +6791,10 @@ body.term-courchevel .company-partners__logo.for-summer {
 .contact-form__header {
   text-align: center;
 }
-.contact-form__header .section-title {
-  padding: 0;
-}
-.contact-form__header .section-title::after {
-  display: none;
-}
 .contact-form__subtitle {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
-  margin-block: 16px;
+  margin-block: 12px;
 }
 @media (max-width: 1024px) {
   .contact-form__subtitle {
@@ -6809,34 +6803,17 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .contact-form__disclaimer {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.5px;
   text-align: center;
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 28px;
   display: inline-block;
-}
-.contact-form__disclaimer::after {
-  content: "";
-  width: 100px;
-  height: 3px;
-  background-color: #000;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 @media (max-width: 992px) {
   .contact-form__disclaimer {
     font-size: 20px;
-    padding-bottom: 12px;
-  }
-  .contact-form__disclaimer::after {
-    height: 1px;
-    width: 50px;
   }
 }
 @media (max-width: 1024px) {
@@ -6847,7 +6824,7 @@ body.term-courchevel .company-partners__logo.for-summer {
 }
 .contact-form__layout {
   display: grid;
-  grid-template-columns: 1fr 450px;
+  grid-template-columns: 1fr 585px;
   gap: 24px;
 }
 @media (max-width: 1024px) {
@@ -6858,21 +6835,18 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .contact-form__section {
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   width: 100%;
 }
 .contact-form__group {
-  margin-bottom: 24px;
-  border-radius: 16px;
+  background: #F5F5F5;
+  margin-bottom: 16px;
+  padding: 16px;
 }
 @media (max-width: 992px) {
   .contact-form__group {
     margin-bottom: 12px;
   }
-}
-.contact-form__group--primary {
-  background: #F5F5F5;
-  padding: 24px;
 }
 .contact-form__group-title {
   font-size: 20px;
@@ -6888,17 +6862,11 @@ body.term-courchevel .company-partners__logo.for-summer {
 .contact-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 12px;
 }
 .contact-form__row--btm-border {
-  border-bottom: 1px solid #828282;
-  padding-bottom: 10px;
-}
-@media (max-width: 600px) {
-  .contact-form__row {
-    grid-template-columns: 1fr;
-  }
+  border-bottom: 0.5px solid #828282;
+  padding-bottom: 24px;
 }
 @media (max-width: 992px) {
   .contact-form__row {
@@ -6906,8 +6874,11 @@ body.term-courchevel .company-partners__logo.for-summer {
     margin-bottom: 12px;
   }
 }
-.contact-form__field {
-  margin-bottom: 20px;
+.contact-form .contact-form__field + .contact-form__row {
+  margin-block: 16px;
+}
+.contact-form .contact-form__row + .contact-form__row {
+  margin-top: 16px;
 }
 .contact-form__field label {
   display: block;
@@ -6916,25 +6887,42 @@ body.term-courchevel .company-partners__logo.for-summer {
   margin-bottom: -12px;
   color: #333;
 }
+@media (max-width: 992px) {
+  .contact-form__field label {
+    font-size: 10px;
+    margin-bottom: -15px;
+  }
+}
 .contact-form__field #mobile_phone {
   margin-bottom: 8px;
 }
 .contact-form__field input, .contact-form__field select, .contact-form__field textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: 0 16px;
   border: 1px solid #E5E5E5;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: #FAFAFA;
+  font-size: 14px;
+  background-color: #FFF;
   transition: border-color 0.3s ease;
+  height: 42px;
+}
+@media (max-width: 992px) {
+  .contact-form__field input, .contact-form__field select, .contact-form__field textarea {
+    font-size: 12px;
+    padding-left: 12px;
+    height: 29px;
+  }
 }
 .contact-form__field input:focus, .contact-form__field select:focus, .contact-form__field textarea:focus {
   outline: none;
   border-color: #B78A67;
 }
 .contact-form__field textarea {
-  height: 120px;
+  min-height: 80px;
+  height: 100%;
+  max-height: 80px;
   resize: vertical;
+  padding-block: 12px;
+  font-family: inherit;
 }
 .contact-form__tel-input {
   position: relative;
@@ -6974,11 +6962,10 @@ body.term-courchevel .company-partners__logo.for-summer {
   text-align: left;
 }
 .contact-form__footer .contact-form__note {
-  font-size: 16px;
-  font-style: italic;
+  font-size: 14px;
   color: #2C2C2C;
   line-height: 1.6;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 @media (max-width: 1024px) {
   .contact-form__footer .contact-form__note {
@@ -6990,11 +6977,10 @@ body.term-courchevel .company-partners__logo.for-summer {
   width: 100%;
   background-color: #000;
   color: #fff;
-  padding: 20px 48px;
-  font-size: 20px;
+  padding: 14px 48px;
+  font-size: 14px;
   font-weight: 500;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -7006,11 +6992,14 @@ body.term-courchevel .company-partners__logo.for-summer {
     font-size: 12px;
   }
 }
+.contact-form__footer .wpcf7-spinner {
+  display: none;
+}
 .contact-form__footer .contact-form__sub-note {
   font-size: 12px;
   color: #2C2C2C;
   margin-top: 8px;
-  font-weight: 500;
+  font-weight: 400;
 }
 @media (max-width: 1024px) {
   .contact-form__footer .contact-form__sub-note {
@@ -7034,15 +7023,15 @@ body.term-courchevel .company-partners__logo.for-summer {
   }
 }
 .contact-form__gallery .contact-form__image-wrapper {
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 .contact-form__gallery .contact-form__image-wrapper__primary {
-  min-height: 877px;
+  max-width: 100%;
+  aspect-ratio: 585/737;
 }
 .contact-form__gallery .contact-form__image-wrapper__secondary {
-  min-height: 610px;
+  max-width: 100%;
+  aspect-ratio: 585/490;
 }
 .contact-form__gallery .contact-form__image-wrapper img {
   width: 100%;

@@ -157,7 +157,7 @@
       <a href="#" class="founder-note__signature">Aldo Ruta <br> Founder & Private Concierge</a>
     </div>
     <div class="founder-note__media">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/founder.jpg" alt="founder image">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/founder.jpeg" alt="founder image">
     </div>
   </div>
 </section>

@@ -2,13 +2,10 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+
   .container {
     .section-title {
-      padding: 0;
       margin-bottom: 12px;
-      &::after {
-        display: none;
-      }
     }
   }
 
@@ -21,42 +18,24 @@
   }
 
   &__subheadline {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 400;
     position: relative;
     text-align: center;
-    padding-bottom: 28px;
-
-    &::after {
-      content: "";
-      width: 100px;
-      height: 3px;
-      background-color: #000;
-      border-radius: 5px;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
 
     @media (max-width: 992px) {
-      font-size: 20px;
-      padding-bottom: 12px;
-
-      &::after {
-        height: 1px;
-        width: 50px;
-      }
+      font-size: 12px;
     }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 40px;
+    gap: 24px;
     place-items: center;
     position: relative;
     z-index: 3;
+
     @media (max-width:992px) {
       grid-template-columns: 1fr;
       gap: 12px;
@@ -66,20 +45,17 @@
   &__item {
     position: relative;
     z-index: 4;
-    background-color: #ffffff;
+    background-color: #F5F5F5;
     width: 100%;
     max-width: 453px;
-    box-shadow: 4px 4px 24px 0px #0000001A;
-    padding: 64px;
-    border-radius: 16px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 24px;
+    gap: 16px;
 
     @media (max-width:992px) {
-      padding: 16px;
-      border-radius: 8px;
+      padding: 12px;
       max-width: 100%;
       align-items: center;
       text-align: center;
@@ -88,7 +64,7 @@
   }
 
   &__title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
 
     @media (max-width:992px) {
@@ -97,9 +73,8 @@
   }
 
   &__description {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
-    font-style: italic;
 
     @media (max-width:992px) {
       font-size: 12px;
@@ -107,24 +82,32 @@
   }
 
   &__icon-wrapper {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+
+    @media (max-width:992px) {
+      width: 32px;
+      height: 32px;
+    }
+
     svg {
-      width: 80px;
-      height: 80px;
+      width: 100%;
+      height: 100%;
+
       path {
         fill: var(--color-6);
       }
 
-      @media (max-width:992px) {
-        width: 40px;
-        height: 40px;
-      }
     }
   }
 
   &__water-mark {
     position: absolute;
-    right: 0;
-    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
     z-index: 1;
     pointer-events: none;
   }

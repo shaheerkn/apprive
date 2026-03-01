@@ -13,7 +13,7 @@
   &__layout {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 24px;
 
     @media (max-width:992px) {
       gap: 16px;
@@ -26,16 +26,20 @@
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 16px;
+    }
+
+    @media (max-width: 500px) {
+      aspect-ratio: 392/300;
     }
   }
 
   &__steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 16px;
 
     @media (max-width:992px) {
       grid-template-columns: repeat(1,1fr)
@@ -44,7 +48,7 @@
 
   &__step {
     max-width: 392px;
-    padding-inline: 48px 32px;
+    padding-inline: 40px 16px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -53,16 +57,25 @@
       border-right: 1px solid #D1D1D1;
 
       @media (max-width:992px) {
-        border-right: none;
         border-bottom: 1px solid #D1D1D1;
-        padding-bottom: 12px;
+      }
+    }
+
+    
+    @media (max-width:992px) {
+      border: none;
+      padding-bottom: 12px;
+      padding-inline: 28px 0;
+
+      &:not(:last-child) {
+        border-right: none;
       }
     }
 
     &-title {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
 
       @media (max-width:992px) {
         font-size: 16px;
@@ -71,7 +84,7 @@
     }
 
     &-text {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.4;
 
       @media (max-width:992px) {
@@ -83,15 +96,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
+      font-size: 14px;
       background: var(--color-1);
       color: white;
       font-weight: bold;
       position: absolute;
       top: 0;
       left: 0;
+
+      @media (max-width:992px) {
+        background: none;
+        color: var(--color-1);
+        width: auto;
+        height: auto;
+        font-size: 16px;
+      }
     }
 
     &:nth-child(1)::before { content: "1"; }
