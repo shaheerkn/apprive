@@ -23,6 +23,7 @@ $prop_pricing = get_field('prop_pricing', $property_id);
 $starting_price = $prop_pricing['starting_price'];
 $currency = $prop_pricing['currency'] ?: '€';
 $price_period = $prop_pricing['price_period'] ?: '/week';
+$price_label_override = isset($prop_pricing['price_label_override']) ? trim($prop_pricing['price_label_override']) : '';
 
 $prop_specs = get_field('prop_specs', $property_id);
 $max_guests = $prop_specs['max_guests'];
@@ -80,7 +81,9 @@ $is_favorite = false;
                 <p class="listing-grid__info-guests"><?php echo esc_html($max_guests); ?> Guests</p>
             <?php endif; ?>
         </div>
-        <?php if ( $starting_price && intval($starting_price) > 0 ) : ?>
+        <?php if ( $price_label_override ) : ?>
+            <p class="listing-grid__info-price"><?php echo esc_html($price_label_override); ?></p>
+        <?php elseif ( $starting_price && intval($starting_price) > 0 ) : ?>
             <p class="listing-grid__info-price">From <span><?php echo esc_html($starting_price); ?><?php echo esc_html($currency); ?></span><?php echo esc_html($price_period); ?></p>
         <?php endif; ?>
     </div>

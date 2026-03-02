@@ -145,6 +145,19 @@ function ar_get_property_pricing( $post_id = null ) {
 
 	$pricing = get_field( 'prop_pricing', $post_id );
 
+	// Check for custom price label override (e.g. "Contact for price")
+	$price_label = isset( $pricing['price_label_override'] ) ? trim( $pricing['price_label_override'] ) : '';
+
+	if ( $price_label ) {
+		return array(
+			'starting_price' => 0,
+			'currency'       => '',
+			'price_period'   => '',
+			'formatted'      => $price_label,
+			'is_custom'      => true,
+		);
+	}
+
 	if ( ! $pricing || ! isset( $pricing['starting_price'] ) || intval( $pricing['starting_price'] ) <= 0 ) {
 		return false;
 	}
@@ -160,6 +173,7 @@ function ar_get_property_pricing( $post_id = null ) {
 			number_format( (int) $pricing['starting_price'], 0, '.', ',' ),
 			isset( $pricing['price_period'] ) && $pricing['price_period'] ? $pricing['price_period'] : '/week'
 		),
+		'is_custom'      => false,
 	);
 }
 

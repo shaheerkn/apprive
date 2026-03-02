@@ -80,15 +80,19 @@ $pricing = ar_get_property_pricing();
 				?>
 
 					<div class="product-detail__content product-detail__content--mobile">
-						<?php if ( $pricing && $pricing['starting_price'] > 0 ) : ?>
+						<?php if ( $pricing ) : ?>
 							<div class="product-detail__price">
-								<p class="product-detail__price-label">Starting Price From</p>
-								<p class="product-detail__price-amount">
-									<?php
-									$formatted_price = esc_html( $pricing['formatted'] );
-									echo preg_replace( '/(\/(?:week|month|night|year))/', '<span>$1</span>', $formatted_price );
-									?>
-								</p>
+								<?php if ( ! empty( $pricing['is_custom'] ) ) : ?>
+									<p class="product-detail__price-amount"><?php echo esc_html( $pricing['formatted'] ); ?></p>
+								<?php else : ?>
+									<p class="product-detail__price-label">Starting Price From</p>
+									<p class="product-detail__price-amount">
+										<?php
+										$formatted_price = esc_html( $pricing['formatted'] );
+										echo preg_replace( '/(\/(?:week|month|night|year))/', '<span>$1</span>', $formatted_price );
+										?>
+									</p>
+								<?php endif; ?>
 							</div>
 						<?php endif; ?>
 
@@ -160,15 +164,19 @@ $pricing = ar_get_property_pricing();
 	</div>
 
 	<div class="product-detail__content product-detail__content--desktop">
-			<?php if ( $pricing && $pricing['starting_price'] > 0 ) : ?>
+			<?php if ( $pricing ) : ?>
 				<div class="product-detail__price">
-					<p class="product-detail__price-label">Starting Price From</p>
-					<p class="product-detail__price-amount">
-						<?php
-						$formatted_price = esc_html( $pricing['formatted'] );
-						echo preg_replace( '/(\/(?:week|month|night|year))/', '<span>$1</span>', $formatted_price );
-						?>
-					</p>
+					<?php if ( ! empty( $pricing['is_custom'] ) ) : ?>
+						<p class="product-detail__price-amount"><?php echo esc_html( $pricing['formatted'] ); ?></p>
+					<?php else : ?>
+						<p class="product-detail__price-label">Starting Price From</p>
+						<p class="product-detail__price-amount">
+							<?php
+							$formatted_price = esc_html( $pricing['formatted'] );
+							echo preg_replace( '/(\/(?:week|month|night|year))/', '<span>$1</span>', $formatted_price );
+							?>
+						</p>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 
