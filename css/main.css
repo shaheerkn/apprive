@@ -6584,7 +6584,6 @@ body:has(.header__modifier) {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  place-items: center;
   position: relative;
   z-index: 3;
 }
