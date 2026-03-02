@@ -217,8 +217,11 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
       </button>
     </div>
 
-    <a href="<?php echo home_url(); ?>/properties" class="btn btn--solid--primary">
-      <span class="">View All chalets in <?php echo esc_html($destination->name); ?></span>
+    <a href="<?php echo home_url(); ?>/properties" class="btn btn--solid--primary for-summer">
+      <span class="">View All villas in Mykonos</span>
+    </a>
+    <a href="<?php echo home_url(); ?>/properties" class="btn btn--solid--primary for-winter">
+      <span class="">View All chalets in Courchevel</span>
     </a>
   </div>
 </section>
