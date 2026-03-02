@@ -219,13 +219,13 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
 
     <div class="for-summer">
       <a href="<?php echo home_url(); ?>/properties" class="btn btn--solid--primary">
-        <span class="">View All villas in Mykonos</span>
+        <span class="">View all Villas in Mykonos</span>
       </a>
     </div>
 
     <div class="for-winter">
       <a href="<?php echo home_url(); ?>/properties" class="btn btn--solid--primary">
-        <span class="">View All chalets in Courchevel</span>
+        <span class="">View all Chalets in Courchevel</span>
       </a>
     </div>
 
