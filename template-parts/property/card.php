@@ -75,9 +75,10 @@ $is_favorite = false;
         <div class="listing-grid__info-details">
             <p class="listing-grid__info-location for-winter"><?php echo esc_html($location_text); ?></p>
             <p class="listing-grid__info-features for-winter"><?php echo esc_html($features_string); ?></p>
-            
-            <!-- Summer content fallback - can be adjusted if we have specific summer fields -->
-             <p class="listing-grid__info-features for-summer"><?php echo esc_html($features_string); ?></p>
+            <p class="listing-grid__info-features for-summer"><?php echo esc_html($features_string); ?></p>
+            <?php if ($max_guests) : ?>
+                <p class="listing-grid__info-guests"><?php echo esc_html($max_guests); ?> Guests</p>
+            <?php endif; ?>
         </div>
         <p class="listing-grid__info-price">From <span><?php echo esc_html($starting_price); ?><?php echo esc_html($currency); ?></span><?php echo esc_html($price_period); ?></p>
     </div>
