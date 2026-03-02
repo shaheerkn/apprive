@@ -80,7 +80,7 @@ $pricing = ar_get_property_pricing();
 				?>
 
 					<div class="product-detail__content product-detail__content--mobile">
-						<?php if ( $pricing ) : ?>
+						<?php if ( $pricing && $pricing['starting_price'] > 0 ) : ?>
 							<div class="product-detail__price">
 								<p class="product-detail__price-label">Starting Price From</p>
 								<p class="product-detail__price-amount">
@@ -160,7 +160,7 @@ $pricing = ar_get_property_pricing();
 	</div>
 
 	<div class="product-detail__content product-detail__content--desktop">
-			<?php if ( $pricing ) : ?>
+			<?php if ( $pricing && $pricing['starting_price'] > 0 ) : ?>
 				<div class="product-detail__price">
 					<p class="product-detail__price-label">Starting Price From</p>
 					<p class="product-detail__price-amount">

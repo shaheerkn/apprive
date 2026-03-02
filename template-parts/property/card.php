@@ -80,6 +80,8 @@ $is_favorite = false;
                 <p class="listing-grid__info-guests"><?php echo esc_html($max_guests); ?> Guests</p>
             <?php endif; ?>
         </div>
-        <p class="listing-grid__info-price">From <span><?php echo esc_html($starting_price); ?><?php echo esc_html($currency); ?></span><?php echo esc_html($price_period); ?></p>
+        <?php if ( $starting_price && intval($starting_price) > 0 ) : ?>
+            <p class="listing-grid__info-price">From <span><?php echo esc_html($starting_price); ?><?php echo esc_html($currency); ?></span><?php echo esc_html($price_period); ?></p>
+        <?php endif; ?>
     </div>
 </article>

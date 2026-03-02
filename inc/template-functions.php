@@ -145,7 +145,7 @@ function ar_get_property_pricing( $post_id = null ) {
 
 	$pricing = get_field( 'prop_pricing', $post_id );
 
-	if ( ! $pricing || ! isset( $pricing['starting_price'] ) ) {
+	if ( ! $pricing || ! isset( $pricing['starting_price'] ) || intval( $pricing['starting_price'] ) <= 0 ) {
 		return false;
 	}
 
