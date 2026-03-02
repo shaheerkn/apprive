@@ -126,14 +126,8 @@ function ar_filter_properties() {
     // For this implementation assuming 'price_max' from the slider.
     if ( ! empty( $_POST['price_max'] ) ) {
         $price_max = intval( $_POST['price_max'] );
-        if ($price_max == 25000) {
-            $args['meta_query'][] = array(
-                'key'     => 'prop_pricing_starting_price',
-                'value'   => 25000,
-                'compare' => '>=',
-                'type'    => 'NUMERIC',
-            );
-        } else {
+        // When slider is at max (25000), skip filter — means "no price limit"
+        if ( $price_max < 25000 ) {
             $args['meta_query'][] = array(
                 'key'     => 'prop_pricing_starting_price',
                 'value'   => $price_max,
