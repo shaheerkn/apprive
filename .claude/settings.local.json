@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/shaheer/Local\\\\ Sites/arprive/app/public/wp-content/themes/apprive && npx sass:*)"
+    ]
+  }
+}

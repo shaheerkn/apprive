@@ -109,42 +109,160 @@
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section-watermark.svg" alt="" class="section-watermark" />
 
     <div class="container">
-      <h2 class="section-title for-summer">A Curated Collection of Luxury Chalets in Courchevel</h2>
-      <h2 class="section-title for-winter">A CURATED COLLECTION OF LUXURY CHALETS IN COURCHEVEL</h2>
+      <h2 class="section-title for-summer">A Curated Collection of Luxury Villas in MYkonos</h2>
+      <h2 class="section-title for-winter">A Curated Collection of Luxury Chalets in Courchevel</h2>
 
       <div class="chalets__content">
-        <p class="chalets__text">We present a limited number of exclusive luxury chalets in Courchevel, carefully selected for location, architecture, privacy and quality.</p>
-        <p class="chalets__text">Each chalet is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
+        <p class="chalets__text for-winter">We present a limited number of exclusive luxury chalets in Courchevel, carefully selected for location, architecture, privacy and quality.</p>
+        <p class="chalets__text for-winter">Each chalet is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
+
+        <p class="chalets__text for-summer">We present a limited number of exclusive luxury villas in Mykonos, carefully selected for location, privacy, design and quality.</p>
+        <p class="chalets__text for-summer">Each villa is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
       </div>
 
-      <div class="chalets__grid">
-        <div class="chalets__card">
-          <a href="#" class="chalets__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-1.jpg" alt="Chalet Mazot Cannors" class="chalets__image">
-          </a>
-          <h3 class="text">Chalet Mazot Cannors</h3>
-          <p class="description">Courchevel 1850</p>
-        </div>
+      <?php
+        // --- Winter properties (Courchevel) ---
+        $winter_term = get_term_by('slug', 'courchevel', 'destination');
+        $winter_query = null;
+        if ($winter_term) {
+          $winter_query = new WP_Query(array(
+            'post_type'      => 'property',
+            'posts_per_page' => 3,
+            'post_status'    => 'publish',
+            'tax_query'      => array(
+              array(
+                'taxonomy' => 'destination',
+                'field'    => 'term_id',
+                'terms'    => $winter_term->term_id,
+              )
+            )
+          ));
+        }
 
-        <div class="chalets__card">
-          <a href="#" class="chalets__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-2.jpg" alt="Chalet Overview" class="chalets__image">
-          </a>
-          <h3 class="text">Chalet Overview</h3>
-          <p class="description">Courchevel 1650</p>
-        </div>
+        // --- Summer properties (Mykonos) ---
+        $summer_term = get_term_by('slug', 'mykonos', 'destination');
+        $summer_query = null;
+        if ($summer_term) {
+          $summer_query = new WP_Query(array(
+            'post_type'      => 'property',
+            'posts_per_page' => 3,
+            'post_status'    => 'publish',
+            'tax_query'      => array(
+              array(
+                'taxonomy' => 'destination',
+                'field'    => 'term_id',
+                'terms'    => $summer_term->term_id,
+              )
+            )
+          ));
+        }
+      ?>
 
-        <div class="chalets__card">
-          <a href="#" class="chalets__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/resort-3.jpg" alt="Chalet Sommet" class="chalets__image">
-          </a>
-          <h3 class="text">Chalet Sommet</h3>
-          <p class="description">Courchevel 1850</p>
+      <?php if ($winter_query && $winter_query->have_posts()) : ?>
+        <div class="for-winter">
+          <div class="showcase__grid">
+            <?php while ($winter_query->have_posts()) : $winter_query->the_post();
+              $prop_id = get_the_ID();
+              $gallery = get_field('prop_gallery', $prop_id);
+              $image_url = ($gallery && !empty($gallery)) ? wp_get_attachment_image_url($gallery[0], 'medium_large') : get_the_post_thumbnail_url($prop_id, 'medium_large');
+              if (!$image_url) $image_url = get_template_directory_uri() . '/assets/images/placeholder.png';
+              $prop_specs = get_field('prop_specs', $prop_id);
+              $max_guests = $prop_specs ? $prop_specs['max_guests'] : '';
+              $feats = array();
+              if (have_rows('prop_key_features', $prop_id)) {
+                while (have_rows('prop_key_features', $prop_id)) {
+                  the_row();
+                  $feats[] = get_sub_field('feature_label');
+                  if (count($feats) >= 3) break;
+                }
+              }
+              $feats_str = implode(' · ', $feats);
+              $is_favorite = false;
+            ?>
+            <article class="showcase__item">
+              <div class="showcase__image-wrap">
+                <a href="<?php the_permalink(); ?>" class="item-image">
+                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>" class="showcase__image">
+                </a>
+              </div>
+              <div class="showcase__details">
+                <div class="showcase__info">
+                  <div class="showcase__info-text">
+                    <h6 class="text"><?php the_title(); ?></h6>
+                    <p class="showcase__amenities"><?php echo esc_html($feats_str); ?></p>
+                  </div>
+                  <div class="showcase__capacity">
+                    <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($prop_id); ?>" aria-label="Add to favorites">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
+                    </button>
+                    <?php if ($max_guests) : ?>
+                      <p><?php echo esc_html($max_guests); ?> Guests</p>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <?php endwhile; wp_reset_postdata(); ?>
+          </div>
         </div>
-      </div>
+      <?php endif; ?>
+
+      <?php if ($summer_query && $summer_query->have_posts()) : ?>
+        <div class="for-summer">
+          <div class="showcase__grid">
+            <?php while ($summer_query->have_posts()) : $summer_query->the_post();
+              $prop_id = get_the_ID();
+              $gallery = get_field('prop_gallery', $prop_id);
+              $image_url = ($gallery && !empty($gallery)) ? wp_get_attachment_image_url($gallery[0], 'medium_large') : get_the_post_thumbnail_url($prop_id, 'medium_large');
+              if (!$image_url) $image_url = get_template_directory_uri() . '/assets/images/placeholder.png';
+              $prop_specs = get_field('prop_specs', $prop_id);
+              $max_guests = $prop_specs ? $prop_specs['max_guests'] : '';
+              $feats = array();
+              if (have_rows('prop_key_features', $prop_id)) {
+                while (have_rows('prop_key_features', $prop_id)) {
+                  the_row();
+                  $feats[] = get_sub_field('feature_label');
+                  if (count($feats) >= 3) break;
+                }
+              }
+              $feats_str = implode(' · ', $feats);
+              $is_favorite = false;
+            ?>
+            <article class="showcase__item">
+              <div class="showcase__image-wrap">
+                <a href="<?php the_permalink(); ?>" class="item-image">
+                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>" class="showcase__image">
+                </a>
+              </div>
+              <div class="showcase__details">
+                <div class="showcase__info">
+                  <div class="showcase__info-text">
+                    <h6 class="text"><?php the_title(); ?></h6>
+                    <p class="showcase__amenities"><?php echo esc_html($feats_str); ?></p>
+                  </div>
+                  <div class="showcase__capacity">
+                    <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($prop_id); ?>" aria-label="Add to favorites">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
+                    </button>
+                    <?php if ($max_guests) : ?>
+                      <p><?php echo esc_html($max_guests); ?> Guests</p>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <?php endwhile; wp_reset_postdata(); ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
       <div class="chalets__actions">
-        <a cl href="<?php echo home_url(); ?>/partner" class="btn work-proces__btn">View Private Portfolio</a>
+        <?php if ($winter_term) : ?>
+          <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $winter_term->term_id; ?>" class="btn work-proces__btn for-winter">View All Chalets in Courchevel</a>
+        <?php endif; ?>
+        <?php if ($summer_term) : ?>
+          <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $summer_term->term_id; ?>" class="btn work-proces__btn for-summer">View All Villas in Mykonos</a>
+        <?php endif; ?>
       </div>
     </div>
   </section>
