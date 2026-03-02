@@ -150,7 +150,8 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
                 $prop_id = get_the_ID();
                 $gallery = get_field('prop_gallery', $prop_id);
                 $image_url = ($gallery && !empty($gallery)) ? wp_get_attachment_image_url($gallery[0], 'medium_large') : get_the_post_thumbnail_url($prop_id, 'medium_large');
-                $max_guests = get_field('max_guests', $prop_id);
+                $prop_specs = get_field('prop_specs', $prop_id);
+                $max_guests = $prop_specs ? $prop_specs['max_guests'] : '';
                 $location = get_field('prop_location_text', $prop_id);
                 
                 // Get features
@@ -216,7 +217,7 @@ $services_title = get_field('services_title', $destination) ?: 'Privately Orches
       </button>
     </div>
 
-    <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $term_id; ?>" class="btn btn--solid--primary">
+    <a href="<?php echo home_url(); ?>/properties" class="btn btn--solid--primary">
       <span class="">View All chalets in <?php echo esc_html($destination->name); ?></span>
     </a>
   </div>

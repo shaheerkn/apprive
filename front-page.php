@@ -258,10 +258,11 @@
 
       <div class="chalets__actions">
         <?php if ($winter_term) : ?>
-          <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $winter_term->term_id; ?>" class="btn work-proces__btn for-winter">View All Chalets in Courchevel</a>
+          
+          <a href="<?php echo home_url(); ?>/destination/courchevel/" class="btn work-proces__btn for-winter">View All Chalets in Courchevel</a>
         <?php endif; ?>
         <?php if ($summer_term) : ?>
-          <a href="<?php echo home_url(); ?>/properties?destination=<?php echo $summer_term->term_id; ?>" class="btn work-proces__btn for-summer">View All Villas in Mykonos</a>
+          <a href="<?php echo home_url(); ?>/destination/mykonos/" class="btn work-proces__btn for-summer">View All Villas in Mykonos</a>
         <?php endif; ?>
       </div>
     </div>
