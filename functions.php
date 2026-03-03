@@ -172,6 +172,13 @@ function ar_scripts() {
         'nonce'   => wp_create_nonce( 'ar_favorite_nonce' ),
     ));
 
+    // Journal Filter
+    wp_enqueue_script( 'ar-journal-filter', get_template_directory_uri() . '/js/journal-filter.js', array('jquery'), _S_VERSION, true );
+    wp_localize_script( 'ar-journal-filter', 'ar_journal_vars', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'nonce'   => wp_create_nonce( 'ar_journal_nonce' ),
+    ));
+
     // Date picker inputs
     wp_add_inline_script( 'ar-navigation', "
         document.addEventListener('DOMContentLoaded', function() {
@@ -234,6 +241,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/ajax-filters.php';
 require get_template_directory() . '/inc/ajax-favorites.php';
+require get_template_directory() . '/inc/ajax-journal.php';
 
 /**
  * Save Contact Form 7 submissions to a CSV file
