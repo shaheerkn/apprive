@@ -141,7 +141,6 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    place-items: center;
     gap: 32px 40px;
     justify-content: space-between;
 

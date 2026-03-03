@@ -1499,11 +1499,13 @@ body:has(.header__modifier) {
     margin-right: -24px;
     padding-right: 24px;
     box-sizing: border-box;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
   .work-proces__content::-webkit-scrollbar {
     display: none;
+  }
+  .work-proces__content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 .work-proces__item {
@@ -1792,11 +1794,13 @@ body:has(.header__modifier) {
     padding-inline: 24px;
     box-sizing: border-box;
     padding-top: 2px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
   .concierge-services__grid::-webkit-scrollbar {
     display: none;
+  }
+  .concierge-services__grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 .concierge-services__item {
@@ -4364,7 +4368,6 @@ body:has(.header__modifier) {
 .listing-grid__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  place-items: center;
   gap: 32px 40px;
   justify-content: space-between;
 }
