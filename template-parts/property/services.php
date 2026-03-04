@@ -52,7 +52,12 @@ if ( ! ar_property_has_content( 'prop_services' ) ) {
 						<?php
 						$label     = $service['service_label'];
 						$label_key = strtolower( trim( $label ) );
-						$icon_svg  = isset( $service_icons[ $label_key ] ) ? $service_icons[ $label_key ] : '';
+						// ACF icon overrides hardcoded icon if set.
+						if ( ! empty( $service['service_icon'] ) ) {
+							$icon_svg = file_get_contents( get_attached_file( $service['service_icon'] ) );
+						} else {
+							$icon_svg = isset( $service_icons[ $label_key ] ) ? $service_icons[ $label_key ] : '';
+						}
 						?>
 						<li>
 							<?php if ( $icon_svg ) : ?>
@@ -69,7 +74,12 @@ if ( ! ar_property_has_content( 'prop_services' ) ) {
 							<?php
 							$label     = $service['service_label'];
 							$label_key = strtolower( trim( $label ) );
-							$icon_svg  = isset( $service_icons[ $label_key ] ) ? $service_icons[ $label_key ] : '';
+							// ACF icon overrides hardcoded icon if set.
+							if ( ! empty( $service['service_icon'] ) ) {
+								$icon_svg = file_get_contents( get_attached_file( $service['service_icon'] ) );
+							} else {
+								$icon_svg = isset( $service_icons[ $label_key ] ) ? $service_icons[ $label_key ] : '';
+							}
 							?>
 							<li>
 								<?php if ( $icon_svg ) : ?>
