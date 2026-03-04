@@ -18,7 +18,7 @@ if ( ! ar_property_has_content( 'prop_services' ) ) {
 <section class="details key-features details--services">
 	<div class="key-features__container">
 		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/servicee-water-mark.svg' ); ?>" alt="water-mark">
-		<h2 class="key-features-title"><span class="title-text">IN-CHALET SERVICES</span> <span></span> </h2>
+		<h2 class="key-features-title"><span class="title-text">Extra Services</span> <span></span> </h2>
 
 		<h4 class="details__title">Available services (through AR PRIVÉ concierge)</h4>
 
