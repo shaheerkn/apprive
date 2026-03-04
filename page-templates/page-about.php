@@ -25,9 +25,9 @@
   <div class="hero__overlay"></div>
   <div class="container">
     <h1 class="hero__title for-winter">We craft moments, not just stays</h1>
-    <p class="hero__description for-winter">Private homes, curated experiences, and timeless discretion.</p>
+    <p class="hero__description for-winter">Private homes, curated experiences and timeless discretion.</p>
     <h1 class="hero__title for-summer">We craft moments — not just stays.</h1>
-    <p class="hero__description for-summer">Private homes, curated experiences, and timeless discretion.p>
+    <p class="hero__description for-summer">Private homes, curated experiences and timeless discretion.<p>
   </div>
 </section>
 
@@ -72,11 +72,12 @@
         <p class="about-intro__text about-intro__text--highlight">
           <span>AR PRIVÉ</span>is a boutique luxury concierge and hospitality company dedicated to discerning travellers seeking refined and personalised experiences.
         </p>
+
         <p class="about-intro__text">
-        We curate a carefully selected collection of private villas and residences, combined with discreet concierge services designed to make every stay seamless, private, and memorable.
+          We curate a carefully selected collection of private villas and residences, combined with discreet concierge services designed to make every stay seamless, private, and memorable.
         </p>
 
-        <p>Our approach is simple. True luxury is not defined by the price of a place, but by the way you are welcomed, understood, and thoughtfully cared for throughout your journey.</p>
+        <p class="about-intro__text">Our approach is simple. True luxury is not defined by the price of a place, but by the way you are welcomed, understood, and thoughtfully cared for throughout your journey.</p>
       </div>
     </article>
   </div>

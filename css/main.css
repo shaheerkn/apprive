@@ -5285,18 +5285,16 @@ body:has(.header__modifier) {
 .about-intro__description {
   font-size: 24px;
 }
-.about-intro__description :nth-child(1) {
-  margin-bottom: 24px;
-}
-@media (max-width: 992px) {
-  .about-intro__description :nth-child(1) {
-    margin-bottom: 12px;
-  }
-}
 .about-intro__description p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  margin-bottom: 24px;
+}
+@media (max-width: 992px) {
+  .about-intro__description p {
+    margin-bottom: 12px;
+  }
 }
 .about-intro__description p span {
   text-transform: uppercase;
