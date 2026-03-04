@@ -19,7 +19,7 @@
     }
   }
 
-  .journal-hero {
+  &.journal-hero {
     min-height: 500px;
 
     @media (max-width: 768px) {

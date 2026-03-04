@@ -1346,11 +1346,11 @@ body:has(.header__modifier) {
     min-height: 781px;
   }
 }
-.hero .journal-hero {
+.hero.journal-hero {
   min-height: 500px;
 }
 @media (max-width: 768px) {
-  .hero .journal-hero {
+  .hero.journal-hero {
     min-height: 781px;
   }
 }
