@@ -18,6 +18,14 @@
       min-height: 781px;
     }
   }
+
+  .journal-hero {
+    min-height: 500px;
+
+    @media (max-width: 768px) {
+      min-height: 781px;
+    }
+  }
 }
 
 .hero__img {
