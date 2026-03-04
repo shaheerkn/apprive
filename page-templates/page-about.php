@@ -70,7 +70,7 @@
       <h2 class="section-title">Who we are</h2>
       <div class="about-intro__description">
         <p class="about-intro__text about-intro__text--highlight">
-          <span>AR PRIVÉ</span>is a boutique luxury concierge and hospitality company dedicated to discerning travellers seeking refined and personalised experiences.
+          <span>AR PRIVÉ </span> is a boutique luxury concierge and hospitality company dedicated to discerning travellers seeking refined and personalised experiences.
         </p>
 
         <p class="about-intro__text">
