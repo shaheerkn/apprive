@@ -4336,6 +4336,9 @@ body:has(.header__modifier) {
 .listing-grid__info-price span {
   font-size: 20px;
 }
+.listing-grid__info .listing-grid__info-price:has(:not(span)) {
+  border: 1px solid red;
+}
 @media (max-width: 992px) {
   .listing-grid__info {
     gap: 8px;
@@ -7448,14 +7451,19 @@ body:has(.header__modifier) {
   padding-bottom: 80px;
 }
 .single-article__container {
-  max-width: 948px;
+  max-width: 888px;
 }
 .single-article__meta {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   font-size: 14px;
+}
+@media (max-width: 992px) {
+  .single-article__meta {
+    margin-bottom: 16px;
+  }
 }
 .single-article__date {
   color: #828282;
@@ -7464,7 +7472,7 @@ body:has(.header__modifier) {
   color: #828282;
 }
 .single-article__categories a {
-  color: var(--color-1);
+  color: #5A98C0;
   text-decoration: none;
   transition: opacity 0.2s;
 }
@@ -7472,14 +7480,20 @@ body:has(.header__modifier) {
   opacity: 0.7;
 }
 .single-article__title {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   color: #1F1F1F;
 }
+@media (max-width: 992px) {
+  .single-article__title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
 .single-article__excerpt {
-  font-size: 16px;
+  font-size: 14px;
   color: #4F4F4F;
   margin-bottom: 32px;
   line-height: 1.5;
@@ -7500,13 +7514,29 @@ body:has(.header__modifier) {
 .single-article__content p {
   margin-bottom: 24px;
 }
+@media (max-width: 992px) {
+  .single-article__content p {
+    margin-bottom: 12px;
+  }
+}
 .single-article__content h2, .single-article__content h3, .single-article__content h4 {
   margin-top: 40px;
   margin-bottom: 16px;
   font-weight: 600;
 }
+@media (max-width: 992px) {
+  .single-article__content h2, .single-article__content h3, .single-article__content h4 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+}
 .single-article__content h2 {
   font-size: 28px;
+}
+@media (max-width: 992px) {
+  .single-article__content h2 {
+    font-size: 20px;
+  }
 }
 .single-article__content h3 {
   font-size: 22px;
@@ -7539,24 +7569,21 @@ body:has(.header__modifier) {
     padding-top: 24px;
     padding-bottom: 48px;
   }
-  .single-article__title {
-    font-size: 24px;
-  }
   .single-article__excerpt {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 24px;
   }
   .single-article__featured-image {
     margin-bottom: 24px;
   }
   .single-article__content {
-    font-size: 15px;
+    font-size: 12px;
   }
   .single-article__content h2 {
-    font-size: 22px;
+    font-size: 18px;
   }
   .single-article__content h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 

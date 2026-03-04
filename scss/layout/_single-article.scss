@@ -3,15 +3,19 @@
   padding-bottom: 80px;
 
   &__container {
-    max-width: calc(900px + 48px);
+    max-width: calc(840px + 48px);
   }
 
   &__meta {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-size: 14px;
+
+    @media (max-width: 992px) {
+      margin-bottom: 16px;
+    }
   }
 
   &__date {
@@ -24,7 +28,7 @@
 
   &__categories {
     a {
-      color: var(--color-1);
+      color: #5A98C0;
       text-decoration: none;
       transition: opacity 0.2s;
 
@@ -35,15 +39,20 @@
   }
 
   &__title {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 1.25;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     color: #1F1F1F;
+
+    @media (max-width: 992px) {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
 
   &__excerpt {
-    font-size: 16px;
+    font-size: 14px;
     color: #4F4F4F;
     margin-bottom: 32px;
     line-height: 1.5;
@@ -66,16 +75,29 @@
 
     p {
       margin-bottom: 24px;
+
+      @media (max-width: 992px) {
+        margin-bottom: 12px;
+      }
     }
 
     h2, h3, h4 {
       margin-top: 40px;
       margin-bottom: 16px;
       font-weight: 600;
+
+      @media (max-width: 992px) {
+        margin-top: 24px;
+        margin-bottom: 12px;
+      }
     }
 
     h2 {
       font-size: 28px;
+
+      @media (max-width: 992px) {
+        font-size: 20px;
+      }
     }
 
     h3 {
@@ -115,12 +137,8 @@
     padding-top: 24px;
     padding-bottom: 48px;
 
-    &__title {
-      font-size: 24px;
-    }
-
     &__excerpt {
-      font-size: 14px;
+      font-size: 12px;
       margin-bottom: 24px;
     }
 
@@ -129,14 +147,14 @@
     }
 
     &__content {
-      font-size: 15px;
+      font-size: 12px;
 
       h2 {
-        font-size: 22px;
+        font-size: 18px;
       }
 
       h3 {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
