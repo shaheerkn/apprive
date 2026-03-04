@@ -70,12 +70,13 @@
       <h2 class="section-title">Who we are</h2>
       <div class="about-intro__description">
         <p class="about-intro__text about-intro__text--highlight">
-          <span>AR PRIVÉ</span>is a boutique hospitality and lifestyle concierge for discerning travellers. We combine hand-picked private
-            homes with refined, discreet, and personalised service — ensuring that every stay becomes effortless and memorable.
+          <span>AR PRIVÉ</span>is a boutique luxury concierge and hospitality company dedicated to discerning travellers seeking refined and personalised experiences.
         </p>
         <p class="about-intro__text">
-          We believe luxury is not in the price of a place, but in the way you are welcomed, cared for, and understood.
+        We curate a carefully selected collection of private villas and residences, combined with discreet concierge services designed to make every stay seamless, private, and memorable.
         </p>
+
+        <p>Our approach is simple. True luxury is not defined by the price of a place, but by the way you are welcomed, understood, and thoughtfully cared for throughout your journey.</p>
       </div>
     </article>
   </div>

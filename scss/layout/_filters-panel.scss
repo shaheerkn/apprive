@@ -312,3 +312,8 @@
     }
   }
 }
+
+
+.listing-grid__info-price:not(:has(span)) {
+  font-size: 20px;
+}

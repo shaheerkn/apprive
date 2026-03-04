@@ -4897,6 +4897,10 @@ body:has(.header__modifier) {
   height: 20px;
 }
 
+.listing-grid__info-price:not(:has(span)) {
+  font-size: 20px;
+}
+
 .services-intro {
   padding-block: 100px;
   position: relative;
