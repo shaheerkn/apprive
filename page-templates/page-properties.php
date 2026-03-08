@@ -336,7 +336,7 @@ $property_query = new WP_Query( $args );
       </select>
     </div>
     
-    <div class="listing-grid__content" id="property-grid">
+    <div class="listing-grid__content" id="property-grid" data-max-pages="<?php echo esc_attr( $property_query->max_num_pages ); ?>">
         <?php
         if ( $property_query->have_posts() ) :
             while ( $property_query->have_posts() ) :
@@ -350,21 +350,10 @@ $property_query = new WP_Query( $args );
         ?>
     </div>
 
-    <div class="listing-grid__actions" id="property-pagination">
-        <?php
-        $big = 999999999; // need an unlikely integer
-        echo paginate_links( array(
-            'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format'    => '?paged=%#%',
-            'current'   => max( 1, $paged ),
-            'total'     => $property_query->max_num_pages,
-            'prev_text' => '<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.30775 18.6155L0 9.30775L9.30775 0L10.3713 1.0635L2.127 9.30775L10.3713 17.552L9.30775 18.6155Z" fill="black"/></svg>',
-            'next_text' => '<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.0635 18.6155L0 17.552L8.24425 9.30775L0 1.0635L1.0635 0L10.3712 9.30775L1.0635 18.6155Z" fill="black"/></svg>',
-            'type'      => 'list',
-            'mid_size'  => 1,
-        ) );
-        ?>
+    <div class="listing-grid__loader" id="property-loader" style="display: <?php echo ($property_query->max_num_pages > 1) ? 'flex' : 'none'; ?>;">
+        <div class="listing-grid__spinner"></div>
     </div>
+
 
     <div class="listing-grid__mobile-actions">
         <a href="#" class="listing-grid__mobile-action">Learn More</a>

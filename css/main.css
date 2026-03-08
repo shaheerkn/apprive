@@ -4450,6 +4450,25 @@ body:has(.header__modifier) {
     width: 100%;
   }
 }
+.listing-grid__loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.listing-grid__spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e0e0e0;
+  border-top-color: var(--color-1);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .listing-grid__water-mark {
   position: absolute;
   right: 0;

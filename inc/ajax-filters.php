@@ -190,23 +190,10 @@ function ar_filter_properties() {
     }
     $html = ob_get_clean();
 
-    // Pagination
-    $big = 999999999;
-    $pagination = paginate_links( array(
-        'base'      => '%_%',
-        'format'    => '?paged=%#%',
-        'current'   => max( 1, $paged ),
-        'total'     => $query->max_num_pages,
-        'prev_text' => '<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.30775 18.6155L0 9.30775L9.30775 0L10.3713 1.0635L2.127 9.30775L10.3713 17.552L9.30775 18.6155Z" fill="black"/></svg>',
-        'next_text' => '<svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.0635 18.6155L0 17.552L8.24425 9.30775L0 1.0635L1.0635 0L10.3712 9.30775L1.0635 18.6155Z" fill="black"/></svg>',
-        'type'      => 'list',
-        'mid_size'  => 1,
-    ) );
-
     wp_send_json_success( array(
-        'html'       => $html,
-        'pagination' => $pagination,
+        'html'        => $html,
         'found_posts' => $query->found_posts,
+        'max_pages'   => $query->max_num_pages,
     ) );
 }
 
