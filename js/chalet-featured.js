@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerGroup: 2,
     spaceBetween: 40,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.featured .pagination .swiper-button-next',
+      prevEl: '.featured .pagination .swiper-button-prev',
     },
     breakpoints: {
 
