@@ -3,12 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!gallery) return;
 
   const swiperContainer = gallery.querySelector('.chalet-gallery-swiper');
+  const wrapper = swiperContainer ? swiperContainer.querySelector('.swiper-wrapper') : null;
   const countEl = gallery.querySelector('.product-detail__count');
   const expandBtn = gallery.querySelector('.product-detail__expand');
 
   let swiperInstance = null;
 
-  // Function to check if a slide has visible images for current season
+  // Store all slides once on page load so we can filter them per season
+  const allSlides = wrapper ? Array.from(wrapper.querySelectorAll('.swiper-slide')) : [];
+
   function isSlideVisibleForSeason(slide) {
     const isWinter = document.body.classList.contains('color-scheme-winter');
     const isSummer = document.body.classList.contains('color-scheme-summer');
@@ -16,109 +19,53 @@ document.addEventListener('DOMContentLoaded', function () {
     const summerImg = slide.querySelector('img.for-summer');
     const regularImg = slide.querySelector('img:not(.for-winter):not(.for-summer)');
 
-    // console.log('Checking slide:', {
-    //   isWinter,
-    //   isSummer,
-    //   hasWinterImg: !!winterImg,
-    //   hasSummerImg: !!summerImg,
-    //   hasRegularImg: !!regularImg
-    // });
-
-    // Regular non-seasonal images are always visible
-    if (regularImg) {
-      return true;
-    }
-
-    // Check if slide has an image for current season
-    if (isWinter && winterImg) {
-      return true;
-    }
-
-    if (isSummer && summerImg) {
-      return true;
-    }
-
+    if (regularImg) return true;
+    if (isWinter && winterImg) return true;
+    if (isSummer && summerImg) return true;
     return false;
   }
 
-  // Function to hide/show slides based on season
-  function updateSlideVisibility() {
-    if (!swiperContainer) return;
+  function updateCount() {
+    if (!countEl || !swiperInstance) return;
+    const total = wrapper.querySelectorAll('.swiper-slide').length;
+    countEl.textContent = `${total} Photo${total !== 1 ? 's' : ''}`;
+  }
 
-    const slides = swiperContainer.querySelectorAll('.swiper-slide');
+  function initSwiper() {
+    // Destroy existing instance first
+    if (swiperInstance) {
+      swiperInstance.destroy(true, true);
+      swiperInstance = null;
+    }
 
-    slides.forEach(slide => {
-      const shouldShow = isSlideVisibleForSeason(slide);
+    if (!wrapper) return;
 
-      // Hide/show the slide itself
-      if (shouldShow) {
-        slide.style.display = '';
-        slide.classList.remove('swiper-slide-hidden');
-      } else {
-        slide.style.display = 'none';
-        slide.classList.add('swiper-slide-hidden');
+    // Remove all slides from wrapper
+    allSlides.forEach(slide => {
+      if (slide.parentNode) {
+        slide.parentNode.removeChild(slide);
       }
     });
-  }
 
-  // Function to get visible slides count
-  function getVisibleSlidesCount() {
-    if (!swiperContainer) return 0;
-    const slides = swiperContainer.querySelectorAll('.swiper-slide:not(.swiper-slide-hidden)');
-    return slides.length;
-  }
+    // Only add back slides visible for the current season
+    allSlides.forEach(slide => {
+      if (isSlideVisibleForSeason(slide)) {
+        wrapper.appendChild(slide);
+      }
+    });
 
-  // Function to update photo count
-  function updateCount() {
-    if (!countEl || !swiperInstance) {
-      console.log('Cannot update count - missing countEl or swiperInstance');
-      return;
-    }
-
-    const total = getVisibleSlidesCount();
-    const visibleSlides = Array.from(swiperContainer.querySelectorAll('.swiper-slide:not(.swiper-slide-hidden)'));
-    const currentSlide = swiperInstance.slides[swiperInstance.activeIndex];
-
-    // console.log('Update count:', {
-    //   total,
-    //   visibleSlidesCount: visibleSlides.length,
-    //   currentActiveIndex: swiperInstance.activeIndex
-    // });
-
-    // Find the index of current slide in visible slides
-    const currentVisibleIndex = visibleSlides.indexOf(currentSlide);
-
-    if (currentVisibleIndex === -1) {
-      // Current slide is hidden, use first visible slide
-      const remaining = total;
-      countEl.textContent = `${remaining} Photo${remaining !== 1 ? 's' : ''}`;
-      // console.log('Showing remaining:', remaining, 'from index:', currentVisibleIndex);
-    } else {
-      // const remaining = Math.max(0, total - currentVisibleIndex);
-      const remaining = total;
-      countEl.textContent = `${remaining} Photo${remaining !== 1 ? 's' : ''}`;
-      // console.log('Showing remaining:', remaining, 'from index:', currentVisibleIndex);
-    }
-  }
-
-  // Initialize Swiper
-  function initSwiper() {
-    // Set initial slide visibility
-    updateSlideVisibility();
-
+    // Initialize Swiper with only the visible slides in the DOM
+    // Use scoped DOM elements for navigation to avoid conflicts with other Swipers on the page
     swiperInstance = new Swiper(".chalet-gallery-swiper", {
       slidesPerView: 1,
       watchSlidesProgress: true,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: swiperContainer.querySelector('.swiper-button-next'),
+        prevEl: swiperContainer.querySelector('.swiper-button-prev'),
       },
       on: {
         init: function() {
-          // Use setTimeout to ensure Swiper is fully initialized
-          setTimeout(() => {
-            updateCount();
-          }, 100);
+          setTimeout(() => updateCount(), 100);
         },
         slideChange: function() {
           updateCount();
@@ -126,13 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Also update count after Swiper is assigned
-    setTimeout(() => {
-      updateCount();
-    }, 150);
+    setTimeout(() => updateCount(), 150);
   }
 
-  // Initialize Swiper on load
+  // Initialize on load
   initSwiper();
 
   // Expand gallery functionality
@@ -156,49 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileToggle = document.querySelector('.mobile-menu__season-toggle .header__toggle-input');
 
   function handleSeasonChange() {
-    const isWinter = document.body.classList.contains('color-scheme-winter');
-    const isSummer = document.body.classList.contains('color-scheme-summer');
-
-    console.log('Season changed!', {
-      isWinter,
-      isSummer,
-      bodyClasses: document.body.className
-    });
-
-    // Update slide visibility
-    updateSlideVisibility();
-
-    // Update Swiper first
-    if (swiperInstance) {
-      swiperInstance.update();
-      swiperInstance.updateSlides();
-      swiperInstance.updateProgress();
-      swiperInstance.updateSlidesClasses();
-
-      // Use setTimeout to ensure DOM and Swiper are fully updated
-      setTimeout(() => {
-        // Find first visible slide
-        const firstVisibleSlide = swiperContainer.querySelector('.swiper-slide:not(.swiper-slide-hidden)');
-
-        if (firstVisibleSlide) {
-          const allSlides = Array.from(swiperInstance.slides);
-          const index = allSlides.indexOf(firstVisibleSlide);
-
-          console.log('Moving to first visible slide at index:', index, 'of', allSlides.length, 'total slides');
-
-          if (index >= 0) {
-            swiperInstance.slideTo(index, 300); // 300ms animation
-          }
-        } else {
-          console.error('No visible slides found!');
-        }
-
-        // Update count after navigation
-        setTimeout(() => {
-          updateCount();
-        }, 50);
-      }, 100); // Wait for DOM updates
-    }
+    // Reinitialize Swiper — it removes hidden slides and rebuilds
+    initSwiper();
   }
 
   if (headerToggle) {
