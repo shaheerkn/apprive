@@ -8,11 +8,8 @@ jQuery(document).ready(function($) {
     const $priceRange = $('#filter-price-range');
     const $priceDisplay = $('#price-display');
 
-    // New selectors for sync logic
-    const $bedroomsRadios = $('input[name="bedrooms"]');
-    const $bedroomsSelect = $('#bedrooms');
-    const $bedsRadios = $('input[name="beds"]');
-    const $bedsSelect = $('#beds');
+    // Bedrooms quantity selector
+    const $bedroomsCount = $('#bedrooms-count');
 
     // Infinite scroll state
     let currentPage = 1;
@@ -53,6 +50,11 @@ jQuery(document).ready(function($) {
                     $count.text(response.data.found_posts);
                     maxPages = response.data.max_pages || 1;
                     $grid.data('max-pages', maxPages);
+
+                    // Re-init carousels on newly loaded cards
+                    if (window.initPropertyCarousels) {
+                        window.initPropertyCarousels($grid[0]);
+                    }
 
                     // Hide loader if no more pages
                     if (currentPage >= maxPages) {
@@ -98,7 +100,9 @@ jQuery(document).ready(function($) {
         currentPage = 1;
         fetchProperties(false);
         $('.filters__modal').removeClass('is-open');
+        $filterForm.removeClass('is-open');
         $('body').css('overflow', '');
+        $('.overlay').hide();
     });
 
     // Sort Change
@@ -112,26 +116,28 @@ jQuery(document).ready(function($) {
         $priceDisplay.text(Number($(this).val()).toLocaleString());
     });
 
-    // --- Synchronization Logic for Bedrooms & Beds ---
+    // --- Bedrooms Quantity Selector ---
+    const $bedroomsDisplay = $('#bedrooms-display');
 
-    $bedroomsRadios.on('change', function() {
-        $bedroomsSelect.val($(this).val());
+    function updateBedroomsDisplay() {
+        let val = parseInt($bedroomsCount.val()) || 0;
+        $bedroomsDisplay.text(val === 0 ? 'All' : val);
+    }
+
+    $('#bedrooms-minus').on('click', function() {
+        let val = parseInt($bedroomsCount.val()) || 0;
+        if (val > 0) {
+            $bedroomsCount.val(val - 1);
+            updateBedroomsDisplay();
+        }
     });
 
-    $bedroomsSelect.on('change', function() {
-        let val = $(this).val();
-        $bedroomsRadios.prop('checked', false);
-        $bedroomsRadios.filter(`[value="${val}"]`).prop('checked', true);
-    });
-
-    $bedsRadios.on('change', function() {
-        $bedsSelect.val($(this).val());
-    });
-
-    $bedsSelect.on('change', function() {
-        let val = $(this).val();
-        $bedsRadios.prop('checked', false);
-        $bedsRadios.filter(`[value="${val}"]`).prop('checked', true);
+    $('#bedrooms-plus').on('click', function() {
+        let val = parseInt($bedroomsCount.val()) || 0;
+        if (val < 15) {
+            $bedroomsCount.val(val + 1);
+            updateBedroomsDisplay();
+        }
     });
 
     // Clear Filters
@@ -139,15 +145,8 @@ jQuery(document).ready(function($) {
         $filterForm[0].reset();
 
         $priceRange.val(25000).trigger('input');
-
-        $bedroomsSelect.val('');
-        $bedsSelect.val('');
-
-        $bedroomsRadios.prop('checked', false);
-        $bedroomsRadios.filter('[value=""]').prop('checked', true);
-
-        $bedsRadios.prop('checked', false);
-        $bedsRadios.filter('[value=""]').prop('checked', true);
+        $bedroomsCount.val(0);
+        updateBedroomsDisplay();
 
         $filterForm.find('input[type="checkbox"]').prop('checked', false);
         $filterForm.find('select').prop('selectedIndex', 0);
@@ -156,48 +155,20 @@ jQuery(document).ready(function($) {
         fetchProperties(false);
     });
 
-    // Auto-search on select change (Destination, Guests)
-    $('#filter-destination, #filter-guests').on('change', function() {
-         currentPage = 1;
-         fetchProperties(false);
+    // Mobile Filters Drawer
+    var $sidebar = $filterForm;
+    var $overlay = $('.overlay');
+
+    $('#open-filters-btn').on('click', function() {
+        $sidebar.addClass('is-open');
+        $('body').css('overflow', 'hidden');
+        $overlay.show();
     });
 
-    // Helper: Apply season filter logic
-    function applySeasonFilter(season) {
-        const $destinationSelect = $('#filter-destination');
-
-        const seasonMapping = {
-            'winter': ['Courchevel', 'Megeve', 'Val d\'Isere', 'Winter'],
-            'summer': ['Mykonos', 'Ibiza', 'St Tropez', 'Summer']
-        };
-
-        const keywords = seasonMapping[season] || [];
-        let foundMatch = false;
-
-        $destinationSelect.find('option').each(function() {
-            const text = $(this).text();
-            if (keywords.some(keyword => text.includes(keyword))) {
-                $destinationSelect.val($(this).val());
-                foundMatch = true;
-                return false;
-            }
-        });
-
-        if (foundMatch) {
-            currentPage = 1;
-            fetchProperties(false);
-        }
-    }
-
-    // Handle Season Change (Winter/Summer Toggle)
-    document.addEventListener('seasonChange', function(e) {
-        applySeasonFilter(e.detail.season);
+    $('#close-filters-btn, .overlay').on('click', function() {
+        $sidebar.removeClass('is-open');
+        $('body').css('overflow', '');
+        $overlay.hide();
     });
-
-    // Initial Load: Pre-select season destination if none selected
-    if ($('#filter-destination').val() === "") {
-        const initialSeason = $('body').hasClass('color-scheme-summer') ? 'summer' : 'winter';
-        applySeasonFilter(initialSeason);
-    }
 
 });

@@ -7,15 +7,25 @@
 
 $property_id = get_the_ID();
 $prop_gallery = get_field('prop_gallery', $property_id);
-$main_image_url = '';
+$gallery_images = array();
 
 if ($prop_gallery && is_array($prop_gallery) && !empty($prop_gallery)) {
-    $main_image_url = wp_get_attachment_image_url($prop_gallery[0], 'medium_large');
-} elseif (has_post_thumbnail()) {
-    $main_image_url = get_the_post_thumbnail_url($property_id, 'medium_large');
-} else {
-    // Fallback image or placeholder could go here
-    $main_image_url = get_template_directory_uri() . '/assets/images/placeholder.png';
+    // Limit to 5 images for performance
+    $gallery_slice = array_slice($prop_gallery, 0, 5);
+    foreach ($gallery_slice as $attachment_id) {
+        $url = wp_get_attachment_image_url($attachment_id, 'medium_large');
+        if ($url) {
+            $gallery_images[] = $url;
+        }
+    }
+}
+
+if (empty($gallery_images)) {
+    if (has_post_thumbnail()) {
+        $gallery_images[] = get_the_post_thumbnail_url($property_id, 'medium_large');
+    } else {
+        $gallery_images[] = get_template_directory_uri() . '/assets/images/placeholder.png';
+    }
 }
 
 $location_text = get_field('prop_location_text', $property_id);
@@ -53,10 +63,25 @@ $is_favorite = false;
 ?>
 
 <article class="listing-grid__item" data-id="<?php echo esc_attr($property_id); ?>">
-    <a href="<?php the_permalink(); ?>" class="listing-grid__image">
-        <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php the_title_attribute(); ?>" class="for-winter">
-        <img src="<?php echo esc_url($main_image_url); ?>" class="for-summer" alt="<?php the_title_attribute(); ?>">
-    </a>
+    <?php if (count($gallery_images) > 1) : ?>
+        <a href="<?php the_permalink(); ?>" class="listing-grid__image">
+            <div class="swiper listing-grid__carousel">
+                <div class="swiper-wrapper">
+                    <?php foreach ($gallery_images as $image_url) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="swiper-button-prev listing-grid__carousel-prev"></div>
+                <div class="swiper-button-next listing-grid__carousel-next"></div>
+            </div>
+        </a>
+    <?php else : ?>
+        <a href="<?php the_permalink(); ?>" class="listing-grid__image">
+            <img src="<?php echo esc_url($gallery_images[0]); ?>" alt="<?php the_title_attribute(); ?>">
+        </a>
+    <?php endif; ?>
     <div class="listing-grid__info">
         <div class="listing-grid__info-header">
             <h5 class="text for-winter"><?php the_title(); ?></h5>
@@ -86,5 +111,16 @@ $is_favorite = false;
         <?php elseif ( $starting_price && intval($starting_price) > 0 ) : ?>
             <p class="listing-grid__info-price">From <span><?php echo esc_html($starting_price); ?><?php echo esc_html($currency); ?></span><?php echo esc_html($price_period); ?></p>
         <?php endif; ?>
+        <div class="listing-grid__info-specs">
+            <?php if ($max_guests) : ?>
+                <span><?php echo esc_html($max_guests); ?> Guests</span>
+            <?php endif; ?>
+            <?php if ($bedroom_count) : ?>
+                <span><?php echo esc_html($bedroom_count); ?> Bedrooms</span>
+            <?php endif; ?>
+            <?php if ($bathroom_count) : ?>
+                <span><?php echo esc_html($bathroom_count); ?> Bathrooms</span>
+            <?php endif; ?>
+        </div>
     </div>
 </article>

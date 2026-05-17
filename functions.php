@@ -155,6 +155,7 @@ function ar_scripts() {
 	wp_enqueue_script( 'ar-chalet-about', get_template_directory_uri() . '/js/chalet-about.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ar-chalet-featured', get_template_directory_uri() . '/js/chalet-featured.js', array('ar-swiper-js'), _S_VERSION, true );
 	wp_enqueue_script( 'ar-single-chalet-gallery', get_template_directory_uri() . '/js/single-chalet-gallery.js', array('ar-swiper-js'), _S_VERSION, true );
+	wp_enqueue_script( 'ar-property-card-carousel', get_template_directory_uri() . '/js/property-card-carousel.js', array('ar-swiper-js'), _S_VERSION, true );
 	wp_enqueue_script( 'ar-filter', get_template_directory_uri() . '/js/filter.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ar-work-process-dots', get_template_directory_uri() . '/js/work-process-dots.js', array(), _S_VERSION, true );
 
@@ -197,6 +198,40 @@ function ar_scripts() {
             });
         });
     " );
+
+    // Enquiry Form (CF7 REST API submission)
+    if ( is_page_template( 'page-templates/page-enquiry.php' ) ) {
+        // Resolve CF7 numeric post ID from hash or title
+        $cf7_id = 0;
+        $cf7_posts = get_posts( array(
+            'post_type'      => 'wpcf7_contact_form',
+            'meta_key'       => '_hash',
+            'meta_value'     => 'b5d73bd',
+            'posts_per_page' => 1,
+            'fields'         => 'ids',
+        ));
+        if ( ! empty( $cf7_posts ) ) {
+            $cf7_id = $cf7_posts[0];
+        } else {
+            // Fallback: find by title
+            $cf7_posts = get_posts( array(
+                'post_type'      => 'wpcf7_contact_form',
+                'title'          => 'Footer Booking form',
+                'posts_per_page' => 1,
+                'fields'         => 'ids',
+            ));
+            if ( ! empty( $cf7_posts ) ) {
+                $cf7_id = $cf7_posts[0];
+            }
+        }
+
+        wp_enqueue_script( 'ar-enquiry-form', get_template_directory_uri() . '/js/enquiry-form.js', array(), _S_VERSION, true );
+        wp_localize_script( 'ar-enquiry-form', 'enquiryFormVars', array(
+            'cf7FormId' => $cf7_id,
+            'pageId'    => get_the_ID(),
+            'restUrl'   => esc_url_raw( rest_url() ),
+        ));
+    }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

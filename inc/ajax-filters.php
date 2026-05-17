@@ -28,20 +28,15 @@ function ar_filter_properties() {
     // Debugging
     error_log( 'Filter POST: ' . print_r( $_POST, true ) );
 
-    // Destination
-    // If 'destination' is set in POST (even if empty string), we use it.
-    // We only fallback to 'initial_destination' if 'destination' is NOT present in POST (unlikely with this form).
-    if ( isset( $_POST['destination'] ) ) {
-        if ( '' !== $_POST['destination'] ) {
-            $args['tax_query'][] = array(
-                'taxonomy' => 'destination',
-                'field'    => 'term_id',
-                'terms'    => intval( $_POST['destination'] ),
-            );
-        }
-        // If it IS empty string, we deliberately want ALL destinations, so we do nothing.
+    // Destination (checkbox array)
+    if ( ! empty( $_POST['destination'] ) && is_array( $_POST['destination'] ) ) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'destination',
+            'field'    => 'term_id',
+            'terms'    => array_map( 'intval', $_POST['destination'] ),
+            'operator' => 'IN',
+        );
     } elseif ( ! empty( $_POST['initial_destination'] ) ) {
-         // Fallback only if filter input is missing entirely
          $args['tax_query'][] = array(
             'taxonomy' => 'destination',
             'field'    => 'term_id',
