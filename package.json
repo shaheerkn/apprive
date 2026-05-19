@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass scss/main.scss css/main.css --watch"
+    "dev": "sass --no-charset scss/main.scss css/main.css --watch"
   },
   "author": "",
   "license": "ISC",
