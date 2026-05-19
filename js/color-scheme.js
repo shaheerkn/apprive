@@ -1,6 +1,6 @@
 const menuToggle = document.querySelector('.header__menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuBack = document.querySelector('.mobile-menu__back');
+const mobileMenuClose = document.querySelector('.mobile-menu__close');
 const mobileMenuOverlay = document.querySelector('.mobile-menu__overlay');
 
 if (menuToggle) {
@@ -10,8 +10,8 @@ if (menuToggle) {
   });
 }
 
-if (mobileMenuBack) {
-  mobileMenuBack.addEventListener('click', () => {
+if (mobileMenuClose) {
+  mobileMenuClose.addEventListener('click', () => {
     mobileMenu.classList.remove('mobile-menu--active');
     document.body.style.overflow = '';
   });

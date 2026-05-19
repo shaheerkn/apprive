@@ -204,3 +204,8 @@ html {
     margin-bottom: 20px;
   }
 }
+
+
+body:has(.header--v2-modifier) {
+  background-color: #F9F7EF;
+}

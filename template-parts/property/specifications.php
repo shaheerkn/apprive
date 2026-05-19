@@ -67,7 +67,7 @@ $location_text = get_field( 'prop_location_text' );
 	$whatsapp_url = 'https://wa.me/393349051603?text=' . $whatsapp_message;
 ?>
 	<div class="product-detail__contacts">
-		<a class="product-detail__contact product-detail__contact--availability" href="#request">
+		<a class="product-detail__contact product-detail__contact--availability" href="/enquiry/">
 			Contact us for private availability
 		</a>
 

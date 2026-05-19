@@ -1,11 +1,13 @@
 .footer {
-  padding: 60px 0 48px 0;
+  padding: 113px 0 113px 0;
   background: var(--color-1);
+  color: #fff;
 
-  @media (max-width:765px) {
-    padding: 20px 0 20px 0;
+  @media (max-width: 765px) {
+    padding: 40px 0 20px 0;
   }
 
+  // Keep existing booking form styles
   &__booking {
     max-width: 900px;
     margin-inline: auto;
@@ -35,12 +37,12 @@
       font-weight: 400;
       text-align: center;
 
-      @media (max-width:992px) {
+      @media (max-width: 992px) {
         font-size: 12px;
       }
     }
 
-    @media (max-width:765px) {
+    @media (max-width: 765px) {
       padding: 16px;
       gap: 16px;
     }
@@ -48,426 +50,489 @@
     .mobile-display__block {
       display: none;
 
-      @media (max-width:992px) {
+      @media (max-width: 992px) {
         display: block;
       }
     }
 
-    @media (max-width:992px) {
+    @media (max-width: 992px) {
       gap: 16px;
       .mobile-hide__descirption {
         display: none;
       }
     }
   }
+}
 
-  &-form {
-    width: 100%;
+// Footer form styles
+.footer-form {
+  width: 100%;
 
-    &__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
 
-      @media (max-width: 992px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      @media (max-width: 500px) {
-        gap: 8px 12px;
-      }
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    &__field {
-      display: flex;
-      flex-direction: column;
-      // gap: 8px;
-
-      label {
-        font-size: 16px;
-        font-weight: 500;
-        color: #fff;
-
-        .required {
-          color: #D4A04A;
-        }
-
-        @media (max-width: 765px) {
-          font-size: 13px;
-        }
-      }
-
-      p {
-        margin: 0;
-      }
-
-      input,
-      select {
-        border: none;
-        outline: none;
-        font-size: 14px;
-        width: 100%;
-        color: #585858;
-        background: #FFFFFF;
-        padding: 18px 20px;
-        font-family: inherit;
-
-        &::placeholder {
-          color: #B0B0B0;
-        }
-
-        @media (max-width: 992px) {
-          font-size: 13px;
-          padding: 14px 16px;
-        }
-      }
-
-      select {
-        appearance: none;
-        -webkit-appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23585858' stroke-width='1.5'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 20px center;
-        padding-right: 44px;
-        cursor: pointer;
-      }
-
-      .wpcf7-form-control-wrap {
-        width: 100%;
-      }
+    @media (max-width: 500px) {
+      gap: 8px 12px;
     }
+  }
 
-    &__message {
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+  &__field {
+    display: flex;
+    flex-direction: column;
 
-      @media (max-width: 992px) {
-        margin-top: 16px;
-      }
-
-      label {
-        font-size: 16px;
-        font-weight: 700;
-        color: #fff;
-
-        .required {
-          color: #D4A04A;
-        }
-
-        @media (max-width: 765px) {
-          font-size: 13px;
-        }
-      }
-
-      p {
-        margin: 0;
-      }
-
-      textarea {
-        width: 100%;
-        border: none;
-        outline: none;
-        font-size: 16px;
-        padding: 18px 20px;
-        height: 80px;
-        resize: vertical;
-        font-family: inherit;
-
-        &::placeholder {
-          color: #B0B0B0;
-        }
-
-        @media (max-width: 992px) {
-          font-size: 13px;
-          padding: 14px 16px;
-          min-height: 100px;
-        }
-      }
-    }
-
-    &__consent {
-      margin-top: 12px;
-      color: #fff;
+    label {
       font-size: 16px;
-
-      @media (max-width: 992px) {
-        margin-top: 16px;
-        font-size: 13px;
-      }
-
-      .wpcf7-list-item {
-        margin: 0;
-      }
-
-      input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        margin-right: 12px;
-        accent-color: var(--color-5);
-        vertical-align: middle;
-        cursor: pointer;
-
-        @media (max-width:992px) {
-          margin-right: 5px;
-        }
-      }
-
-      .wpcf7-list-item-label {
-        vertical-align: middle;
-      }
-    }
-
-    &__submit {
-      width: 100%;
-      background: var(--color-5);
-      color: #fff;
-      font-size: 14px;
-      padding: 14px 32px;
-      border: none;
-      cursor: pointer;
       font-weight: 500;
-      margin-top: 12px;
-      text-transform: none;
-      letter-spacing: 0.02em;
-      transition: opacity 0.3s ease;
+      color: #fff;
 
-      &:hover {
-        opacity: 0.9;
-      }
-
-      @media (max-width: 992px) {
-        margin-top: 16px;
+      .required {
+        color: #D4A04A;
       }
 
       @media (max-width: 765px) {
-        padding: 12px;
-        font-size: 14px;
+        font-size: 13px;
       }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    input,
+    select {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      width: 100%;
+      color: #585858;
+      background: #FFFFFF;
+      padding: 18px 20px;
+      font-family: inherit;
+
+      &::placeholder {
+        color: #B0B0B0;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 13px;
+        padding: 14px 16px;
+      }
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23585858' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      padding-right: 44px;
+      cursor: pointer;
+    }
+
+    .wpcf7-form-control-wrap {
+      width: 100%;
     }
   }
 
-  &-bottom {
+  &__message {
+    margin-top: 12px;
     display: flex;
-    color: #FFF;
-    margin-top: 24px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #FFFFFF80;
-    gap: 50px;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
 
     @media (max-width: 992px) {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      align-items: start;
-      gap: 16px;
-      margin-top: 24px;
-      padding-bottom: 16px;
+      margin-top: 16px;
     }
 
-    &__left {
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-      max-width: 400px;
+    label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+
+      .required {
+        color: #D4A04A;
+      }
+
+      @media (max-width: 765px) {
+        font-size: 13px;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    textarea {
       width: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 18px 20px;
+      height: 80px;
+      resize: vertical;
+      font-family: inherit;
+
+      &::placeholder {
+        color: #B0B0B0;
+      }
 
       @media (max-width: 992px) {
-        grid-column: 1;
-        grid-row: 1;
-        gap: 45px;
+        font-size: 13px;
+        padding: 14px 16px;
+        min-height: 100px;
       }
+    }
+  }
 
-      &-logo {
-        img {
-          width: 180px;
+  &__consent {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 16px;
 
-          @media (max-width:992px) {
-            width: 140px;
-          }
-        }
-      }
+    @media (max-width: 992px) {
+      margin-top: 16px;
+      font-size: 13px;
+    }
 
-      &-contact {
-        p {
-          font-size: 20px;
-          font-weight: 400;
-          margin-bottom: 12px;
+    .wpcf7-list-item {
+      margin: 0;
+    }
 
-          @media (max-width:992px) {
-            margin-bottom: 8px;
-          }
-        }
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      accent-color: var(--color-5);
+      vertical-align: middle;
+      cursor: pointer;
+
+      @media (max-width: 992px) {
+        margin-right: 5px;
       }
     }
 
-    &__socials {
-      display: flex;
-      gap: 12px;
+    .wpcf7-list-item-label {
+      vertical-align: middle;
+    }
+  }
 
-      @media (max-width:992px) {
-        gap: 6px;
-      }
+  &__submit {
+    width: 100%;
+    background: var(--color-5);
+    color: #fff;
+    font-size: 14px;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 12px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.3s ease;
 
-    a {
-      text-decoration: none;
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 992px) {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 765px) {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+}
+
+// Logo
+.footer__logo {
+  img {
+    width: 180px;
+
+    @media (max-width: 992px) {
+      width: 140px;
+    }
+  }
+}
+
+// Partners
+.footer__partners {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+  align-self: flex-start;
+
+  img {
+    height: 64px;
+    width: auto;
+
+    @media (max-width: 765px) {
+      height: 48px;
+    }
+  }
+}
+
+// Nav columns
+.footer__nav {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+
+  @media (max-width: 765px) {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+}
+
+.footer__nav-col {
+  flex: 1;
+
+  &:nth-child(2) {
+    max-width: 152px;
+  }
+
+  &:nth-child(3) {
+    max-width: 134px;
+  }
+
+  &:nth-child(4) {
+    max-width: 213px;
+  }
+
+  // Brand column: Logo at top, then Follow Us + Socials
+  &--brand {
+    .footer__logo {
+      margin-bottom: 40px;
+    }
+
+    .footer__socials {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      overflow: hidden;
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 8px;
+      gap: 16px;
 
-      svg {
-        max-width: 100%;
-        max-height: 100%;
-      }
-      }
-    }
-
-    &__right {
-      display: flex;
-      gap: 40px;
-
-      @media (max-width: 992px) {
-        grid-column: 1 / span 2;
-        grid-row: 2;
-        justify-content: space-between;
-        gap: 27px;
-      }
-
-      @media (max-width:432px) {
-        flex-direction: column;
+      a {
+        text-decoration: none;
+        display: flex;
         align-items: center;
         justify-content: center;
-      }
+        color: #fff;
 
-      &-list {
-        max-width: max-content;
-        width: 100%;
-        flex-shrink: 0;
-
-        @media (max-width:432px) {
-          text-align: center;
-        }
-
-        h6 {
-          font-size: 20px;
-          font-weight: 500;
-          margin-bottom: 20px;
-
-          @media (max-width:992px) {
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 8px;
-          }
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-          font-size: 20px;
-
-          @media (max-width:432px) {
-            align-items: center;
-          }
-
-          @media (max-width:992px) {
-            gap: 8px;
-          }
-        }
-
-        li {
-          a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            display: flex;
-            font-weight: 400;
-            gap: 5px;
-
-            &:hover {
-              text-decoration: underline;
-            }
-
-            @media (max-width:992px) {
-              font-size: 11px;
-              font-weight: 600;
-
-
-            }
-          }
-        }
-
-        &__contactInfo {
-          max-width: 200px;
-
-          @media (max-width:992px) {
-            max-width: 120px;
-          }
-
-          li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            @media (max-width:992px) {
-              font-size: 11px;
-              font-weight: 600;
-              white-space: nowrap;
-            }
-
-            &:last-child {
-              font-size: 16px;
-              white-space: unset;
-
-              @media (max-width:992px) {
-                font-size: 11px;
-              }
-            }
-          }
+        svg {
+          width: 28px;
+          height: 28px;
         }
       }
     }
 
-    &__partner {
+    @media (max-width: 765px) {
       display: flex;
-      gap: 24px;
-      max-width: 161px;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
 
-      @media (max-width: 992px) {
-        grid-column: 2;
-        grid-row: 1;
+      .footer__logo {
+        margin-bottom: 16px;
       }
     }
   }
 
-  &-copyRight {
+  @media (max-width: 765px) {
     text-align: center;
-    color: #FFF;
-    font-size: 16px;
-    margin-top: 24px;
-    font-weight: 400;
+    width: 100%;
+  }
 
-    a {
-      color: #FFF;
-      text-decoration: none;
+  h6 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    @media (max-width: 992px) {
+      font-size: 16px;
+      margin-bottom: 12px;
     }
 
-    @media (max-width:765px) {
-      margin-top: 16px;
-      font-size: 12px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media (max-width: 765px) {
+      align-items: center;
+      gap: 8px;
     }
   }
+
+  li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+    }
+
+  }
+}
+
+@media (max-width: 765px) {
+  .footer__nav > .footer__partners {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+// Contact list
+.footer__contact-list {
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: 765px) {
+      justify-content: center;
+    }
+  }
+
+  .footer__contact-note {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+    }
+
+  }
+}
+
+
+// Copyright
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 24px;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 765px) {
+    font-size: 12px;
+  }
+}
+
+// Date range fields (kept from original)
+.footer-form__field label,
+.footer-form__message label {
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.footer-form__field--dates {
+  width: 100%;
+  max-width: 204px;
+
+  @media (max-width: 992px) {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+.footer-form__field:has(+ .footer-form__field--dates) {
+  @media (max-width: 992px) {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+.footer-form__date-range {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.footer-form__date-half {
+  flex: 1;
+  min-width: 0;
+
+  .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    font-size: 10px;
+    width: 100%;
+    color: #585858;
+    background: transparent;
+    padding: 18px 10px !important;
+    font-family: inherit;
+    cursor: pointer;
+
+    &::placeholder {
+      color: #B0B0B0;
+    }
+
+    &[type="date"]::-webkit-datetime-edit-fields-wrapper {
+      font-size: 14px;
+    }
+
+    &[type="date"]::-webkit-inner-spin-button,
+    &[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 13px;
+      padding: 14px 16px;
+    }
+  }
+}
+
+.footer-form__date-separator {
+  width: 1px;
+  height: 24px;
+  background: #D0D0D0;
+  flex-shrink: 0;
 }
 
 .wpcf7 {

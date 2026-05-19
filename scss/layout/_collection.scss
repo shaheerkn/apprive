@@ -1,0 +1,146 @@
+.collection {
+  background: #F9F7EF;
+  padding-top: 55px;
+  padding-bottom: 55px;
+
+  @media (max-width: 768px) {
+    padding-block: 50px;
+  }
+}
+
+.collection__title {
+  text-align: center;
+  font-size: 44px;
+  line-height: 100%;
+  color: #1f1f1f;
+  margin-bottom: 50px;
+}
+
+.collection__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.collection__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.collection__image-wrap {
+  width: 100%;
+  aspect-ratio: 282 / 403;
+  overflow: hidden;
+}
+
+.collection__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+
+  .collection__link:hover & {
+    transform: scale(1.03);
+  }
+}
+
+.collection__name {
+  font-size: 25px;
+  line-height: 120%;
+  color: #1f1f1f;
+  text-align: center;
+}
+
+.collection__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.collection__btn {
+  background: #252525;
+  color: white;
+  border: 1px solid #232323;
+  padding: 11px 18px;
+  font-size: 18px;
+  font-weight: 400;
+
+  &:hover {
+    background: #1a1a1a;
+  }
+}
+
+@media (max-width: 992px) {
+  .collection {
+
+    .container {
+      padding-inline: 0;
+    }
+  }
+
+  .collection__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .collection__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    padding-inline: 24px;
+  }
+
+  .collection__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-inline: 24px;
+    padding-bottom: 8px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .collection__item {
+    flex: 0 0 65%;
+    scroll-snap-align: center;
+  }
+
+  .collection__name {
+    font-size: 18px;
+  }
+
+  .collection__actions {
+    margin-top: 32px;
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collection__title {
+    font-size: 30px;
+  }
+
+  .collection__item {
+    flex: 0 0 72%;
+  }
+
+  .collection__name {
+    font-size: 16px;
+  }
+}

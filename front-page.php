@@ -1,359 +1,180 @@
 <?php get_header(); ?>
 
-<section class="hero hero--home">
+<section class="hero hero--new">
     <div class="hero__img">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-winter-desktop.jpg" alt="" class="for-winter">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-summer-desktop.jpg" alt="" class="for-summer">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/homepage-v2-desktop.jpg" alt="">
     </div>
-  
-    <div class="hero__overlay"></div>
     <div class="container">
-      <h2 class="hero__title hero__title-desktop for-winter">Luxury Chalets in Courchevel with Private Concierge</h2>
-      <h2 class="hero__title hero__title-desktop for-summer">Luxury Villas in Mykonos with Private Concierge</h2>
-      <h1 class="hero__title hero__title-mobile">Exclusive stays paired with truly private service.</h1>
-      
-      <p class="hero__description hero__description-secondary for-winter">Exclusive winter stays paired with truly private service. <br> Ski-in ski-out chalets, refined hospitality and tailored experiences in Courchevel.</p>
-      <p class="hero__description hero__description-secondary for-summer">Exclusive summer stays paired with truly private service. <br> Sea-view villas, refined hospitality and tailored experiences in Mykonos.</p>
-      <p class="hero__description hero__description-mobile">Where refinement, discretion, and personal attention define every moment.</p>
-      
-      <div class="hero__actions">
-        <a href="#request" class="btn btn--solid--white">Request Your Stay</a>
-        <a href="https://wa.me/393349051603" target="_blank" class="btn btn--outline-white">Chat with us <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon-whatsapp.svg" alt="WhatsApp" /></a>
-      </div>
+      <h2 class="hero__title pp-editorial-new-ultralight-italic">Private villas. Seamless concierge.</h2>
+      <p class="hero__description pp-editorial-new-regular">Everything handled before you arrive</p>
     </div>
-  </section>
 
-  <section class="section work-proces">
-    <div class="container">
-
-      <h2 class="section-title">How AR PRIVÉ works</h2>
-
-      <div class="work-proces__content">
-        <article class="work-proces__item">
-          <span class="work-proces__count">1.</span>
-          <div class="work-proces__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-process-winter-1.png" class="for-winter" alt="Tell us your dates, group size and preferences">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-process-summer-1.png" class="for-summer" alt="Tell us your travel dates, group details and personal preferences.">
-          </div>
-
-          <div class="work-proces__info">
-            <p class="for-winter">Tell us your dates, group size and preferences</p>
-            <p class="for-summer">Tell us your dates, group size and preferences</p>
-          </div>
-        </article>
-
-        <article class="work-proces__item">
-          <span class="work-proces__count">2.</span>
-          <div class="work-proces__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-process-winter-2.png" class="for-winter" alt="Tell us your dates, group size and preferences">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-process-summer-2.png" class="for-summer" alt="Tell us your travel dates, group details and personal preferences.">
-          </div>
-
-          <div class="work-proces__info">
-            <p class="for-winter">We privately curate tailored options for you</p>
-            <p class="for-summer">We discreetly curate a refined selection of residences and experiences tailored to your lifestyle.</p>
-          </div>
-        </article>
-
-        <article class="work-proces__item">
-          <span class="work-proces__count">3.</span>
-          <div class="work-proces__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-process-winter-3.png" class="for-winter" alt="Tell us your dates, group size and preferences">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work-process-summer-3.png" class="for-summer" alt="Tell us your travel dates, group details and personal preferences.">
-          </div>
-
-          <div class="work-proces__info">
-            <p class="for-winter">You choose — we manage every detail</p>
-            <p class="for-summer">Once your selection is confirmed, AR Privé discreetly coordinates every detail of your stay.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="work-proces__dots">
-        <span class="work-proces__dot active"></span>
-        <span class="work-proces__dot"></span>
-        <span class="work-proces__dot"></span>
-      </div>
-
-      <p class="work-proces__description for-winter">Our private concierge service in Courchevel ensures discretion, confidentiality and seamless assistance before and throughout your stay.</p>
-      <p class="work-proces__description for-summer">AR Privé provides private concierge support ensuring discretion, continuity and seamless coordination from the first enquiry to the final moment of your stay.</p>
-      <a href="#request" class="btn work-proces__btn">Start Your Request</a>
-    </div>
-  </section>
-
-  <section class="section singature-destination">
-    <div class="container">
-      <h2 class="section-title">DESTINATION</h2>
-
-      <div class="singature-destination__body">
-        <div class="singature-destination__content">
-          <h3 class="for-winter secondary-title">Courchevel Winter</h3>
-          <h3 class="for-summer secondary-title">Mykonos Summer</h3>
-
-          <p class="singature-destination__description for-winter">Courchevel represents alpine excellence, combining exceptional ski access with refined chalet living and world-class gastronomy in the heart of the French Alps.</p>
-          <p class="singature-destination__description for-summer">Mykonos blends refined seaside living with vibrant island energy.Our curated villa collection offers privacy, panoramic Aegean views and effortless access to the island’s most sought-after beach clubs and lifestyle experiences.</p>
-
-          <a href="<?php echo home_url(); ?>/destination/courchevel/" class="for-winter btn singature-destination__btn">Discover Courchevel</a>
-          <a href="<?php echo home_url(); ?>/destination/mykonos/" class="for-summer btn singature-destination__btn">Discover Mykonos</a>
+    <div class="hero__filters">
+      <form class="hero__filters-form" action="<?php echo esc_url( home_url( '/properties/' ) ); ?>" method="GET">
+        <div class="hero__filter-group">
+          <select name="destination" class="hero__filter-select">
+            <option value="">DESTINATION</option>
+            <?php
+            $destinations = get_terms( array(
+              'taxonomy'   => 'destination',
+              'hide_empty' => false,
+            ) );
+            if ( ! empty( $destinations ) && ! is_wp_error( $destinations ) ) {
+              foreach ( $destinations as $term ) {
+                echo '<option value="' . esc_attr( $term->slug ) . '">' . esc_html( $term->name ) . '</option>';
+              }
+            }
+            ?>
+          </select>
         </div>
 
-        <div class="singature-destination__gallery">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-winter-img-1.png" class="for-winter" alt="Signature Destinations">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/destination-summer-img-1.png" class="for-summer" alt="Signature Destinations">
+        <div class="hero__filter-group">
+          <select name="guests" class="hero__filter-select">
+            <option value="">GUESTS</option>
+            <?php for ( $i = 1; $i <= 20; $i++ ) : ?>
+              <option value="<?php echo $i; ?>"><?php echo $i; ?> <?php echo $i === 1 ? 'Guest' : 'Guests'; ?></option>
+            <?php endfor; ?>
+          </select>
         </div>
-      </div>
+
+        <div class="hero__filter-group">
+          <select name="bedrooms" class="hero__filter-select">
+            <option value="">BEDROOMS</option>
+            <?php for ( $i = 1; $i <= 6; $i++ ) : ?>
+              <option value="<?php echo $i; ?>"><?php echo $i; ?><?php echo $i === 6 ? '+' : ''; ?> <?php echo $i === 1 ? 'Bedroom' : 'Bedrooms'; ?></option>
+            <?php endfor; ?>
+          </select>
+        </div>
+
+        <button type="submit" class="hero__filter-search">
+          SEARCH
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.35 14.7C3.294 14.7 0 11.406 0 7.35C0 3.294 3.294 0 7.35 0C11.406 0 14.7 3.294 14.7 7.35C14.7 9.072 14.1 10.656 13.104 11.898L17.604 16.398L16.398 17.604L11.898 13.104C10.656 14.1 9.072 14.7 7.35 14.7ZM7.35 1.8C4.284 1.8 1.8 4.284 1.8 7.35C1.8 10.416 4.284 12.9 7.35 12.9C10.416 12.9 12.9 10.416 12.9 7.35C12.9 4.284 10.416 1.8 7.35 1.8Z" fill="white"/>
+          </svg>
+        </button>
+      </form>
     </div>
+
+    <a href="#" class="hero__search-btn">Search  villas</a>
   </section>
 
-  <section class="chalets section">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section-watermark.svg" alt="" class="section-watermark" />
-
+  <section class="collection section">
     <div class="container">
-      <h2 class="section-title for-summer">A Curated Collection of Luxury Villas in MYkonos</h2>
-      <h2 class="section-title for-winter">A Curated Collection of Luxury Chalets in Courchevel</h2>
-
-      <div class="chalets__content">
-        <p class="chalets__text for-winter">We present a limited number of exclusive luxury chalets in Courchevel, carefully selected for location, architecture, privacy and quality.</p>
-        <p class="chalets__text for-winter">Each chalet is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
-
-        <p class="chalets__text for-summer">We present a limited number of exclusive luxury villas in Mykonos, carefully selected for location, privacy, design and quality.</p>
-        <p class="chalets__text for-summer">Each villa is offered privately, on request, with dedicated personal assistance and full concierge service.</p>
-      </div>
+      <h2 class="collection__title pp-editorial-new-regular">Our Collection</h2>
 
       <?php
-        // --- Winter properties (Courchevel) ---
-        $winter_term = get_term_by('slug', 'courchevel', 'destination');
-        $winter_query = null;
-        if ($winter_term) {
-          $winter_query = new WP_Query(array(
-            'post_type'      => 'property',
-            'posts_per_page' => 3,
-            'post_status'    => 'publish',
-            'tax_query'      => array(
-              array(
-                'taxonomy' => 'destination',
-                'field'    => 'term_id',
-                'terms'    => $winter_term->term_id,
-              )
-            )
-          ));
-        }
-
-        // --- Summer properties (Mykonos) ---
-        $summer_term = get_term_by('slug', 'mykonos', 'destination');
-        $summer_query = null;
-        if ($summer_term) {
-          $summer_query = new WP_Query(array(
-            'post_type'      => 'property',
-            'posts_per_page' => 3,
-            'post_status'    => 'publish',
-            'tax_query'      => array(
-              array(
-                'taxonomy' => 'destination',
-                'field'    => 'term_id',
-                'terms'    => $summer_term->term_id,
-              )
-            )
-          ));
-        }
+      $collection_query = new WP_Query( array(
+        'post_type'      => 'property',
+        'posts_per_page' => 4,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+      ) );
       ?>
 
-      <?php if ($winter_query && $winter_query->have_posts()) : ?>
-        <div class="for-winter">
-          <div class="showcase__grid">
-            <?php while ($winter_query->have_posts()) : $winter_query->the_post();
-              $prop_id = get_the_ID();
-              $gallery = get_field('prop_gallery', $prop_id);
-              $image_url = ($gallery && !empty($gallery)) ? wp_get_attachment_image_url($gallery[0], 'medium_large') : get_the_post_thumbnail_url($prop_id, 'medium_large');
-              if (!$image_url) $image_url = get_template_directory_uri() . '/assets/images/placeholder.png';
-              $prop_specs = get_field('prop_specs', $prop_id);
-              $max_guests = $prop_specs ? $prop_specs['max_guests'] : '';
-              $feats = array();
-              if (have_rows('prop_key_features', $prop_id)) {
-                while (have_rows('prop_key_features', $prop_id)) {
-                  the_row();
-                  $feats[] = get_sub_field('feature_label');
-                  if (count($feats) >= 3) break;
-                }
-              }
-              $feats_str = implode(' · ', $feats);
-              $is_favorite = false;
-            ?>
-            <article class="showcase__item">
-              <div class="showcase__image-wrap">
-                <a href="<?php the_permalink(); ?>" class="item-image">
-                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>" class="showcase__image">
-                </a>
-              </div>
-              <div class="showcase__details">
-                <div class="showcase__info">
-                  <div class="showcase__info-text">
-                    <h6 class="text"><?php the_title(); ?></h6>
-                    <p class="showcase__amenities"><?php echo esc_html($feats_str); ?></p>
-                  </div>
-                  <div class="showcase__capacity">
-                    <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($prop_id); ?>" aria-label="Add to favorites">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
-                    </button>
-                    <?php if ($max_guests) : ?>
-                      <p><?php echo esc_html($max_guests); ?> Guests</p>
-                    <?php endif; ?>
-                  </div>
+      <?php if ( $collection_query->have_posts() ) : ?>
+        <div class="collection__grid">
+          <?php while ( $collection_query->have_posts() ) : $collection_query->the_post();
+            $prop_id = get_the_ID();
+            $gallery = get_field( 'prop_gallery', $prop_id );
+            $image_url = ( $gallery && ! empty( $gallery ) ) ? wp_get_attachment_image_url( $gallery[0], 'medium_large' ) : get_the_post_thumbnail_url( $prop_id, 'medium_large' );
+            if ( ! $image_url ) $image_url = get_template_directory_uri() . '/assets/images/placeholder.png';
+          ?>
+            <article class="collection__item">
+              <a href="<?php the_permalink(); ?>" class="collection__link">
+                <div class="collection__image-wrap">
+                  <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" class="collection__image">
                 </div>
-              </div>
+                <h3 class="collection__name pp-editorial-new-regular"><?php the_title(); ?></h3>
+              </a>
             </article>
-            <?php endwhile; wp_reset_postdata(); ?>
-          </div>
+          <?php endwhile; wp_reset_postdata(); ?>
         </div>
       <?php endif; ?>
 
-      <?php if ($summer_query && $summer_query->have_posts()) : ?>
-        <div class="for-summer">
-          <div class="showcase__grid">
-            <?php while ($summer_query->have_posts()) : $summer_query->the_post();
-              $prop_id = get_the_ID();
-              $gallery = get_field('prop_gallery', $prop_id);
-              $image_url = ($gallery && !empty($gallery)) ? wp_get_attachment_image_url($gallery[0], 'medium_large') : get_the_post_thumbnail_url($prop_id, 'medium_large');
-              if (!$image_url) $image_url = get_template_directory_uri() . '/assets/images/placeholder.png';
-              $prop_specs = get_field('prop_specs', $prop_id);
-              $max_guests = $prop_specs ? $prop_specs['max_guests'] : '';
-              $feats = array();
-              if (have_rows('prop_key_features', $prop_id)) {
-                while (have_rows('prop_key_features', $prop_id)) {
-                  the_row();
-                  $feats[] = get_sub_field('feature_label');
-                  if (count($feats) >= 3) break;
-                }
-              }
-              $feats_str = implode(' · ', $feats);
-              $is_favorite = false;
-            ?>
-            <article class="showcase__item">
-              <div class="showcase__image-wrap">
-                <a href="<?php the_permalink(); ?>" class="item-image">
-                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>" class="showcase__image">
-                </a>
-              </div>
-              <div class="showcase__details">
-                <div class="showcase__info">
-                  <div class="showcase__info-text">
-                    <h6 class="text"><?php the_title(); ?></h6>
-                    <p class="showcase__amenities"><?php echo esc_html($feats_str); ?></p>
-                  </div>
-                  <div class="showcase__capacity">
-                    <button class="listing-grid-fav <?php echo $is_favorite ? 'active' : ''; ?>" data-id="<?php echo esc_attr($prop_id); ?>" aria-label="Add to favorites">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/fav-black.svg" alt="favorites">
-                    </button>
-                    <?php if ($max_guests) : ?>
-                      <p><?php echo esc_html($max_guests); ?> Guests</p>
-                    <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <?php endwhile; wp_reset_postdata(); ?>
-          </div>
-        </div>
-      <?php endif; ?>
-
-      <div class="chalets__actions">
-        <?php if ($winter_term) : ?>
-          
-          <a href="<?php echo home_url(); ?>/destination/courchevel/" class="btn work-proces__btn for-winter">View All Chalets in Courchevel</a>
-        <?php endif; ?>
-        <?php if ($summer_term) : ?>
-          <a href="<?php echo home_url(); ?>/destination/mykonos/" class="btn work-proces__btn for-summer">View All Villas in Mykonos</a>
-        <?php endif; ?>
+      <div class="collection__actions">
+        <a href="<?php echo esc_url( home_url( '/properties/' ) ); ?>" class="btn collection__btn pp-editorial-new-regular">Discover our collection</a>
       </div>
     </div>
   </section>
 
-  <section class="concierge-services section">
-    <div class="concierge-services__container">
-      <h2 class="section-title">Concierge & Private Services</h2>
+  <section class="services-showcase">
+    <div class="container">
+      <h2 class="services-showcase__title pp-editorial-new-regular">A Different kind of concierge.</h2>
 
-      <div class="concierge-services__grid">
-        <article class="concierge-services__item concierge-services__item--active">
-          <h3 class="concierge-services__item-title">Hosting & Lifestyle</h3>
+      <p class="services-showcase__description causten-regular">SOME EXPERIENCES CAN&rsquo;T BE FOUND. <br/> THEY HAVE TO BE PREPARED. EVERYTHING AROUND YOU IS ALREADY IN PLACE, SO WHAT YOU EXPERIENCE FEELS NATURAL, SEAMLESS, AND ENTIRELY YOURS.</p>
 
-          <div class="concierge-services__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-1.png" alt="Luxury chalet" class="concierge-services__image for-winter">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-1.png" alt="Luxury chalet" class="concierge-services__image for-summer">
-
-            <ul class="concierge-services__list">
-              <li class="concierge-services__list-item">VIP tables &private venues</li>
-              <li class="concierge-services__list-item">Restaurant & club reservations</li>
-              <li class="concierge-services__list-item">Event organisation & celebration planning</li>
-              <li class="concierge-services__list-item">Local immersive experiences</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="concierge-services__item">
-          <h3 class="concierge-services__item-title">Transfers & Mobility</h3>
-
-          <div class="concierge-services__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-2.png" alt="Skiers on mountain" class="concierge-services__image for-winter">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-2.png" alt="Luxury chalet" class="concierge-services__image for-summer">
-
-            <ul class="concierge-services__list">
-              <li class="concierge-services__list-item for-summer">Rental Auto / Quad / Scooter</li>
-              <li class="concierge-services__list-item for-summer">Chauffer Service</li>
-              <li class="concierge-services__list-item for-summer">Helicopter connections</li>
-              <li class="concierge-services__list-item for-winter">Chauffeured travel</li>
-              <li class="concierge-services__list-item for-winter">Private driver</li>
-              <li class="concierge-services__list-item for-winter">Helicopter connections</li>
-            </ul>
-          </div>
-
-        </article>
-
-        <article class="concierge-services__item">
-          <h3 class="concierge-services__item-title">In-Home Services</h3>
-
-          <div class="concierge-services__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-3.jpeg" alt="Private dining setup" class="concierge-services__image for-winter">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-3.png" alt="Luxury chalet" class="concierge-services__image for-summer">
-
-            <ul class="concierge-services__list">
-
-              <li class="concierge-services__list-item">Private chef & mixologist</li>
-              <li class="concierge-services__list-item">Housekeeping & staffing</li>
-              <li class="concierge-services__list-item">Spa therapist & wellness treatments</li>
-              <li class="concierge-services__list-item">Private trainer & coaching</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="concierge-services__item">
-          <h3 class="concierge-services__item-title">Experiences</h3>
-
-          <div class="concierge-services__image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-winter-4.png" alt="Courchevel resort" class="concierge-services__image for-winter">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/update-service-summer-4.png" alt="Luxury chalet" class="concierge-services__image for-summer">
-
-            <ul class="concierge-services__list">
-              <li class="concierge-services__list-item for-winter">Ski Schools</li>
-              <li class="concierge-services__list-item for-winter">ski touring</li>
-              <li class="concierge-services__list-item for-winter">dog sled ride</li>
-              <li class="concierge-services__list-item for-winter">snow scooter</li>
-              <li class="concierge-services__list-item for-winter">Ice climbing</li>
-
-              <li class="concierge-services__list-item for-summer">Private Yachting Adventure</li>
-              <li class="concierge-services__list-item for-summer">Greek Farmstead Cooking Session</li>
-              <li class="concierge-services__list-item for-summer">Exploring Ancient Delos</li>
-              <li class="concierge-services__list-item for-summer">Horse Riding</li>
-              <li class="concierge-services__list-item for-summer">Professional Mykonian PhotoShoot</li>
-            </ul>
-          </div>
-        </article>
+      <div class="services-showcase__actions">
+        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn services-showcase__btn pp-editorial-new-regular">Discover our services</a>
       </div>
 
-      <div class="concierge-services__dots">
-        <span class="concierge-services__dot active"></span>
-        <span class="concierge-services__dot"></span>
-        <span class="concierge-services__dot"></span>
-        <span class="concierge-services__dot"></span>
+      <div class="services-showcase__grid">
+        <article class="services-showcase__item">
+          <div class="services-showcase__image-wrap">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-1.jpg" alt="Hosting & Lifestyle" class="services-showcase__image">
+          </div>
+          <h3 class="services-showcase__name pp-editorial-new-regular">Hosting & Lifestyle</h3>
+        </article>
+
+        <article class="services-showcase__item">
+          <div class="services-showcase__image-wrap">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-2.jpg" alt="Transfers & Mobility" class="services-showcase__image">
+          </div>
+          <h3 class="services-showcase__name pp-editorial-new-regular">Transfers & Mobility</h3>
+        </article>
+
+        <article class="services-showcase__item">
+          <div class="services-showcase__image-wrap">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-3.jpg" alt="In-Home Services" class="services-showcase__image">
+          </div>
+          <h3 class="services-showcase__name pp-editorial-new-regular">In-Home Services</h3>
+        </article>
+
+        <article class="services-showcase__item">
+          <div class="services-showcase__image-wrap">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-4.jpg" alt="Experiences" class="services-showcase__image">
+          </div>
+          <h3 class="services-showcase__name pp-editorial-new-regular">Experiences</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta__bg">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cta-desktop.jpg" alt="Mykonos">
+    </div>
+
+    <div class="cta__content">
+      <span class="cta__label pp-editorial-new-regular">Our Destination</span>
+      <h2 class="cta__title pp-editorial-new-regular">Mykonos</h2>
+      <a href="<?php echo esc_url( home_url( '/destination/mykonos/' ) ); ?>" class="btn cta__btn pp-editorial-new-regular">Explore the destination</a>
+    </div>
+  </section>
+
+  <section class="speak-with-us">
+    <div class="container">
+      <div class="speak-with-us__inner">
+        <div class="speak-with-us__content">
+          <h2 class="speak-with-us__title pp-editorial-new-regular">Speak with us</h2>
+
+          <div class="speak-with-us__text causten-regular">
+            <p>WE KNOW THESE PLACES BEYOND WHAT CAN BE SEEN.<br>NOT JUST THE VILLAS, BUT WHAT MAKES THEM FEEL RIGHT, AT THE RIGHT MOMENT, FOR THE RIGHT PERSON.</p>
+            <p>TELL US WHAT YOUR PERFECT STAY LOOKS LIKE,<br>AND WE&rsquo;LL SHAPE EVERYTHING AROUND IT, QUIETLY, PRECISELY, AS IT SHOULD BE.</p>
+          </div>
+
+          <div class="speak-with-us__actions">
+            <a href="#" class="btn speak-with-us__btn pp-editorial-new-regular">Chat with us</a>
+            <a href="<?php echo esc_url( home_url( '/enquiry/' ) ); ?>" class="btn speak-with-us__btn pp-editorial-new-regular">Enquiry</a>
+          </div>
+        </div>
+
+        <div class="speak-with-us__image">
+          <picture>
+            <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/speak-with-us-mobile.png">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/speak-with-us-bg.png" alt="">
+          </picture>
+        </div>
       </div>
     </div>
   </section>
