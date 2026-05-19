@@ -56,7 +56,7 @@ body:has(.header__modifier) {
 
 body:has(.header--v2-modifier) {
   @media (max-width: 1200px) {
-    padding-top: 100px;
+    padding-top: 96px;
   }
 }
 
@@ -100,6 +100,12 @@ body:has(.header--v2-modifier) {
   display: flex;
   align-items: center;
   gap: 24px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.header__topbar-right {
+  justify-content: flex-end;
 }
 
 .header__topbar-link {
@@ -571,7 +577,7 @@ body:has(.header--v2-modifier) {
   width: 100%;
   height: 100%;
   bottom: 0;
-  z-index: 9999;
+  z-index: 9999999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
@@ -1035,4 +1041,8 @@ body:has(.header--v2-modifier) {
   text-transform: uppercase;
   border-bottom: 1px solid #000;
   padding-inline: 0;
+}
+
+.current_page_item a {
+  font-weight: 700;
 }

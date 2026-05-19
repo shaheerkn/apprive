@@ -155,6 +155,11 @@ jQuery(document).ready(function($) {
         fetchProperties(false);
     });
 
+    // Dropdown Filter Groups Toggle
+    $('.filters__filter-group--dropdown .filters__filter-group__title').on('click', function() {
+        $(this).closest('.filters__filter-group--dropdown').toggleClass('is-closed');
+    });
+
     // Mobile Filters Drawer
     var $sidebar = $filterForm;
     var $overlay = $('.overlay');

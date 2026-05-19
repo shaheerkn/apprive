@@ -165,7 +165,7 @@
 
           <div class="speak-with-us__actions">
             <a href="#" class="btn speak-with-us__btn pp-editorial-new-regular">Chat with us</a>
-            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn speak-with-us__btn pp-editorial-new-regular">Enquire</a>
+            <a href="<?php echo esc_url( home_url( '/enquiry/' ) ); ?>" class="btn speak-with-us__btn pp-editorial-new-regular">Enquiry</a>
           </div>
         </div>
 

@@ -67,6 +67,23 @@ $property_query = new WP_Query( $args );
           ?>
       </div>
 
+      <div class="filters__speak-with-us filters__speak-with-us--mobile">
+          <h4 class="filters__speak-with-us__title">Speak with us</h4>
+          <p class="filters__speak-with-us__text">Each destination is carefully experienced by our local specialists to shape your perfect stay</p>
+          <a href="tel:" class="filters__speak-with-us__btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.667 17.5C14.861 17.5 13.0729 17.1215 11.3027 16.3646C9.53255 15.6076 7.92394 14.5174 6.47699 13.0938C5.03005 11.6701 3.9236 10.0764 3.15765 8.3125C2.3917 6.54861 2.00949 4.76736 2.01102 2.96875C2.01102 2.71875 2.10269 2.5 2.28602 2.3125C2.46935 2.125 2.69449 2.03125 2.96144 2.03125H6.20699C6.39032 2.03125 6.56283 2.09549 6.72449 2.22396C6.88616 2.35243 6.98546 2.52083 7.02255 2.72917L7.60255 5.46875C7.63963 5.65972 7.63349 5.84201 7.58421 6.01562C7.53491 6.18924 7.43563 6.33681 7.28616 6.45833L5.22699 8.38542C5.95588 9.65972 6.85088 10.8264 7.91199 11.8854C8.9731 12.9444 10.1425 13.8368 11.4202 14.5625L13.4402 12.5C13.5836 12.3472 13.7507 12.2431 13.9414 12.1875C14.132 12.1319 14.3258 12.1285 14.5227 12.1771L17.1337 12.7917C17.3306 12.8542 17.4914 12.9653 17.6162 13.125C17.741 13.2847 17.8034 13.4618 17.8034 13.6562V16.6562C17.8034 16.9062 17.7063 17.1198 17.5122 17.2969C17.318 17.474 17.0875 17.5556 16.8205 17.5434L16.667 17.5Z" fill="white"/>
+              </svg>
+              <span>Make a Call</span>
+          </a>
+          <a href="/enquiry/" class="filters__speak-with-us__btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33301 16.6667C2.87467 16.6667 2.48245 16.5035 2.15634 16.1771C1.83023 15.8507 1.66717 15.4583 1.66717 15V5C1.66717 4.54167 1.83023 4.14931 2.15634 3.82292C2.48245 3.49653 2.87467 3.33333 3.33301 3.33333H16.6663C17.1247 3.33333 17.5171 3.49653 17.8435 3.82292C18.1699 4.14931 18.333 4.54167 18.333 5V15C18.333 15.4583 18.1699 15.8507 17.8435 16.1771C17.5171 16.5035 17.1247 16.6667 16.6663 16.6667H3.33301ZM9.99967 10.5833L16.6663 6.25V5L9.99967 9.33333L3.33301 5V6.25L9.99967 10.5833Z" fill="white"/>
+              </svg>
+              <span>Enquiry</span>
+          </a>
+      </div>
+
       <div class="listing-grid__loader" id="property-loader" style="display: <?php echo ($property_query->max_num_pages > 1) ? 'flex' : 'none'; ?>;">
           <div class="listing-grid__spinner"></div>
       </div>
@@ -82,7 +99,7 @@ $property_query = new WP_Query( $args );
         <div class="filters__content">
             <button type="button" class="filters__close-btn" id="close-filters-btn">&times;</button>
             <h3 class="filters__main-title">Filter by</h3>
-            <div class="filters__filter-group">
+            <div class="filters__filter-group filters__filter-group--dropdown">
                 <h4 class="filters__filter-group__title">Destination</h4>
                 <div class="filters__checkboxes-group filters__checkboxes-group--column">
                     <?php
@@ -143,7 +160,7 @@ $property_query = new WP_Query( $args );
                 </div>
             </div>
 
-            <div class="filters__filter-group">
+            <div class="filters__filter-group filters__filter-group--dropdown">
                 <h4 class="filters__filter-group__title">Amenities & features</h4>
                 <div class="filters__checkboxes-group">
                     <?php
@@ -186,15 +203,11 @@ $property_query = new WP_Query( $args );
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.33301 16.6667C2.87467 16.6667 2.48245 16.5035 2.15634 16.1771C1.83023 15.8507 1.66717 15.4583 1.66717 15V5C1.66717 4.54167 1.83023 4.14931 2.15634 3.82292C2.48245 3.49653 2.87467 3.33333 3.33301 3.33333H16.6663C17.1247 3.33333 17.5171 3.49653 17.8435 3.82292C18.1699 4.14931 18.333 4.54167 18.333 5V15C18.333 15.4583 18.1699 15.8507 17.8435 16.1771C17.5171 16.5035 17.1247 16.6667 16.6663 16.6667H3.33301ZM9.99967 10.5833L16.6663 6.25V5L9.99967 9.33333L3.33301 5V6.25L9.99967 10.5833Z" fill="white"/>
                     </svg>
-                    <span>Enquire</span>
+                    <span>Enquiry</span>
                 </a>
             </div>
         </div>
     </form>
-    </div>
-
-    <div class="listing-grid__mobile-actions">
-        <a href="#" class="listing-grid__mobile-action">Learn More</a>
     </div>
 
     <div class="overlay"></div>

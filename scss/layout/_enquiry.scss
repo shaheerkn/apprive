@@ -231,15 +231,55 @@ select.enquiry__input {
 
   .enquiry__grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 0;
+  }
+
+  .enquiry__divider,
+  .enquiry__contact {
+    display: none;
+  }
+
+  .enquiry__form-wrap {
+    background: #FBF7EF;
+    border: 1px solid #EBE4D1;
+    padding: 32px 14px;
+  }
+
+  .enquiry__info {
+    text-align: center;
   }
 
   .enquiry__title {
-    font-size: 32px;
+    font-size: 30px;
+    margin-bottom: 17px;
+  }
+
+  .enquiry__description {
+    font-size: 14px;
   }
 
   .enquiry__form-title {
-    font-size: 32px;
+    font-size: 16px;
+    font-family: "Causten", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .enquiry__checkboxes {
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .enquiry__checkbox {
+    width: 100%;
+    justify-content: flex-start;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 16px;
   }
 
   .enquiry__row--3 {
@@ -253,5 +293,10 @@ select.enquiry__input {
   .enquiry__submit {
     width: 100%;
     text-align: center;
+  }
+
+  .enquiry__disclaimer {
+    text-align: center;
+    font-size: 12px;
   }
 }

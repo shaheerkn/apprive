@@ -55,12 +55,17 @@
   background: #252525;
   color: white;
   border: 1px solid #232323;
-  padding: 11px 18px;
+  padding: 8px 18px;
   font-size: 18px;
   font-weight: 400;
 
   &:hover {
     background: #1a1a1a;
+  }
+
+  &:nth-child(2) {
+    background-color: transparent;
+    color: #050817;
   }
 }
 
@@ -79,7 +84,7 @@
 @media (max-width: 992px) {
   .speak-with-us {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 22px;
   }
 
   .speak-with-us__inner {
@@ -92,7 +97,7 @@
   }
 
   .speak-with-us__text {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 28px;
   }
 

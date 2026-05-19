@@ -52,12 +52,12 @@
 <?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ar' ); ?></a>
 
-	<header class="header <?php echo !is_front_page() ? 'header__modifier' : ''; ?> <?php echo (is_page_template('page-templates/page-enquiry.php') || is_page_template('page-templates/page-properties.php')) ? 'header--v2-modifier' : ''; ?>">
+	<header class="header <?php echo !is_front_page() ? 'header__modifier' : ''; ?> <?php echo (is_page_template('page-templates/page-enquiry.php') || is_page_template('page-templates/page-properties.php') || is_page_template('page-templates/page-journal.php') || is_single()) ? 'header--v2-modifier' : ''; ?>">
     <div class="container">
       <!-- Top Bar -->
       <div class="header__topbar">
         <div class="header__topbar-left">
-          <a href="mailto:info@arprive.com" class="header__topbar-link">
+          <a href="/enquiry" class="header__topbar-link">
           <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="20" height="24" fill="url(#pattern0_247_199)"/>
             <defs>
@@ -251,7 +251,7 @@
           <span>Make a call</span>
         </a>
 
-        <a href="mailto:info@arprive.com" class="btn btn--solid--primary">
+        <a href="/enquiry" class="btn btn--solid--primary">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="20" height="20" fill="url(#pattern0_442_146)"/>
             <defs>

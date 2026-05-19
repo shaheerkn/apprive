@@ -23,6 +23,7 @@
     padding-top: 298px;
     padding-bottom: 140px;
     min-height: 875px;
+    align-items: flex-start;
   
     @media (min-width: 768px) {
       min-height: 780px;
@@ -173,7 +174,7 @@
 // Hero Filters
 .hero__filters {
   position: absolute;
-  bottom: 89px;
+  bottom: 150px;
   left: 50%;
   transform: translate(-50%, 50%);
   z-index: 3;
