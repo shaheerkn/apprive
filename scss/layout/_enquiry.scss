@@ -96,6 +96,7 @@
 .enquiry__form-wrap {
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
 .enquiry__form-title {
@@ -105,10 +106,10 @@
   line-height: 100%;
   letter-spacing: 0;
   color: #1f1f1f;
-  margin-bottom: 40px;
 }
 
-.enquiry__form {
+.enquiry__form,
+.wpcf7-form {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -127,7 +128,12 @@
 }
 
 .enquiry__input,
-.enquiry__textarea {
+.enquiry__textarea,
+.wpcf7-form .wpcf7-text,
+.wpcf7-form .wpcf7-email,
+.wpcf7-form .wpcf7-tel,
+.wpcf7-form .wpcf7-textarea,
+.wpcf7-form .wpcf7-select {
   background: #fff;
   border: 0.7px solid #000;
   padding: 10px 12px;
@@ -135,6 +141,8 @@
   font-family: inherit;
   color: #1f1f1f;
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
 
   &::placeholder {
     color: #999;
@@ -145,12 +153,14 @@
   }
 }
 
-.enquiry__textarea {
+.enquiry__textarea,
+.wpcf7-form .wpcf7-textarea {
   min-height: 100px;
   resize: vertical;
 }
 
-select.enquiry__input {
+select.enquiry__input,
+.wpcf7-form .wpcf7-select {
   appearance: none;
   cursor: pointer;
 }
@@ -223,6 +233,90 @@ select.enquiry__input {
   }
 }
 
+// CF7 markup resets
+.wpcf7-form {
+  .hidden-fields-container {
+    display: none;
+  }
+
+  .enquiry__field p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    br {
+      display: none;
+    }
+  }
+
+  .enquiry__checkboxes p {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  // Checkbox styling to match old markup
+  .enquiry__checkboxes .wpcf7-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .enquiry__checkboxes .wpcf7-list-item {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    cursor: pointer;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      border: 1px solid #999;
+      appearance: none;
+      flex-shrink: 0;
+      cursor: pointer;
+      background: #fff;
+      margin: 0;
+
+      &:checked {
+        background: #252525;
+        border-color: #252525;
+      }
+    }
+  }
+
+  .wpcf7-list-item-label {
+    font-size: 14px;
+    color: #1f1f1f;
+  }
+
+  // Submit button wrapper
+  p:has(.enquiry__submit) {
+    margin: 0;
+  }
+
+  .wpcf7-spinner {
+    display: none;
+  }
+
+  .wpcf7-response-output {
+    margin: 10px 0 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
 // Mobile
 @media (max-width: 992px) {
   .enquiry {
@@ -262,7 +356,6 @@ select.enquiry__input {
     font-size: 16px;
     font-family: "Causten", sans-serif;
     text-transform: uppercase;
-    margin-bottom: 18px;
   }
 
   .enquiry__checkboxes {
@@ -275,6 +368,25 @@ select.enquiry__input {
   }
 
   .enquiry__checkbox {
+    width: 100%;
+    justify-content: flex-start;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 16px;
+  }
+
+  .wpcf7-form .enquiry__checkboxes .wpcf7-checkbox {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .enquiry__checkboxes > p,
+  .enquiry__checkboxes span {
+    width: 100%;
+  }
+
+
+  .wpcf7-form .enquiry__checkboxes .wpcf7-list-item {
     width: 100%;
     justify-content: flex-start;
     background-color: #fff;
