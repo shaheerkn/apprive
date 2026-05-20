@@ -37,6 +37,11 @@
     box-shadow: 0px 4px 4px 0px #00000040;
     border: 0.4px solid #9A9A9A;
 
+    @media (min-width: 993px) {
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+
     @media (max-width: 992px) {
       position: fixed;
       top: 0;

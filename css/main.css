@@ -5193,6 +5193,12 @@ body:has(.header__modifier) {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   border: 0.4px solid #9A9A9A;
 }
+@media (min-width: 993px) {
+  .listing-grid__sidebar {
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+}
 @media (max-width: 992px) {
   .listing-grid__sidebar {
     position: fixed;
@@ -8434,6 +8440,7 @@ body:has(.header__modifier) {
   max-width: 453px;
   background-color: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  position: relative;
 }
 .journal-card__image-wrapper {
   width: 100%;
@@ -8482,6 +8489,11 @@ body:has(.header__modifier) {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+}
+.journal-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 @media (max-width: 992px) {
   .journal-card__title {

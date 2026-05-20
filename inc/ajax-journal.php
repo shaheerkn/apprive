@@ -39,9 +39,9 @@ function ar_filter_journal() {
             $cat_name = ! empty( $post_categories ) ? $post_categories[0]->name : '';
             ?>
             <article class="journal-card">
-                <a href="<?php the_permalink(); ?>" class="journal-card__image-wrapper">
+                <div class="journal-card__image-wrapper">
                     <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php the_title_attribute(); ?>" class="journal-card__image">
-                </a>
+                </div>
                 <div class="journal-card__content">
                     <?php if ( $cat_name ) : ?>
                         <span class="journal-card__location"><?php echo esc_html( strtoupper( $cat_name ) ); ?></span>
